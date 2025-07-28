@@ -9,63 +9,25 @@
     },
     "favicon": "/favicon.svg",
     "navigation": {
-     {
-  "groups": [
-    {
-      "group": "Getting Started",
-      "icon": "play",
-      "pages": [
-        "index",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "Customization",
-      "icon": "wrench",
-      "pages": [
-        "essentials/settings",
-        "essentials/navigation"
-      ]
-    },
-    {
-      "group": "Writing Content",
-      "icon": "notebook-text",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "AI Tools",
-      "icon": "robot",
-      "pages": [
-        "ai-tools/cursor",
-        "ai-tools/claude-code",
-        "ai-tools/windsurf"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "icon": "api",
-      "pages": [
-        "api-reference/introduction",
-        {
-          "group": "Endpoint Examples",
-          "icon": "terminal",
-          "pages": [
-            "api-reference/endpoint/get",
-            "api-reference/endpoint/create",
-            "api-reference/endpoint/delete",
-            "api-reference/endpoint/webhook"
-          ]
-        }
-      ]
-    }
+  "pages": [
+    "index",
+    "quickstart",
+    "development",
+    "essentials/settings",
+    "essentials/navigation",
+    "essentials/markdown",
+    "essentials/code",
+    "essentials/images",
+    "essentials/reusable-snippets",
+    "ai-tools/cursor",
+    "ai-tools/claude-code",
+    "ai-tools/windsurf",
+    "api-reference/introduction",
+    "api-reference/endpoint/get",
+    "api-reference/endpoint/create",
+    "api-reference/endpoint/delete",
+    "api-reference/endpoint/webhook"
   ]
-}
     },
     "logo": {
         "light": "/logo/light.svg",
