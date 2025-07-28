@@ -8,34 +8,20 @@
         "dark": "#15803D"
     },
     "favicon": "/favicon.svg",
+ 
   "navigation": {
-    "dropdowns": [
+    "anchors": [
       {
-        "dropdown": "Docs",
-        "icon": "book",
+        "anchor": "Documentation",
+        "icon": "book-open",
         "pages": [
           "index",
           "quickstart",
-          "development",
-          "essentials/settings",
-          "essentials/navigation",
-          "essentials/markdown",
-          "essentials/code",
-          "essentials/images",
-          "essentials/reusable-snippets"
+          "development"
         ]
       },
       {
-        "dropdown": "AI",
-        "icon": "bot",
-        "pages": [
-          "ai-tools/cursor",
-          "ai-tools/claude-code",
-          "ai-tools/windsurf"
-        ]
-      },
-      {
-        "dropdown": "API",
+        "anchor": "API",
         "icon": "terminal",
         "pages": [
           "api-reference/introduction",
@@ -43,6 +29,15 @@
           "api-reference/endpoint/create",
           "api-reference/endpoint/delete",
           "api-reference/endpoint/webhook"
+        ]
+      },
+      {
+        "anchor": "AI",
+        "icon": "robot",
+        "pages": [
+          "ai-tools/cursor",
+          "ai-tools/claude-code",
+          "ai-tools/windsurf"
         ]
       }
     ]
