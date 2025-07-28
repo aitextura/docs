@@ -8,29 +8,17 @@
         "dark": "#15803D"
     },
     "favicon": "/favicon.svg",
-   "navigation": {
-    "groups": [
+  "navigation": {
+    "dropdowns": [
       {
-        "group": "Getting Started",
-        "icon": "play",
+        "dropdown": "Docs",
+        "icon": "book",
         "pages": [
           "index",
           "quickstart",
-          "development"
-        ]
-      },
-      {
-        "group": "Customization",
-        "icon": "wrench",
-        "pages": [
+          "development",
           "essentials/settings",
-          "essentials/navigation"
-        ]
-      },
-      {
-        "group": "Writing Content",
-        "icon": "notebook-text",
-        "pages": [
+          "essentials/navigation",
           "essentials/markdown",
           "essentials/code",
           "essentials/images",
@@ -38,7 +26,7 @@
         ]
       },
       {
-        "group": "AI Tools",
+        "dropdown": "AI",
         "icon": "bot",
         "pages": [
           "ai-tools/cursor",
@@ -47,19 +35,14 @@
         ]
       },
       {
-        "group": "API Reference",
+        "dropdown": "API",
         "icon": "terminal",
         "pages": [
           "api-reference/introduction",
-          {
-            "group": "Endpoints",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+          "api-reference/endpoint/get",
+          "api-reference/endpoint/create",
+          "api-reference/endpoint/delete",
+          "api-reference/endpoint/webhook"
         ]
       }
     ]
