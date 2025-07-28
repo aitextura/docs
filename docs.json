@@ -9,6 +9,12 @@
     },
     "favicon": "/favicon.svg",
     "navigation": {
+       "pages": [
+      "overview",
+      "quickstart",
+      "advanced/components",
+      "advanced/integrations"
+    ],
         "groups": [
             {
                 "group": "Getting Started",
