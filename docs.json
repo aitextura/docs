@@ -15,15 +15,15 @@
         "language": "en",
         "versions": [
           {
-            "version": "1.0.0",
+            "version": "0.2.5",
             "groups": [
               {
                 "group": "Documentation",
                 "icon": "book",
                 "pages": [
-                  "en/v1/index",
-                  "en/v1/quickstart",
-                  "en/v1/development"
+                  "en/v025/index",
+                  "en/v025/quickstart",
+                  "en/v025/development"
                 ]
               },
               {
@@ -34,10 +34,10 @@
                   {
                     "group": "API Methods",
                     "pages": [
-                      "en/v1/api-reference/endpoint/get",
-                      "en/v1/api-reference/endpoint/create",
-                      "en/v1/api-reference/endpoint/delete",
-                      "en/v1/api-reference/endpoint/webhook"
+                      "en/v025/api-reference/endpoint/get",
+                      "en/v025/api-reference/endpoint/create",
+                      "en/v025/api-reference/endpoint/delete",
+                      "en/v025/api-reference/endpoint/webhook"
                     ]
                   }
                 ]
@@ -46,7 +46,7 @@
                 "group": "Changelog",
                 "icon": "clock-rotate-left",
                 "pages": [
-                  "en/v1/changelog"
+                  "en/v025/changelog"
                 ]
               }
             ]
@@ -57,29 +57,29 @@
         "language": "ru",
         "versions": [
           {
-            "version": "1.0.0",
+            "version": "0.2.5",     
             "groups": [
               {
                 "group": "Документация",
                 "icon": "book",
                 "pages": [
-                  "ru/v1/index",
-                  "ru/v1/quickstart",
-                  "ru/v1/development"
+                  "ru/v025/index",
+                  "ru/v025/quickstart",
+                  "ru/v025/development"
                 ]
               },
               {
                 "group": "API",
                 "icon": "terminal",
                 "pages": [
-                  "ru/v1/api-reference/introduction",
+                  "ru/v025/api-reference/introduction",
                   {
                     "group": "Методы API",
                     "pages": [
-                      "ru/v1/api-reference/endpoint/get",
-                      "ru/v1/api-reference/endpoint/create",
-                      "ru/v1/api-reference/endpoint/delete",
-                      "ru/v1/api-reference/endpoint/webhook"
+                      "ru/v025/api-reference/endpoint/get",
+                      "ru/v025/api-reference/endpoint/create",
+                      "ru/v025/api-reference/endpoint/delete",
+                      "ru/v025/api-reference/endpoint/webhook"
                     ]
                   }
                 ]
@@ -88,7 +88,7 @@
                 "group": "История изменений",
                 "icon": "clock-rotate-left",
                 "pages": [
-                  "ru/v1/changelog"
+                  "ru/v025/changelog"
                 ]
               }
             ]
@@ -99,29 +99,29 @@
         "language": "es",
         "versions": [
           {
-            "version": "1.0.0",
+            "version": "0.2.5",
             "groups": [
               {
                 "group": "Documentación",
                 "icon": "book",
                 "pages": [
-                  "es/v1/index",
-                  "es/v1/quickstart",
-                  "es/v1/development"
+                  "es/v025/index",
+                  "es/v025/quickstart",
+                  "es/v025/development"
                 ]
               },
               {
                 "group": "API",
                 "icon": "terminal",
                 "pages": [
-                  "es/v1/api-reference/introduction",
+                  "es/v025/api-reference/introduction",
                   {
                     "group": "Métodos API",
                     "pages": [
-                      "es/v1/api-reference/endpoint/get",
-                      "es/v1/api-reference/endpoint/create",
-                      "es/v1/api-reference/endpoint/delete",
-                      "es/v1/api-reference/endpoint/webhook"
+                      "es/v025/api-reference/endpoint/get",
+                      "es/v025/api-reference/endpoint/create",
+                      "es/v025/api-reference/endpoint/delete",
+                      "es/v025/api-reference/endpoint/webhook"
                     ]
                   }
                 ]
@@ -130,7 +130,7 @@
                 "group": "Cambios",
                 "icon": "clock-rotate-left",
                 "pages": [
-                  "es/v1/changelog"
+                  "es/v025/changelog"
                 ]
               }
             ]
@@ -152,15 +152,8 @@
         ],
         "primary": {
             "type": "button",
-            "label": "Dashasdasdasdboard",
-            "href": "https://dashboard.mintlify.com"
-        }
-    },
-    "footer": {
-        "socials": {
-            "x": "https://x.com/mintlify",
-            "github": "https://github.com/mintlify",
-            "linkedin": "https://linkedin.com/company/mintlify"
+            "label": "Dashboard",
+            "href": "https://app.aitextura.com"
         }
     }
 }
