@@ -73,6 +73,8 @@
           },
           {
             "tab": "Terms and policies",
+            "icon": "scale-balanced",
+            "iconType": "duotone",
             "groups": [
               {
                 "group": "Terms and policies",
@@ -95,6 +97,11 @@
                 ]
               }
             ]
+          },
+          {
+            "tab": "Changelog",
+            "icon": "list-check",
+            "iconType": "duotone"
           }
         ]
       },
@@ -145,16 +152,18 @@
             ]
           },
           {
-            "tab": "Terms and policies",
+            "tab": "Условия и политики",
+            "icon": "scale-balanced",
+            "iconType": "duotone",
             "groups": [
               {
-                "group": "Terms and policies",
+                "group": "Условия и политики",
                 "pages": [
                   "ru/terms-and-policies/index"
                 ]
               },
               {
-                "group": "Legal agreements",
+                "group": "Юридические соглашения",
                 "pages": [
                   "ru/terms-and-policies/offer",
                   "ru/terms-and-policies/terms-of-use",
@@ -162,12 +171,17 @@
                 ]
               },
               {
-                "group": "Consents",
+                "group": "Согласия",
                 "pages": [
                   "ru/terms-and-policies/privacy-consent"
                 ]
               }
             ]
+          },
+          {
+            "tab": "История изменений",
+            "icon": "list-check",
+            "iconType": "duotone"
           }
         ]
       }
