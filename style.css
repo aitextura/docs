@@ -1,0 +1,8 @@
+body[data-path="/en/terms-and-policies"] #pagination,
+body[data-path="/en/terms-and-policies/index"] #pagination,
+body[data-path="/en/terms-and-policies/offer"] #pagination,
+body[data-path="/en/terms-and-policies/terms-of-use"] #pagination,
+body[data-path="/en/terms-and-policies/privacy"] #pagination,
+body[data-path="/en/terms-and-policies/privacy-consent"] #pagination {
+  display: none !important;
+}
