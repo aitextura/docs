@@ -34,20 +34,20 @@
               {
                 "group": "Get Started",
                 "pages": [
-                  "welcome",
-                  "quickstart",
-                  "development"
+                  "en/welcome",
+                  "en/quickstart",
+                  "en/development"
                 ]
               },
               {
                 "group": "Essentials",
                 "pages": [
-                  "essentials/markdown",
-                  "essentials/code",
-                  "essentials/images",
-                  "essentials/settings",
-                  "essentials/navigation",
-                  "essentials/reusable-snippets"
+                  "en/essentials/markdown",
+                  "en/essentials/code",
+                  "en/essentials/images",
+                  "en/essentials/settings",
+                  "en/essentials/navigation",
+                  "en/essentials/reusable-snippets"
                 ]
               }
             ]
@@ -58,15 +58,15 @@
               {
                 "group": "API Reference",
                 "pages": [
-                  "api-reference/introduction"
+                  "en/api-reference/introduction"
                 ]
               },
               {
                 "group": "Endpoint Examples",
                 "pages": [
-                  "api-reference/endpoint/get",
-                  "api-reference/endpoint/create",
-                  "api-reference/endpoint/delete"
+                  "en/api-reference/endpoint/get",
+                  "en/api-reference/endpoint/create",
+                  "en/api-reference/endpoint/delete"
                 ]
               }
             ]
@@ -75,17 +75,23 @@
             "tab": "Terms and policies",
             "groups": [
               {
-                "group": "API Reference",
+                "group": "Terms and policies",
                 "pages": [
-                  "terms-and-policies/index"
+                  "en/terms-and-policies/index"
                 ]
               },
               {
-                "group": "Endpoint Examples",
+                "group": "Legal agreements",
                 "pages": [
-                  "api-reference/endpoint/get",
-                  "api-reference/endpoint/create",
-                  "api-reference/endpoint/delete"
+                  "en/terms-and-policies/offer",
+                  "en/terms-and-policies/terms-of-use",
+                  "en/terms-and-policies/privacy"
+                ]
+              },
+              {
+                "group": "Consents",
+                "pages": [
+                  "en/terms-and-policies/privacy-consent"
                 ]
               }
             ]
@@ -101,20 +107,20 @@
               {
                 "group": "Get Started",
                 "pages": [
-                  "welcome",
-                  "quickstart",
-                  "development"
+                  "ru/welcome",
+                  "ru/quickstart",
+                  "ru/development"
                 ]
               },
               {
                 "group": "Essentials",
                 "pages": [
-                  "essentials/markdown",
-                  "essentials/code",
-                  "essentials/images",
-                  "essentials/settings",
-                  "essentials/navigation",
-                  "essentials/reusable-snippets"
+                  "ru/essentials/markdown",
+                  "ru/essentials/code",
+                  "ru/essentials/images",
+                  "ru/essentials/settings",
+                  "ru/essentials/navigation",
+                  "ru/essentials/reusable-snippets"
                 ]
               }
             ]
@@ -125,15 +131,40 @@
               {
                 "group": "API Reference",
                 "pages": [
-                  "api-reference/introduction"
+                  "ru/api-reference/introduction"
                 ]
               },
               {
                 "group": "Endpoint Examples",
                 "pages": [
-                  "api-reference/endpoint/get",
-                  "api-reference/endpoint/create",
-                  "api-reference/endpoint/delete"
+                  "ru/api-reference/endpoint/get",
+                  "ru/api-reference/endpoint/create",
+                  "ru/api-reference/endpoint/delete"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Terms and policies",
+            "groups": [
+              {
+                "group": "Terms and policies",
+                "pages": [
+                  "ru/terms-and-policies/index"
+                ]
+              },
+              {
+                "group": "Legal agreements",
+                "pages": [
+                  "ru/terms-and-policies/offer",
+                  "ru/terms-and-policies/terms-of-use",
+                  "ru/terms-and-policies/privacy"
+                ]
+              },
+              {
+                "group": "Consents",
+                "pages": [
+                  "ru/terms-and-policies/privacy-consent"
                 ]
               }
             ]
