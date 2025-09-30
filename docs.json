@@ -24,6 +24,12 @@
     ]
   },
   "navigation": {
+    "pages": [
+      {
+        "name": "terms-and-policies",
+        "href": "/terms-and-policies"
+      }
+    ],
     "languages": [
       {
         "language": "en",
