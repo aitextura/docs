@@ -42,7 +42,20 @@
               {
                 "group": "Get Started",
                 "pages": [
-                  "en/welcome"
+                  "en/welcome",
+                  "en/quickstart",
+                  "en/development"
+                ]
+              },
+              {
+                "group": "Essentials",
+                "pages": [
+                  "en/essentials/markdown",
+                  "en/essentials/code",
+                  "en/essentials/images",
+                  "en/essentials/settings",
+                  "en/essentials/navigation",
+                  "en/essentials/reusable-snippets"
                 ]
               }
             ]
@@ -106,6 +119,19 @@
                 "group": "Get Started",
                 "pages": [
                   "ru/welcome",
+                  "ru/quickstart",
+                  "ru/development"
+                ]
+              },
+              {
+                "group": "Essentials",
+                "pages": [
+                  "ru/essentials/markdown",
+                  "ru/essentials/code",
+                  "ru/essentials/images",
+                  "ru/essentials/settings",
+                  "ru/essentials/navigation",
+                  "ru/essentials/reusable-snippets"
                 ]
               }
             ]
