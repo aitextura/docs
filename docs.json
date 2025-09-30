@@ -90,7 +90,15 @@
           {
             "tab": "Changelog",
             "icon": "list-check",
-            "iconType": "duotone"
+            "iconType": "duotone",
+            "groups": [
+              {
+                "group": "Changelog",
+                "pages": [
+                  "en/changelog/index"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -105,7 +113,7 @@
               {
                 "group": "Get Started",
                 "pages": [
-                  "ru/welcome",
+                  "ru/welcome"
                 ]
               }
             ]
@@ -153,7 +161,15 @@
           {
             "tab": "История изменений",
             "icon": "list-check",
-            "iconType": "duotone"
+            "iconType": "duotone",
+            "groups": [
+              {
+                "group": "Changelog",
+                "pages": [
+                  "en/changelog/index"
+                ]
+              }
+            ]
           }
         ]
       }
