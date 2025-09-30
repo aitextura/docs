@@ -181,5 +181,43 @@
       "label": "Dashbboard",
       "href": "https://app.aitextura.com"
     }
+  },
+  "seo": {
+    "metatags": {
+      "charset": "UTF-8",
+      "viewport": "width=device-width, initial-scale=1",
+      "title": "AI Textura Docs — Official Documentation",
+      "description": "Official AI Textura documentation: user guides, API references, integrations, and examples for deploying AI agents.",
+      "author": "JSC AI TEXTURA",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "googlebot": "index, follow",
+      "google": "notranslate",
+      "referrer": "strict-origin-when-cross-origin",
+      "theme-color": "#5a4aaa",
+      "color-scheme": "light dark",
+      "format-detection": "telephone=no",
+      "canonical": "https://docs.aitextura.com",
+      "application-name": "AI Textura Docs",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black",
+      "apple-mobile-web-app-title": "AI Textura Docs",
+      "msapplication-TileColor": "#5a4aaa",
+      "og:type": "website",
+      "og:title": "AI Textura Docs — Official Documentation",
+      "og:description": "User guides, API references, integrations, and examples for AI Textura.",
+      "og:url": "https://docs.aitextura.com",
+      "og:site_name": "AI Textura Docs",
+      "og:locale": "en_US",
+      "og:image": "https://docs.aitextura.com/assets/og/docs-cover-1200x630.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "AI Textura Documentation",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@aitextura",
+      "twitter:title": "AI Textura Docs — Official Documentation",
+      "twitter:description": "Guides, API, and integration docs for AI Textura.",
+      "twitter:image": "https://docs.aitextura.com/assets/og/docs-cover-1200x630.png",
+      "twitter:image:alt": "AI Textura Documentation"
+    }
   }
 }
