@@ -82,7 +82,8 @@
               {
                 "group": "Consents",
                 "pages": [
-                  "en/terms-and-policies/privacy-consent"
+                  "en/terms-and-policies/privacy-consent",
+                   "en/terms-and-policies/promo-consent"
                 ]
               }
             ]
@@ -153,7 +154,8 @@
               {
                 "group": "Согласия",
                 "pages": [
-                  "ru/terms-and-policies/privacy-consent"
+                  "ru/terms-and-policies/privacy-consent",
+                   "ru/terms-and-policies/promo-consent"
                 ]
               }
             ]
