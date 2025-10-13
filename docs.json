@@ -116,6 +116,11 @@
                 "pages": [
                   "ru/welcome"
                 ]
+              },{
+                "group": "Get Started",
+                "pages": [
+                  "ru/guides/mcp"
+                ]
               }
             ]
           },
