@@ -83,7 +83,7 @@
                 "group": "Consents",
                 "pages": [
                   "en/terms-and-policies/privacy-consent",
-                   "en/terms-and-policies/promo-consent"
+                  "en/terms-and-policies/promo-consent"
                 ]
               }
             ]
@@ -112,14 +112,18 @@
             "iconType": "duotone",
             "groups": [
               {
-                "group": "Get Started",
+                "group": "Гайды",
                 "pages": [
-                  "ru/welcome"
-                ]
-              },{
-                "group": "Get Started",
-                "pages": [
-                  "ru/guides/mcp"
+                  "ru/guides/channels",
+                  "ru/guides/chats",
+                  "ru/guides/faq",
+                  "ru/guides/finance",
+                  "ru/guides/knowledge",
+                  "ru/guides/mcp",
+                  "ru/guides/notifications",
+                  "ru/guides/profiles",
+                  "ru/guides/quick-start",
+                  "ru/guides/settings"
                 ]
               }
             ]
@@ -160,7 +164,7 @@
                 "group": "Согласия",
                 "pages": [
                   "ru/terms-and-policies/privacy-consent",
-                   "ru/terms-and-policies/promo-consent"
+                  "ru/terms-and-policies/promo-consent"
                 ]
               }
             ]
