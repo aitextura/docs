@@ -112,9 +112,18 @@
             "iconType": "duotone",
             "groups": [
               {
+                "group": "Каналы",
+                "pages": [
+                  "ru/channels/index",
+                  "ru/channels/telegram",
+                  "ru/channels/amocrm"
+                 
+                ]
+              },
+              {
                 "group": "Гайды",
                 "pages": [
-                  "ru/guides/channels",
+                 
                   "ru/guides/chats",
                   "ru/guides/faq",
                   "ru/guides/finance",
