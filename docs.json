@@ -113,17 +113,17 @@
             "groups": [
               {
                 "group": "Каналы",
+                "icon": "comments",
+                "iconType": "duotone",
                 "pages": [
                   "ru/channels/index",
                   "ru/channels/telegram",
                   "ru/channels/amocrm"
-                 
                 ]
               },
               {
                 "group": "Гайды",
                 "pages": [
-                 
                   "ru/guides/chats",
                   "ru/guides/faq",
                   "ru/guides/finance",
