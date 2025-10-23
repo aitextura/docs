@@ -124,15 +124,18 @@
               {
                 "group": "Гайды",
                 "pages": [
-                  "ru/guides/chats",
-                  "ru/guides/faq",
-                  "ru/guides/finance",
-                  "ru/guides/knowledge",
-                  "ru/guides/mcp",
-                  "ru/guides/notifications",
-                  "ru/guides/profiles",
                   "ru/guides/quick-start",
-                  "ru/guides/settings"
+                  "ru/guides/settings",
+                  "ru/guides/chats",
+                  "ru/guides/notifications",
+                  "ru/guides/knowledge",
+                  "ru/guides/faq_mode",
+                  "ru/guides/profiles",
+                  "ru/guides/mcp",
+                  "ru/guides/finance",
+                  "ru/guides/faq"
+
+                  
                 ]
               }
             ]
