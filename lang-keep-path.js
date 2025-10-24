@@ -1,12 +1,12 @@
 (function () {
   console.log('LANG SWITCH HOOK LOADED');
-  // настрой под свои локали
+
   var LOCALES = ['en', 'ru'];
   var DEFAULT = 'en';
 
   function detectLocale(path) {
     var m = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(\/|$)/);
-    if (m && LOCALES.includes(m[1])) return m[1];
+    if (m && LOCALES.indexOf(m[1]) > -1) return m[1];
     return DEFAULT;
   }
 
@@ -14,44 +14,49 @@
     var cur = detectLocale(path);
     if (cur === to) return path;
 
-    if (LOCALES.includes(cur)) {
+    if (LOCALES.indexOf(cur) > -1) {
       if (path === '/' + cur) return '/' + to;
       return path.replace(new RegExp('^/' + cur + '(\\/|$)'), '/' + to + '$1');
     }
-    // если без префикса — добавим
     if (path === '/') return '/' + to;
     return '/' + to + (path.startsWith('/') ? '' : '/') + path;
   }
 
-  // перехват кликов по элементам свитчера языка
-  document.addEventListener('click', function (e) {
-    var el = e.target.closest('a,button,[role="menuitem"],[data-locale]');
-    if (!el) return;
+  function handle(e) {
+    // Любая ссылка внутри документа
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
 
-    // пробуем вытащить целевую локаль из атрибутов/текста
-    var target =
-      el.getAttribute('data-locale') ||
-      el.getAttribute('data-lang') ||
-      (el.dataset ? el.dataset.locale : '');
+    // Берём pathname целевого href (без домена)
+    var hrefPath = a.getAttribute('href');
+    if (!hrefPath) return;
 
-    if (!target) {
-      var txt = (el.textContent || '').trim().toLowerCase();
-      if (txt === 'en' || txt.includes('english')) target = 'en';
-      if (txt === 'ru' || txt.includes('рус') || txt.includes('russian')) target = 'ru';
-    }
+    // Нормализуем на случай относительных
+    try {
+      hrefPath = new URL(hrefPath, location.origin).pathname;
+    } catch (_) { return; }
 
-    if (!target || !LOCALES.includes(target)) return;
+    // Реагируем ТОЛЬКО на переключатели языка (ссылки ровно на /en или /ru)
+    var m = hrefPath.match(/^\/(en|ru)\/?$/);
+    if (!m) return;
 
-    // ограничим перехват только меню языка (классы Mintlify могут меняться,
-    // поэтому берём несколько эвристик)
-    var isLangUI = el.closest(
-      '.option-dropdown, [id*="lang"], [class*="lang"], [aria-label*="Language"], [aria-label*="язык"]'
-    );
-    if (!isLangUI) return;
+    var to = m[1];
 
-    e.preventDefault();
-    var newPath = swapLocale(location.pathname, target);
+    // Готовим новый путь: тот же current pathname, но с другой локалью
+    var newPath = swapLocale(location.pathname, to);
     var url = newPath + location.search + location.hash;
+
+    // Блокируем стандартную навигацию Mintlify
+    e.preventDefault();
+    e.stopPropagation();
+    if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
+
+    // Переходим на нужный URL
     location.assign(url);
-  }, true);
+  }
+
+  // Вешаемся максимально рано и на все основные типы взаимодействий
+  document.addEventListener('click', handle, true);
+  document.addEventListener('mousedown', handle, true);
+  document.addEventListener('touchstart', handle, true);
 })();
