@@ -1,4 +1,5 @@
 (function () {
+  console.log('LANG SWITCH HOOK LOADED');
   // настрой под свои локали
   var LOCALES = ['en', 'ru'];
   var DEFAULT = 'en';
