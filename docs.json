@@ -206,6 +206,11 @@
     }
   },
   "seo": {
+    "ogTemplate": {
+    "background": "/assets/og/docs-cover-1200x630.png",
+    "logo": "/assets/logo/light.svg",
+    "themeColor": "#5a4aaa"
+  },
     "metatags": {
       "charset": "UTF-8",
       "viewport": "width=device-width, initial-scale=1",
