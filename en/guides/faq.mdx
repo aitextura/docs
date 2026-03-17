@@ -1,0 +1,154 @@
+---
+title: "FAQ / Self-Learning"
+description: "AI employee self-learning system: automatic extraction of questions and answers from dialogs, record status management, and strict mode configuration."
+---
+
+The **FAQ** section is a self-learning system: the AI employee analyzes real customer conversations, extracts question-answer pairs, and builds a database of verified responses. With each passing day, the agent responds more accurately.
+
+You control the process: review records, edit answers, confirm successful ones, and push them to the knowledge base.
+
+<Frame>
+  <img src="/assets/images/faq.png" />
+</Frame>
+
+---
+
+## How It Works
+
+<Steps>
+  <Step title="Agent analyzes dialogs">
+    With self-learning enabled, the AI employee automatically processes real customer conversations and extracts question-answer pairs from them.
+  </Step>
+  <Step title="Records appear in FAQ">
+    Extracted pairs are added to the FAQ list with the status **New**. You review them, edit if necessary, and confirm.
+  </Step>
+  <Step title="Confirmed records are pushed to the knowledge base">
+    After confirmation, a record can be pushed to the agent's knowledge base, where it will be used to improve response accuracy.
+  </Step>
+</Steps>
+
+<Tip>
+  The first records will appear after the agent processes several real conversations. This usually happens within the first few days of operation.
+</Tip>
+
+---
+
+## Record Statuses
+
+FAQ records go through three statuses:
+
+| Status | Description |
+|---|---|
+| **New** | Record was automatically added from a dialog and has not been reviewed yet |
+| **Confirmed** | You have reviewed and approved the record |
+| **In Knowledge** | Record has been pushed to the agent's knowledge base and is actively used |
+
+Each row in the table contains:
+
+| Column | Description |
+|---|---|
+| **Question** | Customer question extracted from the dialog |
+| **Answer** | Agent's response |
+| **Status** | New, Confirmed, or In Knowledge |
+
+For each record, the following actions are available: **confirm**, **push to knowledge base**, **delete**. You can select multiple records and perform bulk actions. A **search bar** is also available to filter by questions and answers.
+
+---
+
+## How to Enable Self-Learning
+
+<Steps>
+  <Step title="Open the FAQ tab">
+    Navigate to the desired AI employee and open the **FAQ** tab.
+  </Step>
+  <Step title="Enable the toggle">
+    Switch the **FAQ Self-Learning** toggle at the top of the tab to the "on" position.
+  </Step>
+  <Step title="Done">
+    The agent will start analyzing dialogs and building a response database automatically.
+  </Step>
+</Steps>
+
+---
+
+## Processing Records
+
+<Steps>
+  <Step title="Review new records">
+    Go to the **New** sub-tab — this is where records automatically added by the agent are listed.
+  </Step>
+  <Step title="Review and edit">
+    Check the question and answer. Edit the text if necessary.
+  </Step>
+  <Step title="Confirm the record">
+    If everything looks correct, click **Confirm**.
+  </Step>
+  <Step title="Push to knowledge base">
+    Confirmed records can be **pushed to the knowledge base** to improve the accuracy of future responses.
+  </Step>
+</Steps>
+
+---
+
+## Strict Mode
+
+Strict mode determines how the agent behaves when it cannot find an answer in the FAQ database. To open the settings, click the **gear icon** next to the self-learning toggle.
+
+| Option | Behavior |
+|---|---|
+| **Allow the agent to respond** | The agent will answer in its own words using the Persona and knowledge base |
+| **Do not respond** | The agent will remain silent |
+| **Send a preset phrase** | The agent will send a phrase that you specify in the text field (up to 450 characters) |
+
+<Warning>
+  The "Do not respond" option may result in the customer receiving no reply at all. Use it with caution — it is better to set up a preset phrase instead.
+</Warning>
+
+**Example preset phrase:**
+> Let me check with my colleagues
+
+---
+
+## FAQ and Quick Answers
+
+<Note>
+  **Quick Answers have higher priority** than FAQ. If both a Quick Answer and an FAQ record exist for the same question, the Quick Answer will be used. FAQ is designed for automatic population from dialogs. For manually adding prepared responses, use the **Quick Answers** section instead.
+</Note>
+
+---
+
+## Usage Examples
+
+- **Hotel** — within a week, the agent accumulated 50 question-answer pairs about check-in, Wi-Fi, and parking. It now responds to them instantly and accurately.
+- **Law firm** — enabled strict mode with a preset phrase: "To answer your question, I need to verify information with a lawyer." This eliminates the risk of incorrect recommendations.
+- **Online school** — reviews records once a week, corrects inaccuracies, and pushes them to the knowledge base. Response quality improves every week.
+
+---
+
+## Frequently Asked Questions
+
+<Accordion title="How quickly does the agent start accumulating answers?">
+  The first records appear after processing several dialogs. Usually within the first few days of working with real customers.
+</Accordion>
+
+<Accordion title="Can I edit the agent's answers?">
+  Yes. All records can be viewed and edited directly in the FAQ list.
+</Accordion>
+
+<Accordion title="What happens if I turn off self-learning?">
+  The agent will stop adding new records, but the already accumulated answers will remain and continue to be used.
+</Accordion>
+
+<Accordion title="Can I add questions manually?">
+  FAQ is designed for automatic population from dialogs. For manually adding prepared responses, the **Quick Answers** section is a better fit.
+</Accordion>
+
+<Accordion title="How does FAQ work together with Quick Answers?">
+  They complement each other. Quick Answers have higher priority — if both a Quick Answer and an FAQ record exist for the same question, the Quick Answer will take effect.
+</Accordion>
+
+---
+
+<Tip>
+  Regularly review FAQ records — the agent learns from real dialogs, and sometimes answers may need corrections. We recommend reviewing once a week.
+</Tip>

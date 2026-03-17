@@ -1,0 +1,254 @@
+---
+title: "Talents"
+description: "Talents are apps and services that give your AI employee real-world capabilities: booking, CRM, calendars, spreadsheets, and thousands of other integrations."
+---
+
+Talents transform your AI employee from a good conversationalist into a full-fledged assistant that doesn't just answer questions but performs real actions: books rooms, schedules appointments, searches the web, sends data to your CRM.
+
+**Without talents, an agent can only talk. With talents — it works.**
+
+<Frame><img src="/assets/images/talanty.png" /></Frame>
+
+---
+
+## Talent Catalog
+
+The catalog offers **over 3,000 integrations** with external services and applications. Open the desired AI employee and navigate to the **Talents** tab.
+
+| Tab | Description |
+|---|---|
+| **Browse apps** | Catalog of all available apps and services for connection |
+| **Connected** | List of talents already connected to this agent |
+
+### Catalog Filters
+
+| Filter | What it shows |
+|---|---|
+| **All** | Complete list of talents |
+| **Available talents** | Talents already configured and ready to connect |
+| **BY AI TEXTURA** | Talents developed by the AI Textura team |
+| **App Collections** | Themed collections |
+
+### Categories
+
+The catalog features over 22 categories, including:
+
+- **CRM** — amoCRM, Bitrix24, and others
+- **Calendars** — Google Calendar and similar tools
+- **Spreadsheets** — Google Sheets and other spreadsheet tools
+- **Databases** — MySQL, PostgreSQL, and other databases
+- **AI** — OpenAI (ChatGPT), Anthropic (Claude), and others
+- **E-commerce** — Shopify and trading platforms
+- **Communication** — Telegram, Twilio SendGrid, and messengers
+- **Marketing** — marketing tools
+- **Developer Tools** — tools for developers
+
+---
+
+## Two Catalog Sections
+
+<AccordionGroup>
+  <Accordion title="Available talents (top section)">
+    Talents that are already configured for your account or created by you. This includes integrations with booking systems (Travelline, Bnovo), web search, Google Calendar, Google Sheets, and others. These are ready to use out of the box.
+  </Accordion>
+  <Accordion title="External talents (bottom section)">
+    An extensive library of **3,000+ external integrations**. This includes services from around the world: OpenAI, Anthropic, Notion, Google Drive, Telegram, Shopify, MySQL, PostgreSQL, AWS, Twilio SendGrid, and many more. The catalog is continuously expanding.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Most Popular Talents
+
+| Talent | Purpose |
+|---|---|
+| **Travelline** | Hotel room booking: availability checks, rates, reservation creation |
+| **Bnovo** | Hotel PMS system: rooms, prices, availability |
+| **Google Calendar** | Event and schedule management: create, view, edit appointments |
+| **Google Sheets** | Read and write data in Google spreadsheets |
+| **WebSearch** | Real-time web search for up-to-date information |
+| **HTTP / Webhook** | Send HTTP requests and webhooks — a universal tool for connecting to any API |
+| **Google Drive** | Work with files in cloud storage |
+| **Notion** | Integration with Notion workspace |
+| **amoCRM** | CRM system integration |
+| **Bitrix24** | Bitrix24 integration |
+
+---
+
+## How to Connect a Talent
+
+<Steps>
+  <Step title="Open the Talents section">
+    Go to the desired AI employee's profile and open the **Talents** tab.
+  </Step>
+  <Step title="Find the talent you need">
+    On the **Browse apps** tab, use the search bar, category filters, or simply scroll through the catalog.
+  </Step>
+  <Step title="Open the talent card">
+    Click on the card — a connection dialog will open.
+  </Step>
+  <Step title="Fill in the parameters">
+    - **Instance name** — choose a clear name (e.g., "Hotel Seaside Booking" or "Teacher Ivanov's Calendar").
+    - **Talent settings** — fill in fields specific to the service (ID, access keys, region, etc.).
+  </Step>
+  <Step title="Connect">
+    Click **Connect talent**. It will appear on the **Connected** tab.
+  </Step>
+</Steps>
+
+<Tip>
+  If the connection requires authorization (e.g., OAuth for Google Calendar), the system will redirect you to the service's login page. Make sure you sign in with an account that has the necessary permissions.
+</Tip>
+
+---
+
+## Connection Parameters
+
+| Parameter | Description |
+|---|---|
+| **Talent name** | Filled automatically — the talent's name from the catalog |
+| **Description** | Brief description of what the talent can do (automatic) |
+| **Instance name** | The name you assign — this is how the talent appears in your connected list |
+| **Settings fields** | Fields specific to the talent (e.g., for Travelline — Hotel ID and hotel region) |
+
+<Warning>
+  Before connecting, make sure you have all required data: IDs, access keys, region, etc. This information can usually be found in the corresponding service's dashboard.
+</Warning>
+
+---
+
+## Multiple Instances of the Same Talent
+
+You can connect **the same talent multiple times** with different settings. This is useful when:
+
+- You have **multiple hotels** — each with its own Travelline instance and Hotel ID
+- You have **multiple employees** — each with their own Google Calendar
+- You need **different configurations** of the same service
+
+Give each instance a clear name so both you and the agent can distinguish them: for example, "Booking — Hotel Seaside" and "Booking — Hotel Mountain."
+
+---
+
+## Creating a Custom Talent
+
+If the catalog doesn't have the integration you need — create your own talent.
+
+<Steps>
+  <Step title="Click + Create talent">
+    The button is located at the top of the catalog on the **Talents** tab.
+  </Step>
+  <Step title="Fill in the parameters">
+    Specify the settings for the new talent following the on-screen instructions.
+  </Step>
+  <Step title="Save">
+    After saving, the talent will be available for connection.
+  </Step>
+</Steps>
+
+Custom talents are ideal for:
+
+- Integrating with internal company systems
+- Non-standard logic not available in the catalog
+- Connecting to your APIs via HTTP requests and webhooks
+
+<Tip>
+  If you have a developer on your team, the **HTTP / Webhook** talent lets you connect virtually any service with an API. The agent can send data to your system and receive responses.
+</Tip>
+
+---
+
+## Persona Connection — Critically Important
+
+<Warning>
+  Connecting a talent is only half the job. **The other half is describing it in the agent's Persona.** Without this, the agent may not understand when to use the talent or may "forget" about it entirely.
+</Warning>
+
+In the **Persona** section of your AI employee, write specific instructions for each connected talent:
+
+**Example Persona instructions:**
+
+> When a guest asks about room availability for specific dates — use Travelline to check. Show available options with prices. If no rooms are available — suggest the nearest available dates.
+
+> When a client wants to schedule a consultation — use Google Calendar to check available slots and create an event.
+
+The more precise the description in the Persona, the more appropriately the agent uses talents.
+
+---
+
+## Real-World Examples
+
+<AccordionGroup>
+  <Accordion title="Hotel 'Seaside' — automated booking">
+    The hotel connected the **Travelline** talent. When a guest asks about room availability, the agent independently checks the PMS system and offers booking options — without involving the front desk staff.
+
+    **Connected:** Travelline
+    **In Persona:** when asked about rooms — check Travelline, show options with prices, on confirmation — create the booking.
+  </Accordion>
+  <Accordion title="Online school — consultation scheduling">
+    The school connected **Google Calendar** to its curator agent. A student writes: "I want to book a consultation with the teacher on Thursday" — the agent checks available slots and offers a specific time. After confirmation, the event appears in the calendar.
+
+    **Connected:** Google Calendar
+    **In Persona:** when a student requests a booking — check the calendar, suggest slots, create an event after confirmation.
+  </Accordion>
+  <Accordion title="E-commerce store — web search for support">
+    The store connected **WebSearch** to its support agent. If a question falls outside the knowledge base — the agent searches the web and provides an up-to-date answer.
+
+    **Connected:** WebSearch
+    **In Persona:** if the question isn't covered by the knowledge base — search via web, informing the customer about the source.
+  </Accordion>
+  <Accordion title="Company with multiple hotels — multiple instances">
+    Each hotel has its own **Travelline** instance with a unique Hotel ID. One agent serves both properties and knows exactly which system to query when the guest specifies a hotel name.
+
+    **Connected:** two Travelline instances — "Booking — Hotel Seaside" and "Booking — Hotel Mountain."
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Key Considerations
+
+<Steps>
+  <Step title="Prepare your data in advance">
+    Before connecting a talent, ensure you have the IDs, access keys, region, and other parameters. These can be obtained from the service's dashboard.
+  </Step>
+  <Step title="Test immediately">
+    After connecting, open the test chat (**Show chat** button) and try a scenario where the agent should use the talent.
+  </Step>
+  <Step title="Monitor authorization">
+    If the talent connects via OAuth, make sure you authorize with the correct account. Changing the password or revoking access will break the talent.
+  </Step>
+  <Step title="Describe talents in the Persona">
+    Without a Persona description, the agent may not know when to use the talent. Write specific situations and instructions.
+  </Step>
+  <Step title="Check the Connected tab regularly">
+    Periodically verify that all connections are active. API updates or expired tokens may require reconnection.
+  </Step>
+</Steps>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How many talents can I connect to one agent?">
+    There are no limits. However, the more talents you have, the more important it is to clearly describe in the Persona when to use each one.
+  </Accordion>
+  <Accordion title="Can I connect the same talent multiple times?">
+    Yes. This is useful for multiple instances with different settings — for example, two Travelline connections for two hotels or two Google Calendars for different employees.
+  </Accordion>
+  <Accordion title="The talent is connected but the agent isn't using it. What should I do?">
+    Most likely, there's no instruction in the Persona. Add a rule: "When a client asks about [situation] — use [talent name]." Then test in the chat.
+  </Accordion>
+  <Accordion title="What happens if the external service becomes unavailable?">
+    The agent will inform the client that it cannot perform the action at the moment and suggest an alternative. The agent itself will continue working — just without that specific talent.
+  </Accordion>
+  <Accordion title="Can I connect a talent that isn't in the catalog?">
+    Yes, via the **+ Create talent** button or through the universal **HTTP / Webhook** talent, which allows sending arbitrary HTTP requests to any API.
+  </Accordion>
+  <Accordion title="Is talent data preserved between conversations?">
+    No. Each conversation is a separate session. Data obtained in one chat is not carried over to another. This is done for security and data accuracy.
+  </Accordion>
+  <Accordion title="Do I need to pay for talents?">
+    Some talents are available for free with your plan. Certain integrations may require a subscription to the third-party service (Google Workspace, Notion, etc.). Details are provided in each talent's catalog description.
+  </Accordion>
+</AccordionGroup>

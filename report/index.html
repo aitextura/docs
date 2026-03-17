@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI TEXTURA - Функции Платформы</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .no-print {
+                display: none;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .avoid-break {
+                page-break-inside: avoid;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- Print Button -->
+    <div class="fixed bottom-8 right-8 no-print z-50">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Сохранить в PDF
+        </button>
+    </div>
+
+    <!-- Cover Page -->
+    <div class="max-w-4xl mx-auto bg-white shadow-xl min-h-screen flex flex-col justify-center items-center p-12 mb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+        <div class="text-center z-10">
+            <h1 class="text-6xl font-extrabold tracking-tight text-slate-900 mb-4">AI TEXTURA</h1>
+            <p class="text-2xl text-slate-500 uppercase tracking-widest font-medium">Обзор функционала платформы</p>
+        </div>
+        <div class="mt-16 grid grid-cols-2 gap-8 text-left max-w-2xl w-full">
+            <div class="space-y-2">
+                <div class="font-semibold text-slate-900">Каналы коммуникации</div>
+                <div class="text-sm text-slate-500">Telegram, WhatsApp, CRM интеграции</div>
+            </div>
+            <div class="space-y-2">
+                <div class="font-semibold text-slate-900">ИИ Сотрудники</div>
+                <div class="text-sm text-slate-500">Автономные агенты, обучение, таланты</div>
+            </div>
+            <div class="space-y-2">
+                <div class="font-semibold text-slate-900">Аналитика</div>
+                <div class="text-sm text-slate-500">Дашборды, CSV экспорт, метрики</div>
+            </div>
+            <div class="space-y-2">
+                <div class="font-semibold text-slate-900">Инструменты</div>
+                <div class="text-sm text-slate-500">База знаний, автодожим, групповые чаты</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="max-w-4xl mx-auto bg-white shadow-xl p-12 space-y-12">
+
+        <!-- Table of Contents (Visual) -->
+        <section class="avoid-break">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8 border-b pb-4">Оглавление</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Главная страница</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Каналы</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>ИИ Сотрудники</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Быстрые ответы</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Знания</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Самообучение</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Таланты</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Профиль</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Уведомления</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Настройки</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Чаты</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Поддержка</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Групповые чаты</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>Автодожим</div>
+            </div>
+        </section>
+
+        <!-- Main Page -->
+        <section class="avoid-break space-y-6">
+            <h2 class="text-3xl font-bold text-slate-800 flex items-center gap-3">
+                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl">01</span>
+                Главная страница
+            </h2>
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                <p class="text-slate-600 mb-4">Единый центр управления системой, предоставляющий общую информацию о каналах, ИИ-агентах и балансе.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-slate-900 mb-2">Нанять автоматически</h3>
+                        <p class="text-sm text-slate-500">Вставьте ссылку на веб-сайт, и система автоматически создаст обученного ИИ-агента на основе контента сайта.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-slate-900 mb-2">Экспорт аналитики (CSV)</h3>
+                        <ul class="text-sm text-slate-500 list-disc list-inside space-y-1">
+                            <li>Количество диалогов и сообщений</li>
+                            <li>Время ответа (ИИ vs Менеджер)</li>
+                            <li>Диалоги без ответа</li>
+                            <li>Процент автоматизации (только ИИ)</li>
+                            <li>Активность по времени суток</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Channels -->
+        <section class="avoid-break space-y-6">
+            <h2 class="text-3xl font-bold text-slate-800 flex items-center gap-3">
+                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl">02</span>
+                Каналы
+            </h2>
+            <p class="text-slate-600">Управление источниками сообщений. Даже если ИИ не подключен, сообщения сохраняются в истории.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4">Общие настройки</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-indigo-50 p-2 rounded text-indigo-600 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-slate-900">Буфер сообщений</h4>
+                                <p class="text-sm text-slate-500">Задержка ответа 10 сек. для группировки входящих сообщений в один ответ.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-indigo-50 p-2 rounded text-indigo-600 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-slate-900">Автоочистка истории</h4>
+                                <p class="text-sm text-slate-500">Интервал сброса контекста переписки (24/48 часов) для актуализации диалога.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4">Интеграции</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="bg-slate-50 p-3 rounded border border-slate-100 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Telegram (Bot/Personal)
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-100 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Amo CRM
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-100 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Kommo CRM
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-100 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Bitrix24 (Открытые линии)
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-100 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Bookboost (WA + Email)
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-100 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span> Wazzup24 / Umnico / SendAPI
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Employees -->
+        <section class="page-break space-y-8">
+            <div class="border-b pb-6">
+                <h2 class="text-3xl font-bold text-slate-800 flex items-center gap-3">
+                    <span class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl">03</span>
+                    ИИ Сотрудники (Агенты)
+                </h2>
+                <p class="mt-4 text-slate-600">Ключевой модуль для создания и настройки интеллектуальных агентов.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-slate-800">Создание и Настройка</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</div>
+                            <div class="text-slate-600"><strong class="text-slate-900">Идентификация:</strong> Техническое имя и имя для клиентов.</div>
+                        </li>
+                        <li class="flex gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</div>
+                            <div class="text-slate-600"><strong class="text-slate-900">Поведение:</strong> Настройка Роли, Тона (Tone of Voice) и Инструкций.</div>
+                        </li>
+                        <li class="flex gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</div>
+                            <div class="text-slate-600"><strong class="text-slate-900">Переменные профиля:</strong> Использование данных из профиля пользователя в инструкциях.</div>
+                        </li>
+                        <li class="flex gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</div>
+                            <div class="text-slate-600"><strong class="text-slate-900">Языковые настройки:</strong> Автоопределение языка пользователя или фиксация конкретного языка.</div>
+                        </li>
+                        <li class="flex gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</div>
+                            <div class="text-slate-600"><strong class="text-slate-900">Публичный доступ:</strong> Ссылка для тестирования агента в браузере.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Мультимодальные возможности</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded shadow-sm">
+                            <div class="font-semibold text-slate-900 mb-1">Голос (Audio)</div>
+                            <p class="text-sm text-slate-500">Ответ голосом на аудиосообщения или видео-кружки. Интеграция с 11Labs для профессиональных голосов или клонирования собственного голоса. Настройка эмоций.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded shadow-sm">
+                            <div class="font-semibold text-slate-900 mb-1">Зрение (Vision)</div>
+                            <p class="text-sm text-slate-500">Автоматическое распознавание и анализ входящих изображений и фотографий.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Дополнительные опции безопасности и логики</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="border p-4 rounded-lg">
+                        <strong class="block text-slate-900 mb-2">Защита от взлома</strong>
+                        <span class="text-slate-500">Сопротивление попыткам промпт-инжиниринга (получения внутренних инструкций).</span>
+                    </div>
+                    <div class="border p-4 rounded-lg">
+                        <strong class="block text-slate-900 mb-2">Рабочее время</strong>
+                        <span class="text-slate-500">Гибкий график работы по дням и часам. Уникальные настройки для праздников.</span>
+                    </div>
+                    <div class="border p-4 rounded-lg">
+                        <strong class="block text-slate-900 mb-2">Авто-старт / Пауза</strong>
+                        <span class="text-slate-500">Автоматическое включение после 10-20 мин неактивности. Остановка при ответе менеджера.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components Grid (Quick Answers, Knowledge, Talents) -->
+        <section class="page-break">
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Quick Answers -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        Быстрые ответы
+                    </h2>
+                    <p class="text-sm text-slate-600">Система маршрутизации частых вопросов без генерации с нуля. Работает как "первая линия".</p>
+                    <ul class="text-sm space-y-2 text-slate-500 bg-slate-50 p-4 rounded-lg">
+                        <li>• Точный ответ (без изменений)</li>
+                        <li>• Ответ на основе базы (генеративный)</li>
+                        <li>• Перевод на другого агента (навсегда/один раз/перефразирование)</li>
+                        <li>• <strong>Совет экспертов:</strong> ответ формируется коллегиально до 10 агентами.</li>
+                    </ul>
+                </div>
+
+                <!-- Knowledge Base -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                        Знания
+                    </h2>
+                    <p class="text-sm text-slate-600">Подключение источников информации для RAG (Retrieval Augmented Generation).</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">PDF</span>
+                        <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">DOCX</span>
+                        <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">Google Docs</span>
+                        <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">Google Sheets</span>
+                        <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">Веб-сайты</span>
+                    </div>
+                </div>
+
+                <!-- Self Learning -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        Самообучение (FAQ)
+                    </h2>
+                    <p class="text-sm text-slate-600">Автоматическая проверка ответов на галлюцинации и сбор вопросов без ответа.</p>
+                    <ul class="text-sm space-y-2 text-slate-500 bg-slate-50 p-4 rounded-lg">
+                        <li>• Режим молчания (если нет в базе)</li>
+                        <li>• Ответ + Фиксация (попытка ответить)</li>
+                        <li>• Заготовленная заглушка</li>
+                    </ul>
+                </div>
+
+                <!-- Talents -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                        Таланты (Skills & MCP)
+                    </h2>
+                    <p class="text-sm text-slate-600">Доступ к 3000+ внешним инструментам. ИИ сам решает, когда их использовать.</p>
+                    <div class="space-y-2">
+                        <div class="text-xs font-semibold text-slate-700 uppercase tracking-wider">PMS Системы</div>
+                        <div class="flex flex-wrap gap-2 text-xs text-slate-500">
+                            <span class="border px-2 py-1 rounded">MEWS</span>
+                            <span class="border px-2 py-1 rounded">Travelline</span>
+                            <span class="border px-2 py-1 rounded">Bnovo</span>
+                            <span class="border px-2 py-1 rounded">RealtyCalendar</span>
+                        </div>
+                        <div class="text-xs font-semibold text-slate-700 uppercase tracking-wider mt-2">Инструменты</div>
+                        <div class="flex flex-wrap gap-2 text-xs text-slate-500">
+                            <span class="border px-2 py-1 rounded">Веб-поиск</span>
+                            <span class="border px-2 py-1 rounded">GeoCode</span>
+                            <span class="border px-2 py-1 rounded">Спам-фильтр</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile & Notifications -->
+        <section class="page-break grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">Профиль клиента</h2>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 h-full">
+                    <p class="text-slate-600 mb-4">Сбор и обновление динамических переменных в ходе диалога.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-500 font-bold">•</span>
+                            <span><strong>Конкретные данные:</strong> Имя, телефон, марка авто, кол-во детей.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-500 font-bold">•</span>
+                            <span><strong>Контекстуальные данные:</strong> Настроение, лояльность, саммари разговора.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">Уведомления</h2>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 h-full">
+                    <p class="text-slate-600 mb-4">Гибкая система алертов в Telegram по триггерам.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-500 font-bold">•</span>
+                            <span>Отправка последних сообщений или анкеты при срабатывании.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-500 font-bold">•</span>
+                            <span>Автоматическая пауза диалога (на 10-15 мин или навсегда).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-500 font-bold">•</span>
+                            <span>Прямые ссылки на чат в CRM или платформе.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Features -->
+        <section class="avoid-break space-y-8">
+            <h2 class="text-3xl font-bold text-slate-800 flex items-center gap-3">
+                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl">04</span>
+                Дополнительные возможности
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Group Chats -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Групповые чаты</h3>
+                    <p class="text-sm text-slate-500 mb-4">ИИ работает в группах, разделяя пользователей.</p>
+                    <div class="text-xs bg-slate-50 p-3 rounded space-y-2">
+                        <div class="font-medium text-slate-700">Триггеры ответа:</div>
+                        <div>• Упоминание @bot</div>
+                        <div>• Reply на сообщение</div>
+                        <div>• Обращение по имени</div>
+                        <div>• Автоматически (по инструкции)</div>
+                        <div class="border-t pt-2 mt-2 font-medium text-slate-700">Функции:</div>
+                        <div>• Саммари дня</div>
+                        <div>• Авто-реакции</div>
+                    </div>
+                </div>
+
+                <!-- Auto FollowUP -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Автодожим (FollowUp)</h3>
+                    <p class="text-sm text-slate-500 mb-4">Инициация диалога при неактивности.</p>
+                    <div class="text-xs bg-slate-50 p-3 rounded space-y-2">
+                        <div class="font-medium text-slate-700">Типы:</div>
+                        <div>• Заготовленный (по таймеру)</div>
+                        <div>• Интеллектуальный (ИИ сам ставит задачу написать позже, например "напишите завтра")</div>
+                    </div>
+                </div>
+
+                <!-- Chats & Management -->
+                <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Управление чатами</h3>
+                    <p class="text-sm text-slate-500 mb-4">Интерфейс оператора и аналитика.</p>
+                    <div class="text-xs bg-slate-50 p-3 rounded space-y-2">
+                        <div>• Просмотр "Мыслей" (Chain of thought) ИИ</div>
+                        <div>• Ручное вмешательство</div>
+                        <div>• Сброс памяти / контекста</div>
+                        <div>• Быстрые команды (/start, /stop, /clear)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-slate-400 text-sm pt-12 border-t mt-12 avoid-break">
+            <p>&copy; 2026 AI TEXTURA. Все права защищены.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+---
+title: "Account Settings"
+description: "Manage theme, language, AI commands, personal data, security, integrations, and experimental features in AI Textura."
+---
+
+Account Settings is your personal control panel for the platform. It contains everything related to appearance, security, integrations, and global commands for AI employees.
+
+## How to access settings
+
+<Steps>
+  <Step title="Open the profile menu">
+    At the bottom of the sidebar, find the block with your name and email — click on it.
+  </Step>
+  <Step title="Select 'Settings'">
+    In the dropdown menu, click **Settings**. A page with five tabs will open.
+  </Step>
+</Steps>
+
+| Tab | What's inside |
+|---|---|
+| **General** | Theme, interface language, AI control commands |
+| **Account** | Name, surname, company, phone, email, password |
+| **Security** | Sessions, two-factor authentication, linked accounts |
+| **Integrations** | ElevenLabs API key for PRO voices |
+| **Experimental** | Beta features in testing |
+
+---
+
+## 1. General
+
+The first tab, open by default. It contains appearance settings and global commands for managing AI employees.
+
+### Interface theme
+
+Control the color scheme of the application. The setting applies to all pages at once.
+
+| Option | What it does |
+|---|---|
+| **Light** | Always light interface |
+| **Dark** | Always dark interface |
+| **System** | Follows your OS settings — if dark mode is enabled on your device, the platform will also switch to dark mode |
+
+### Interface language
+
+Choose the language for the platform interface.
+
+| Option | Description |
+|---|---|
+| **English** | Interface in English |
+| **Russian** | Interface in Russian |
+
+<Tip>The interface language does not affect the language AI employees use with customers. An employee responds in the language set in their Persona, or adapts to the customer's language.</Tip>
+
+### AI control commands
+
+Global text commands that can be sent directly in a chat with an AI employee. Each command is a word, phrase, or set of emoji that triggers a specific action. You can change the command text to anything you prefer.
+
+| Command | What it does | Default |
+|---|---|---|
+| **Start AI** | The employee begins writing automatically after 10-20 minutes of silence. After a manager responds, AI will stop and wait for the next pause | `😇` |
+| **Stop AI** | Immediately stops automatic messages, even if auto-support is enabled in the employee's settings | `❌` |
+| **Retrain AI** | The employee re-reads instructions and knowledge, including connected documents. Can be sent from any chat | `📚📕📙📗📓📖` |
+| **Toggle protection** | Enables and disables corporate protection across all chats simultaneously | `🔒🔒🔒🔒🔒🔒` |
+| **Clear memory** | Completely clears the active dialog history. Use for testing knowledge from a clean slate | `delete all` |
+
+<Warning>The clear memory command permanently deletes the conversation from the employee's context. This action cannot be undone.</Warning>
+
+To change a command, enter new text in the field next to the description and click **Save commands**. The **Reset** button will restore all commands to their default values.
+
+---
+
+## 2. Account
+
+This is where your personal data is stored. The information is used for identification in the system and displayed in the interface — for example, in the sidebar and in support tickets.
+
+### Profile fields
+
+| Field | Description | Required |
+|---|---|---|
+| **First name** | Displayed in the interface | Yes |
+| **Last name** | Displayed next to the first name | No |
+| **Company** | Your company or project name | No |
+| **Phone** | Contact phone number | No |
+| **Email** | Address used for login and notifications | Yes |
+
+After making changes, click **Save changes**. The **Reset** button will discard unsaved edits.
+
+### Changing your password
+
+On this same tab, there is a **Change password** button. Clicking it opens a password change form: enter your current password and the new password twice, then confirm.
+
+<Tip>Use a strong password of at least 8 characters, with mixed-case letters and numbers. If you sign in via a linked account (Apple, Google, etc.), setting a password for added security is still recommended.</Tip>
+
+---
+
+## 3. Security
+
+The tab for keeping your account under control. It has three sections: active sessions, two-factor authentication, and linked accounts.
+
+### Active sessions
+
+A list of all devices and browsers where your account is currently signed in.
+
+| Parameter | What it shows |
+|---|---|
+| **IP address** | The address used to sign in |
+| **Label** | The current session is marked as "Current session" |
+| **Platform** | Application name — AI TEXTURA |
+| **Created** | When the session was opened |
+| **Last activity** | When the session was last used |
+
+<Warning>If you see an unfamiliar session — change your password immediately and enable two-factor authentication.</Warning>
+
+### Two-factor authentication (2FA)
+
+An additional layer of protection. When signing in, the system will request a one-time code from an authenticator app (Google Authenticator, Authy, etc.).
+
+<Steps>
+  <Step title="Click 'Enable 2FA'">
+    The button is located in the two-factor authentication section.
+  </Step>
+  <Step title="Scan the QR code">
+    Open the authenticator app on your phone and scan the QR code displayed on screen.
+  </Step>
+  <Step title="Enter the confirmation code">
+    Enter the one-time code from the app to complete setup.
+  </Step>
+</Steps>
+
+<Tip>We strongly recommend enabling 2FA, especially if you use paid plans and have funds on your balance. It protects your account even if your password is compromised.</Tip>
+
+### Linked accounts
+
+Link external accounts for quick passwordless sign-in. Four services are supported:
+
+| Service | Action |
+|---|---|
+| **Apple** | Link / Unlink |
+| **Facebook** | Link / Unlink |
+| **Google** | Link / Unlink |
+| **Microsoft** | Link / Unlink |
+
+If an account is linked, its status shows **Linked** with an **Unlink** button. If not — a **Link** button will redirect you to the service's authorization page.
+
+<Tip>Linking an external account is convenient for quick sign-in but does not replace a password. We recommend having both a password and a linked account — so you don't lose access if one method fails.</Tip>
+
+---
+
+## 4. Integrations
+
+This tab configures connections to external services that extend the platform's capabilities.
+
+### ElevenLabs API key
+
+AI Textura supports PRO voices through integration with **ElevenLabs** — over 1,000 professional voices, plus the ability to connect your own custom voice.
+
+<Steps>
+  <Step title="Get your API key">
+    Register at [ElevenLabs](https://elevenlabs.io) and obtain an API key from your dashboard.
+  </Step>
+  <Step title="Open the 'Integrations' tab">
+    Go to **Settings** → **Integrations**.
+  </Step>
+  <Step title="Paste the key and save">
+    Paste the key into the **API key** field and click **Save**.
+  </Step>
+</Steps>
+
+After this, PRO voices will become available in voice employee settings.
+
+<Warning>This is an external integration. PRO voice charges are handled by ElevenLabs — the cost depends on your plan with their service. AI Textura does not charge extra for using PRO voices.</Warning>
+
+<Tip>If you don't use voice employees or are satisfied with built-in voices — you can skip this tab. Built-in voices (the "Standard" category) are available without a key and at no additional cost.</Tip>
+
+---
+
+## 5. Experimental
+
+Features that are still in testing. They may be unstable or change in future updates, but you can try them now.
+
+### Page transition animations
+
+Enables smooth animated transitions between platform pages. This is an experimental browser feature — it makes navigation visually smoother, but in rare cases may cause lag on low-powered devices.
+
+| Parameter | Description |
+|---|---|
+| **Toggle** | On / Off — enables or disables the animation |
+
+Animation is disabled by default. Enable it if you want to try — you can turn it off at any time.
+
+<Tip>The Experimental section will be updated with new features over time. Check back after platform updates.</Tip>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How do I access account settings?">
+    Click on your name and email at the bottom of the sidebar. In the dropdown menu, select **Settings**.
+  </Accordion>
+
+  <Accordion title="I changed my email but can't sign in with the new address">
+    After changing your email, make sure you saved the changes with the **Save changes** button. If the issue persists, contact support via the **Support** section in the left menu.
+  </Accordion>
+
+  <Accordion title="Can I use the platform without a password — only via Apple/Google?">
+    Yes. If you registered through an external service, you can sign in through it only. However, for added security we recommend setting a password on the **Account** tab.
+  </Accordion>
+
+  <Accordion title="What should I do if I see an unfamiliar session?">
+    Immediately change your password on the **Account** tab → **Change password**. Then enable two-factor authentication. If you suspect unauthorized access, contact support.
+  </Accordion>
+
+  <Accordion title="Why do I need an ElevenLabs API key?">
+    Only for PRO voices. If you don't use voice employees or are satisfied with built-in voices, you don't need a key.
+  </Accordion>
+
+  <Accordion title="Do AI control commands work in all chats?">
+    Yes. Commands configured on the **General** tab apply globally — across all chats with all AI employees in your account.
+  </Accordion>
+
+  <Accordion title="What happens if I send the retrain command?">
+    The employee will re-read all its instructions, knowledge base, and connected documents. This is useful if you updated data and want the employee to start using it immediately.
+  </Accordion>
+
+  <Accordion title="Are experimental features paid?">
+    No. All features in the Experimental section are free. These are beta capabilities that the AI Textura team is testing before full release.
+  </Accordion>
+</AccordionGroup>

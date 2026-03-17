@@ -1,0 +1,159 @@
+---
+title: "Versions"
+description: "AI employee configuration history: browse, compare, and restore any previous state."
+---
+
+The **Versions** tab is a built-in "time machine" for your AI employee. Every save creates a full snapshot of the configuration, which is stored in the history. You can view any past version and restore it in one click.
+
+---
+
+## How It Works
+
+A new version is created **every time you click "Save"** in any tab of the employee settings. Each version captures the **entire** configuration, not just the tab you changed.
+
+| Rule | Description |
+|---|---|
+| **No auto-save** | A version is created only by your action — when you click "Save" |
+| **Full snapshot** | Every version includes all tabs: Persona, Knowledge Base, FAQ, Talents, Channel, Quick Answers, Profiles, Working Hours, Auto Follow-Up, Notifications, Additional |
+| **No limit** | The number of versions is unlimited — the platform stores the complete history from the moment the agent was created |
+| **No partial rollback** | Restoration replaces the entire configuration, not a single tab |
+
+<Tip>
+  Think of every save as a checkpoint. Before making significant changes, just click "Save" to lock in the current working state.
+</Tip>
+
+---
+
+## Versions Tab Interface
+
+Open the desired AI employee and navigate to the **Versions** tab in the top navigation bar.
+
+| Element | Description |
+|---|---|
+| **Version list** | All saves, sorted from newest to oldest |
+| **Date and time** | Exact moment of each save (in your account's time zone) |
+| **Version number** | Auto-assigned sequential number. Numbering starts at 1 — the moment the employee was created |
+| **View** | Click a version to open the agent's configuration at that point in time (read-only mode) |
+| **"Restore This Version" button** | Makes the selected version the current configuration |
+
+---
+
+## How to Browse the Change History
+
+<Steps>
+  <Step title="Open the agent">
+    Go to the **AI Employees** section and select the desired agent.
+  </Step>
+  <Step title="Navigate to the Versions tab">
+    In the top bar, click the **Versions** tab. You will see a list of all saved versions — the most recent one at the top.
+  </Step>
+  <Step title="Open the version you need">
+    Click on the desired version — a card with the configuration details at that point will open. Viewing is read-only — you cannot accidentally change anything.
+  </Step>
+</Steps>
+
+---
+
+## How to Restore a Previous Version
+
+<Steps>
+  <Step title="Go to the Versions tab">
+    Open the agent and click the **Versions** tab.
+  </Step>
+  <Step title="Find the version you need">
+    Select a version from the list and click on it. Make sure it is the right one by reviewing the parameters.
+  </Step>
+  <Step title="Click 'Restore This Version'">
+    Click the **"Restore This Version"** button and confirm the action.
+  </Step>
+</Steps>
+
+Once confirmed, the agent's configuration will be replaced with the selected version, and it will immediately start operating with it.
+
+<Warning>
+  Restoration replaces the **entire** configuration — all tabs at once. If you only need to roll back a single parameter, view the desired version, find the value, and transfer it manually to the current configuration.
+</Warning>
+
+<Note>
+  Restoration **does not delete** intermediate entries. The full history is preserved, and the restored configuration becomes a new (latest) entry in the history. You can always go back.
+</Note>
+
+---
+
+## What Is Saved in a Version
+
+A version is a full snapshot of the entire employee configuration:
+
+| Tab | What it includes |
+|---|---|
+| **Persona** | Role, tone, all instruction blocks |
+| **Knowledge Base** | Connected sources |
+| **FAQ** | Questions and answers |
+| **Talents** | Connected tools |
+| **Channel** | Communication channel settings |
+| **Quick Answers** | Quick response templates |
+| **Profiles** | Configured fields |
+| **Working Hours** | Agent work schedule |
+| **Auto Follow-Up** | Automatic follow-up message settings |
+| **Notifications** | Alert parameters |
+| **Additional** | Language, voice, commands |
+
+---
+
+## Practical Examples
+
+<Accordion title="Rolling back after a bad change">
+  You rewrote the system prompt in Persona and the agent started giving irrelevant answers. Instead of trying to recall the previous text, open **Versions**, find the stable version, and restore it. The agent will immediately return to its previous behavior.
+</Accordion>
+
+<Accordion title="Checkpoint before an experiment">
+  Before a major overhaul of the sales script, click **Save** to lock in the current state. If the experiment fails, you can revert in seconds.
+</Accordion>
+
+<Accordion title="Comparing before and after">
+  The agent's performance has degraded, but you are not sure which change caused it. Open **Versions**, review the last few entries, and compare configurations to find the cause.
+</Accordion>
+
+<Accordion title="Team collaboration">
+  If multiple people configure the same employee, the version history helps track who changed what and when.
+</Accordion>
+
+---
+
+## FAQ
+
+<Accordion title="Is there a limit on the number of versions?">
+  No. The platform stores the complete history — you can go back to the very first configuration that existed when the agent was created.
+</Accordion>
+
+<Accordion title="Are versions created automatically?">
+  No, there is no auto-save. A new version is created only when you click the **"Save"** button in any settings tab.
+</Accordion>
+
+<Accordion title="What happens to the current configuration when I restore?">
+  It does not disappear. The system creates a new entry in the history — the current state becomes yet another version. You can return to it at any time.
+</Accordion>
+
+<Accordion title="Can I roll back only one tab?">
+  No, restoration replaces the entire configuration. If you need to change only one parameter, view the desired version, find the value, and transfer it manually.
+</Accordion>
+
+<Accordion title="Can I delete a version from the history?">
+  No. All versions are stored permanently and cannot be deleted. This is intentional — so you can always return to any state.
+</Accordion>
+
+<Accordion title="I didn't change anything but clicked 'Save' — will a duplicate be created?">
+  Yes, a new history entry will appear even if the content has not changed. This is harmless — you simply get an extra checkpoint.
+</Accordion>
+
+---
+
+## Best Practices
+
+<Note>
+  **Save before experimenting.** Before major changes, click "Save" — it takes a second but can save you hours of recovery work.
+</Note>
+
+<Note>
+  **Don't be afraid to experiment.** Versions are your safety net. Try something, don't like it, roll back.
+</Note>

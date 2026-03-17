@@ -1,0 +1,68 @@
+---
+title: "Bitrix24"
+description: "The Bitrix24 integration allows your AI employee to process messages from Bitrix24 open channels. Setup consists of two stages: creating a webhook and connecting it in AI Textura."
+---
+
+## What the integration provides
+
+- The AI employee responds to messages from Bitrix24 open channels.
+- All inquiries are automatically recorded in the CRM.
+- Managers can join the conversation at any time.
+
+---
+
+## Step 1. Create a webhook in Bitrix24
+
+<Steps>
+  <Step title="Log in to Bitrix24">
+    Sign in to your Bitrix24 account.
+  </Step>
+  <Step title="Go to webhooks">
+    Open **Applications → For Developers → Inbound webhook**.
+  </Step>
+  <Step title="Copy the address">
+    Copy the **"Webhook URL for calling REST API"** field.
+  </Step>
+</Steps>
+
+---
+
+## Step 2. Connect in AI Textura
+
+<Steps>
+  <Step title="Open the Channel section">
+    Go to **AI Employees** → select the agent → **Channel** tab.
+  </Step>
+  <Step title="Select Bitrix24">
+    In the **Browse apps** tab, find **Bitrix24** and click on it.
+  </Step>
+  <Step title="Paste the webhook">
+    In the side panel, select **Create** and paste the webhook address into the **WEBHOOK** field.
+  </Step>
+  <Step title="Grant permissions in Bitrix24">
+    Go back to Bitrix24 and configure the webhook permissions. Required permissions:
+    - Open channels
+    - Chatbot creation and management
+    - CRM
+    - Drive
+    - Notifications
+  </Step>
+  <Step title="Save">
+    Click **Save**. The channel will appear in the **Connected** tab.
+  </Step>
+</Steps>
+
+---
+
+## Configuration inside Bitrix24
+
+After connecting the channel in AI Textura, you need to configure Bitrix24:
+
+1. Go to: **CRM → Integrations → Messengers**.
+2. Open the desired chat → **Open channel**.
+3. Enable the **"Assign chatbot as responsible"** checkbox.
+4. Select the AI employee → **Save**.
+
+<Tip>
+  After setup, send a test message through the open channel to verify that the AI employee receives and processes inquiries.
+</Tip>

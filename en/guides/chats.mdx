@@ -1,0 +1,229 @@
+---
+title: "Chats -- Dialog Management Center"
+description: "A unified inbox for all conversations between your AI employees and clients: monitoring, search, manager intervention, escalation mechanics, and agent control commands."
+---
+
+The **Chats** section in the AI Textura platform's left menu is a centralized place where the entire conversation history between your AI employees and clients is collected. Here you can see every dialog, monitor response quality, intervene in a conversation, and reply to a client personally.
+
+Think of it as a control room: all conversations are in front of you, you can see what is happening right now, and you can step in at any moment.
+
+<Note>
+  The **Chats** section is accessible in two ways: via the left menu (all dialogs across all agents) or via the **Live chat** button in the AI employees list (dialogs for a specific agent).
+</Note>
+
+---
+
+## Why Use Chats
+
+- Monitor how AI employees communicate with clients
+- Quickly find a specific dialog by client name, channel, or employee
+- Intervene in a conversation when the situation requires a human
+- Handle escalations -- cases when an agent has handed the dialog to a manager
+- Evaluate AI employee performance on real conversations
+
+---
+
+## Interface Overview
+
+### Dialog List (Left Panel)
+
+The left side of the screen displays a list of all chats. Each list item is a separate dialog with a client. Dialogs are sorted by time: the most recent ones appear at the top.
+
+| Element | Description |
+|---|---|
+| **Client name** | Name or identifier if the name is not available |
+| **AI employee name** | Which agent is handling the dialog |
+| **Channel** | Where the client came from: Telegram, amoCRM, Bitrix24, website widget, etc. |
+| **Time** | Time of the last message |
+| **Message preview** | A snippet of the last message |
+| **Status** | Active, paused, or completed |
+
+### Conversation View (Right Panel)
+
+Click on any dialog in the list -- the full conversation history opens on the right. Messages are displayed like a regular messenger: client on the left, agent on the right. Each message includes a timestamp.
+
+At the bottom of the conversation window is a **message input field** -- this is how a manager can reply to the client manually.
+
+---
+
+## Search and Filtering
+
+<AccordionGroup>
+  <Accordion title="Search bar">
+    At the top of the dialog list there is a search bar. Enter a client name, keyword, or conversation fragment -- the list filters in real time.
+  </Accordion>
+  <Accordion title="Filter by employee">
+    Shows dialogs for a specific AI employee only. Useful when you have multiple agents.
+  </Accordion>
+  <Accordion title="Filter by channel">
+    Filters by source: Telegram, amoCRM, Bitrix24, web widget, etc.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Combine filters for targeted analysis. For example, select a specific employee and the Telegram channel -- you will only see that agent's Telegram conversations. This is useful for analyzing performance in a specific channel.
+</Tip>
+
+---
+
+## Manager Intervention
+
+One of the key capabilities of the **Chats** section is manual manager intervention in a conversation that an AI employee is handling.
+
+### How to Intervene
+
+<Steps>
+  <Step title="Open the Chats section">
+    From the left menu or via the **Live chat** button in the employees list.
+  </Step>
+  <Step title="Find the dialog">
+    Use search or filters to find the dialog, then click on it.
+  </Step>
+  <Step title="Read the conversation history">
+    Assess the conversation context and decide whether intervention is needed.
+  </Step>
+  <Step title="Send a message">
+    Type your message in the input field at the bottom and send it. The client will see your reply in their messenger.
+  </Step>
+</Steps>
+
+### What Happens After Intervention
+
+As soon as a manager sends a message, the AI employee **automatically pauses** in that specific dialog. It will not interrupt the human.
+
+| Behavior | Description |
+|---|---|
+| **Client messages** | Continue to arrive and are saved in history |
+| **AI employee** | Remains paused while the manager handles the dialog |
+| **Auto-resume** | After 10-20 minutes of manager inactivity, the AI may automatically resume work |
+
+<Warning>
+  Auto-resume after a pause is a configurable behavior. For 24/7 support services, auto-start after a pause is almost always useful. For premium sales where a human touch matters, it is better to disable it.
+</Warning>
+
+---
+
+## Agent Control Commands
+
+Managers can control an AI employee directly from a messenger using service commands. Commands are configured in the **Advanced** tab for each agent.
+
+| Command | What it does |
+|---|---|
+| **AI start command** | Activates the agent in the chat (set by you) |
+| **AI stop command** | Pauses the agent (set by you) |
+| **Clear memory command** | Resets the dialog context -- the conversation starts from scratch (default: `delete all`) |
+| **Protection command** | Activates protection against prompt injection attempts (set by you) |
+
+<Tip>
+  Start and stop commands are especially convenient for managers who work directly in a messenger. They can quickly enable or disable an agent in a specific chat without opening the AI Textura dashboard.
+</Tip>
+
+---
+
+## Escalation -- When an Agent Hands Off to a Manager
+
+Escalation is a situation when an AI employee recognizes that it cannot or should not handle a request on its own and transfers the dialog to a human.
+
+### When Escalation Triggers
+
+Escalation is triggered in cases that you define in advance:
+
+- In the agent's **Persona** (the "When to call a manager" or "Escalation" section)
+- In **Notifications** (triggers that send an alert and pause the chat)
+- In **Quick Replies** (actions of the "Chat management" type with a pause)
+
+### What It Looks Like for a Manager
+
+<Steps>
+  <Step title="Receive a notification">
+    The manager receives a notification in Telegram (or via webhook) that the agent has handed off the dialog.
+  </Step>
+  <Step title="Find the dialog in Chats">
+    In the **Chats** section, the dialog is displayed with a status indicating that intervention is needed.
+  </Step>
+  <Step title="Reply to the client">
+    Open the conversation, read the context, and reply to the client.
+  </Step>
+</Steps>
+
+### Agent Behavior During Escalation
+
+| Trigger setting | Behavior |
+|---|---|
+| **Pause chat for N time** | The agent pauses for the specified duration. If the manager does not connect, the agent resumes automatically |
+| **Forced pause** | The agent stops completely. Work resumes only manually (via the start command or the interface) |
+
+---
+
+## Dialog Details
+
+When you open a specific chat, in addition to the conversation history, additional information is available:
+
+- **Client profile** -- filled fields: name, language, preferences, and any data the AI extracted from the conversation
+- **Communication channel** -- which messenger or CRM the conversation is going through
+- **AI employee name** -- which agent is handling this dialog
+- **Dialog status** -- whether the agent is active or paused
+
+---
+
+## Related Sections
+
+| Section | How it relates to Chats |
+|---|---|
+| **[Persona](/en/guides/persona)** | Defines how the agent conducts dialogs and when to call a manager |
+| **[Notifications](/en/guides/notifications)** | Configures escalation triggers: when and how the manager learns about problematic dialogs |
+| **[Quick Replies](/en/guides/quick-replies)** | Can manage the chat: pause, transfer to another agent |
+| **[Profiles](/en/guides/profiles)** | Client data visible in the chat |
+| **[Follow-up](/en/guides/follow-up)** | Follow-up messages if the client goes silent |
+| **[Advanced](/en/guides/advanced)** | Agent control commands from the messenger, message limits |
+| **[Channels](/en/channels/index)** | Sources through which messages arrive in the chat |
+
+---
+
+## Practical Tips
+
+<AccordionGroup>
+  <Accordion title="Review dialogs regularly">
+    Especially in the first days after launch. Browse conversations in the **Chats** section at least once a day during the first week of operation.
+  </Accordion>
+  <Accordion title="Use filters for systematic analysis">
+    Filter dialogs by a specific employee and review the last 10-15 conversations. This gives you an understanding of where the agent performs well and where adjustments to the persona or knowledge base are needed.
+  </Accordion>
+  <Accordion title="Don't hesitate to intervene">
+    If you see that the agent is not responding correctly, step in and reply yourself. The agent will automatically pause. After the conversation, adjust the settings so it handles similar cases on its own next time.
+  </Accordion>
+  <Accordion title="Set up notifications for critical situations">
+    Create triggers in the **Notifications** section for complaints, returns, VIP clients, and questions outside the agent's competency. You will receive an alert in Telegram and can quickly step in.
+  </Accordion>
+  <Accordion title="Share control commands with your team">
+    If your managers work in a messenger, configure start and stop commands in the **Advanced** tab and share them with the team.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Are chats stored forever or deleted?">
+    Chat history is stored on the platform. For some channels, an **Auto-clear history** setting is available in the **Channel** tab -- it allows automatic deletion of old dialogs.
+  </Accordion>
+  <Accordion title="Can I reply to a client from the Chats section if they wrote in Telegram?">
+    Yes. When you send a message through the **Chats** section, the client receives it in whichever messenger they used to reach out. You do not need to open Telegram or amoCRM -- everything is managed from one window.
+  </Accordion>
+  <Accordion title="What happens if two managers reply in the same chat simultaneously?">
+    The client will receive both messages. It is recommended to coordinate within your team who handles a specific dialog to avoid duplication.
+  </Accordion>
+  <Accordion title="The agent paused after my reply. How do I resume it?">
+    Three options: (1) wait 10-20 minutes -- if auto-resume is configured, the agent will start on its own; (2) send the **AI start command** in the messenger; (3) manage through the platform interface.
+  </Accordion>
+  <Accordion title="Can I view chats from all employees in one place?">
+    Yes. The **Chats** section in the left menu shows dialogs across all agents. Use the employee filter to narrow the selection.
+  </Accordion>
+  <Accordion title="Does the client see that they are talking to a manager, not AI?">
+    In most cases, the client sees messages from the same contact (bot or account) through which the AI employee was communicating. The transition is visually seamless for the client.
+  </Accordion>
+  <Accordion title="Is there a message limit per chat?">
+    Yes. In the **Advanced** tab for each agent there is a **Message limit** setting -- a cap on the number of messages in one chat per 24 hours. If no limit is set, there are no restrictions.
+  </Accordion>
+</AccordionGroup>

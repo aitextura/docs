@@ -1,0 +1,186 @@
+---
+title: "Profiles"
+description: "Automatic structured client data collection during conversations: field configuration, update modes, analytics, and usage in Persona."
+---
+
+Profiles are client cards that the AI employee fills in **automatically** during conversations. No manual work is needed: while the employee communicates with the client, it simultaneously extracts relevant data and records it in a structured table.
+
+You decide what to collect. Name and language are included by default. Everything else is up to you — configure fields to match your business needs.
+
+<Frame>
+  <img src="/assets/images/profili.png" />
+</Frame>
+
+<Note>
+  **"Profiles" refers to two different places in the interface.**
+  - **Profiles tab** in the AI employee settings — this is where you configure which fields to collect and when to fill them. This is the configuration.
+  - **Profiles section** in the platform's left menu — this is where filled client cards are stored. This is the analytics tool.
+
+  This page covers both sections.
+</Note>
+
+---
+
+## Setting up profile fields
+
+Open the desired AI employee → **Profiles** tab.
+
+### Update mode
+
+The first thing to choose is when the employee updates the profile.
+
+| Mode | When it updates | When to use |
+|---|---|---|
+| **Realtime** | After every client message | When the employee needs the data right away — e.g., to address the client by name or consider their preferences within the same conversation |
+| **Scheduled** | On a schedule (e.g., once every 24 hours) | When data is only needed for analytics and reporting |
+
+When you select the scheduled mode, additional settings appear: interval, start hour, and time zone. A token usage forecast is also displayed — showing estimated daily and monthly costs.
+
+<Tip>
+  If you are unsure which to choose — use **scheduled updates once every 24 hours**. This is sufficient for most scenarios and significantly reduces costs compared to Realtime.
+</Tip>
+
+---
+
+### Field types
+
+Each field has a type that determines whether the employee can update its value.
+
+| Type | Behavior | Example |
+|---|---|---|
+| **Variable** | Updated with each new mention | Language, preferences, status, current interest |
+| **Constant** | Set once and never changes | Contract number, date of birth, client type |
+
+<Warning>
+  A Constant cannot be changed after it is first set. If you are unsure — choose **Variable**.
+</Warning>
+
+---
+
+### Field properties
+
+Each field consists of four properties:
+
+| Property | What to enter |
+|---|---|
+| **Name** | A clear field label: "Name", "Language", "Request status" |
+| **Description** | Instructions for the AI — when and what to fill in. This is the **most important property** |
+| **Key** | Auto-generated, no changes needed |
+| **Type** | Variable or Constant |
+
+<Warning>
+  **The field description is crucial.** Write it **from the client's perspective**: not "when the client mentions a language", but "the language I communicate in". The more precise the description, the more accurately the employee knows when to fill in the field.
+
+  Also specify the answer format. For example: "yes/no" or "choose one option: Russian, English, other". Without this, the employee may record freeform text that is difficult to analyze.
+</Warning>
+
+---
+
+### How to add a field
+
+<Steps>
+  <Step title="Open the Profiles tab">
+    Go to the desired AI employee's settings and select the **Profiles** tab.
+  </Step>
+  <Step title="Add a new field">
+    Click the button to add a new field.
+  </Step>
+  <Step title="Enter the name">
+    Provide a clear label — for example, "Name", "Language", "Budget".
+  </Step>
+  <Step title="Fill in the description">
+    Describe in detail, **from the client's perspective**, when and what to fill in. Specify the answer format.
+  </Step>
+  <Step title="Choose the type">
+    **Variable** — if the value can change. **Constant** — if it is set once.
+  </Step>
+  <Step title="Save">
+    Repeat for each field you need. The number of fields is unlimited.
+  </Step>
+</Steps>
+
+<Tip>
+  It is recommended to add only the fields you truly need — this improves fill accuracy and saves tokens.
+</Tip>
+
+---
+
+### Field examples
+
+<Accordion title="View field configuration examples">
+
+| Field | Type | Description for AI |
+|---|---|---|
+| Name | Variable | My name |
+| Language | Variable | The language I communicate in. Choose one option: Russian, English, other |
+| Preferences | Variable | Preferences or wishes I have mentioned. Update with each mention |
+| Complaint | Variable | When I mention any problem. Describe briefly, no more than four words. Always update |
+| Status | Variable | Current request status. Choose one option: new, in progress, resolved |
+| Budget | Variable | When I mention a budget or amount. Record the number |
+| Contract number | Constant | The contract or booking number I provided |
+| Summary | Variable | Two sentences about what the conversation is about. Review the full history. Always update |
+
+These are examples — the set of fields depends entirely on your business and what you need to track.
+
+</Accordion>
+
+---
+
+## Profile analytics
+
+The **"Profiles"** section in the platform's left menu is an analytics tool. It stores filled client cards across all employees.
+
+### Summary metrics
+
+Key metrics are displayed at the top of the page:
+
+| Metric | What it shows |
+|---|---|
+| **Total profiles** | Total number of clients across all time |
+| **This week** | New profiles created this week |
+| **This month** | New profiles created this month |
+| **Fill rate** | Average percentage of fields filled — how thoroughly the employee extracts data |
+
+### Profile table
+
+Each row represents one client. Standard columns include: profile, agent, Chat ID, name, summary, and language. Plus all custom fields you have configured.
+
+Table capabilities:
+
+- **Filter by agent** — view data for a specific employee or branch
+- **Search** by name, field content, or any text
+- **Go to chat** — click on Chat ID to open the full conversation history
+- **Column management** — hide columns you do not need
+- **Display modes** — switch between **Cards** and **Table** views
+
+<Tip>
+  If a field is not being filled — check its description in the employee settings. Most likely the AI does not understand when to record the data.
+</Tip>
+
+---
+
+## Usage in Persona
+
+Profile data can be used directly in the employee's instructions — via **profile variables**. For example, if the client's name is known, the employee can address them personally during the conversation.
+
+This enables truly personalized communication: taking preferences into account, adapting the conversation style, and offering relevant solutions based on collected data.
+
+---
+
+## FAQ
+
+<Accordion title="Is Realtime more expensive than Scheduled?">
+  Yes, significantly. Realtime updates the profile after every message and consumes considerably more tokens. Scheduled mode processes data in batches — this is more cost-effective.
+</Accordion>
+
+<Accordion title="Can a Constant value be changed?">
+  No. That is the purpose of the Constant type — the value is set once and does not change. If you are unsure, choose Variable instead.
+</Accordion>
+
+<Accordion title="Are profiles shared across all agents?">
+  No, each employee maintains its own client profiles.
+</Accordion>
+
+<Accordion title="How many fields can I add?">
+  There is no limit, but it is recommended to add only the fields you truly need — this improves accuracy and reduces token usage.
+</Accordion>

@@ -40,9 +40,60 @@
             "iconType": "duotone",
             "groups": [
               {
-                "group": "Get Started",
+                "group": "Overview",
                 "pages": [
-                  "en/welcome"
+                  "en/guides/dashboard"
+                ]
+              },
+              {
+                "group": "AI Employees",
+                "icon": "robot",
+                "iconType": "duotone",
+                "pages": [
+                  "en/guides/ai-employees",
+                  "en/guides/persona",
+                  "en/guides/knowledge",
+                  "en/guides/talents",
+                  "en/guides/faq",
+                  "en/guides/quick-answers",
+                  "en/guides/profiles",
+                  "en/guides/auto-followup",
+                  "en/guides/working-hours",
+                  "en/guides/notifications",
+                  "en/guides/versions",
+                  "en/guides/additional-settings"
+                ]
+              },
+              {
+                "group": "Connect Channels",
+                "icon": "plug",
+                "iconType": "duotone",
+                "pages": [
+                  "en/channels/index",
+                  "en/channels/telegram",
+                  "en/channels/messengers",
+                  "en/channels/amocrm",
+                  "en/channels/bittrix24"
+                ]
+              },
+              {
+                "group": "Communication",
+                "icon": "message-lines",
+                "iconType": "duotone",
+                "pages": [
+                  "en/guides/chats",
+                  "en/guides/rules-hub"
+                ]
+              },
+              {
+                "group": "Account",
+                "icon": "gear",
+                "iconType": "duotone",
+                "pages": [
+                  "en/guides/account-settings",
+                  "en/guides/finance",
+                  "en/guides/referral",
+                  "en/guides/support"
                 ]
               }
             ]
@@ -112,31 +163,60 @@
             "iconType": "duotone",
             "groups": [
               {
-                "group": "Каналы",
-                "icon": "comments",
+                "group": "Обзор",
+                "pages": [
+                  "ru/guides/dashboard"
+                ]
+              },
+              {
+                "group": "ИИ-сотрудники",
+                "icon": "robot",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/guides/ai-employees",
+                  "ru/guides/persona",
+                  "ru/guides/knowledge",
+                  "ru/guides/talents",
+                  "ru/guides/faq",
+                  "ru/guides/quick-answers",
+                  "ru/guides/profiles",
+                  "ru/guides/auto-followup",
+                  "ru/guides/working-hours",
+                  "ru/guides/notifications",
+                  "ru/guides/versions",
+                  "ru/guides/additional-settings"
+                ]
+              },
+              {
+                "group": "Подключение каналов",
+                "icon": "plug",
                 "iconType": "duotone",
                 "pages": [
                   "ru/channels/index",
                   "ru/channels/telegram",
-                  "ru/channels/amocrm"
+                  "ru/channels/messengers",
+                  "ru/channels/amocrm",
+                  "ru/channels/bittrix24"
                 ]
               },
               {
-                "group": "Гайды",
+                "group": "Коммуникация",
+                "icon": "message-lines",
+                "iconType": "duotone",
                 "pages": [
-                  "ru/guides/quick-start",
-                  "ru/guides/settings",
                   "ru/guides/chats",
-                  "ru/guides/notifications",
-                  "ru/guides/knowledge",
-                  "ru/guides/faq_mode",
-                  "ru/guides/profiles",
-                  "ru/guides/mcp",
+                  "ru/guides/rules-hub"
+                ]
+              },
+              {
+                "group": "Аккаунт",
+                "icon": "gear",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/guides/account-settings",
                   "ru/guides/finance",
-                  "ru/guides/faq",
-                  "ru/guides/test"
-
-                  
+                  "ru/guides/referral",
+                  "ru/guides/support"
                 ]
               }
             ]
@@ -202,7 +282,7 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Dashbboard",
+      "label": "Dashboard",
       "href": "https://app.aitextura.com"
     }
   },

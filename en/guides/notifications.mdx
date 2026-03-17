@@ -1,0 +1,277 @@
+---
+title: "Notifications"
+description: "Notification system for AI employees in AI Textura: delivery channels (Telegram, webhooks), triggers, conditions, actions, and integration with other platform sections."
+---
+
+Notifications are an alert system that informs you about important events in your AI employee's conversations. A customer asked for a human agent, confirmed a booking, or filed a complaint — you find out immediately, not hours later.
+
+In essence, notifications bridge the gap between your AI employee's automated work and your personal involvement. The agent handles routine tasks, but in critical situations it passes the baton to you.
+
+<Frame>
+  <img src="/assets/images/uvedomleniya.png" />
+</Frame>
+
+<Warning>
+  Without configured notifications, your AI employee works "in silence": it responds to customers, but you have no idea when you need to step in. This is acceptable during testing, but risky in production.
+</Warning>
+
+---
+
+## Section Structure
+
+Open the desired AI employee and navigate to the **Notifications** tab. The section consists of three blocks:
+
+1. **Notification subscription** — connect a Telegram channel to receive alerts
+2. **Notification webhook** — alternative delivery via HTTP POST request to any URL
+3. **Triggers** — rules that define when to send a notification
+
+---
+
+## Delivery Channels
+
+Notifications can be received in two ways. You can use both simultaneously.
+
+### Telegram
+
+The primary and simplest method. Notifications arrive in a dedicated Telegram channel that you subscribe to.
+
+<Steps>
+  <Step title="Open the Notifications tab">
+    Go to the desired AI employee's card and select the **Notifications** tab.
+  </Step>
+  <Step title="Click 'Receive notifications'">
+    You will be redirected to Telegram.
+  </Step>
+  <Step title="Subscribe to the channel">
+    Subscribe to the notification channel in Telegram. All triggered alerts will be delivered here.
+  </Step>
+</Steps>
+
+<Tip>
+  Subscribe everyone who needs to stay informed: managers, administrators, team leads. Everyone receives the same alerts — no need to configure separately for each person.
+</Tip>
+
+### Webhook (HTTP POST)
+
+A webhook is a URL where the system sends data about a triggered event as an HTTP POST request. It is suitable for integration with CRMs, Slack, Notion, Google Sheets, and any service that accepts webhooks.
+
+<Steps>
+  <Step title="Expand the 'Notification webhook' block">
+    Find the corresponding block on the **Notifications** tab.
+  </Step>
+  <Step title="Paste the URL">
+    Enter your system's URL in the webhook field.
+  </Step>
+  <Step title="Save">
+    Each time a trigger fires, the system will send a POST request to the specified address with event data.
+  </Step>
+</Steps>
+
+<Tip>
+  Webhooks work great with automation platforms like Make (Integromat), n8n, or Zapier. For example: trigger fires → webhook goes to Make → a task is created in Trello and an email is sent to the manager.
+</Tip>
+
+---
+
+## Triggers
+
+A trigger is a rule: "if this event occurs in a conversation — send a notification." Without triggers, notifications do not work, even if you have subscribed to the channel.
+
+### Trigger Templates
+
+The platform offers ready-made templates covering the most common scenarios. You can use them as-is or customize them to fit your needs.
+
+| Template | When it fires |
+|---|---|
+| **Need a human** | The customer asks to speak with a live operator, manager, or administrator |
+| **Booking confirmation** | The customer confirms a booking, order, or appointment |
+| **Complaint** | The customer expresses dissatisfaction or reports a problem |
+| **Refund request** | The customer asks for a refund or order cancellation |
+
+### Creating a Trigger
+
+<Steps>
+  <Step title="Open the Notifications tab">
+    Go to the desired AI employee's card.
+  </Step>
+  <Step title="Add a trigger">
+    Click the button to add a new trigger or select one of the templates.
+  </Step>
+  <Step title="Fill in the parameters">
+    Specify the name, firing condition, additional data, and action (details below).
+  </Step>
+  <Step title="Save">
+    The trigger starts working immediately after saving.
+  </Step>
+</Steps>
+
+### Trigger Parameters
+
+| Parameter | Type | What to specify |
+|---|---|---|
+| **Trigger name** | Text field | A clear name: "Complaint", "VIP guest", "Refund request" |
+| **Firing condition** | Text description | The situation that should trigger the alert — in your own words |
+| **Additional data from the conversation** | Text field | What information from the chat to include in the notification |
+| **Action** | Selection | Pause the chat for a set time or force a pause |
+
+### Firing Condition
+
+The condition is **not keywords** or exact phrases. It is a natural-language description of a situation that the AI interprets semantically.
+
+<Tip>
+  Describe the situation as you would explain it to a new employee: "If the customer says they want a refund, asks about the return process, or complains that the product didn't suit them — let me know." This is exactly how the AI evaluates the condition.
+</Tip>
+
+**Good example:**
+> The customer expresses strong dissatisfaction, complains about service quality, or threatens to leave a negative review
+
+**Bad example:**
+> complaint
+
+The more detailed the description, the more accurately the trigger fires. An overly broad description leads to false positives; an overly narrow one leads to missed events.
+
+### Additional Data from the Conversation
+
+This field determines what information the system attaches to the notification. Without it, you only receive the fact that the trigger fired, but no context.
+
+What you can request:
+- Customer name
+- Summary of the issue or complaint
+- Dates, order numbers, specific details from the conversation
+- A brief dialogue summary
+
+**Example:**
+> Customer name, summary of the issue, and booking number if mentioned
+
+### Action on Trigger
+
+In addition to sending the notification, the trigger can control the agent's behavior.
+
+| Action | What happens |
+|---|---|
+| **Pause chat for N minutes/hours** | The agent stops responding for the specified time. A message like "Connecting you with a manager, please wait" can be sent to the customer |
+| **Forced pause** | The agent stops completely until manually resumed |
+
+<Tip>
+  Use a pause for situations where the agent should not respond: complaints, refunds, complex negotiations. For informational triggers (e.g., "booking confirmation"), no pause is needed — the agent can continue the conversation.
+</Tip>
+
+---
+
+## Recommended Starter Triggers
+
+### Essential for Any Business
+
+- **Escalation to a human** — the customer explicitly asks to speak with a live operator
+- **Complaint / negativity** — the customer expresses strong dissatisfaction
+- **Refund request** — the customer wants their money back
+
+### Recommended (Depends on Business)
+
+- **Booking/order confirmation** — for hotels, restaurants, services
+- **VIP customer** — the customer mentions a large budget or special requirements
+- **Technical issue** — the customer reports something not working
+- **Request beyond agent's scope** — anything the agent cannot answer
+
+<Note>
+  Start with 2-3 triggers. Monitor for a week: if there are too many notifications, narrow the conditions. If important situations slip through, add new triggers or broaden existing ones.
+</Note>
+
+---
+
+## Practical Examples
+
+<AccordionGroup>
+  <Accordion title="Law firm — urgent inquiries">
+    **Condition:** The customer says they have an urgent legal question, asks to speak with a lawyer, or describes a situation requiring immediate legal advice.
+
+    **Additional data:** Customer name, summary of the issue, contact details if provided.
+
+    **Action:** Forced pause.
+  </Accordion>
+  <Accordion title="Hotel — booking confirmation">
+    **Condition:** The customer confirmed a booking, agreed to the terms, and is ready to check in.
+
+    **Additional data:** Guest name, check-in and check-out dates, number of guests, selected room.
+
+    **Action:** No pause.
+  </Accordion>
+  <Accordion title="Online school — refund request">
+    **Condition:** The student asks for a course refund, complains that the course was not suitable, or inquires about the refund process.
+
+    **Additional data:** Student name, course name, reason for the refund.
+
+    **Action:** Chat pause for 30 minutes.
+  </Accordion>
+  <Accordion title="E-commerce store — negative feedback">
+    **Condition:** The customer expresses strong dissatisfaction, threatens a negative review, or describes a serious issue with their order.
+
+    **Additional data:** Customer name, order number, summary of the problem.
+
+    **Action:** Chat pause for 15 minutes.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Integration with Other Sections
+
+<AccordionGroup>
+  <Accordion title="Notifications + Quick Answers">
+    Quick Answers handle routine situations automatically (sending addresses, schedules, etc.), while notification triggers bring in a human for non-standard cases.
+
+    Quick Answers also have a **Send notification** toggle — you can enable it for critical Quick Answers (e.g., when a complaint-related Quick Answer is triggered).
+
+    **Tip:** Use Quick Answers for standard situations and notification triggers for non-standard ones.
+  </Accordion>
+  <Accordion title="Notifications + Working Hours">
+    Triggers fire **at any time**, including outside working hours. A notification will arrive even at 3 AM if a customer writes at that time. This is a plus — you won't miss anything. However, a chat pause at night may be useless if no manager is available.
+  </Accordion>
+  <Accordion title="Notifications + Persona (escalation)">
+    In the Persona's "Escalation" block, you can describe how the agent should behave before handing off to a human. For example: "If the customer asks for a manager — say you are connecting them with a specialist and ask them to wait." This works hand-in-hand with the "Need a human" trigger.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Settings Summary
+
+| Setting | Type | Description |
+|---|---|---|
+| **Receive notifications** | Button | Opens the Telegram channel for subscription |
+| **Notification webhook** | URL | Address for sending notifications to external systems (HTTP POST) |
+| **Trigger name** | Text field | Custom name for the trigger |
+| **Firing condition** | Text field | Natural-language description of the situation |
+| **Additional data** | Text field | What information from the chat to include in the notification |
+| **Action** | Selection | Timed pause or forced pause |
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I receive notifications outside of Telegram?">
+    Yes. Use a webhook — enter your system's URL. Webhooks can send notifications to any service: CRM, email, messenger, spreadsheet.
+  </Accordion>
+  <Accordion title="Can I receive notifications via email?">
+    Not directly. However, through a webhook and an automation platform (Make, n8n, Zapier), you can set up email delivery in minutes.
+  </Accordion>
+  <Accordion title="How many triggers can I create?">
+    There is no limit. However, it is recommended to keep it under 5-7 per employee — otherwise you will receive too many notifications.
+  </Accordion>
+  <Accordion title="My trigger is not firing — what should I do?">
+    Check the firing condition. It is likely too narrow or imprecisely described. Describe the situation in detail, in your own words — these are not keywords.
+  </Accordion>
+  <Accordion title="My trigger fires too often">
+    Narrow the condition: add clarifications, exclusions, and specifics. Instead of "the customer asks a question," write "the customer asks a question that the agent cannot answer and explicitly expresses dissatisfaction."
+  </Accordion>
+  <Accordion title="Are notifications delayed?">
+    Notifications are sent almost instantly. If there is a delay, check your internet connection or webhook status.
+  </Accordion>
+  <Accordion title="Can I set up different notifications for different managers?">
+    Via Telegram — no, all channel subscribers receive the same alerts. Via webhook — yes: different triggers can send data to different URLs.
+  </Accordion>
+  <Accordion title="Do notifications consume tokens?">
+    Trigger checks consume a minimal number of tokens — this will not noticeably affect your budget.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,175 @@
+---
+title: "Channels"
+description: "A channel is a messenger, CRM system, or other platform through which your AI employee communicates with real customers. Without a connected channel, the agent only works in the test chat inside AI Textura."
+---
+
+<Frame><img src="/assets/images/kanal.png" /></Frame>
+
+## What is a channel
+
+A channel is a messenger, CRM system, or other platform through which your AI employee communicates with real customers. A Telegram bot, amoCRM integration, or WhatsApp connection via Wazzup — these are all channels.
+
+Without a connected channel, the agent only works in the test chat inside AI Textura. This is convenient for setup and debugging, but to have the employee start responding to real customers, you need to connect at least one channel.
+
+<Warning>
+  **One channel = one employee.** You cannot assign multiple AI employees to a single channel.\
+  However, one employee can be connected to multiple channels — for example, Telegram + amoCRM.
+</Warning>
+
+<Tip>
+  The work schedule is configured at the agent level and applies to **all** of its channels simultaneously. If you need different schedules for different channels, create separate AI employees.
+</Tip>
+
+---
+
+## Supported channels
+
+| Channel | Type | Purpose |
+| --- | --- | --- |
+| **Telegram (bot)** | Messenger | The most popular option. Connects directly via bot token |
+| **Telegram (personal)** | Messenger | AI responds on behalf of your personal account. Requires Telegram Premium |
+| **amoCRM** | CRM system | Handle inquiries directly in CRM. Managers see conversations in the deal card |
+| **Bitrix24** | CRM system | Works through Bitrix24 open channels |
+| **Kommo** | CRM with messengers | CRM with built-in channels: WhatsApp, Telegram, Instagram, VK |
+| **Salebot** | Automation platform | Bot and funnel builder. WhatsApp, Telegram, VK, Viber |
+| **Umnico** | Messenger aggregator | Combines WhatsApp, Telegram, Instagram, VK, Viber, Facebook and others |
+| **Wazzup** | WhatsApp integration | Specializes in WhatsApp connections (personal and Business API) |
+| **SendAPI** | Universal API | For custom integrations via HTTP requests and webhooks |
+
+<Tip>
+  If you need to connect WhatsApp, Instagram, or other messengers but do not use a CRM system, an aggregator (Umnico, Wazzup) is the simplest solution.
+</Tip>
+
+---
+
+## Connection types
+
+| Connection type | When to use | What you need |
+| --- | --- | --- |
+| **Direct connection (Telegram)** | Quick and free AI launch | Telegram account and bot |
+| **Connection via CRM** | If you have amoCRM, Kommo, or Bitrix24 | Authorization or webhook |
+| **Connection via aggregator** | If you have no CRM but need WhatsApp, VK, Instagram, etc. | Registration and API key from the aggregator service |
+
+---
+
+## Channel section interface
+
+Open the desired AI employee and go to the **Channel** tab. Inside you will find two tabs:
+
+| Tab | Contents |
+| --- | --- |
+| **Browse apps** | Catalog of all available channels. Filters: **All**, **Available** (configured and ready), **Connect more** |
+| **Connected** | Channels already connected to this agent |
+
+At the top of the section there is a **search bar** — you can search by channel name or platform.
+
+For each connected channel in the **Connected** tab you can see:
+- **Bot name** — for example, @my_hotel_bot
+- **Platform** — for example, Telegram
+- **Owner** — the name of the user who connected the channel
+
+---
+
+## Connected channel settings
+
+After connecting a channel, click on it in the **Connected** tab to open settings.
+
+| Setting | Values | Description |
+| --- | --- | --- |
+| **Active** | On / Off | Enables or disables the channel. A disabled channel remains in the list but the agent stops responding |
+| **Free** | On / Off | Messages through this channel are not billed. Useful for testing |
+| **AI inline buttons** | On / Off | The agent can send quick-select buttons directly in the chat |
+| **Message buffer** | On / Off | The agent waits a few seconds before responding so the customer can finish their thought |
+| **Buffer time** | Slider (seconds) | How many seconds to wait for new messages. Appears when the buffer is enabled |
+| **Channel type: Personal** | — | Bot communicates with the customer one-on-one |
+| **Channel type: Group** | — | Bot works in a group chat |
+
+### Message buffer
+
+The buffer is useful when customers send a single thought across multiple consecutive messages. Without the buffer, the agent will start responding after the first message without waiting for the rest.
+
+<Steps>
+  <Step title="Open channel settings">
+    Click on the connected channel in the **Connected** tab.
+  </Step>
+  <Step title="Enable the buffer">
+    Toggle on the **Message buffer** switch.
+  </Step>
+  <Step title="Set the wait time">
+    Adjust the **Buffer time** — 3-5 seconds is recommended.
+  </Step>
+  <Step title="Save changes">
+    Click **Save**.
+  </Step>
+</Steps>
+
+<Tip>
+  Recommended buffer time is 3-5 seconds. This is enough for customers to finish their thought. More than 10 seconds is too long; less than 1 second has no effect.
+</Tip>
+
+---
+
+## How to connect a channel to an employee
+
+<Steps>
+  <Step title="Open the employee card">
+    Go to **AI Employees** and select the desired agent.
+  </Step>
+  <Step title="Go to the Channel tab">
+    In the **Browse apps** tab, find the desired platform and click on it.
+  </Step>
+  <Step title="Create or select a channel">
+    In the side panel, choose **Create** (new connection) or **Existing** (previously created channel).
+  </Step>
+  <Step title="Fill in the details and connect">
+    Enter the channel name, paste the token / API key, and click **Connect**.
+  </Step>
+</Steps>
+
+---
+
+## How to transfer a channel between employees
+
+1. Disconnect the channel from the current agent.
+2. Open the desired agent and go to the **Channel** tab.
+3. Connect the channel through the **Existing** tab.
+
+---
+
+## Important rules
+
+<Warning>
+  **Disabling a channel and disabling an employee are different actions.** If you disable the channel, the system stops seeing incoming messages. If you disable the employee, messages keep coming in but the AI does not respond to them.
+</Warning>
+
+<Tip>
+  If you need to temporarily switch to manual responses by managers, disable the employee, not the channel. This way the conversation history is preserved.
+</Tip>
+
+---
+
+## FAQ
+
+<Accordion title="Can I connect multiple channels to one agent?">
+  Yes, you can connect as many channels as you like. For example, one agent can simultaneously work in Telegram and amoCRM.
+</Accordion>
+
+<Accordion title="Can I set different schedules for different channels?">
+  The schedule is configured at the agent level and applies to all of its channels simultaneously. If you need different schedules, create separate AI employees.
+</Accordion>
+
+<Accordion title="How do I connect WhatsApp?">
+  WhatsApp cannot be connected directly — use an aggregator. The simplest path: register with Wazzup or Umnico, connect WhatsApp there, then integrate the aggregator with AI Textura via API key.
+</Accordion>
+
+<Accordion title="The agent is created but does not respond to customers. What is wrong?">
+  Check three things: (1) agent status — it should be "Active"; (2) is at least one channel connected; (3) is the work schedule configured — the agent might currently be "off shift."
+</Accordion>
+
+<Accordion title="Do voice messages work in all channels?">
+  No. Currently voice messages are only supported in Telegram. If you need IP telephony, contact support.
+</Accordion>
+
+<Accordion title="What is the difference between Personal and Group channel types?">
+  A Personal channel is a one-on-one conversation between the bot and the customer. A Group channel allows the bot to work in group chats. For most tasks, the Personal channel is recommended.
+</Accordion>

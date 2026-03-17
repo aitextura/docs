@@ -1,0 +1,249 @@
+---
+title: "Additional Settings"
+description: "Fine-tuning your AI employee: response language, word limit, image recognition instructions, voice messages, chat commands, and manager intervention behavior."
+---
+
+The **Additional** section contains settings that fine-tune your AI employee's behavior: response language, message length limits, image recognition, voice messages, and agent control commands from chat.
+
+<Note>
+  These settings are not required for basic operation — the agent will work without them. But this is where you can adapt the employee to specific tasks.
+</Note>
+
+Open the desired AI employee and navigate to the **Additional** tab in the top navigation bar (the last tab on the right).
+
+---
+
+## Response Language
+
+A dropdown that determines which language the agent uses to respond to customers.
+
+| Value | Behavior |
+|---|---|
+| **User's language** (default) | The agent automatically detects the customer's language and responds in it |
+| **Specific language** (Russian, English, etc.) | The agent always responds in the selected language, regardless of the customer's language |
+
+<Warning>
+  Choosing a specific language does not prevent the agent from *understanding* messages in other languages. It will understand everything — but will only respond in the selected language.
+</Warning>
+
+<Steps>
+  <Step title="Open the Additional tab">
+    Navigate to the desired AI employee's editor.
+  </Step>
+  <Step title="Find the Response Language field">
+    This is the first setting in the section.
+  </Step>
+  <Step title="Select the desired option">
+    Keep **User's language** for international business, or choose a specific language for uniform responses.
+  </Step>
+  <Step title="Save changes">
+    Click the save button.
+  </Step>
+</Steps>
+
+<Tip>
+  Fix the language if all customers speak the same language or if the agent gets confused during auto-detection. Keep auto-detection for international business and tourism.
+</Tip>
+
+---
+
+## Maximum Word Count
+
+A numeric field that limits the length of the agent's responses.
+
+| Value | Behavior |
+|---|---|
+| **0** (default) | No limit — the agent determines response length on its own |
+| **Any number** (e.g., 50 or 100) | The agent tries to stay within the specified limit |
+
+<Warning>
+  This is a soft limit. The agent does not cut off a response mid-sentence — it formulates the answer more concisely to fit the limit. It may occasionally exceed it slightly.
+</Warning>
+
+<Steps>
+  <Step title="Open the Additional tab">
+    Navigate to the desired AI employee's editor.
+  </Step>
+  <Step title="Find the Maximum Word Count field">
+    Enter a number, for example **100**.
+  </Step>
+  <Step title="Save changes">
+    To remove the limit, set the value to **0**.
+  </Step>
+</Steps>
+
+<Tip>
+  For Telegram and WhatsApp chats, a limit of 50-80 words works well. For complex consultations (legal, medical), leave it at 0 or set 150-200.
+</Tip>
+
+---
+
+## Image Recognition Instructions
+
+A text field where you describe what the agent should focus on when analyzing photos, screenshots, and other images sent by customers.
+
+By default, the field is empty — the agent analyzes images in a general manner. Filling in this field focuses its attention on what matters for your business.
+
+### Example Instructions
+
+| Business | Example Instruction |
+|---|---|
+| Hotel | "Pay attention to the booking number, check-in and check-out dates, number of guests, and total amount" |
+| Online store | "Identify the product in the photo, its condition (new, used, damaged), and any defects" |
+| Auto service | "Describe visible vehicle damage, its location, and approximate severity" |
+| Restaurant | "Identify the dish in the photo and its approximate ingredients" |
+
+<Steps>
+  <Step title="Open the Additional tab">
+    Navigate to the desired AI employee's editor.
+  </Step>
+  <Step title="Find the Image Recognition Instructions field">
+    Describe what exactly the agent should pay attention to.
+  </Step>
+  <Step title="Save changes">
+    Click the save button.
+  </Step>
+</Steps>
+
+<Tip>
+  The more specific the instruction, the more accurate the result. Instead of "analyze the photo," write: "Find the order number, date, and amount on the screenshot. If there is no number, ask the customer."
+</Tip>
+
+---
+
+## Voice Settings
+
+Voice response settings that allow the agent to reply with voice messages.
+
+<Warning>
+  Voice messages work only in Telegram. For IP telephony, contact support.
+</Warning>
+
+### Voice Parameters
+
+| Parameter | Type | Description | Default |
+|---|---|---|---|
+| **Voice type** | Toggle | **Normal** — built-in voices (e.g., onyx). **Pro** — voices via ElevenLabs integration (API key required) | Normal |
+| **Voice speed** | Slider | Speech rate from x0.5 (slow) to x1.5 (fast) | x1.0 |
+| **Style and emotions** | Text field | Voice style description: "calm and confident," "energetic and friendly," etc. | Empty |
+| **Voice message response** | Dropdown | Response format when a customer sends a voice message: **Voice + text**, **Voice only**, **Text only** | Voice + text |
+
+<Steps>
+  <Step title="Select voice type">
+    **Normal** — built-in voices, works immediately. **Pro** — ElevenLabs voices, requires an API key.
+  </Step>
+  <Step title="Adjust the speed">
+    Use the slider to select a speed from x0.5 to x1.5.
+  </Step>
+  <Step title="Set style and emotions">
+    Describe the desired voice style, for example "calm and confident."
+  </Step>
+  <Step title="Choose voice message response format">
+    Specify how the agent should respond to customer voice messages.
+  </Step>
+  <Step title="Save changes">
+    Click the save button.
+  </Step>
+</Steps>
+
+<Tip>
+  For business communications (legal, medical, financial), speed x1.0 and "calm and confident" style work well. For youth-oriented projects, try x1.1-x1.2 and "energetic and friendly."
+</Tip>
+
+---
+
+## Agent Commands
+
+Service commands let you control the agent directly from chat — without accessing the control panel. Convenient for managers who work in the same chat as the agent.
+
+### Available Commands
+
+| Command | Description | Example Use |
+|---|---|---|
+| **Start AI command** | Activates the agent in chat. If the agent was paused, it resumes responding | Manager sends the command — agent turns on |
+| **Stop AI command** | Pauses the agent. It stops responding but continues to "see" messages | Manager wants to reply personally — pauses the agent |
+| **Clear memory command** | Resets the current conversation context. The agent starts the conversation from scratch | Customer returned with a new question but the agent remembers the old context |
+| **Protection command** | Protection against prompt injection — blocks attempts to "hack" the agent's instructions | For agents handling sensitive data |
+| **Training command** | Launches the agent's training mode | For advanced configuration scenarios |
+
+<Steps>
+  <Step title="Open the Additional tab">
+    Navigate to the **Agent Commands** section.
+  </Step>
+  <Step title="Set your commands">
+    You choose which word or phrase to use for each command.
+  </Step>
+  <Step title="Share commands with managers">
+    Make sure all managers know the current commands.
+  </Step>
+  <Step title="Save changes">
+    Click the save button.
+  </Step>
+</Steps>
+
+<Tip>
+  Choose simple but non-obvious commands so that customers do not trigger them accidentally. For example, instead of "stop," use **/ai_pause_now** or a unique combination.
+</Tip>
+
+---
+
+## Manager Intervention Behavior
+
+This is built-in platform logic that works automatically.
+
+<Accordion title="How auto-pause and auto-resume work">
+  If a manager intervenes in a conversation and replies to the customer personally, the AI employee automatically pauses. It will not "interrupt" a live person. Messages continue to be saved in the history.
+
+  The AI can automatically resume after 10-20 minutes of manager inactivity — if the customer writes again and the manager has not responded.
+</Accordion>
+
+<Tip>
+  For 24/7 support, automatic resume after a pause is useful — the customer will not be left without a response at night. For premium sales where a "human" touch matters, it is better to control the agent manually via commands.
+</Tip>
+
+---
+
+## Settings Summary Table
+
+| Setting | Type | Default |
+|---|---|---|
+| **Response language** | Dropdown | User's language |
+| **Maximum word count** | Numeric field | 0 (no limit) |
+| **Image recognition instructions** | Text field | Empty |
+| **Voice: type** | Toggle | Normal |
+| **Voice: speed** | Slider | x1.0 |
+| **Voice: style and emotions** | Text field | Empty |
+| **Voice message response** | Dropdown | Voice + text |
+| **Start AI command** | Text field | -- |
+| **Stop AI command** | Text field | -- |
+| **Clear memory command** | Text field | -- |
+| **Protection command** | Text field | -- |
+| **Training command** | Text field | -- |
+
+---
+
+## Frequently Asked Questions
+
+<Accordion title="If I choose a specific language, will the agent stop understanding other languages?">
+  No. The agent will continue to understand messages in any language — but will only respond in the selected one.
+</Accordion>
+
+<Accordion title="How does the word limit work — does the agent cut off mid-sentence?">
+  No. The agent tries to stay within the limit by formulating the answer more concisely. This is a soft limit — it may occasionally exceed it slightly, but there will be no abrupt cutoff.
+</Accordion>
+
+<Accordion title="Can I use voice in WhatsApp or on a website?">
+  Currently, voice messages are only supported in Telegram. For IP telephony, contact support.
+</Accordion>
+
+<Accordion title="What happens when the clear memory command is sent?">
+  The agent resets the entire current conversation context — as if the conversation started from scratch. Useful when the agent is stuck in an old context.
+</Accordion>
+
+<Accordion title="Do I need to fill in all fields in the Additional section?">
+  No. All settings have sensible defaults. Only fill in what you actually need.
+</Accordion>
+
+<Accordion title="A customer accidentally triggered an agent command — what should I do?">
+  Use commands that customers are unlikely to type by accident. If it already happened, restart the agent with the start command.
+</Accordion>

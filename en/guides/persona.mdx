@@ -1,0 +1,219 @@
+---
+title: "Persona — Core Instructions for Your AI Employee"
+description: "How to configure a Persona: block-based editor, role, tone, instructions, importing from Rules Hub and Google Docs, XML editor, test chat, and common troubleshooting."
+---
+
+Persona is the main instruction set for your AI employee. It defines who the employee is, how it speaks, and what it does in every situation. Everything else — knowledge base, channels, talents — works on top of the Persona. If the Persona is poorly written, no knowledge base will compensate.
+
+<Frame>
+  <img src="/assets/images/persona.png" />
+</Frame>
+
+---
+
+## How the Editor Works
+
+Open the desired AI employee and navigate to the **Persona** tab.
+
+The editor uses a **block-based system**: the entire instruction consists of individual blocks that you can create, edit, reorder, delete, and import from the library. Each block is a separate fragment of the instruction.
+
+To add a new block, type `/` at the end of the editor — a menu with options will appear.
+
+---
+
+## Three Main Block Types
+
+<Steps>
+  <Step title="Role">
+    Who your employee is. One or two sentences that give the AI context: what role it plays and what business it represents.
+
+    **What to write:**
+    - Professional role and title
+    - Company or property it represents
+    - Primary objective
+
+    **Good example:**
+    > You are a virtual concierge for the "Seventh Heaven" apartments in Chelyabinsk. Your task is to help guests with bookings, answer questions, and ensure a comfortable experience.
+
+    **Bad example:**
+    > You are a smart assistant. Help people.
+
+    <Warning>A vague role causes the employee to "improvise" and respond unpredictably.</Warning>
+  </Step>
+
+  <Step title="Tone">
+    How the employee speaks. Describes the style, message length, emoji usage, form of address, and overall atmosphere.
+
+    **What to write:**
+    - Formal / friendly / casual
+    - Form of address (formal "you" vs. informal)
+    - Message length (short / detailed)
+    - Emojis: use or not
+    - What makes the tone "right" for your audience
+
+    **Example:**
+    > Communicate warmly and naturally, without corporate jargon. Use the formal "you." Keep messages short — no more than 3–4 sentences per message. Use 1–2 emojis where appropriate.
+
+    <Info>If no tone is set, the employee will default to a neutral, templated style — sometimes too formal, sometimes too casual.</Info>
+  </Step>
+
+  <Step title="Instructions (set of blocks)">
+    The most important part of the Persona. Unlike Role and Tone, instructions are a **set of individual blocks**, each responsible for a specific task. You can create any number of blocks — there are no limits.
+
+    **Example block set for an apartment concierge:**
+    - Greeting
+    - Handling unusual requests
+    - Group bookings
+    - Prohibited actions
+    - Booking scenario
+      - Step 1 — clarify dates and number of guests
+      - Step 2 — show available options
+      - Step 3 — details on the selected option
+      - Step 4 — request contact information
+      - Step 5 — make the booking and send instructions
+    - Escalation
+    - Additional instructions
+  </Step>
+</Steps>
+
+---
+
+## Nesting and Block Hierarchy
+
+Nesting is created via indent — the button is available in the block menu. This is not just visual formatting: **the AI treats nested blocks as subordinate to the parent**, which helps it better understand the instruction hierarchy.
+
+<Tip>The more precisely the instruction is split into logical parts, the more predictable the employee's behavior.</Tip>
+
+---
+
+## Reordering and Managing Blocks
+
+Blocks can be:
+- **Edited** directly in the editor
+- **Deleted** — click the X next to the block
+- **Reordered** — drag and drop
+- **Added** — type `/` at the end of the editor
+
+---
+
+## Importing Blocks
+
+<AccordionGroup>
+  <Accordion title="Import from Rules Hub">
+    Type `/` in the editor and select **"Import from hub"**. Two sections are available:
+
+    - **Public** — ready-made templates from the AI Textura team: "Hotel Administrator," "Real Estate Agent," "Personal Assistant," and more.
+    - **My Rules** — blocks you have saved yourself.
+
+    The Rules Hub is accessible from the left menu. Edit a block once — it updates for all employees that use it.
+  </Accordion>
+
+  <Accordion title="Import from Google Docs">
+    Type `/` in the editor and select **"Import Google Doc"**.
+
+    If the instruction is long or you update it frequently, keep it in a Google Document. The employee will automatically pull the latest version. You can edit the document directly without opening the platform.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Special Blocks
+
+<AccordionGroup>
+  <Accordion title="Prohibited Actions">
+    If the employee says something it should not, you do not always need to rewrite the entire script. Simply add a prohibition.
+
+    **Examples:**
+    - Do not mention special rates unless the request conditions match
+    - Do not ask more than two questions in a single message
+    - Do not fabricate information — use only data from the knowledge base
+
+    This is the fastest way to fine-tune the employee on the fly.
+  </Accordion>
+
+  <Accordion title="Additional Instructions">
+    Targeted rules for non-standard situations that do not fit the main script.
+
+    Principle: "if X happens — do Y." The more specific the wording, the more accurate the behavior.
+
+    **Examples:**
+    - If a client asks a question outside your area of expertise — say you will check and do not answer on your own
+    - If a client asks for a discount — offer current promotions
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## XML Editor
+
+<Note>XML is a tool for advanced users. If the tag structure is broken (unclosed tag, extra characters), the instruction may malfunction.</Note>
+
+The blocks in the visual editor are a representation of an XML instruction. Click the **XML** button in the top-right corner of the editor to switch to XML mode.
+
+```xml
+<role>
+  You are a virtual concierge for the "Seventh Heaven" apartments.
+</role>
+
+<tone>
+  Friendly, short messages, formal address.
+</tone>
+
+<script>
+  1. Clarify dates and number of guests.
+  2. Show available options.
+  ...
+</script>
+```
+
+Switching between blocks and XML works both ways — no data is lost. If you are unsure about syntax, use the block editor — it is safer.
+
+---
+
+## Referencing Profile Data
+
+You can reference data that the employee collects about clients in the **Profiles** section within your instructions.
+
+For example, if a profile has a "Hall" field, you can write in the instruction:
+
+> If the guest is interested in the [name] hall — tell them more about it and suggest suitable options.
+
+This lets you build **personalized scenarios**: one employee behaves differently depending on what is already known about a specific client.
+
+---
+
+## Testing Changes
+
+<Steps>
+  <Step title="Open the test chat">
+    Click **"Show chat"** — the button in the top-right corner of the editor.
+  </Step>
+  <Step title="Test your scenarios">
+    Write several messages as a guest. If the response is not satisfactory, return to the editor, make adjustments, and test again.
+  </Step>
+  <Step title="Review the reasoning">
+    Click the **checkmark** next to the employee's response to see where it got the information, which quick replies it checked, and what it used from the knowledge base.
+  </Step>
+</Steps>
+
+<Tip>Do not start the conversation over — delete the last messages (trash button next to each message) and write again from the desired point.</Tip>
+
+---
+
+## Versions — Safety Net Against Mistakes
+
+After every save, the platform creates a new version of the instruction. If something breaks, roll back to any previous version via the **Versions** tab in the top menu of the employee settings.
+
+Do not be afraid to experiment — you can always revert.
+
+---
+
+## Common Mistakes and Solutions
+
+| Symptom | Cause | Solution |
+|---|---|---|
+| Employee sounds robotic and templated | Tone is not set or is too formal | Rewrite the "Tone" block; add specific example phrases |
+| Employee fabricates information | No prohibition on fabrication; no knowledge base | Add to "Prohibited Actions": "do not fabricate; use only data from the knowledge base" |
+| Replies are too long | Tone does not limit length | Add to the "Tone" block: "do not write more than X sentences per message" |
+| Asks too many questions at once | No limitation set | Add to "Prohibited Actions": "do not ask more than two questions in a single message" |
+| Does not escalate to a human manager | Escalation section is not filled in | Specify concrete situations in the "Escalation" block |

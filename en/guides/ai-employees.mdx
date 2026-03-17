@@ -1,0 +1,132 @@
+---
+title: "AI Employees"
+description: "Managing virtual agents: list view, creation, configuration, and status control for AI employees on the AI Textura platform."
+---
+
+The **AI Employees** section is your control center for all virtual agents. Here you can see the full list of employees, their statuses, connected channels, and recent activity. This is also where you create new agents and access their settings.
+
+<Frame>
+  <img src="/assets/images/ii_sotrudniki.png" />
+</Frame>
+
+---
+
+## Employee Table
+
+The main part of the page is a searchable table. Click any row to open the agent editor.
+
+| Column | Description |
+|---|---|
+| **Name** | The employee's technical name. Click to open settings |
+| **Status** | Current state: green badge **Active** or gray **Inactive** |
+| **Created** | When the agent was created |
+| **Channels** | Connected messengers and platforms (e.g., @BotName Telegram) |
+| **Talents** | Number of active integrations |
+| **Last Activity** | Date and time of the agent's last action |
+| **Chats** | **Live Chat** button — opens the current conversations window |
+| **Actions** | On/off toggle and **...** menu with additional actions |
+
+---
+
+## Creating a New Employee
+
+Click the **Hire Employee** button in the top panel. A dialog will open with three creation methods:
+
+<Steps>
+  <Step title="Manual — from a template">
+    Choose a ready-made use case from the library and set the employee's name. The platform will suggest templates for common tasks — just adapt them to your needs.
+  </Step>
+  <Step title="Automatic — from a website URL">
+    Paste your website address — the platform will analyze its content, gather key information, and prepare a starter agent profile.
+  </Step>
+  <Step title="Blank agent — from scratch">
+    Start from zero and configure everything manually. Best suited for experienced users who know exactly what they need.
+  </Step>
+</Steps>
+
+<Tip>
+  Automatic creation from a URL is especially convenient if you have a website describing your services or products — the agent will immediately receive up-to-date information.
+</Tip>
+
+After creation, the employee will appear in the table. Next, configure the **Persona**, connect a **Channel**, and add the necessary **Talents**.
+
+---
+
+## Agent Settings Tabs
+
+When you click an employee in the table, you enter the **agent editor**. The following tabs are available at the top:
+
+<Accordion title="Full list of tabs">
+  1. **Persona** — character, communication style, and role of the agent
+  2. **Knowledge Base** — documents and materials the agent relies on
+  3. **FAQ** — frequently asked questions and prepared answers
+  4. **Talents** — active integrations and skills
+  5. **Channel** — connected messengers and platforms
+  6. **Quick Answers** — templates for instant responses
+  7. **Profiles** — additional agent profiles
+  8. **Working Hours** — agent's work schedule
+  9. **Auto Follow-Up** — automatic repeated messages to clients
+  10. **Notifications** — alert settings
+  11. **Versions** — configuration change history
+  12. **Additional** — advanced parameters
+</Accordion>
+
+Next to the tabs is the **Show Chat** button, which opens a test chat where you can verify the agent's behavior before publishing.
+
+---
+
+## Enabling and Disabling an Employee
+
+In the **Actions** column next to each employee there is a toggle switch:
+
+- **Enabled** — the agent is active and processes incoming messages
+- **Disabled** — the agent is paused and new messages are not processed
+
+<Warning>
+  When an agent is disabled, clients will not receive a response. If you need to temporarily limit availability, consider configuring **Working Hours** instead of fully disabling the agent.
+</Warning>
+
+---
+
+## Actions Menu
+
+The **...** button in the **Actions** column contains:
+
+- **Edit settings** — open the agent editor
+- **Duplicate employee** — create a copy with all settings
+- **Delete employee** — permanently remove the agent
+
+<Warning>
+  Deletion is irreversible. Make sure you have saved all necessary settings before deleting.
+</Warning>
+
+---
+
+## Frequently Asked Questions
+
+<Accordion title="How many AI employees can I create?">
+  The number depends on your subscription plan.
+</Accordion>
+
+<Accordion title="Can I duplicate an existing employee?">
+  Yes. Click **...** next to the desired employee and select **Duplicate**. A copy with all settings will be created.
+</Accordion>
+
+<Accordion title="The agent was created but doesn't respond to clients. What's wrong?">
+  Check three things:
+  1. Status — it should be **Active**
+  2. At least one **Channel** must be connected
+  3. **Working Hours** must be configured — the agent may currently be off-shift
+</Accordion>
+
+<Accordion title="What happens if I delete an employee?">
+  The agent will be deleted along with all its settings. Deletion is irreversible.
+</Accordion>
+
+---
+
+## Best Practice
+
+<Note>
+  **One employee — one task.** It is better to create two specialized agents than one universal one. Narrow instructions produce higher-quality responses.
+</Note>

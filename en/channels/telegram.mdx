@@ -1,0 +1,117 @@
+---
+title: "Telegram"
+description: "Connect a Telegram bot or personal account to your AI employee. The bot is created via @BotFather; a personal account requires Telegram Premium."
+---
+
+## Telegram bot
+
+The fastest and free way to connect your AI employee to customers. You will need a bot token issued by @BotFather.
+
+### Step 1. Create a bot in Telegram
+
+<Steps>
+  <Step title="Find @BotFather">
+    Open Telegram and search for **@BotFather** — the official Telegram bot with a blue checkmark.
+  </Step>
+  <Step title="Create a new bot">
+    Press **/start**, then send the **/newbot** command.
+  </Step>
+  <Step title="Set the name and username">
+    - **Name** — any display name (e.g., "Glamping Jawberry").
+    - **Username** — one word in Latin characters, may contain `_`, must end with `bot` (e.g., `JawaBerry_Glamping_bot`).
+  </Step>
+  <Step title="Copy the token">
+    BotFather will send a token like `123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ`.\
+    **Copy it entirely** — you will need it in the next step.
+  </Step>
+</Steps>
+
+<Warning>
+  Do not share the token with third parties — it is the access key to your bot.
+</Warning>
+
+### Step 2. Connect the bot in AI Textura
+
+<Steps>
+  <Step title="Open the Channel section">
+    Go to **AI Employees** → select the agent → **Channel** tab.
+  </Step>
+  <Step title="Select Telegram">
+    In the **Browse apps** tab, find **Telegram** and click on it.
+  </Step>
+  <Step title="Create a connection">
+    In the side panel, select the **Create** tab.
+  </Step>
+  <Step title="Fill in the settings">
+    - **Channel type**: Personal (one-on-one) or Group (for group chats).
+    - **Platform**: already selected — Telegram.
+    - **Channel name**: any name convenient for you.
+    - **Bot token**: paste the token from BotFather.
+  </Step>
+  <Step title="Connect">
+    Click **Connect**. The bot will appear in the **Connected** tab and start receiving messages.
+  </Step>
+</Steps>
+
+<Tip>
+  If you are connecting a group channel, make sure Privacy Mode is disabled in @BotFather — otherwise the bot will not see messages in the group.
+</Tip>
+
+### Step 3. Customize the bot appearance (recommended)
+
+Go back to Telegram → @BotFather → **My Bots** → select your bot → **Edit Bot**:
+
+- **Description** — a short description (up to 512 characters). Displayed when the bot is opened for the first time.
+- **About** — a very short line, visible in the bot's profile.
+- **Photo** — add a logo or photo for recognition.
+
+---
+
+## Personal Telegram account
+
+If you want the AI employee to respond to customers on behalf of your **personal** Telegram account (rather than a separate bot), this is also possible.
+
+<Warning>
+  A **Telegram Premium** subscription is required to connect a personal account. The setup is done on the Telegram side, not in AI Textura.
+</Warning>
+
+<Steps>
+  <Step title="Connect a Telegram bot">
+    First, create and connect a bot using the instructions above — it is required for the system to work.
+  </Step>
+  <Step title="Open Telegram business settings">
+    On your phone, go to **Settings** → **Telegram for Business**.
+  </Step>
+  <Step title="Configure the chatbot">
+    Select the **Chatbots** section and specify the bot connected to AI Textura.
+  </Step>
+  <Step title="Choose the scope">
+    Specify which chats the bot should respond to — **all messages** or with certain chats excluded.
+  </Step>
+</Steps>
+
+After this, the bot will process messages, but the customer will see responses from your personal account.
+
+---
+
+## Bot vs Personal account
+
+| | Telegram bot | Personal account |
+| --- | --- | --- |
+| **What the customer sees** | A separate bot with a username | Your personal profile |
+| **Requires Premium** | No | Yes |
+| **Setup** | AI Textura only | AI Textura + Telegram |
+| **Group chats** | Supported | Not supported |
+| **Recommended for** | Most tasks | Personal communication with clients |
+
+---
+
+## Voice messages
+
+Telegram is the only channel where voice messages are supported. If a customer sends a voice message, the AI will:
+
+- automatically transcribe it,
+- respond with text,
+- and can **voice the response** if text-to-speech is enabled in the employee settings.
+
+In the employee settings, you can choose the voice, adjust speed, pitch, and pauses.
