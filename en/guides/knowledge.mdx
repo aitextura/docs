@@ -6,15 +6,30 @@ description: "How to upload, organize, and connect information sources to AI emp
 Knowledge is the foundation of accurate answers from your AI employee. Without a knowledge base, the agent relies only on instructions from the Persona and the model's general knowledge. With a knowledge base, it provides fact-backed data: prices, terms, descriptions, specifications.
 
 <Frame>
-  <img src="/assets/images/baza_znaniy.png" />
+  <img src="/assets/images/en/baza_znaniy.png" />
 </Frame>
+
+<CardGroup cols={2}>
+  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
+    Define how your agent communicates
+  </Card>
+  <Card title="FAQ" icon="circle-question" href="/en/guides/faq">
+    Prepared answers and self-learning
+  </Card>
+  <Card title="Talents" icon="wand-magic-sparkles" href="/en/guides/talents">
+    Connect integrations and services
+  </Card>
+  <Card title="AI Employees" icon="users" href="/en/guides/ai-employees">
+    Manage all your virtual agents
+  </Card>
+</CardGroup>
 
 <Warning>
   **Knowledge is static.** After uploading, content does not update automatically. If the original document has changed, you need to delete the old source and upload the new one.
 </Warning>
 
 <Info>
-  **Persona** defines **how** the employee responds (tone, style, behavior). **Knowledge Base** defines **what** it knows (facts, data, documents). These two tools work together: an instruction in the Persona can direct the employee to specific data from the knowledge base.
+  [Persona](/en/guides/persona) defines **how** the employee responds (tone, style, behavior). **Knowledge Base** defines **what** it knows (facts, data, documents). These two tools work together: an instruction in the Persona can direct the employee to specific data from the knowledge base.
 </Info>
 
 ---
@@ -86,7 +101,7 @@ All knowledge
 ```
 
 - **Agents** -- a system folder. Subfolders are automatically created for each employee when you add sources via the **Knowledge Base** tab in the agent's settings.
-- **FAQ** -- a folder for entries from the self-learning section that have been sent to the knowledge base.
+- **FAQ** -- a folder for entries from the [self-learning](/en/guides/faq) section that have been sent to the knowledge base.
 - **Custom folders** -- create them at any level to organize by topic, department, or project.
 
 <Tip>
@@ -329,7 +344,7 @@ Uploaded sources do not update automatically. If a price list has changed, the e
 </Accordion>
 
 <Accordion title="The employee is not using data from the knowledge base. What should I do?">
-  Check three things: (1) the source is connected -- the checkbox is checked in the **Knowledge Base** tab; (2) the information is well-structured -- use headings and lists; (3) the Persona includes an instruction like "answer based on knowledge base data, do not make things up."
+  Check three things: (1) the source is connected -- the checkbox is checked in the **Knowledge Base** tab; (2) the information is well-structured -- use headings and lists; (3) the [Persona](/en/guides/persona) includes an instruction like "answer based on knowledge base data, do not make things up."
 </Accordion>
 
 <Accordion title="Does folder structure affect how the employee works?">

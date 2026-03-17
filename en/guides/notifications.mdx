@@ -3,12 +3,27 @@ title: "Notifications"
 description: "Notification system for AI employees in AI Textura: delivery channels (Telegram, webhooks), triggers, conditions, actions, and integration with other platform sections."
 ---
 
+<CardGroup cols={2}>
+  <Card title="Quick Answers" icon="bolt" href="/en/guides/quick-answers">
+    Combine Quick Answers with notification triggers for critical situations
+  </Card>
+  <Card title="Working Hours" icon="clock" href="/en/guides/working-hours">
+    Triggers fire at any time, including outside working hours
+  </Card>
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Configure escalation behavior in the Persona settings
+  </Card>
+  <Card title="Telegram" icon="paper-plane" href="/en/channels/telegram">
+    Primary delivery channel for notification alerts
+  </Card>
+</CardGroup>
+
 Notifications are an alert system that informs you about important events in your AI employee's conversations. A customer asked for a human agent, confirmed a booking, or filed a complaint — you find out immediately, not hours later.
 
 In essence, notifications bridge the gap between your AI employee's automated work and your personal involvement. The agent handles routine tasks, but in critical situations it passes the baton to you.
 
 <Frame>
-  <img src="/assets/images/uvedomleniya.png" />
+  <img src="/assets/images/en/uvedomleniya.png" />
 </Frame>
 
 <Warning>
@@ -218,17 +233,17 @@ In addition to sending the notification, the trigger can control the agent's beh
 
 <AccordionGroup>
   <Accordion title="Notifications + Quick Answers">
-    Quick Answers handle routine situations automatically (sending addresses, schedules, etc.), while notification triggers bring in a human for non-standard cases.
+    [Quick Answers](/en/guides/quick-answers) handle routine situations automatically (sending addresses, schedules, etc.), while notification triggers bring in a human for non-standard cases.
 
-    Quick Answers also have a **Send notification** toggle — you can enable it for critical Quick Answers (e.g., when a complaint-related Quick Answer is triggered).
+    [Quick Answers](/en/guides/quick-answers) also have a **Send notification** toggle — you can enable it for critical Quick Answers (e.g., when a complaint-related Quick Answer is triggered).
 
-    **Tip:** Use Quick Answers for standard situations and notification triggers for non-standard ones.
+    **Tip:** Use [Quick Answers](/en/guides/quick-answers) for standard situations and notification triggers for non-standard ones.
   </Accordion>
   <Accordion title="Notifications + Working Hours">
-    Triggers fire **at any time**, including outside working hours. A notification will arrive even at 3 AM if a customer writes at that time. This is a plus — you won't miss anything. However, a chat pause at night may be useless if no manager is available.
+    Triggers fire **at any time**, including outside [Working Hours](/en/guides/working-hours). A notification will arrive even at 3 AM if a customer writes at that time. This is a plus — you won't miss anything. However, a chat pause at night may be useless if no manager is available.
   </Accordion>
   <Accordion title="Notifications + Persona (escalation)">
-    In the Persona's "Escalation" block, you can describe how the agent should behave before handing off to a human. For example: "If the customer asks for a manager — say you are connecting them with a specialist and ask them to wait." This works hand-in-hand with the "Need a human" trigger.
+    In the [Persona's](/en/guides/persona) "Escalation" block, you can describe how the agent should behave before handing off to a human. For example: "If the customer asks for a manager — say you are connecting them with a specialist and ask them to wait." This works hand-in-hand with the "Need a human" trigger.
   </Accordion>
 </AccordionGroup>
 

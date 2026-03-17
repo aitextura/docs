@@ -3,6 +3,21 @@ title: "Billing History"
 description: "Monitor expenses on the AI Textura platform: word balance, analytics, charts, billing table, pricing model, and tips for cost optimization."
 ---
 
+<CardGroup cols={2}>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Create and manage your AI employees
+  </Card>
+  <Card title="Account Settings" icon="gear" href="/en/guides/account-settings">
+    Theme, security, integrations, and personal data
+  </Card>
+  <Card title="Dashboard" icon="chart-mixed" href="/en/guides/dashboard">
+    Overview of key platform metrics
+  </Card>
+  <Card title="Referral Program" icon="gift" href="/en/guides/referral">
+    Invite users and earn rewards
+  </Card>
+</CardGroup>
+
 **Billing History** is the financial control center of the platform, where all statistics on word usage and spending are collected. Here you can see how many words each AI employee has used, how much it cost, and how expenses changed by day and month.
 
 The section is located in the left menu: **Billing History**.
@@ -161,11 +176,11 @@ The price per word depends on your plan. The larger the word package, the lower 
 
 | Factor | Impact |
 |---|---|
-| **AI employee response length** | Longer responses use more words |
+| **AI employee response length** | Longer responses use more words. Adjust in [Additional Settings](/en/guides/additional-settings) |
 | **Conversation context** | Longer conversations consume more — the AI considers previous messages |
-| **Knowledge base** | Querying the knowledge base increases usage |
-| **Profiles (Realtime)** | Updating the profile after each message adds words |
-| **Talents** | Using external integrations can increase usage |
+| [Knowledge](/en/guides/knowledge) | Querying the knowledge base increases usage |
+| [Profiles](/en/guides/profiles) **(Realtime)** | Updating the profile after each message adds words |
+| [Talents](/en/guides/talents) | Using external integrations can increase usage |
 
 ---
 
@@ -173,7 +188,7 @@ The price per word depends on your plan. The larger the word package, the lower 
 
 <Steps>
   <Step title="Shorten response length">
-    Add an instruction to the Persona tone: "reply briefly, no more than 2-3 sentences." This can reduce word usage significantly.
+    Add an instruction to the [Persona](/en/guides/persona) tone: "reply briefly, no more than 2-3 sentences." This can reduce word usage significantly.
   </Step>
   <Step title="Switch profile updates">
     Change from Realtime mode to scheduled updates (e.g., once every 24 hours). This significantly reduces consumption.
@@ -182,7 +197,7 @@ The price per word depends on your plan. The larger the word package, the lower 
     Remove outdated and redundant documents. The more compact the base, the fewer words are used per query.
   </Step>
   <Step title="Use quick replies (FAQ)">
-    Set up FAQ for common questions — they use fewer resources than full response generation.
+    Set up [FAQ](/en/guides/faq) for common questions — they use fewer resources than full response generation.
   </Step>
 </Steps>
 

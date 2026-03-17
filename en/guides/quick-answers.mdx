@@ -3,10 +3,25 @@ title: "Quick Answers"
 description: "Pre-configured reactions to common customer questions — instant, precise, and prioritized over FAQ."
 ---
 
+<CardGroup cols={2}>
+  <Card title="FAQ" icon="circle-question" href="/en/guides/faq">
+    Self-learning system that automatically extracts Q&A pairs from conversations
+  </Card>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Central repository of information the AI employee uses for responses
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Alert system for important events in AI employee conversations
+  </Card>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Create and manage your AI employees
+  </Card>
+</CardGroup>
+
 Quick Answers are pre-configured reactions to specific questions or situations. Instead of "thinking" and formulating a response from scratch each time, the AI employee instantly performs the action you defined: sends exact text, consults another agent behind the scenes, or transfers the client to a different AI employee.
 
 <Frame>
-  <img src="/assets/images/bystrye_otvety.png" />
+  <img src="/assets/images/en/bystrye_otvety.png" />
 </Frame>
 
 ---
@@ -22,10 +37,10 @@ Quick Answers are pre-configured reactions to specific questions or situations. 
 ## How Quick Answers differ from FAQ
 
 <Warning>
-  Quick Answers **always** take priority over FAQ. If a customer's question matches both a Quick Answer and an FAQ entry, the Quick Answer will fire.
+  Quick Answers **always** take priority over [FAQ](/en/guides/faq). If a customer's question matches both a Quick Answer and an [FAQ](/en/guides/faq) entry, the Quick Answer will fire.
 </Warning>
 
-| | Quick Answers | FAQ |
+| | Quick Answers | [FAQ](/en/guides/faq) |
 |---|---|---|
 | **Created by** | You configure manually | Agent populates automatically from conversations |
 | **Control** | Full — you set both the question and the action | Partial — the agent decides what to add |
@@ -34,7 +49,7 @@ Quick Answers are pre-configured reactions to specific questions or situations. 
 | **Adaptation** | "Answer exactly" sends verbatim text; other actions adapt to context | Answers may adapt to context |
 
 <Tip>
-  For manually adding ready-made answers, use Quick Answers rather than FAQ. FAQ is primarily designed for automatic population from conversations.
+  For manually adding ready-made answers, use Quick Answers rather than [FAQ](/en/guides/faq). [FAQ](/en/guides/faq) is primarily designed for automatic population from conversations.
 </Tip>
 
 ---
@@ -218,9 +233,9 @@ A toggle. When enabled, the manager receives a notification whenever the Quick A
 
 ## Quick Answers priority
 
-When a client sends a message, the agent checks information sources in a specific order. Quick Answers have **higher priority** than FAQ and the knowledge base.
+When a client sends a message, the agent checks information sources in a specific order. Quick Answers have **higher priority** than [FAQ](/en/guides/faq) and the [Knowledge Base](/en/guides/knowledge).
 
-If the agent answers a question differently than you'd like (via FAQ or the knowledge base), create a Quick Answer with the desired wording — it will take priority.
+If the agent answers a question differently than you'd like (via [FAQ](/en/guides/faq) or the [Knowledge Base](/en/guides/knowledge)), create a Quick Answer with the desired wording — it will take priority.
 
 <Tip>
   In the test chat, click the checkmark next to the agent's response — you'll see its reasoning: which Quick Answers it checked, what it used from the knowledge base, and why it answered the way it did.
@@ -240,10 +255,10 @@ There are no limits on the number of Quick Answers. Practical recommendations:
 
 ## Integration with other tools
 
-- **FAQ** — they complement each other. Quick Answers for critical questions, FAQ for everything else.
-- **Knowledge base** — the "Based on answer" action uses knowledge base data to form personalized responses.
-- **Notifications** — you can combine Quick Answers with notification triggers.
-- **Other AI employees** — "Transfer to another AI," "Get answer from another AI," and "Expert council" actions allow you to build multi-agent scenarios.
+- **[FAQ](/en/guides/faq)** — they complement each other. Quick Answers for critical questions, FAQ for everything else.
+- **[Knowledge Base](/en/guides/knowledge)** — the "Based on answer" action uses knowledge base data to form personalized responses.
+- **[Notifications](/en/guides/notifications)** — you can combine Quick Answers with notification triggers.
+- **Other [AI Employees](/en/guides/ai-employees)** — "Transfer to another AI," "Get answer from another AI," and "Expert council" actions allow you to build multi-agent scenarios.
 
 ---
 
@@ -263,12 +278,12 @@ There are no limits on the number of Quick Answers. Practical recommendations:
     No. But it's recommended if your trigger question is long or contains specific phrasing. Simplification helps the agent better recognize different variations of the same question.
   </Accordion>
   <Accordion title="Can I combine Quick Answers with FAQ?">
-    Yes. Quick Answers and FAQ complement each other. Quick Answers always have higher priority.
+    Yes. Quick Answers and [FAQ](/en/guides/faq) complement each other. Quick Answers always have higher priority.
   </Accordion>
   <Accordion title="A Quick Answer isn't firing — what should I do?">
     Check the trigger wording — it may be too narrow or too broad. Try clicking **Simplify** and resaving. Test in the test chat and check the agent's reasoning (checkmark next to the response).
   </Accordion>
   <Accordion title="Can I use Quick Answers without a knowledge base?">
-    Yes. The "Answer exactly" action doesn't depend on the knowledge base. But for "Based on answer," the knowledge base significantly improves response quality.
+    Yes. The "Answer exactly" action doesn't depend on the [Knowledge Base](/en/guides/knowledge). But for "Based on answer," the [Knowledge Base](/en/guides/knowledge) significantly improves response quality.
   </Accordion>
 </AccordionGroup>

@@ -3,6 +3,21 @@ title: "Auto Follow-up — Automatic Reminder Messages"
 description: "Set up automated follow-up reminder chains for clients who go silent, and monitor all active follow-up messages across your AI employees on the AI Textura platform."
 ---
 
+<CardGroup cols={2}>
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Reminder style follows the employee's persona settings
+  </Card>
+  <Card title="Working Hours" icon="clock" href="/en/guides/working-hours">
+    Reminders respect the employee's working schedule
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels/index">
+    Auto follow-up works across all connected channels
+  </Card>
+  <Card title="Chats" icon="comments" href="/en/guides/chats">
+    View conversations and follow-up history
+  </Card>
+</CardGroup>
+
 Auto Follow-up is an automated follow-up messaging mechanism. When a client stops responding, the AI employee will reach out after a specified delay -- naturally, within the context of the conversation, without copy-paste templates.
 
 <Warning>
@@ -56,7 +71,7 @@ Each row represents one active chat where the client has gone silent and an auto
 Open the desired AI employee and navigate to the **Auto Follow-up** tab.
 
 <Frame>
-  <img src="/assets/images/autodojim_tab.png" />
+  <img src="/assets/images/en/autodojim_tab.png" />
 </Frame>
 
 ### Enabling and Disabling
@@ -146,11 +161,11 @@ Below the toggle are **steps** -- sequential reminders that the employee will se
 </Accordion>
 
 <Accordion title="Interaction with other settings">
-  **Persona.** The reminder style depends on the employee's persona. If the persona uses a friendly tone -- reminders will follow the same style. Auto follow-up doesn't override the persona; it works on top of it.
+  **[Persona](/en/guides/persona).** The reminder style depends on the employee's persona. If the persona uses a friendly tone -- reminders will follow the same style. Auto follow-up doesn't override the persona; it works on top of it.
 
-  **Working Hours.** If the employee has a schedule configured -- reminders will only be sent during working hours. Make sure delays and the schedule don't conflict.
+  **[Working Hours](/en/guides/working-hours).** If the employee has a schedule configured -- reminders will only be sent during working hours. Make sure delays and the schedule don't conflict.
 
-  **Channels.** Auto follow-up works across all connected channels -- Telegram, WhatsApp, website widget, and others.
+  **[Channels](/en/channels/index).** Auto follow-up works across all connected channels -- [Telegram](/en/channels/telegram), WhatsApp, website widget, and others.
 </Accordion>
 
 ---
@@ -166,7 +181,7 @@ Below the toggle are **steps** -- sequential reminders that the employee will se
 </Accordion>
 
 <Accordion title="Does the agent send the exact text from the instruction?">
-  No. You write an instruction -- a task description -- and the agent composes the message on its own, considering the conversation context and its persona.
+  No. You write an instruction -- a task description -- and the agent composes the message on its own, considering the conversation context and its [Persona](/en/guides/persona).
 </Accordion>
 
 <Accordion title="How many steps can I add?">
@@ -182,7 +197,7 @@ Below the toggle are **steps** -- sequential reminders that the employee will se
 </Accordion>
 
 <Accordion title="Will auto follow-up send messages outside working hours?">
-  If the employee has working hours configured, the reminder will wait until the start of working hours.
+  If the employee has [Working Hours](/en/guides/working-hours) configured, the reminder will wait until the start of working hours.
 </Accordion>
 
 <Accordion title="Does auto follow-up consume tokens?">
@@ -190,5 +205,5 @@ Below the toggle are **steps** -- sequential reminders that the employee will se
 </Accordion>
 
 <Accordion title="Can I disable auto follow-up for a specific chat?">
-  No, auto follow-up is configured at the agent level and applies to all their chats. If a client asks not to be contacted, add the appropriate instruction to the persona.
+  No, auto follow-up is configured at the agent level and applies to all their chats. If a client asks not to be contacted, add the appropriate instruction to the [Persona](/en/guides/persona).
 </Accordion>

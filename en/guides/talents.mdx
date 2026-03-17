@@ -7,7 +7,22 @@ Talents transform your AI employee from a good conversationalist into a full-fle
 
 **Without talents, an agent can only talk. With talents — it works.**
 
-<Frame><img src="/assets/images/talanty.png" /></Frame>
+<Frame><img src="/assets/images/en/talanty.png" /></Frame>
+
+<CardGroup cols={2}>
+  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
+    Describe when and how to use each talent
+  </Card>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Add facts and documents for your agent
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels/index">
+    Connect messengers and platforms
+  </Card>
+  <Card title="AI Employees" icon="users" href="/en/guides/ai-employees">
+    Manage all your virtual agents
+  </Card>
+</CardGroup>
 
 ---
 
@@ -160,10 +175,10 @@ Custom talents are ideal for:
 ## Persona Connection — Critically Important
 
 <Warning>
-  Connecting a talent is only half the job. **The other half is describing it in the agent's Persona.** Without this, the agent may not understand when to use the talent or may "forget" about it entirely.
+  Connecting a talent is only half the job. **The other half is describing it in the agent's [Persona](/en/guides/persona).** Without this, the agent may not understand when to use the talent or may "forget" about it entirely.
 </Warning>
 
-In the **Persona** section of your AI employee, write specific instructions for each connected talent:
+In the [Persona](/en/guides/persona) section of your AI employee, write specific instructions for each connected talent:
 
 **Example Persona instructions:**
 
@@ -182,19 +197,19 @@ The more precise the description in the Persona, the more appropriately the agen
     The hotel connected the **Travelline** talent. When a guest asks about room availability, the agent independently checks the PMS system and offers booking options — without involving the front desk staff.
 
     **Connected:** Travelline
-    **In Persona:** when asked about rooms — check Travelline, show options with prices, on confirmation — create the booking.
+    **In [Persona](/en/guides/persona):** when asked about rooms — check Travelline, show options with prices, on confirmation — create the booking.
   </Accordion>
   <Accordion title="Online school — consultation scheduling">
     The school connected **Google Calendar** to its curator agent. A student writes: "I want to book a consultation with the teacher on Thursday" — the agent checks available slots and offers a specific time. After confirmation, the event appears in the calendar.
 
     **Connected:** Google Calendar
-    **In Persona:** when a student requests a booking — check the calendar, suggest slots, create an event after confirmation.
+    **In [Persona](/en/guides/persona):** when a student requests a booking — check the calendar, suggest slots, create an event after confirmation.
   </Accordion>
   <Accordion title="E-commerce store — web search for support">
     The store connected **WebSearch** to its support agent. If a question falls outside the knowledge base — the agent searches the web and provides an up-to-date answer.
 
     **Connected:** WebSearch
-    **In Persona:** if the question isn't covered by the knowledge base — search via web, informing the customer about the source.
+    **In [Persona](/en/guides/persona):** if the question isn't covered by the knowledge base — search via web, informing the customer about the source.
   </Accordion>
   <Accordion title="Company with multiple hotels — multiple instances">
     Each hotel has its own **Travelline** instance with a unique Hotel ID. One agent serves both properties and knows exactly which system to query when the guest specifies a hotel name.
@@ -218,7 +233,7 @@ The more precise the description in the Persona, the more appropriately the agen
     If the talent connects via OAuth, make sure you authorize with the correct account. Changing the password or revoking access will break the talent.
   </Step>
   <Step title="Describe talents in the Persona">
-    Without a Persona description, the agent may not know when to use the talent. Write specific situations and instructions.
+    Without a [Persona](/en/guides/persona) description, the agent may not know when to use the talent. Write specific situations and instructions.
   </Step>
   <Step title="Check the Connected tab regularly">
     Periodically verify that all connections are active. API updates or expired tokens may require reconnection.
@@ -231,13 +246,13 @@ The more precise the description in the Persona, the more appropriately the agen
 
 <AccordionGroup>
   <Accordion title="How many talents can I connect to one agent?">
-    There are no limits. However, the more talents you have, the more important it is to clearly describe in the Persona when to use each one.
+    There are no limits. However, the more talents you have, the more important it is to clearly describe in the [Persona](/en/guides/persona) when to use each one.
   </Accordion>
   <Accordion title="Can I connect the same talent multiple times?">
     Yes. This is useful for multiple instances with different settings — for example, two Travelline connections for two hotels or two Google Calendars for different employees.
   </Accordion>
   <Accordion title="The talent is connected but the agent isn't using it. What should I do?">
-    Most likely, there's no instruction in the Persona. Add a rule: "When a client asks about [situation] — use [talent name]." Then test in the chat.
+    Most likely, there's no instruction in the [Persona](/en/guides/persona). Add a rule: "When a client asks about [situation] — use [talent name]." Then test in the chat.
   </Accordion>
   <Accordion title="What happens if the external service becomes unavailable?">
     The agent will inform the client that it cannot perform the action at the moment and suggest an alternative. The agent itself will continue working — just without that specific talent.

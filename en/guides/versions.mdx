@@ -3,6 +3,21 @@ title: "Versions"
 description: "AI employee configuration history: browse, compare, and restore any previous state."
 ---
 
+<CardGroup cols={2}>
+  <Card title="Additional Settings" icon="sliders" href="/en/guides/additional-settings">
+    Language, voice, commands, and other fine-tuning options
+  </Card>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Create and manage your AI employees
+  </Card>
+  <Card title="Account Settings" icon="gear" href="/en/guides/account-settings">
+    Theme, security, integrations, and personal data
+  </Card>
+  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
+    Core instructions that define employee behavior
+  </Card>
+</CardGroup>
+
 The **Versions** tab is a built-in "time machine" for your AI employee. Every save creates a full snapshot of the configuration, which is stored in the history. You can view any past version and restore it in one click.
 
 ---
@@ -14,7 +29,7 @@ A new version is created **every time you click "Save"** in any tab of the emplo
 | Rule | Description |
 |---|---|
 | **No auto-save** | A version is created only by your action — when you click "Save" |
-| **Full snapshot** | Every version includes all tabs: Persona, Knowledge Base, FAQ, Talents, Channel, Quick Answers, Profiles, Working Hours, Auto Follow-Up, Notifications, Additional |
+| **Full snapshot** | Every version includes all tabs: [Persona](/en/guides/persona), [Knowledge](/en/guides/knowledge), [FAQ](/en/guides/faq), [Talents](/en/guides/talents), [Channels](/en/channels/index), [Quick Answers](/en/guides/quick-answers), [Profiles](/en/guides/profiles), [Working Hours](/en/guides/working-hours), [Auto Follow-up](/en/guides/auto-followup), [Notifications](/en/guides/notifications), [Additional Settings](/en/guides/additional-settings) |
 | **No limit** | The number of versions is unlimited — the platform stores the complete history from the moment the agent was created |
 | **No partial rollback** | Restoration replaces the entire configuration, not a single tab |
 
@@ -42,7 +57,7 @@ Open the desired AI employee and navigate to the **Versions** tab in the top nav
 
 <Steps>
   <Step title="Open the agent">
-    Go to the **AI Employees** section and select the desired agent.
+    Go to the [AI Employees](/en/guides/ai-employees) section and select the desired agent.
   </Step>
   <Step title="Navigate to the Versions tab">
     In the top bar, click the **Versions** tab. You will see a list of all saved versions — the most recent one at the top.
@@ -86,24 +101,24 @@ A version is a full snapshot of the entire employee configuration:
 
 | Tab | What it includes |
 |---|---|
-| **Persona** | Role, tone, all instruction blocks |
-| **Knowledge Base** | Connected sources |
-| **FAQ** | Questions and answers |
-| **Talents** | Connected tools |
-| **Channel** | Communication channel settings |
-| **Quick Answers** | Quick response templates |
-| **Profiles** | Configured fields |
-| **Working Hours** | Agent work schedule |
-| **Auto Follow-Up** | Automatic follow-up message settings |
-| **Notifications** | Alert parameters |
-| **Additional** | Language, voice, commands |
+| [Persona](/en/guides/persona) | Role, tone, all instruction blocks |
+| [Knowledge](/en/guides/knowledge) | Connected sources |
+| [FAQ](/en/guides/faq) | Questions and answers |
+| [Talents](/en/guides/talents) | Connected tools |
+| [Channels](/en/channels/index) | Communication channel settings |
+| [Quick Answers](/en/guides/quick-answers) | Quick response templates |
+| [Profiles](/en/guides/profiles) | Configured fields |
+| [Working Hours](/en/guides/working-hours) | Agent work schedule |
+| [Auto Follow-up](/en/guides/auto-followup) | Automatic follow-up message settings |
+| [Notifications](/en/guides/notifications) | Alert parameters |
+| [Additional Settings](/en/guides/additional-settings) | Language, voice, commands |
 
 ---
 
 ## Practical Examples
 
 <Accordion title="Rolling back after a bad change">
-  You rewrote the system prompt in Persona and the agent started giving irrelevant answers. Instead of trying to recall the previous text, open **Versions**, find the stable version, and restore it. The agent will immediately return to its previous behavior.
+  You rewrote the system prompt in [Persona](/en/guides/persona) and the agent started giving irrelevant answers. Instead of trying to recall the previous text, open **Versions**, find the stable version, and restore it. The agent will immediately return to its previous behavior.
 </Accordion>
 
 <Accordion title="Checkpoint before an experiment">

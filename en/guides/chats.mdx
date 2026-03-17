@@ -11,6 +11,21 @@ Think of it as a control room: all conversations are in front of you, you can se
   The **Chats** section is accessible in two ways: via the left menu (all dialogs across all agents) or via the **Live chat** button in the AI employees list (dialogs for a specific agent).
 </Note>
 
+<CardGroup cols={2}>
+  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
+    Define dialog behavior and escalation rules
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Set up alerts for critical conversations
+  </Card>
+  <Card title="Quick Answers" icon="bolt" href="/en/guides/quick-answers">
+    Templates for instant responses
+  </Card>
+  <Card title="Profiles" icon="address-card" href="/en/guides/profiles">
+    View client data collected during chats
+  </Card>
+</CardGroup>
+
 ---
 
 ## Why Use Chats
@@ -105,7 +120,7 @@ As soon as a manager sends a message, the AI employee **automatically pauses** i
 
 ## Agent Control Commands
 
-Managers can control an AI employee directly from a messenger using service commands. Commands are configured in the **Advanced** tab for each agent.
+Managers can control an AI employee directly from a messenger using service commands. Commands are configured in the [Additional Settings](/en/guides/additional-settings) tab for each agent.
 
 | Command | What it does |
 |---|---|
@@ -128,9 +143,9 @@ Escalation is a situation when an AI employee recognizes that it cannot or shoul
 
 Escalation is triggered in cases that you define in advance:
 
-- In the agent's **Persona** (the "When to call a manager" or "Escalation" section)
-- In **Notifications** (triggers that send an alert and pause the chat)
-- In **Quick Replies** (actions of the "Chat management" type with a pause)
+- In the agent's [Persona](/en/guides/persona) (the "When to call a manager" or "Escalation" section)
+- In [Notifications](/en/guides/notifications) (triggers that send an alert and pause the chat)
+- In [Quick Answers](/en/guides/quick-answers) (actions of the "Chat management" type with a pause)
 
 ### What It Looks Like for a Manager
 
@@ -172,10 +187,10 @@ When you open a specific chat, in addition to the conversation history, addition
 |---|---|
 | **[Persona](/en/guides/persona)** | Defines how the agent conducts dialogs and when to call a manager |
 | **[Notifications](/en/guides/notifications)** | Configures escalation triggers: when and how the manager learns about problematic dialogs |
-| **[Quick Replies](/en/guides/quick-replies)** | Can manage the chat: pause, transfer to another agent |
+| **[Quick Answers](/en/guides/quick-answers)** | Can manage the chat: pause, transfer to another agent |
 | **[Profiles](/en/guides/profiles)** | Client data visible in the chat |
-| **[Follow-up](/en/guides/follow-up)** | Follow-up messages if the client goes silent |
-| **[Advanced](/en/guides/advanced)** | Agent control commands from the messenger, message limits |
+| **[Auto Follow-up](/en/guides/auto-followup)** | Follow-up messages if the client goes silent |
+| **[Additional Settings](/en/guides/additional-settings)** | Agent control commands from the messenger, message limits |
 | **[Channels](/en/channels/index)** | Sources through which messages arrive in the chat |
 
 ---
@@ -193,10 +208,10 @@ When you open a specific chat, in addition to the conversation history, addition
     If you see that the agent is not responding correctly, step in and reply yourself. The agent will automatically pause. After the conversation, adjust the settings so it handles similar cases on its own next time.
   </Accordion>
   <Accordion title="Set up notifications for critical situations">
-    Create triggers in the **Notifications** section for complaints, returns, VIP clients, and questions outside the agent's competency. You will receive an alert in Telegram and can quickly step in.
+    Create triggers in the [Notifications](/en/guides/notifications) section for complaints, returns, VIP clients, and questions outside the agent's competency. You will receive an alert in Telegram and can quickly step in.
   </Accordion>
   <Accordion title="Share control commands with your team">
-    If your managers work in a messenger, configure start and stop commands in the **Advanced** tab and share them with the team.
+    If your managers work in a messenger, configure start and stop commands in the [Additional Settings](/en/guides/additional-settings) tab and share them with the team.
   </Accordion>
 </AccordionGroup>
 
@@ -206,7 +221,7 @@ When you open a specific chat, in addition to the conversation history, addition
 
 <AccordionGroup>
   <Accordion title="Are chats stored forever or deleted?">
-    Chat history is stored on the platform. For some channels, an **Auto-clear history** setting is available in the **Channel** tab -- it allows automatic deletion of old dialogs.
+    Chat history is stored on the platform. For some channels, an **Auto-clear history** setting is available in the [Channel](/en/channels/index) tab -- it allows automatic deletion of old dialogs.
   </Accordion>
   <Accordion title="Can I reply to a client from the Chats section if they wrote in Telegram?">
     Yes. When you send a message through the **Chats** section, the client receives it in whichever messenger they used to reach out. You do not need to open Telegram or amoCRM -- everything is managed from one window.
@@ -224,6 +239,6 @@ When you open a specific chat, in addition to the conversation history, addition
     In most cases, the client sees messages from the same contact (bot or account) through which the AI employee was communicating. The transition is visually seamless for the client.
   </Accordion>
   <Accordion title="Is there a message limit per chat?">
-    Yes. In the **Advanced** tab for each agent there is a **Message limit** setting -- a cap on the number of messages in one chat per 24 hours. If no limit is set, there are no restrictions.
+    Yes. In the [Additional Settings](/en/guides/additional-settings) tab for each agent there is a **Message limit** setting -- a cap on the number of messages in one chat per 24 hours. If no limit is set, there are no restrictions.
   </Accordion>
 </AccordionGroup>

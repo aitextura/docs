@@ -6,8 +6,23 @@ description: "Managing virtual agents: list view, creation, configuration, and s
 The **AI Employees** section is your control center for all virtual agents. Here you can see the full list of employees, their statuses, connected channels, and recent activity. This is also where you create new agents and access their settings.
 
 <Frame>
-  <img src="/assets/images/ii_sotrudniki.png" />
+  <img src="/assets/images/en/ii_sotrudniki.png" />
 </Frame>
+
+<CardGroup cols={2}>
+  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
+    Define your agent's role, tone, and behavior
+  </Card>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Upload documents and data sources
+  </Card>
+  <Card title="Talents" icon="wand-magic-sparkles" href="/en/guides/talents">
+    Connect integrations and external services
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels/index">
+    Link messengers and platforms
+  </Card>
+</CardGroup>
 
 ---
 
@@ -48,7 +63,7 @@ Click the **Hire Employee** button in the top panel. A dialog will open with thr
   Automatic creation from a URL is especially convenient if you have a website describing your services or products — the agent will immediately receive up-to-date information.
 </Tip>
 
-After creation, the employee will appear in the table. Next, configure the **Persona**, connect a **Channel**, and add the necessary **Talents**.
+After creation, the employee will appear in the table. Next, configure the [Persona](/en/guides/persona), connect a [Channel](/en/channels/index), and add the necessary [Talents](/en/guides/talents).
 
 ---
 
@@ -57,18 +72,18 @@ After creation, the employee will appear in the table. Next, configure the **Per
 When you click an employee in the table, you enter the **agent editor**. The following tabs are available at the top:
 
 <Accordion title="Full list of tabs">
-  1. **Persona** — character, communication style, and role of the agent
-  2. **Knowledge Base** — documents and materials the agent relies on
-  3. **FAQ** — frequently asked questions and prepared answers
-  4. **Talents** — active integrations and skills
-  5. **Channel** — connected messengers and platforms
-  6. **Quick Answers** — templates for instant responses
-  7. **Profiles** — additional agent profiles
-  8. **Working Hours** — agent's work schedule
-  9. **Auto Follow-Up** — automatic repeated messages to clients
-  10. **Notifications** — alert settings
-  11. **Versions** — configuration change history
-  12. **Additional** — advanced parameters
+  1. [Persona](/en/guides/persona) — character, communication style, and role of the agent
+  2. [Knowledge Base](/en/guides/knowledge) — documents and materials the agent relies on
+  3. [FAQ](/en/guides/faq) — frequently asked questions and prepared answers
+  4. [Talents](/en/guides/talents) — active integrations and skills
+  5. [Channel](/en/channels/index) — connected messengers and platforms
+  6. [Quick Answers](/en/guides/quick-answers) — templates for instant responses
+  7. [Profiles](/en/guides/profiles) — additional agent profiles
+  8. [Working Hours](/en/guides/working-hours) — agent's work schedule
+  9. [Auto Follow-Up](/en/guides/auto-followup) — automatic repeated messages to clients
+  10. [Notifications](/en/guides/notifications) — alert settings
+  11. [Versions](/en/guides/versions) — configuration change history
+  12. [Additional](/en/guides/additional-settings) — advanced parameters
 </Accordion>
 
 Next to the tabs is the **Show Chat** button, which opens a test chat where you can verify the agent's behavior before publishing.
@@ -83,7 +98,7 @@ In the **Actions** column next to each employee there is a toggle switch:
 - **Disabled** — the agent is paused and new messages are not processed
 
 <Warning>
-  When an agent is disabled, clients will not receive a response. If you need to temporarily limit availability, consider configuring **Working Hours** instead of fully disabling the agent.
+  When an agent is disabled, clients will not receive a response. If you need to temporarily limit availability, consider configuring [Working Hours](/en/guides/working-hours) instead of fully disabling the agent.
 </Warning>
 
 ---
@@ -115,8 +130,8 @@ The **...** button in the **Actions** column contains:
 <Accordion title="The agent was created but doesn't respond to clients. What's wrong?">
   Check three things:
   1. Status — it should be **Active**
-  2. At least one **Channel** must be connected
-  3. **Working Hours** must be configured — the agent may currently be off-shift
+  2. At least one [Channel](/en/channels/index) must be connected
+  3. [Working Hours](/en/guides/working-hours) must be configured — the agent may currently be off-shift
 </Accordion>
 
 <Accordion title="What happens if I delete an employee?">

@@ -3,10 +3,25 @@ title: "Working Hours"
 description: "Configure your AI employee's schedule: work week, breaks, timezone, special days, and quick presets on the AI Textura platform."
 ---
 
+<CardGroup cols={2}>
+  <Card title="Channels" icon="plug" href="/en/channels/index">
+    Configure out-of-hours auto-reply in channel settings
+  </Card>
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Add time-based behavioral instructions
+  </Card>
+  <Card title="Auto Follow-up" icon="rotate" href="/en/guides/auto-followup">
+    Coordinate reminder delays with working hours
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Alerts may arrive outside working hours
+  </Card>
+</CardGroup>
+
 The **Working Hours** section defines when your AI employee accepts and processes customer messages. During working hours the employee is active and responds; outside working hours it either stays silent or sends a pre-configured auto-reply.
 
 <Frame>
-  <img src="/assets/images/rabochee_vremya.png" />
+  <img src="/assets/images/en/rabochee_vremya.png" />
 </Frame>
 
 ---
@@ -100,7 +115,7 @@ When a customer writes to the employee outside of working hours, there are two p
 2. **The employee sends an auto-reply** — a pre-configured message informing the customer about working hours.
 
 <Warning>
-  The auto-reply text is configured not here but in the **Channel** settings. The **Working Hours** tab is responsible only for the schedule — "when", not "what to do".
+  The auto-reply text is configured not here but in the **[Channels](/en/channels/index)** settings. The **Working Hours** tab is responsible only for the schedule — "when", not "what to do".
 </Warning>
 
 <Note>
@@ -203,17 +218,17 @@ When a customer writes to the employee outside of working hours, there are two p
 
 | Section | How it relates to Working Hours |
 |---|---|
-| **Channel** | This is where the out-of-hours auto-reply is configured — the message text the customer receives |
-| **Persona** | You can add instructions for behavior at certain hours (e.g., night mode) |
-| **Auto Follow-up** | Consider the schedule when configuring — reminders may be sent outside working hours |
-| **Notifications** | Manager notifications may arrive outside working hours |
+| **[Channels](/en/channels/index)** | This is where the out-of-hours auto-reply is configured — the message text the customer receives |
+| **[Persona](/en/guides/persona)** | You can add instructions for behavior at certain hours (e.g., night mode) |
+| **[Auto Follow-up](/en/guides/auto-followup)** | Consider the schedule when configuring — reminders may be sent outside working hours |
+| **[Notifications](/en/guides/notifications)** | Manager notifications may arrive outside working hours |
 
 ---
 
 ## FAQ
 
 <Accordion title="What happens when a customer writes outside working hours?">
-  The employee either does not respond or sends a pre-configured auto-reply. The specific behavior depends on the settings in the **Channel** section.
+  The employee either does not respond or sends a pre-configured auto-reply. The specific behavior depends on the settings in the **[Channels](/en/channels/index)** section.
 </Accordion>
 
 <Accordion title="Can I set different schedules for different channels?">
@@ -241,5 +256,5 @@ When a customer writes to the employee outside of working hours, there are two p
 </Accordion>
 
 <Accordion title="How do I set up an auto-reply for out-of-hours messages?">
-  The auto-reply text is configured not here but in the **Channel** section. The **Working Hours** tab is responsible only for the schedule.
+  The auto-reply text is configured not here but in the **[Channels](/en/channels/index)** section. The **Working Hours** tab is responsible only for the schedule.
 </Accordion>

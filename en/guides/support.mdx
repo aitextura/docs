@@ -3,6 +3,21 @@ title: "Support"
 description: "AI Textura built-in ticket system: creating tickets, communicating with the team, statuses, search and filtering, response times."
 ---
 
+<CardGroup cols={2}>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Create and manage your AI employees
+  </Card>
+  <Card title="Account Settings" icon="gear" href="/en/guides/account-settings">
+    Theme, security, integrations, and personal data
+  </Card>
+  <Card title="Finance" icon="chart-line" href="/en/guides/finance">
+    Monitor word usage and spending
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels/index">
+    Connect messaging platforms to your employees
+  </Card>
+</CardGroup>
+
 Support is the built-in ticket system for contacting the AI Textura team. Here you can ask a question, report a problem, request help with configuration — and receive a response directly inside the platform, without switching to email or messengers.
 
 The section is located in the left menu — the **Support** item.
@@ -91,7 +106,7 @@ The AI Textura team strives to respond to requests as quickly as possible. Estim
 | Feature request or suggestion | Within 1–2 business days |
 
 <Tip>
-  If your issue is urgent, indicate this in the ticket title. For example: "URGENT: agent stopped responding in Telegram." This helps the team prioritize your request.
+  If your issue is urgent, indicate this in the ticket title. For example: "URGENT: agent stopped responding in [Telegram](/en/channels/telegram)." This helps the team prioritize your request.
 </Tip>
 
 ---
@@ -100,12 +115,20 @@ The AI Textura team strives to respond to requests as quickly as possible. Estim
 
 - **One question per ticket.** This makes it easier for the team to track and resolve each issue.
 - **Include details:** which employee or feature it concerns, what you were doing, and what went wrong.
-- **Attach screenshots** via link — upload the image to any hosting service and paste the URL in your message.
+- **Attach screenshots and files** — you can add images directly to ticket messages.
 - **Reply to the team's questions** — this speeds up resolution.
+
+<Info>
+  **For the fastest response to your request**, include the following:
+
+  1. **Error screenshot** — attach an image directly to the message so the team can immediately see what's happening.
+  2. **Link to the conversation** — open the [Chats](/en/guides/chats) section, find the relevant conversation, and copy the URL from your browser's address bar. This way support can see the dialogue and understand the situation.
+  3. **Steps to reproduce** (for complex errors) — describe step by step what needs to be done to reproduce the error. This allows the team to repeat the scenario and see in the conversation how it works.
+</Info>
 
 **Example of a good request:**
 > Title: "Booking link not working"
-> Message: "The 'Concierge' employee in Telegram sends clients a booking link, but clicking it opens a blank page. Link: [URL]. The problem started yesterday."
+> Message: "The 'Concierge' employee in Telegram sends clients a booking link, but clicking it opens a blank page. Link: [URL]. The problem started yesterday. Chat link: https://app.aitextura.com/chats/... To reproduce: write to the bot 'book a room for March 20' — the response will contain a broken link."
 
 ---
 
@@ -113,7 +136,7 @@ The AI Textura team strives to respond to requests as quickly as possible. Estim
 
 <AccordionGroup>
   <Accordion title="Can I attach a screenshot or file to a ticket?">
-    In the current version, communication is text-only. If you need to share a screenshot, upload it to any image hosting service and paste the link in your message.
+    Yes! You can attach images and files directly to ticket messages. We recommend always including an error screenshot — it significantly speeds up resolution.
   </Accordion>
   <Accordion title="How do I know when I receive a response?">
     A red indicator with the number of unread messages will appear next to the ticket in the list.

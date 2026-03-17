@@ -3,12 +3,27 @@ title: "FAQ / Self-Learning"
 description: "AI employee self-learning system: automatic extraction of questions and answers from dialogs, record status management, and strict mode configuration."
 ---
 
+<CardGroup cols={2}>
+  <Card title="Quick Answers" icon="bolt" href="/en/guides/quick-answers">
+    Pre-configured reactions to common questions with higher priority than FAQ
+  </Card>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Central repository of information the AI employee uses to answer questions
+  </Card>
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Configure personality, tone, and behavioral instructions for your AI employee
+  </Card>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Create and manage your AI employees
+  </Card>
+</CardGroup>
+
 The **FAQ** section is a self-learning system: the AI employee analyzes real customer conversations, extracts question-answer pairs, and builds a database of verified responses. With each passing day, the agent responds more accurately.
 
 You control the process: review records, edit answers, confirm successful ones, and push them to the knowledge base.
 
 <Frame>
-  <img src="/assets/images/faq.png" />
+  <img src="/assets/images/en/faq.png" />
 </Frame>
 
 ---
@@ -96,7 +111,7 @@ Strict mode determines how the agent behaves when it cannot find an answer in th
 
 | Option | Behavior |
 |---|---|
-| **Allow the agent to respond** | The agent will answer in its own words using the Persona and knowledge base |
+| **Allow the agent to respond** | The agent will answer in its own words using the [Persona](/en/guides/persona) and [Knowledge Base](/en/guides/knowledge) |
 | **Do not respond** | The agent will remain silent |
 | **Send a preset phrase** | The agent will send a phrase that you specify in the text field (up to 450 characters) |
 
@@ -112,7 +127,7 @@ Strict mode determines how the agent behaves when it cannot find an answer in th
 ## FAQ and Quick Answers
 
 <Note>
-  **Quick Answers have higher priority** than FAQ. If both a Quick Answer and an FAQ record exist for the same question, the Quick Answer will be used. FAQ is designed for automatic population from dialogs. For manually adding prepared responses, use the **Quick Answers** section instead.
+  **[Quick Answers](/en/guides/quick-answers) have higher priority** than FAQ. If both a Quick Answer and an FAQ record exist for the same question, the Quick Answer will be used. FAQ is designed for automatic population from dialogs. For manually adding prepared responses, use the **[Quick Answers](/en/guides/quick-answers)** section instead.
 </Note>
 
 ---
@@ -140,7 +155,7 @@ Strict mode determines how the agent behaves when it cannot find an answer in th
 </Accordion>
 
 <Accordion title="Can I add questions manually?">
-  FAQ is designed for automatic population from dialogs. For manually adding prepared responses, the **Quick Answers** section is a better fit.
+  FAQ is designed for automatic population from dialogs. For manually adding prepared responses, the **[Quick Answers](/en/guides/quick-answers)** section is a better fit.
 </Accordion>
 
 <Accordion title="How does FAQ work together with Quick Answers?">

@@ -6,8 +6,23 @@ description: "How to configure a Persona: block-based editor, role, tone, instru
 Persona is the main instruction set for your AI employee. It defines who the employee is, how it speaks, and what it does in every situation. Everything else — knowledge base, channels, talents — works on top of the Persona. If the Persona is poorly written, no knowledge base will compensate.
 
 <Frame>
-  <img src="/assets/images/persona.png" />
+  <img src="/assets/images/en/persona.png" />
 </Frame>
+
+<CardGroup cols={2}>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Add facts and documents your agent can reference
+  </Card>
+  <Card title="Talents" icon="wand-magic-sparkles" href="/en/guides/talents">
+    Give your agent real-world capabilities
+  </Card>
+  <Card title="Rules Hub" icon="layer-group" href="/en/guides/rules-hub">
+    Reusable instruction blocks for all agents
+  </Card>
+  <Card title="Versions" icon="clock-rotate-left" href="/en/guides/versions">
+    Roll back to any previous configuration
+  </Card>
+</CardGroup>
 
 ---
 
@@ -105,7 +120,7 @@ Blocks can be:
     - **Public** — ready-made templates from the AI Textura team: "Hotel Administrator," "Real Estate Agent," "Personal Assistant," and more.
     - **My Rules** — blocks you have saved yourself.
 
-    The Rules Hub is accessible from the left menu. Edit a block once — it updates for all employees that use it.
+    The [Rules Hub](/en/guides/rules-hub) is accessible from the left menu. Edit a block once — it updates for all employees that use it.
   </Accordion>
 
   <Accordion title="Import from Google Docs">
@@ -172,7 +187,7 @@ Switching between blocks and XML works both ways — no data is lost. If you are
 
 ## Referencing Profile Data
 
-You can reference data that the employee collects about clients in the **Profiles** section within your instructions.
+You can reference data that the employee collects about clients in the [Profiles](/en/guides/profiles) section within your instructions.
 
 For example, if a profile has a "Hall" field, you can write in the instruction:
 
@@ -202,7 +217,7 @@ This lets you build **personalized scenarios**: one employee behaves differently
 
 ## Versions — Safety Net Against Mistakes
 
-After every save, the platform creates a new version of the instruction. If something breaks, roll back to any previous version via the **Versions** tab in the top menu of the employee settings.
+After every save, the platform creates a new version of the instruction. If something breaks, roll back to any previous version via the [Versions](/en/guides/versions) tab in the top menu of the employee settings.
 
 Do not be afraid to experiment — you can always revert.
 
