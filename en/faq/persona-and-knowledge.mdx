@@ -1,0 +1,264 @@
+---
+title: "Persona, Knowledge Base & Training"
+description: "Setting up instructions, tone, scripts, knowledge base, self-learning and quick answers"
+---
+
+Setting up instructions, tone, scripts, knowledge base, self-learning and quick answers
+
+---
+
+## PERSONA: INSTRUCTIONS, TONE, SCRIPTS
+
+<AccordionGroup>
+  <Accordion title="How is the Persona structured?">
+    The Persona is a block editor. Each block controls a separate aspect of the AI's behaviour:
+    - **Role** — who the AI is and what business it works in.
+    - **Tone** — communication style, formality, response length.
+    - **Instructions** — behaviour scenarios, scripts.
+    - **Prohibited actions** — what the AI must never do under any circumstances.
+    - **Additional instructions** — any clarifications and exceptions.
+    - **Script** — ready-made conversation scripts.
+    Blocks can be nested inside one another to create a hierarchy of rules.
+  </Accordion>
+  <Accordion title="How do I describe the AI employee's role correctly?">
+    Fill in the "Role" block using the following structure:
+    1. State who the AI is (1–2 sentences).
+    2. State what business/property it works in.
+    3. Define its main task.
+    Example: "You are a booking manager at the Revelton Suites hotel in Riga. Your task is to advise guests and help with room bookings."
+  </Accordion>
+  <Accordion title="How do I configure the communication tone (formality, formal address)?">
+    Go to the "Tone" block and specify the following:
+    1. Address style: "Use formal address (You/Sir/Ma'am)".
+    2. Register: "Formal / informal".
+    3. Length: "Short responses, up to 40 words".
+    4. Emoji: "Do not use emoji unless the guest uses them".
+    You can copy this example and adapt it to your brand.
+  </Accordion>
+  <Accordion title="How do I make responses shorter?">
+    Follow these steps:
+    1. In the "Tone" block, add: "Reply as briefly as possible, 1–2 sentences, to the point only. No extra details or closing filler phrases."
+    2. In the employee's "Additional settings", set a word limit if that option is available in your version of the account.
+  </Accordion>
+  <Accordion title='How do I remove filler phrases like "If you have any more questions, feel free to ask"?'>
+    Go to the "Prohibited actions" block and add the line:
+    "Do not end every message with an invitation to ask more questions."
+    After saving, click "Retrain" — the change will take effect.
+  </Accordion>
+  <Accordion title="What language should I write instructions in?">
+    It is recommended to write instructions in **English** — this improves the accuracy with which rules are followed. Use the following practice:
+    1. Start the instruction with the line: "Always respond in the language the guest writes in".
+    2. Describe scenarios in English.
+    If the instructions are written in Russian, the AI may occasionally switch to Russian when communicating in other languages — this is a quirk of the language model that English instructions eliminate.
+  </Accordion>
+  <Accordion title="Are there any limits on instruction length?">
+    There are no technical limits, but follow this recommendation:
+    - Keep instructions within **500–1000 words**.
+    - Put everything else (price lists, room descriptions, FAQ) in the **Knowledge Base**.
+    The longer the instruction, the more tokens are consumed per request, which affects cost. Moving data to the Knowledge Base optimises expenses.
+  </Accordion>
+  <Accordion title="Can I store instructions in Google Docs?">
+    Yes. Here's how:
+    1. Create a document in Google Docs and write your instructions.
+    2. In the Persona editor, use the function to import blocks from Google Docs.
+    3. Every time you update the document in Google Docs — return to the employee card and click "Retrain".
+  </Accordion>
+  <Accordion title="How do I prevent the AI from answering off-topic questions?">
+    Use both methods together for a reliable result:
+    1. In the "Instructions" block, add: "Only answer questions related to bookings and property services. For other topics, politely decline: say you cannot help with that and suggest returning to the subject."
+    2. In the employee's settings, enable the **"Protection"** option — it restricts topics at the system level.
+  </Accordion>
+  <Accordion title="How do I prohibit certain actions (confirming cancellations, financial operations)?">
+    Go to the "Prohibited actions" block and specify the restrictions explicitly. Example:
+    - "Never confirm a booking cancellation on your own."
+    - "Never promise a refund."
+    - "For such requests — tell the guest that a manager needs to handle this, and transfer the chat."
+    The more specific the prohibition, the more accurately the AI will follow it.
+  </Accordion>
+  <Accordion title="The AI gets the gender wrong (writes in the feminine form instead of masculine).">
+    This is a configuration detail — the role needs to be specified explicitly. Follow these steps:
+    1. In the "Role" block, add: "You are a male hotel administrator."
+    2. If the mismatch persists — also add to "Prohibited actions": "Never use feminine forms when referring to yourself."
+    3. Click "Retrain".
+  </Accordion>
+  <Accordion title="How do I configure the AI to first clarify needs rather than immediately listing all rates?">
+    In the "Instructions" block, add a sales script:
+    "Before offering options, ask clarifying questions: check-in/check-out dates, number of guests, preferences. Only then suggest 2–3 of the most suitable options. Do not list all rates at once."
+  </Accordion>
+  <Accordion title="How do I configure a transfer to a manager for group bookings?">
+    In the "Instructions" block, add the rule:
+    "If the group is more than 8 people or the request involves a corporate event — do not calculate the cost yourself, transfer the request to a manager."
+    By default, booking two or more rooms simultaneously is also redirected to a manager — check whether this setting is enabled in "Talents" → PMS integration settings.
+  </Accordion>
+  <Accordion title="How do I configure discounts and promotions?">
+    In the "Instructions" block, create a separate section for each promotion with the following structure:
+    1. Promotion name.
+    2. Conditions of application (dates, guest categories).
+    3. Exclusions.
+    4. What to do when requested.
+    Example: "15% birthday discount. Does not apply to additional services. When requested — ask for the guest's details and pass to a manager for processing."
+  </Accordion>
+  <Accordion title="How do I configure information about children / surcharges?">
+    In the "Instructions" block, create a separate section by age category:
+    1. Specify each age group and its conditions.
+    2. Define the information-gathering rule.
+    Example: "Under 5 — free, no extra bed. 5–12 — surcharge of 1,000 RUB/night. Always ask for children's ages when processing a booking request."
+  </Accordion>
+  <Accordion title="How do I configure a "weekend minimum 2 nights" rule?">
+    Add a separate block to the "Instructions" section:
+    "On Fridays and Saturdays the minimum stay is 2 nights. If a guest requests one night on these days — do not say 'no availability', explain the minimum stay rule and offer to find suitable dates."
+  </Accordion>
+  <Accordion title="Where can I find templates / examples of good instructions?">
+    Ready-made templates are available directly in the Persona editor:
+    1. Open the Persona editor in the employee card.
+    2. Click the "/" button — the **Rules Hub** will open, with ready-made blocks from AI TEXTURA for various scenarios.
+    3. Select the appropriate block and insert it into your instructions.
+    If you need an example for a specific niche — request one from an AI TEXTURA methodologist.
+  </Accordion>
+  <Accordion title="Can I import blocks from the Rules Hub?">
+    Yes. Follow these steps:
+    1. In the Persona editor, click "/" and open the Rules Hub.
+    2. Select the desired block and insert it into your instructions — it will be added as an independent copy.
+    3. Edit the inserted block for your needs without any restrictions.
+    Please note: if a block in the Rules Hub is updated, the inserted copy will not be updated automatically. Keep track of relevance manually.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## KNOWLEDGE BASE AND DATA SOURCES
+
+<AccordionGroup>
+  <Accordion title="What is the Knowledge Base and why do I need it?">
+    The Knowledge Base is the central information repository that AI employees use when generating responses. Key benefits:
+    - A single source can be connected to multiple AI employees at once.
+    - Data is stored separately from instructions, keeping the Persona cleaner and saving tokens.
+    Add everything the AI should know to the Knowledge Base: price lists, property descriptions, policies, FAQs.
+  </Accordion>
+  <Accordion title="Which file formats are supported?">
+    The following formats and sources are supported:
+    - Files: PDF (text layer only — not scans), DOCX, TXT, CSV.
+    - Manual text input.
+    - Links: web pages, YouTube videos (the system transcribes the audio).
+    - Cloud: Google Docs, Google Sheets.
+    **Important:** Word files (.docx) should be saved as a Google Doc first for more reliable recognition.
+  </Accordion>
+  <Accordion title="Is data from files updated automatically?">
+    No. Data in the Knowledge Base is static. When information changes:
+    1. Go to "Knowledge Base" → find the relevant source.
+    2. Delete the outdated file.
+    3. Upload the updated version.
+    4. Click "Retrain" in the employee card.
+    Exception: **Google Sheets connected via "Talents"** — they update dynamically, with no manual action required.
+  </Accordion>
+  <Accordion title="How do I connect a Google Spreadsheet?">
+    Follow these steps:
+    1. In the employee card, go to "Talents" → select "Google Sheets".
+    2. Enter the SpreadsheetID of your spreadsheet (see the next FAQ entry).
+    3. Make sure the spreadsheet has a "flat" structure: clear column headers in the first row, no merged cells, no nested tables.
+    4. In the "Instructions" block in the Persona, specify when and for what purpose the AI should refer to this spreadsheet.
+  </Accordion>
+  <Accordion title="How do I find the SpreadsheetID of a Google spreadsheet?">
+    The SpreadsheetID is in the spreadsheet URL between `/d/` and `/edit`. Follow these steps:
+    1. Open the Google Spreadsheet in your browser.
+    2. Copy the page address from the address bar.
+    3. Find the fragment in this format: `https://docs.google.com/spreadsheets/d/**[YOUR_ID]**/edit`
+    4. Copy only the ID — the string of characters between `/d/` and `/edit`.
+    Example: in the link `https://docs.google.com/spreadsheets/d/1X4YNQ10dgk.../edit` — the ID is `1X4YNQ10dgk...`.
+  </Accordion>
+  <Accordion title="Can the AI read information from a website?">
+    Yes. To connect a website as a source:
+    1. In the "Knowledge Base", click "Add source" → select "URL".
+    2. Paste the link to the relevant page.
+    Keep the following in mind:
+    - The AI only reads text content — images are not recognised.
+    - If the website is protected against automated data collection, the information will not be retrieved. In that case, copy the text manually and add it as a text source.
+  </Accordion>
+  <Accordion title="The AI is pulling information from the wrong source (mixing up data from different sources).">
+    This is a data conflict that can be resolved in the settings. Follow these steps:
+    1. Check whether there are any contradictions between different sources in the Knowledge Base (e.g. the same price listed differently in two places).
+    2. Check whether the "Instructions" block contains an explicit instruction: when and from which source the AI should take data.
+    3. In the chat with the bot, use the **"Response analysis"** button — it will show which source was used when generating the response.
+    If the behaviour persists after these steps — contact support with an example question, the response you received, and the source you expected the answer to come from.
+  </Accordion>
+  <Accordion title="Deleted documents are still showing in the account.">
+    This is a known interface display quirk that does not affect how the AI works — deleted sources are no longer used when generating responses. To verify:
+    1. Use "Response analysis" in the chat to check whether the AI is referencing that source.
+    2. If the visual "ghost" of the document is bothering you — refresh the page or log out and back in to your account.
+    If the document is still showing after these steps — contact support with the document name and the section of the account where it appears.
+  </Accordion>
+  <Accordion title="How many files can I add to the Knowledge Base?">
+    There is no limit on the number of files in the Knowledge Base. Add as many sources as needed for accurate AI employee responses.
+  </Accordion>
+  <Accordion title="Which is better — PDF or Google Docs?">
+    **Google Docs** is recommended as the primary format. Here's why:
+    - Google Docs is reliably recognised by the system.
+    - PDF works correctly only if it contains a text layer (not a scan or photo of a document).
+    If your data is currently in PDF:
+    1. Open the PDF.
+    2. Copy the text.
+    3. Create a Google Doc and paste the text there.
+    4. Add the Google Doc as a source in the Knowledge Base.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## SELF-LEARNING (FAQ)
+
+<AccordionGroup>
+  <Accordion title="How does self-learning work?">
+    The system automatically analyses real conversations and extracts question–answer pairs from them. Here's how to work with it:
+    1. Go to the **"FAQ"** section in your account.
+    2. You will see accumulated records with the status "New".
+    3. For each record, choose an action: approve, edit, or delete.
+    4. After finishing moderation, click the **"Update knowledge base"** button.
+    Without clicking this button, approved answers will not be applied.
+  </Accordion>
+  <Accordion title="Why aren't approved answers being used by the AI yet?">
+    Approving a record in the interface does not apply it automatically. Complete this step:
+    1. Make sure you have clicked the **"Update knowledge base"** button after moderation.
+    Only after that will the AI start using approved answers.
+  </Accordion>
+  <Accordion title="Why does self-learning collect ALL questions, not just those without an answer?">
+    This is a known characteristic of the self-learning algorithm at its current stage — the system does not yet filter questions based on whether an answer exists in the base; it collects all interactions. The platform team is working on optimising this behaviour. When moderating the "FAQ" section, simply delete records whose answers are already in the Knowledge Base.
+  </Accordion>
+  <Accordion title="When updating the knowledge base, unusual behaviour occurs (a notification about a quirk is shown) but questions are still added — is this normal?">
+    Yes, this is a confirmed technical quirk of the update interface. Despite the unusual notification, questions are correctly added to the Knowledge Base. To verify:
+    1. Go to the "Knowledge Base" and confirm that the new records are visible.
+    2. Test the AI employee by asking one of the approved questions.
+  </Accordion>
+  <Accordion title="How do I enable strict FAQ mode?">
+    Follow these steps:
+    1. Go to the **"FAQ"** section in the employee's settings.
+    2. Find the "Behaviour when no answer is found" parameter.
+    3. Select one of the modes:
+    - **"Answer independently"** — the AI generates a response based on the Knowledge Base.
+    - **"Stay silent"** — the AI does not respond if there is no matching FAQ answer.
+    - **"Send a template response"** — the AI sends a pre-written text (up to 450 characters).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## QUICK ANSWERS
+
+<AccordionGroup>
+  <Accordion title="What are Quick Answers and how are they different from FAQ?">
+    Quick Answers are pre-configured reactions to specific phrases. They are checked before FAQ and have higher priority. Use them when you need to guarantee an exact response to a specific trigger — without processing through the knowledge base.
+  </Accordion>
+  <Accordion title="What action types are available?">
+    You have 5 action types available for each quick answer:
+    1. **Reply exactly** — the AI reproduces your text word for word.
+    2. **Based on the answer** — the AI rephrases the given text in its own words.
+    3. **Transfer to another AI** — the conversation is passed to another AI employee.
+    4. **Get an answer from another AI** — the request is sent to another AI and the response is returned to the current conversation.
+    5. **Expert council** — 2 to 10 AI employees are engaged simultaneously.
+    Select the required type when creating or editing a quick answer in the **AI Employee → Quick Answers** section.
+  </Accordion>
+  <Accordion title="Are there any limitations?">
+    Yes, keep two things in mind:
+    1. The trigger question must be no more than **50 words**. If the phrase is longer — shorten it to the key part.
+    2. The number of quick answers is **unlimited** — create as many as you need.
+  </Accordion>
+</AccordionGroup>

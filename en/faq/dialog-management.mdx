@@ -1,0 +1,142 @@
+---
+title: "Dialog Management & Notifications"
+description: "Chat history, AI pause, operator intervention, triggers and message buffer"
+---
+
+Chat history, AI pause, operator intervention, triggers and message buffer
+
+---
+
+## DIALOG MANAGEMENT AND HISTORY
+
+<AccordionGroup>
+  <Accordion title="How do I clear the bot's history/memory?">
+    Send the following combination in the chat: 😎😇😭😚😍. Or open your account → "Chats" section → select the conversation → click "Clear History". After clearing, the AI starts the conversation from scratch, without any previous context.
+  </Accordion>
+  <Accordion title="After clearing history, the AI still 'remembers' old data.">
+    Note this behavioral distinction: clearing the conversation history and clearing the guest profile are two separate operations. Profile data (name, preferences) is stored separately. The full guest profile clearing feature is under development. If you need to reset a profile — contact support.
+  </Accordion>
+  <Accordion title="Can I set up automatic clearing after X hours?">
+    Yes. Open your account → channel settings → find the "Auto-clear chat" option → set the desired interval in hours. Changes take effect immediately.
+  </Accordion>
+  <Accordion title="The AI restarts the conversation with a greeting in the middle of an ongoing chat.">
+    Check the auto-clear setting in your account → channel settings. If the interval is too short, the AI resets the context before the conversation ends. Increase the interval to a comfortable value.
+  </Accordion>
+  <Accordion title="Where can I view the AI's conversation history with customers?">
+    Open your account → "Chats" section. All conversations across all employees and channels are displayed here. Use the filters by employee and by channel to quickly find the conversation you need.
+  </Accordion>
+  <Accordion title="How do I share a link to a specific conversation?">
+    Open your account → "Chats" section → select the desired conversation → copy the URL from the browser address bar. The link format is: https://app.aitextura.com/chat/[ID]. This is more convenient than screenshots: the recipient immediately sees the full context.
+  </Accordion>
+  <Accordion title="How do I retrain the AI after making changes in Google Docs?">
+    After saving your changes in Google Docs, perform these two steps:
+    1. Send the retraining command in any chat: 📚📕📙📗📓📖. Or click "Save / Retrain" in your account.
+    2. Immediately after retraining, clear the employee's memory (😎😇😭😚😍) so that the AI starts using the new data from the first message.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## OPERATOR INTERVENTION / AI PAUSE
+
+<AccordionGroup>
+  <Accordion title="What happens when a manager replies manually in the chat?">
+    The AI automatically goes on pause — by default for 15–20 minutes. After the pause expires, the AI resumes working in that chat on its own. The pause duration is configurable.
+  </Accordion>
+  <Accordion title="Can I prevent the AI from resuming after a manager's reply?">
+    Yes. Open your account → employee settings → advanced settings → disable the option "Reply to messages received during pause". In this mode, after the manager responds, the AI is fully disabled for that chat and will not resume automatically.
+  </Accordion>
+  <Accordion title="How do I disable the AI in a specific chat?">
+    Open your account → "Chats" section → select the desired conversation → find the AI toggle → switch it to pause mode. The AI will stop responding only in that chat; other conversations are not affected.
+  </Accordion>
+  <Accordion title="How do I completely disable an AI employee?">
+    Open your account → employee list → find the desired employee → click the green toggle next to their name. The toggle will turn grey — the employee is deactivated across all channels.
+  </Accordion>
+  <Accordion title="How do I set up a stop word?">
+    Open the settings of the desired employee → find the "Stop word" field → enter the desired phrase. Examples: "Alina, stop" or three commas (,,,). Important note: do not use commonly occurring words like "Hello" as a stop word — the AI will pause on every guest greeting.
+  </Accordion>
+  <Accordion title="Can the pause duration be adjusted?">
+    Yes. The pause duration can be configured in the employee settings (if the option is available on your plan) or through support. The default is 15–20 minutes.
+  </Accordion>
+  <Accordion title="How do I turn the AI back on after a pause?">
+    Two ways:
+    1. Send the symbol 😇 in the relevant chat — the AI will resume immediately.
+    2. Open your account → "Chats" section → select the conversation → enable the AI toggle manually.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## NOTIFICATIONS AND TRIGGERS
+
+<AccordionGroup>
+  <Accordion title="How do I set up notifications for managers?">
+    Set up notifications yourself in a few steps:
+    1. Log in to your account → "Notifications" section.
+    2. Click "Receive notifications" — the system will generate an activation link for the @aitexturanotificationbot bot in Telegram.
+    3. Each manager follows the link and activates the bot in their own Telegram.
+    Notifications will start arriving immediately after activation.
+  </Accordion>
+  <Accordion title="What triggers are available?">
+    There are 4 default triggers: "Human needed", "Booking confirmation", "Complaint", "Refund". To add a custom trigger: go to the "Triggers" section → click "Add" → describe the condition in natural language. The AI will recognize it automatically.
+  </Accordion>
+  <Accordion title="Notifications are not arriving.">
+    Run through the following checks:
+    1. Make sure the @aitexturanotificationbot bot is activated in Telegram on your account — follow the link from your account again.
+    2. Open the trigger settings and check that the "Stop" flag is not enabled — when "Stop" is on, notifications are intentionally blocked.
+    3. Check the platform status at status.aitextura.com: when non-standard behavior occurs in the notification channel, we analyze the request chain and restore delivery.
+    If all three points are in order and notifications are still not arriving — contact support with the trigger ID and the relevant time range.
+  </Accordion>
+  <Accordion title="Can notifications be sent to email / webhook?">
+    Yes. Set up the integration via webhook (HTTP POST):
+    1. In the "Notifications" section, select "Webhook" as the delivery type.
+    2. Enter the URL of your endpoint.
+    3. Add authorization headers if needed.
+    The webhook is compatible with Slack, Notion, Make, Zapier, and any service that accepts HTTP POST.
+  </Accordion>
+  <Accordion title="Will the notification include a link to the conversation?">
+    Yes. Every notification contains a direct link to the corresponding conversation in your account — you go straight to the right chat without having to search.
+  </Accordion>
+  <Accordion title="Notifications arrive for every message — how do I set up only important ones?">
+    Refine the trigger conditions:
+    1. Open the "Triggers" section and review each active trigger.
+    2. Remove broad or vague conditions that match most messages.
+    3. Make the condition as specific as possible: specify keywords, topic, or the guest's intent.
+    4. Save the changes and test with 10–15 real conversations.
+    After adjustments, notifications will only arrive for targeted situations.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## MESSAGE BUFFER AND RESPONSE SPEED
+
+<AccordionGroup>
+  <Accordion title="The AI responds to each message separately when the guest sends several in a row.">
+    This is standard behavior without a buffer. To have the AI wait for all messages before responding:
+    1. Open the settings for the relevant channel.
+    2. Find the "Message buffer" parameter.
+    3. Set a delay of 5–10 seconds.
+    4. Save. The AI will now accumulate incoming messages for the set duration and respond with a single comprehensive reply.
+  </Accordion>
+  <Accordion title="The guest has not finished typing and the AI has already replied.">
+    Increase the buffer value in the channel settings:
+    1. Settings → relevant channel → "Message buffer".
+    2. Increase the delay — for example, from 5 to 10–15 seconds.
+    3. Save the changes.
+    Adjust the value to match the typical communication pace of your guests.
+  </Accordion>
+  <Accordion title="The AI is responding too slowly (half a minute or more).">
+    Increased response time may be related to several technical factors:
+    1. The AI is simultaneously querying multiple Talents — check whether the instruction chain is overloaded and simplify it if necessary.
+    2. Check the current platform status at status.aitextura.com — we monitor server load in real time.
+    3. Consider the integration nuances of the specific channel — some channels have their own delivery speed limitations.
+    If the slowdown is systematic, send the channel ID and conversation timestamps to support.
+  </Accordion>
+  <Accordion title="Can the buffer be disabled for the website widget?">
+    Yes. For a web widget, response speed is critical, so the buffer is recommended to be reduced or disabled entirely:
+    1. Settings → "Website Widget" channel → "Message buffer".
+    2. Set the value to 0 or the minimum allowed.
+    3. Save.
+  </Accordion>
+</AccordionGroup>

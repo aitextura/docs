@@ -1,0 +1,223 @@
+---
+title: "Connecting Communication Channels"
+description: "Telegram, WhatsApp, Instagram, VKontakte, website widget, email and MAX messenger"
+---
+
+Telegram, WhatsApp, Instagram, VKontakte, website widget, email and MAX messenger
+
+---
+
+## CONNECTING CHANNELS: TELEGRAM
+
+<AccordionGroup>
+  <Accordion title="How do I connect a Telegram bot?">
+    Connect the bot in three steps:
+    1. Open Telegram and message **@BotFather** → run the `/newbot` command → follow the instructions → copy the token you receive.
+    2. In your account, go to: **AI Employee → Channels → Browse apps → Telegram**.
+    3. Paste the token in the field and click **Connect**.
+    Detailed video guide: https://docs.aitextura.com/ru/channels/telegram
+  </Accordion>
+  <Accordion title="How do I connect the AI to a personal Telegram account (not a bot)?">
+    This requires an active **Telegram Premium** subscription. Steps:
+    1. Open **Telegram Settings → Telegram for Business → Chatbots**.
+    2. Select the desired bot from the list.
+    3. Set the mode to **"New chats"** so the bot responds to incoming messages.
+    Video guide: https://www.youtube.com/watch?v=GXSxWdkHkVg
+  </Accordion>
+  <Accordion title='Is the "_bot" suffix in the username mandatory?'>
+    Yes, this is a mandatory technical requirement of the Telegram platform — the username must end with "bot" (e.g. `ReveltonAssistantBot`). Keep this in mind when choosing a name during bot creation in @BotFather.
+  </Accordion>
+  <Accordion title="Can the Telegram bot's username be changed?">
+    The bot's username is fixed at the moment of creation and cannot be changed — this is an architectural feature of Telegram. Here is what you can do:
+    - **Change the display name** (what users see in the chat) — via @BotFather using the `/setname` command.
+    - **Create a new bot** with the desired username — via @BotFather → `/newbot`, then connect it in your account in place of the old one.
+  </Accordion>
+  <Accordion title="Why does it say "bot" under the bot's name?">
+    This is a standard automatic label that Telegram applies to all bots without exception. It has nothing to do with AI TEXTURA settings and does not affect how the AI employee works.
+  </Accordion>
+  <Accordion title="Can one Telegram bot be connected to two different AI employees?">
+    No — this is an architectural feature of the platform: one channel is strictly tied to one AI employee. If you need different employees — create a separate bot for each one via @BotFather and connect them independently.
+  </Accordion>
+  <Accordion title="The AI is responding in Telegram groups, but it should only respond to direct messages.">
+    Manually disable the unwanted groups:
+    1. In your account, go to the **Chats** section of the relevant AI employee.
+    2. Find the groups in the conversation list.
+    3. Disable message processing for each group.
+    Please note: automatic group ignoring is a planned platform improvement. If the behaviour persists after manual disabling — contact support with the bot name and the group names.
+  </Accordion>
+  <Accordion title="What does "Free mode" mean when connecting a channel?">
+    Free mode is a no-cost channel option with a limited number of responses per day. To remove the limit:
+    1. Go to **Channels → [your Telegram channel] → Settings**.
+    2. Uncheck the **Free** option.
+    3. Save the changes.
+    After this, the channel will operate in full mode with no limits.
+  </Accordion>
+  <Accordion title="The test bot appears in Telegram search — clients are writing to it by mistake.">
+    To prevent the test bot from being associated with your brand, do the following via @BotFather:
+    1. Change the **display name** using the `/setname` command — use something neutral, e.g. "Test Bot".
+    2. Change the **avatar** using the `/setuserpic` command — remove the branded image.
+    After this, the bot will no longer be visually associated with your company and can only be found via a direct link.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CONNECTING CHANNELS: WHATSAPP
+
+<AccordionGroup>
+  <Accordion title="How do I connect WhatsApp?">
+    Connection is possible via an aggregator or CRM. Steps:
+    1. Register with one of the supported aggregators: **Umnico** or **Wazzup**, or via CRM — **amoCRM** or **Bitrix24**.
+    2. Connect your WhatsApp number in the aggregator interface following its instructions.
+    3. Copy the API key from the aggregator's account.
+    4. In your AI TEXTURA account, go to: **Channels → select the aggregator → paste the API key → save**.
+  </Accordion>
+  <Accordion title="Regular WhatsApp or WhatsApp Business?">
+    **WhatsApp Business API** (via 360dialog or an aggregator) is required for the AI employee to work correctly. An important integration note: regular WhatsApp is not designed for automated replies — the WhatsApp platform treats such traffic as unauthorised messaging, which can lead to account restrictions. Use the official Business API to operate within the platform's rules.
+  </Accordion>
+  <Accordion title="My WhatsApp number got blocked — how do I avoid this?">
+    This is a risk associated with unofficial connection methods. To protect your number:
+    1. Switch to the **official WhatsApp Business API** via 360dialog or an accredited aggregator — this is the only permitted method for automated replies.
+    2. Configure the AI to only respond to **incoming** messages and never initiate conversations with unknown contacts first.
+    3. Monitor response speed — if necessary, configure a delay in the employee's settings.
+  </Accordion>
+  <Accordion title="Do I need to keep the phone plugged in?">
+    Only during the initial connection — the phone must be active for authorisation. After a successful connection, messages are exchanged between servers and the phone does not need to stay on permanently. The only requirement is that it remains connected to a network (Wi-Fi or mobile data) so the session stays active.
+  </Accordion>
+  <Accordion title="Can the "typing..." indicator be configured in WhatsApp?">
+    When connected via **Umnico**, this feature is not yet available — it is a technical limitation on the aggregator integration side. If the "typing" status is critical for you — contact support and we will log your request on the priority improvements list.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CONNECTING CHANNELS: INSTAGRAM
+
+<AccordionGroup>
+  <Accordion title="How do I connect the AI to Instagram?">
+    Connection is done via the Umnico or Wazzup aggregator. Steps:
+    1. Follow the instructions at: https://t.me/ai_textura/5
+    2. After connecting, **make sure to**: in your Instagram settings, disable all built-in auto-replies (welcome messages). Their integration quirk: they intercept the first message and create duplicate responses.
+    If duplicates appear after setup — the first thing to check is the built-in Instagram auto-replies.
+  </Accordion>
+  <Accordion title="Can the AI respond to Instagram comments?">
+    Yes, this is done through a separate AI employee. Setup steps:
+    1. Create a separate AI employee in your account.
+    2. In your CRM system, split the channels: one for direct messages, one for comments.
+    3. Connect each channel to the corresponding AI employee.
+  </Accordion>
+  <Accordion title="The AI disconnects from Instagram on its own.">
+    This is usually a conflict in auto-reply settings. Follow these steps:
+    1. Open your Instagram account settings → **Business tools → Automatic replies**.
+    2. Disable all active welcome and automatic replies.
+    3. Check Umnico settings: make sure there are no duplicate rules at the aggregator level.
+    4. Reconnect the channel in your AI TEXTURA account.
+    If disconnections recur after completing these steps — contact support with the AI employee name and the aggregator.
+  </Accordion>
+  <Accordion title="Are there alternatives to Umnico for Instagram?">
+    Yes, you can use **Wazzup24** as an alternative: https://wazzup24.ru — the connection is done in the same way via an API key.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CONNECTING CHANNELS: VKONTAKTE
+
+<AccordionGroup>
+  <Accordion title="How do I connect the AI to VKontakte?">
+    Connection is done via the **Umnico** aggregator:
+    1. Register with Umnico and log in to your account.
+    2. Connect your VKontakte group following Umnico's instructions.
+    3. Copy the API key from Umnico's settings.
+    4. In your AI TEXTURA account: **AI Employee → Channels → Umnico** → paste the key and save.
+  </Accordion>
+  <Accordion title="I connected Umnico, I write in VK — messages are not being forwarded.">
+    This is a typical setup issue on first connection. Check the following:
+    1. In your AI TEXTURA account, go to **AI Employee → Channels**.
+    2. Make sure that **Umnico** — added after the VK integration — appears in the channel list.
+    3. If it is not there — go back to the Umnico connection step and make sure your VK group has been successfully authorised in the aggregator.
+    4. After adding the channel, send a test message again.
+    If messages are still not coming through — contact support with the AI employee name and the VKontakte group address.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CONNECTING CHANNELS: WEBSITE WIDGET
+
+<AccordionGroup>
+  <Accordion title="How do I add the widget to a website?">
+    Choose the appropriate method and follow the steps yourself:
+    1. **Via Umnico (free):**
+    - Log in to your Umnico account.
+    - Go to the "Widget" section and copy the generated JS code.
+    - Paste the code before the closing `</body>` tag on all pages of your website.
+    2. **Via amoCRM:**
+    - Open the "Integrations" section in amoCRM.
+    - Find the chat widget and generate the JS code.
+    - Paste the code on your website in the same way.
+    3. **Via Bitrix24:**
+    - Use the "Open Channels" mechanism — the widget code is available in the channel settings.
+    If you do not have access to edit your website code — pass the generated snippet to your IT specialist. If the widget is not appearing after installation, contact support — we will diagnose the behaviour on your configuration.
+  </Accordion>
+  <Accordion title="Is Umnico free for the widget?">
+    Yes. The website widget via Umnico is connected at no additional cost. To activate:
+    1. Register or log in to Umnico.
+    2. Go to the widget section and obtain the code.
+    3. Place the code on your website.
+    There are no plan restrictions for the basic widget.
+  </Accordion>
+  <Accordion title="The website widget only responds to 4 messages, then goes silent.">
+    This is unusual behaviour seen in certain configurations with Bitrix24 or Umnico. To diagnose, do the following:
+    1. Open your AI TEXTURA account → the "Channels" section.
+    2. Make sure the AI assistant is connected to the correct channel that the widget uses (not a duplicate or inactive one).
+    3. Check whether the channel settings have a limit on the number of messages per session.
+    4. Save the changes and run a test conversation again.
+    If the behaviour reproduces — contact support: we will check the request chain and identify at which step processing is interrupted.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CONNECTING CHANNELS: EMAIL
+
+<AccordionGroup>
+  <Accordion title="Can the AI respond to emails?">
+    Yes. To connect email as a channel:
+    1. Log in to your account → "Channels" → add a new channel.
+    2. Select the "Email" type and follow the connection instructions via Umnico.
+    3. Enter the email address and complete verification.
+    4. Once connected, the AI will start processing incoming messages and generating responses.
+    We recommend running a test correspondence before going live with real traffic.
+  </Accordion>
+  <Accordion title="Should I connect the AI to email?">
+    This depends on the structure of your incoming traffic. Evaluate it yourself:
+    1. Analyse the last 20–30 incoming emails: what proportion are genuine customer enquiries?
+    2. If the majority are automated booking confirmations, newsletters, and system notifications — connection is not advisable: the AI will generate responses to irrelevant messages.
+    3. If there is a steady flow of meaningful customer enquiries — connection is worthwhile.
+    If needed, discuss your specific case with support — we can help assess your configuration.
+  </Accordion>
+  <Accordion title="Can notifications only be received in Telegram, or in WhatsApp too?">
+    At this time, AI TEXTURA notifications are only supported in Telegram. To configure:
+    1. Go to your account → "Notifications".
+    2. Link your Telegram account by following the on-screen instructions.
+    Support for additional notification channels is being worked on — keep an eye on the "News" section of your account for updates.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CONNECTING CHANNELS: MAX MESSENGER
+
+<AccordionGroup>
+  <Accordion title="Can I connect MAX messenger?">
+    Yes, connection is available through two options:
+    1. **Via Umnico:**
+    - Log in to Umnico → add the MAX channel.
+    - Log in to MAX messenger and confirm access.
+    - In your AI TEXTURA account, link this channel to the desired assistant.
+    2. **Via Wazzup24:**
+    - Similarly — add MAX to the list of Wazzup24 channels and connect it to the assistant.
+    Both options are functional and used by current clients. If you encounter any integration issues during connection — contact support with the method you chose.
+  </Accordion>
+</AccordionGroup>

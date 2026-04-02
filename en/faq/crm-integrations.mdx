@@ -1,0 +1,123 @@
+---
+title: "CRM & Aggregator Integrations"
+description: "amoCRM, Bitrix24, Umnico — connection and setup"
+---
+
+amoCRM, Bitrix24, Umnico — connection and setup
+
+---
+
+## CRM INTEGRATION: AMOCRM
+
+<AccordionGroup>
+  <Accordion title="How do I connect amoCRM?">
+    Follow these steps in order:
+    1. Log in to your AI TEXTURA account → "Channels" → "Browse apps" → select **amoCRM**.
+    2. In amoCRM, go to: "Settings" → "Integrations" → find **AI Textura** → open the "Keys and access" tab and copy the long-term token.
+    3. Return to your AI TEXTURA account and paste the token into the corresponding field.
+    4. Specify which amoCRM channels the AI assistant should listen to, and save the settings.
+    5. Run a test conversation to verify the connection.
+    If the integration does not activate after completing the steps — contact support and we will check the request chain.
+  </Accordion>
+  <Accordion title="The AI is responding as one of my employees, not as a bot.">
+    This happens because the AI is authorised under a real employee's account. To fix it:
+    1. In amoCRM, create a separate user — for example, "AI Textura Bot" or "Assistant".
+    2. Assign a separate email and password to this user.
+    3. In your AI TEXTURA account, reconnect amoCRM by authorising with the new user.
+    4. After reconnecting, the AI will write from this account.
+  </Accordion>
+  <Accordion title='When connecting, I get the error "account already connected" but it does not appear in the list.'>
+    This is an integration quirk caused by webhooks left over from a previous connection. Do the following:
+    1. In amoCRM, go to: "Settings" → "Integrations" → find AI Textura and fully remove the integration.
+    2. In amoCRM, also check and delete all webhooks associated with AI Textura ("Settings" → "Webhooks").
+    3. In your AI TEXTURA account, delete the amoCRM entry in the "Channels" section.
+    4. Redo the connection from scratch following the standard instructions.
+    If the conflict persists — contact support.
+  </Accordion>
+  <Accordion title="Avito connection through amoCRM is not working.">
+    This is an integration issue at the webhook level between Avito and amoCRM. To diagnose it, we need access to your amoCRM account. Contact support and provide:
+    - the name of your amoCRM account,
+    - a description of the step at which the connection breaks.
+    We will check the request chain and identify the exact point of failure.
+  </Accordion>
+  <Accordion title="Error "This amoCRM account is already connected" when attempting integration.">
+    To resolve the data conflict, perform a full reset:
+    1. In amoCRM: "Settings" → "Integrations" → delete all entries related to AI Textura.
+    2. In your AI TEXTURA account: delete the amoCRM channel.
+    3. Repeat the connection from step 1 of the standard instructions.
+    If the conflict reproduces after a full reset — contact support: we will analyse the logs and determine the cause.
+  </Accordion>
+  <Accordion title="amoCRM chats are being closed randomly by the AI.">
+    This unusual behaviour is currently being diagnosed at the integration level. While the investigation is ongoing, you can reduce the frequency of occurrence as follows:
+    1. Check the assistant's settings: make sure the "end conversation" trigger on session expiry is not active.
+    2. Check the automation rules in amoCRM itself — sometimes the cause is CRM bots, not the AI.
+    If the situation is critical — contact support and we will speed up diagnostics on your account.
+  </Accordion>
+  <Accordion title="Does the AI create leads and deals in amoCRM?">
+    No. AI TEXTURA handles conversations in channels — that is its area of responsibility. Creating leads and deals is native amoCRM functionality that operates independently based on your automation rules and pipelines.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CRM INTEGRATION: BITRIX24
+
+<AccordionGroup>
+  <Accordion title="How do I connect Bitrix24?">
+    Follow these steps in order:
+    1. In Bitrix24, go to: "Applications" → "For developers" → "Inbound webhook" → copy the webhook URL.
+    2. In your AI TEXTURA account: "Channels" → "Bitrix24" → paste the copied URL and save.
+    3. In the Bitrix24 webhook settings, assign the required permissions: "Open Channels", "Chatbots", "CRM".
+    4. In Bitrix24, go to the settings of the desired Open Channel and assign the AI TEXTURA chatbot as the responsible party.
+    5. Run a test conversation through the Open Channel to verify the connection.
+    If unexpected behaviour occurs at any step — contact support with the step number.
+  </Accordion>
+  <Accordion title="Which Bitrix24 plan is required?">
+    The basic Bitrix24 plan is sufficient for connecting AI TEXTURA. Make sure your plan includes "Open Channels" and "For developers" functionality (inbound webhooks) — these are included in the basic plan.
+  </Accordion>
+  <Accordion title="Can photos be sent through Bitrix Open Channels?">
+    Bitrix24 Open Channels transmit attachments as links, but whether photos are displayed depends on the specific channel configuration and the message source. To find out whether photo transfer works in your case:
+    1. Set up a test Open Channels channel.
+    2. Send several test images from different sources (WhatsApp, Telegram, web widget).
+    3. Check whether they appear as photos or as links in the Bitrix24 interface.
+    The test results will help determine exactly how your configuration behaves. If needed, describe the issue to support.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## UMNICO INTEGRATION
+
+<AccordionGroup>
+  <Accordion title="What is Umnico?">
+    An omnichannel platform — a messenger aggregator. It allows you to connect WhatsApp, Instagram, VKontakte, Avito, Viber and others into a single inbox and to AI Textura.
+  </Accordion>
+  <Accordion title="Is Umnico paid?">
+    Yes, Umnico is a separate paid service. The website widget is free. Russian legal entities can pay via the "Pay" button on the Umnico website.
+  </Accordion>
+  <Accordion title="How do I get the Umnico API key?">
+    Log in to your Umnico account settings and copy the API key. Detailed connection instructions: https://telegra.ph/Podklyuchenie-II-sotrudnika-vo-vse-socialnye-seti-06-20
+  </Accordion>
+  <Accordion title="Messages from Umnico are not reaching AI Textura.">
+    Follow these steps to diagnose the unusual channel behaviour:
+    1. Go to the channel settings in AI Textura.
+    2. Find the Umnico toggle and switch it to "Off".
+    3. Wait 5–10 seconds, then switch the toggle back on.
+    4. Send a test message via Umnico and check whether it reaches AI Textura.
+    If the unusual behaviour persists after completing all steps — contact support: we will analyse the request chain logs and diagnose the channel behaviour.
+  </Accordion>
+  <Accordion title="Data from Umnico has stopped coming through.">
+    This is a typical integration issue after first connection or following updates. Follow these steps:
+    1. Go to the channel settings in AI Textura.
+    2. Switch the Umnico toggle to "Off", wait 5–10 seconds.
+    3. Switch the toggle back on.
+    4. Check that data is coming through by sending a test message.
+    If the data conflict persists — contact support: we will check the request chain and diagnose the integration behaviour.
+  </Accordion>
+  <Accordion title="Can I use 2 numbers in Umnico for 2 different AIs?">
+    Yes, if they are two physically different numbers — each can be linked to its own AI employee.
+  </Accordion>
+  <Accordion title="Where do I view messages in Umnico?">
+    At https://umnico.com/app/inbox/deals/inbox. Also at aitextura.com/chat.
+  </Accordion>
+</AccordionGroup>

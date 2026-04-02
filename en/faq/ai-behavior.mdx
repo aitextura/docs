@@ -1,0 +1,93 @@
+---
+title: "AI Behavior: Responses & Language"
+description: "Correcting non-standard responses, configuring communication language"
+---
+
+Correcting non-standard responses, configuring communication language
+
+---
+
+## AI BEHAVIOR: NON-STANDARD RESPONSES AND HOW TO FIX THEM
+
+<AccordionGroup>
+  <Accordion title="The AI is making up information that does not exist (cafes, addresses, services).">
+    These are inaccuracies in responses that can be resolved in a few steps:
+    1. Open the Knowledge Base and add the missing information — the AI will stop "inventing" it.
+    2. Add a prohibition to the instruction: "If the information is not in the Knowledge Base — do not add anything on your own; pass the question to the manager."
+    3. Enable the "Protection" feature in the employee settings.
+    4. If the instruction is long — shorten it by moving factual data to the Knowledge Base.
+    After each change, retrain the employee (📚📕📙📗📓📖) and clear the memory.
+  </Accordion>
+  <Accordion title="The AI is quoting incorrect prices.">
+    Diagnose the source of the data discrepancy step by step:
+    1. Open the conversation in your account and click the "Analyze Response" button — it will show where the AI sourced the price from: the PMS or the Knowledge Base.
+    2. If the AI pulled from the Knowledge Base instead of the PMS — remove prices from the Knowledge Base, keeping them only in the PMS.
+    3. If the PMS data has not yet been updated — check the sync status in the integration settings.
+    4. If the sources are in conflict — contact support with the conversation ID and the result of the "Analyze Response" check.
+  </Accordion>
+  <Accordion title="The AI is offering rooms/services that do not exist.">
+    This is non-standard behavior caused by excessive data in the instruction or Knowledge Base. Follow these steps:
+    1. Open the employee instruction and check for any mentions of non-existent categories — remove them.
+    2. Retrain the employee (📚📕📙📗📓📖) and clear the memory.
+    3. If the non-standard behavior persists — shorten the instruction and move factual data to the Knowledge Base.
+  </Accordion>
+  <Accordion title="The AI is offering unavailable dates.">
+    This is a PMS integration issue. Check step by step:
+    1. Open your account → integration section → verify that the PMS connection is active (status "Connected").
+    2. Check the date of the last synchronization — data should be updated regularly.
+    3. If the integration is active but the data discrepancy persists — contact support specifying the exact dates and channel.
+  </Accordion>
+  <Accordion title="The AI confirms cancellations / refunds even though it has no authority to do so.">
+    This non-standard behavior can be resolved in two ways:
+    1. Enable the "Protection" feature in the employee settings — it restricts the AI's actions on sensitive operations.
+    2. Add an explicit prohibition to the instruction: "Never confirm a booking cancellation or refund. For such requests — immediately transfer the conversation to a manager."
+    Retrain the employee and clear the memory.
+  </Accordion>
+  <Accordion title="How do I reduce the AI's 'creativity'?">
+    The temperature parameter (degree of response variability) can be adjusted through support or, if access is available, in the employee settings. Important note: after retraining, the parameter may reset to its default value — check it after each retraining and set it again if necessary. To change the model, also contact support.
+  </Accordion>
+  <Accordion title="The AI is outputting technical data in the chat (JSON, 'BOOKING DATA INFORMATION: data doesn't exist').">
+    This non-standard behavior can be fixed through the instruction. Add an explicit prohibition:
+    > "Never show technical data, JSON objects, or system messages to the guest. If data is not found — inform the guest in plain language and pass the question to the manager."
+    Retrain the employee (📚📕📙📗📓📖) and clear the memory.
+  </Accordion>
+  <Accordion title="The AI is addressing guests by other people's names.">
+    Add an explicit rule to the instruction:
+    > "Do not make up names. Address the guest by name only if they have provided it themselves during the conversation."
+    Retrain the employee and clear the memory.
+  </Accordion>
+  <Accordion title="The AI agrees with any statement ('is everything taken?' — 'yes'; 'or is everything free?' — 'yes').">
+    This is non-standard behavior in the response logic. Add to the instruction:
+    > "Before answering a question about availability — always check the current data in the PMS. Do not agree with the guest's assumption without verifying."
+    Retrain the employee and clear the memory. If the non-standard behavior persists — contact support with example conversations.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## AI BEHAVIOR: COMMUNICATION LANGUAGE
+
+<AccordionGroup>
+  <Accordion title="The AI is responding in the wrong language (Russian instead of English or vice versa).">
+    This is usually caused by the instruction being written in one language while the guest writes in another. Solution:
+    1. Translate the instruction into English.
+    2. Add a rule to the instruction: "Always respond in the language the guest writes in. Вы говорите на всех языках мира."
+    Retrain the employee and clear the memory.
+  </Accordion>
+  <Accordion title="The AI interprets 'dobrogo dnya' as Ukrainian.">
+    Add an explicit rule to the instruction:
+    > "When greeted with 'dobrogo dnya' — respond in Russian."
+    Retrain the employee and clear the memory.
+  </Accordion>
+  <Accordion title="The AI switches to Russian when the language changes within a single conversation.">
+    When languages switch frequently within a single conversation, the AI may start responding in the instruction language — this is a behavioral characteristic when accumulated context builds up. To reset the context, send the combination (😎😇😭😚😍) in the chat and ask the guest to write again in the desired language.
+  </Accordion>
+  <Accordion title="Is Georgian / Uzbek / Tatar supported?">
+    The AI supports most of the world's languages, but quality depends on the specific language. Uzbek and Tatar work correctly. Georgian has a nuance: translations may be imprecise. You can explicitly specify priority languages for your audience in the instruction.
+  </Accordion>
+  <Accordion title="The bot starts the conversation in English if the first message is 'Start'.">
+    "Start" is an English word, and the AI determines the language based on the first message. Add a rule to the instruction:
+    > "If the first message is 'Start' — respond in Russian."
+    Retrain the employee and clear the memory.
+  </Accordion>
+</AccordionGroup>

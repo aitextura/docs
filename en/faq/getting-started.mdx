@@ -1,0 +1,111 @@
+---
+title: "Getting Started: Registration & Setup"
+description: "System registration, creating and initial setup of AI employee"
+---
+
+System registration, creating and initial setup of AI employee
+
+---
+
+## REGISTRATION & ACCOUNT ACCESS
+
+<AccordionGroup>
+  <Accordion title="How do I register in the system?">
+    Follow these steps:
+    1. Go to https://app.aitextura.com/login.
+    2. Click the "Register" button.
+    3. Fill in all required fields and complete the registration.
+    4. Share your email with your AI TEXTURA manager — they will activate your account manually.
+    After activation you will receive a notification and will be able to log in to your account.
+  </Accordion>
+  <Accordion title="The registration page won't load / freezes / shows a captcha that does nothing.">
+    Follow these steps in order:
+    1. Open the page in Chrome (recommended).
+    2. Disable your VPN if it is active, then refresh the page.
+    3. Clear your browser cache and cookies: Settings → Privacy → Clear data.
+    4. Try opening the page in incognito mode.
+    This unusual behaviour is caused by traffic filtering specifics and is resolved by changing your environment. If the issue persists after these steps — contact support with the browser you are using, your connection country, and a screenshot of what you see on screen.
+  </Accordion>
+  <Accordion title="I can't find my account password / no email is arriving.">
+    Follow these steps:
+    1. Check your Spam folder — the email is sent from info@aitextura.com.
+    2. Make sure you are looking at the email address you used when registering.
+    3. Go to https://app.aitextura.com/login and use the "Forgot password?" link to reset it yourself.
+    If the email still hasn't arrived after these steps — contact support and provide the email address you used when registering.
+  </Accordion>
+  <Accordion title="I can't log in — I've tried different email addresses.">
+    Your account is tied to a specific email address. Follow these steps:
+    1. Ask your AI TEXTURA manager which exact address your account is registered under.
+    2. Use that address to log in.
+    3. If you need to change the linked email — contact support with your current account email and the new address you want to use.
+  </Accordion>
+  <Accordion title="Another employee wants access / wants to test the bot — do they need to register too?">
+    It depends on the purpose:
+    - **For account access** — yes, a separate registration is required using the same steps (https://app.aitextura.com/login → "Register" → activation via manager).
+    - **For testing the bot in a messenger** — no registration needed. Simply write to the bot directly in the relevant messenger (WhatsApp, Telegram, etc.).
+  </Accordion>
+  <Accordion title="After changing email in the account — the confirmation code arrives with a 20-minute delay.">
+    This is a technical quirk of confirmation emails when changing your address — the email may be delayed. Follow these steps:
+    1. Wait up to 20 minutes after requesting the code.
+    2. Check your Spam folder.
+    3. If the code expired before you received it — go back to profile settings in your account and request a new code.
+    If the email doesn't arrive at all after these steps — contact support with the email address the code should have been sent to.
+  </Accordion>
+  <Accordion title="Is it possible to create access with limited permissions (view-only chats)?">
+    Multi-user access with role-based permissions is currently in development. At this time:
+    1. All employees work through one shared account.
+    2. 2–3 people can be logged in simultaneously.
+    If this is a priority need for you — let your AI TEXTURA manager know: feature requests are taken into account when planning platform updates.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CREATING AND CONFIGURING AN AI EMPLOYEE
+
+<AccordionGroup>
+  <Accordion title="What is the sequence of steps to launch an AI employee?">
+    Follow the steps in this order:
+    1. In your account, go to "AI Employees" → click "Hire an employee".
+    2. Fill in the "Persona" block: role, tone, instructions, prohibited actions.
+    3. Go to the "Knowledge Base" and add information sources (documents, links, spreadsheets).
+    4. Connect "Talents" — integrations with PMS or other services.
+    5. Connect "Channels" — messengers (WhatsApp, Telegram, etc.).
+    6. Configure notifications for managers.
+    7. Test the bot by sending a few test messages.
+  </Accordion>
+  <Accordion title="How do I create an employee — from a template or from scratch?">
+    Three creation methods are available:
+    1. **From a ready-made template** — choose a suitable role from the AI TEXTURA template catalogue.
+    2. **From a website URL** — paste a link to your website and the system will automatically parse the text and fill in the basic data.
+    3. **From scratch** — fill in all fields manually.
+    We recommend starting with a template or URL: it is faster, and settings can always be adjusted manually.
+  </Accordion>
+  <Accordion title="How many AI employees can I create?">
+    The number of AI employees depends on your plan. On some plans, the number of employees is unlimited. Check the details of your plan in the "Subscription" section of your account or ask your AI TEXTURA manager.
+  </Accordion>
+  <Accordion title="Do I need a separate AI employee for each property / location?">
+    Not necessarily — use the following logic:
+    - **One employee** works when all properties have the same tasks: describe each property as a separate block in the instructions.
+    - **Separate employees** are recommended when properties differ significantly in services, policies, or are connected to different PMS systems.
+  </Accordion>
+  <Accordion title="When creating an AI employee automatically from a URL — is the entire site parsed or just one page?">
+    At this time, only the specified page is parsed. Support for multiple pages / full sites will come in a future platform update. After automatic creation:
+    1. Open the generated content in the Persona editor.
+    2. Review and manually adjust the information.
+    3. Add any missing data to the Knowledge Base.
+  </Accordion>
+  <Accordion title="How do I retrain an AI employee after making changes?">
+    Use one of two methods:
+    1. In the employee card, click the "Retrain" button (or "Save", if that is what the button is called in your version of the account).
+    2. Send the following emoji sequence in the chat with the bot: 📚📕📙📗📓📖 — this triggers retraining via a special command.
+    **Important:** after retraining, be sure to clear the bot's memory by sending: 😎😇😭😚😍 — without this, the AI may continue responding based on the old context.
+  </Accordion>
+  <Accordion title="What types of AI employees are available?">
+    The following preset roles are available on the platform:
+    - **Administrator** — advises on bookings and accepts requests.
+    - **Consultant** — answers general questions, without a booking function.
+    - **Support** — works with guests who are already staying.
+    In addition to the preset roles, you can create any custom role for your needs by filling in the Persona from scratch.
+  </Accordion>
+</AccordionGroup>

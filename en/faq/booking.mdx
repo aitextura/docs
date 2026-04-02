@@ -1,0 +1,55 @@
+---
+title: "AI-Powered Booking"
+description: "How booking works, payment links, guest data and typical nuances"
+---
+
+How booking works, payment links, guest data and typical nuances
+
+---
+
+## BOOKING VIA AI
+
+<AccordionGroup>
+  <Accordion title="How does AI-powered booking work?">
+    The AI asks the guest for the required dates and details, checks availability and current prices in the PMS (Travelline / Bnovo / MEWS), then generates a booking or payment link — or creates the reservation directly. The entire process takes place in the conversation without manager involvement.
+  </Accordion>
+  <Accordion title="Why is the AI not sending a payment link?">
+    Diagnose the situation step by step:
+    1. Open the chat and check whether a previous conversation history is still active. If so — clear it (😎😇😭😚😍) and ask the guest to write again.
+    2. Check the selected rate: if the guest chose "pay at check-in", an online payment link will not be generated — this is expected behavior.
+    3. Check whether a manager intervened in the conversation before the AI completed its data collection flow — intervention interrupts the request chain.
+    4. If all three points are fine — forward the conversation to support with the chat ID.
+  </Accordion>
+  <Accordion title="The AI created a booking, but it does not appear in the PMS — why?">
+    This is standard behavior: a reservation in Travelline is only recorded at the moment the guest follows the link and confirms it. If the guest received the link but did not follow it — the booking is considered unconfirmed and will not appear in the PMS. Ask the guest whether they followed the link.
+  </Accordion>
+  <Accordion title="The AI made a booking using made-up data (name, phone number).">
+    This is non-standard behavior that can be fixed at the instruction level. Add an explicit prohibition to the employee instruction:
+    > "Never use test or made-up data for bookings. Always request real data from the guest before creating a reservation."
+    After adding the instruction, retrain the employee (📚📕📙📗📓📖) and clear the memory.
+  </Accordion>
+  <Accordion title="Can the AI book multiple rooms at the same time?">
+    Simultaneous booking of two or more rooms is not currently supported. For such requests, the AI automatically transfers the conversation to a manager. The manager completes the process manually.
+  </Accordion>
+  <Accordion title="Can the AI add extra services (early check-in) to a booking?">
+    Automatic addition of extra services to a booking is not yet implemented — PMS documentation is being reviewed. In the current configuration, the AI records the guest's request and passes it to the manager for manual processing.
+  </Accordion>
+  <Accordion title="How do I configure booking for the correct year?">
+    Add an explicit rule to the employee instruction:
+    > "Process all bookings within the current year unless the guest explicitly specifies a different year."
+    After adding the instruction, retrain the employee and clear the memory.
+  </Accordion>
+  <Accordion title="Can the AI make hourly bookings?">
+    Direct creation of hourly reservations via the PMS is not currently available — Travelline only supports per-night accounting. Current solution: the AI collects the guest's details (dates, hours, preferences) and passes them to the manager for manual processing.
+  </Accordion>
+  <Accordion title="The AI said 'booked', but there is no actual reservation.">
+    This is a wording issue in the instruction: the AI may have reported "booked" meaning only that the data had been collected. Correct the instruction — replace "booked" with a specific action:
+    > "Details have been passed to the manager" or "Booking link has been sent."
+    Retrain the employee and clear the memory.
+  </Accordion>
+  <Accordion title="The AI is calculating the number of nights incorrectly.">
+    Add an explicit calculation rule to the instruction:
+    > "A 1-night booking includes 2 days: the check-in day and the check-out day. The period 'from the 4th to the 6th' is 2 nights, not 3."
+    After adding the instruction, retrain the employee and clear the memory.
+  </Accordion>
+</AccordionGroup>

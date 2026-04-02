@@ -1,0 +1,149 @@
+---
+title: "PMS Integrations & Other Talents"
+description: "Travelline, Bnovo, MEWS, Google Sheets, WebSearch and custom APIs"
+---
+
+Travelline, Bnovo, MEWS, Google Sheets, WebSearch and custom APIs
+
+---
+
+## PMS INTEGRATION: TRAVELLINE
+
+<AccordionGroup>
+  <Accordion title="How do I connect Travelline?">
+    Follow these steps on the V2 platform:
+    1. Go to the "Talents" section → "Available Skills".
+    2. Find Travelline at the bottom of the list and click "Connect".
+    3. Enter the hotel ID from your Travelline account.
+    4. Save the settings and verify with a test request.
+  </Accordion>
+  <Accordion title="Where can I find the hotel ID in Travelline?">
+    Log in to your Travelline account. In the top-right corner, under settings, you will find the "Hotel ID" — a numeric value, for example 243332. Copy this value to use during setup.
+  </Accordion>
+  <Accordion title="What data does the AI pull from Travelline?">
+    Room pricing and availability data. Data is updated dynamically. The AI can quote a price, check availability, and send a booking link.
+  </Accordion>
+  <Accordion title="Are promo codes applied when requesting prices?">
+    Automatic application of promo codes when requesting prices is not implemented. To work with static promo codes, add their description and terms of use to the AI instruction — the assistant will inform guests about them. Automatic promo code application at the time of booking is not currently available.
+  </Accordion>
+  <Accordion title="Can I set up automatic booking (without a manager)?">
+    Yes, auto-booking via Travelline is available. The AI creates the reservation autonomously. Make sure the corresponding feature is enabled in the AI employee settings.
+  </Accordion>
+  <Accordion title="The AI asks for citizenship during booking — why?">
+    This is a required field in the Travelline form — a technical requirement of the PMS integration. The AI requests it to correctly pass the data to the booking system. If you need to adjust the wording of the request to the guest, add a corresponding instruction in the AI employee settings.
+  </Accordion>
+  <Accordion title="Can I set the booking source to 'AI Employee' instead of 'website'?">
+    Yes, this is done on the Travelline side. Follow these steps:
+    1. Contact Travelline support.
+    2. Request that AI Textura be added as a separate booking source.
+    3. Once confirmed by Travelline, the source will appear correctly.
+  </Accordion>
+  <Accordion title="On weekends the AI says 'unavailable' instead of 'minimum 2 nights'.">
+    This is an instruction wording issue — the AI is reproducing a phrase it was not trained to avoid. Fix the behavior as follows:
+    1. Go to the AI employee settings → "Instruction" section.
+    2. Add an explicit rule, for example: "On Fridays and Saturdays, bookings are only available for 2 nights or more. Inform the guest of this rule; do not use phrases like 'no rooms available' or 'unavailable'".
+    3. Save the instruction and verify the behavior with a test request.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## PMS INTEGRATION: BNOVO
+
+<AccordionGroup>
+  <Accordion title="How do I connect Bnovo?">
+    Follow these steps:
+    1. Go to the AI Textura account → "Data" → "Add Data".
+    2. Select Bnovo from the list of integrations.
+    3. Enter the login and password for your Bnovo account.
+    4. Save the settings and verify the connection.
+  </Accordion>
+  <Accordion title="Where can I find the hotel ID in Bnovo?">
+    The hotel ID is contained in the browser address bar when you are in your Bnovo account. Example URL: `https://bnovo.ru/hotel/12345` — the ID is `12345`. Copy this value for use in the integration.
+  </Accordion>
+  <Accordion title="Which login/password should I enter — the owner's or an employee's?">
+    Administrator credentials are sufficient.
+  </Accordion>
+  <Accordion title="Error: 'no available hotels found' when connecting.">
+    This is a typical credential mismatch issue. Follow these steps:
+    1. Copy the login from your Bnovo account — do not type it manually, to avoid extra spaces.
+    2. Do the same with the password.
+    3. Paste both values into the connection fields and try again.
+    If the mismatch persists — contact support: we will check the authorization request parameters.
+  </Accordion>
+  <Accordion title="The AI shows rates by ID instead of by name.">
+    This is non-standard behavior in the Bnovo integration that we diagnose at the request chain level. Contact support — we will analyze the logs and resolve the display discrepancy.
+  </Accordion>
+  <Accordion title="The AI is pulling prices from inactive rate plans.">
+    This is a rate visibility configuration issue in Bnovo. Choose one of the following options:
+    1. In your Bnovo account, configure which rates are shown "at the desk" — the AI will only work with those.
+    2. Alternatively, create a dedicated rate plan, e.g. "AI Rate", specifically for the AI employee, and reference it in the instruction.
+  </Accordion>
+  <Accordion title="The AI creates a booking with an amount of 0.">
+    This is an integration issue on the Bnovo side related to cost data transfer. Follow these steps:
+    1. After the AI creates a booking, you will find the correct amount in the Bnovo notification — use it to fill in the amount manually.
+    2. Contact AI Textura support — we will analyze the request chain and diagnose the cost transfer behavior in your configuration.
+  </Accordion>
+  <Accordion title="Bnovo API access has been granted — how do I use it?">
+    The Bnovo API allows retrieving data — room prices and availability. Creating bookings via the Bnovo API is not currently available. If you need auto-booking — consider alternative PMS integrations or check with support for the current status of this feature.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## PMS INTEGRATION: MEWS
+
+<AccordionGroup>
+  <Accordion title="How do I get access to the MEWS API?">
+    There are two options:
+    1. Submit a request to MEWS to obtain a production client name.
+    2. Use an existing client name if you already have one.
+    In both cases, MEWS Connector API certification is required. Check the current certification requirements on the MEWS website or with your MEWS account manager.
+  </Accordion>
+  <Accordion title="MEWS is calculating the time zone incorrectly.">
+    This is a technical characteristic of the MEWS API: the system expects times in the hotel's local time zone, not UTC. For correct operation, ensure that check-in (15:00) and check-out (11:00) times are explicitly sent to MEWS in the property's local time zone. If you have configured this yourself and the discrepancy persists — contact support: we will check the request parameters.
+  </Accordion>
+  <Accordion title="How often is data updated from MEWS?">
+    Every 2 minutes.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## OTHER INTEGRATIONS AND TALENTS
+
+<AccordionGroup>
+  <Accordion title="Can the AI read data from Google Sheets?">
+    Yes, via the Google Sheets Talent. Prepare your spreadsheet according to the following requirements: the structure must be flat (no nested levels), column headers must be clear and unambiguous, and merged cells are not allowed. Then connect the Talent in the AI employee settings.
+  </Accordion>
+  <Accordion title="Can the AI search the internet?">
+    Yes, via the WebSearch Talent. Connect it in the AI employee settings and add an explicit instruction indicating when to use search — this allows precise control over the assistant's behavior.
+  </Accordion>
+  <Accordion title="Is there a Google Calendar integration?">
+    Yes, via Talents. Connect the corresponding Talent in the AI employee settings.
+  </Accordion>
+  <Accordion title="Can I connect my own API?">
+    Yes. There are two options:
+    1. Create a custom Talent (Custom) to send HTTP requests to any external API.
+    2. Use SendAPI to configure custom webhooks.
+    Connection is done in the "Talents" section of the AI employee settings.
+  </Accordion>
+  <Accordion title="Can the AI connect to a weather service?">
+    Yes. For accurate results, specify the exact address or location of your property in the settings of the corresponding Talent — this ensures accurate weather data.
+  </Accordion>
+  <Accordion title="Is there an integration with Ecvi / RealtyCalendar / MeHotel?">
+    Integrations with these systems are handled individually. API access is required for implementation. If your PMS has a closed API, an alternative option is available: "AI Operator" mode, in which the AI interacts with the system through a browser like a regular user. Contact support to discuss your specific case.
+  </Accordion>
+  <Accordion title="Is there a WeChat integration?">
+    WeChat integration is not currently available. Stay tuned for updates in the AI Textura news section.
+  </Accordion>
+  <Accordion title="Do I need to whitelist IP addresses for API access?">
+    Yes, when working with external APIs, follow these steps:
+    1. Add the following IPs to your whitelist: `136.144.29.235` and `136.144.28.219`.
+    2. Also add the domain `aitextura.com`.
+    3. Make sure the changes have been applied on your system's side.
+  </Accordion>
+  <Accordion title="How many Talents are available?">
+    Over 3,000 through the External Talents library: OpenAI, Anthropic, Shopify, MySQL, PostgreSQL, AWS, Twilio, amoCRM, Bitrix24, and more. You can view the full list in the "Talents" → "Available Skills" section of your account.
+  </Accordion>
+</AccordionGroup>

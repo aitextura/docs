@@ -1,0 +1,76 @@
+---
+title: "Security & Multiple AI Employees"
+description: "Data protection, privacy laws, NDA, switching between AI employees"
+---
+
+Data protection, privacy laws, NDA, switching between AI employees
+
+---
+
+## PROTECTION AND SECURITY
+
+<AccordionGroup>
+  <Accordion title="How do I protect the AI from being 'jailbroken' (so it doesn't reveal its instructions)?">
+    Here is how to activate protection:
+    1. Open the employee settings.
+    2. Find the **Protection** item and enable the corresponding toggle.
+    During testing you can temporarily disable protection — this reduces token consumption. For working with real clients it is recommended to keep protection enabled.
+  </Accordion>
+  <Accordion title="How is personal data protected?">
+    The platform does not store guest data: it is passed to a PII system and anonymized — in transit, without being saved. If your company requires additional data localization, you can switch the employee to a local Russian model — this is done in the employee settings under the model selection section.
+  </Accordion>
+  <Accordion title="What about data protection laws? If data is sent to foreign servers, is it forbidden to use this AI in business?">
+    This is an important question, and here is what you need to know.
+    The key point is not the data transmission channel, but how data processing and protection are organized on your company's side.
+    The platform does not store clients' personal data: all data passes in transit and is anonymized. Upon your request, the following options are available:
+    - complete opt-out from processing personal data through the platform;
+    - switching to permitted local communication channels (for example, a local messenger or a local web form);
+    - operating exclusively on local servers.
+    It is important to note: responsibility for compliance with personal data protection requirements rests with your company as the data operator. The platform is a tool, and, as with any employee working with client data, you must have an internal personal data processing policy, secure channels, and reporting in place.
+    To adapt the configuration to your policy — contact your manager, and we will find a suitable scheme.
+    Detailed guide: https://docs.google.com/document/d/1NlANYCyVH840smTU71WX9dzD9UU0xCWzmW8f7Bi6qkI/edit?usp=drivesdk
+  </Accordion>
+  <Accordion title="Is there an NDA / confidentiality agreement?">
+    Yes, confidentiality provisions are included in the public offer. If your company needs a separate agreement — contact your manager and we will prepare an additional document.
+    Public offer: https://docs.aitextura.com/ru/terms-and-policies/offer
+  </Accordion>
+  <Accordion title="Two-factor authentication?">
+    Yes, two-factor authentication is available. Here is how to enable it:
+    1. Open your account settings.
+    2. Go to the security section.
+    3. Enable 2FA and link an authenticator app (Google Authenticator, Yandex Key, or similar).
+  </Accordion>
+  <Accordion title="We are hesitant to share our PMS login/password.">
+    This is a standard concern, and there is a solution. PMS credentials are used exclusively for technical integration and are not shared with third parties. If your company requires additional legal documentation — request an additional NDA from your manager and we will prepare it.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## MULTIPLE AI EMPLOYEES AND SWITCHING
+
+<AccordionGroup>
+  <Accordion title="Can I create multiple AI employees with different functions?">
+    Yes. You can create as many employees as needed for different tasks. For example: one employee handles bookings, another handles post-check-in support. Narrowly specialized employees generally perform more accurately than a single general-purpose one.
+    To create a new employee: Settings → Employees → Add.
+  </Accordion>
+  <Accordion title="How do I switch between AI employees within a single conversation?">
+    There are two ways:
+    1. **Via Quick Replies** — create a button with the type "Transfer to another AI" and specify the target employee.
+    2. **Automatically** — in the employee's instruction define a condition: when a specific object or topic is mentioned — switch to the relevant specialist.
+  </Accordion>
+  <Accordion title="Can I create a 'main' AI dispatcher?">
+    Yes. Here is how to set up such a scheme:
+    1. Create a separate "dispatcher" employee.
+    2. In its instruction define the routing logic: which topics or keywords are directed to which specialists.
+    3. Add Quick Replies with the type "Transfer to another AI" for each direction.
+    The dispatcher will identify the topic of the request and hand the conversation over to the appropriate employee.
+  </Accordion>
+  <Accordion title="One Instagram account for multiple branches — the AI mixes up data.">
+    This is a typical integration nuance when working with a single channel across multiple properties. There are three solutions:
+    1. **Different employees for different channels** — each property gets its own channel and its own AI. The cleanest option.
+    2. **One employee with clear separation in the instruction** — define a condition: "If the client asks about [property A] — use data from [source A], if about [property B] — from [source B]".
+    3. **Remove the shared widget** — place widgets on the specific property pages instead of a single entry point.
+    Choose the option that matches your structure. If you need help configuring the instruction — contact your manager.
+  </Accordion>
+</AccordionGroup>

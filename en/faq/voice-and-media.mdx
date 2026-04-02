@@ -1,0 +1,79 @@
+---
+title: "Voice, Calls, Photos & Files"
+description: "Voice messages, AI calls, sending photos/videos/documents"
+---
+
+Voice messages, AI calls, sending photos/videos/documents
+
+---
+
+## VOICE MESSAGES AND CALLS
+
+<AccordionGroup>
+  <Accordion title="Can the AI recognize voice messages?">
+    Yes. The AI automatically transcribes incoming voice messages and replies with text. If needed, you can additionally configure voice replies — see the question "How do I set up the AI voice?".
+  </Accordion>
+  <Accordion title="How do I set up the AI voice?">
+    Configure the voice in a few steps:
+    1. Open Channel Advanced Settings → the "Voice" section.
+    2. For a standard voice: select one of the preset options and save.
+    3. For ElevenLabs Pro voice:
+    - Sign up at elevenlabs.io.
+    - Choose a ready-made voice or clone your own.
+    - Go to your ElevenLabs profile settings → copy the API key.
+    - Paste the API key into the corresponding field in the TEXTURA AI settings.
+    - Save and test the voice response.
+  </Accordion>
+  <Accordion title="Can voice responses be disabled?">
+    Yes. Go to Channel Advanced Settings → the "Voice" section → deactivate the voice response feature → save.
+  </Accordion>
+  <Accordion title="Can the AI receive and make calls?">
+    Yes, the feature is available. Before connecting, please note the following technical details:
+    - Cost: ~$0.10–0.15 per minute of conversation plus a subscription fee for the number.
+    - Inbound calls are generally included in the plan at no extra charge.
+    - For Russian numbers there is an integration nuance: SIP telephony is required, and a connection delay is possible.
+    To connect, contact your support manager — a specialist will find the optimal configuration for your needs.
+  </Accordion>
+  <Accordion title="Is it possible to get a Russian number for AI calls?">
+    Direct issuance of a Russian number is currently unavailable. Please note the technical specifics:
+    - Calls to Russia are possible, but the outgoing number will be registered in another country.
+    - When using SIP telephony to route through Russian operators, a characteristic connection delay occurs.
+    If this scenario is critical for your business — contact support for a joint analysis of a suitable connection scheme.
+  </Accordion>
+  <Accordion title="Adjusting voice speed?">
+    Go to Advanced Settings → the "Voice" section → the "Speed" parameter. Set a value from x0.5 (slower) to x1.5 (faster) and save.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## SENDING PHOTOS, VIDEOS AND FILES
+
+<AccordionGroup>
+  <Accordion title="Can the AI send photos and videos?">
+    Yes. To configure media file sending:
+    1. Upload files to cloud storage (Google Drive, Yandex.Disk, etc.) and obtain direct links.
+    2. Add the links to the Talent's instruction or to the "Quick Replies" section.
+    3. Specify in which context the AI should send each file.
+    Photos and videos are sent as separate messages in the conversation.
+  </Accordion>
+  <Accordion title="The AI is sending links instead of photos.">
+    This is a technical characteristic of the specific data channel:
+    - Telegram: in most cases displays the media file directly.
+    - Umnico / Bitrix24: the channel may only display a text link — this is an integration nuance on the platform's side.
+    For correct display, make sure the link is direct (ends with a file extension: .jpg, .mp4, etc.) and the file is accessible without authentication. If the issue persists, check with support about the behavior of your specific channel.
+  </Accordion>
+  <Accordion title="How do I send a banquet menu / PDF file?">
+    Configure file sending on request:
+    1. Upload the PDF to cloud storage (Google Drive, Dropbox, etc.).
+    2. Obtain a direct link to the file with public access.
+    3. In the Talent's instruction add: "When the menu is requested — send the link: [your link]".
+    4. Save the instruction and test it in a test conversation.
+  </Accordion>
+  <Accordion title="Can the AI recognize images from guests?">
+    Yes. To activate the feature:
+    1. Go to Advanced Settings → "Image Recognition" → enable the feature.
+    2. In the Talent's instruction describe how the AI should process incoming photos: what to analyze, what to report to the guest based on the result.
+    3. Save and test by sending a test image.
+  </Accordion>
+</AccordionGroup>

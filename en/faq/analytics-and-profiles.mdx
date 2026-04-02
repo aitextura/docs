@@ -1,0 +1,96 @@
+---
+title: "Analytics, Profiles & Auto Follow-up"
+description: "Client profiles, dashboard, automatic reminders and working hours"
+---
+
+Client profiles, dashboard, automatic reminders and working hours
+
+---
+
+## CLIENT PROFILES AND ANALYTICS
+
+<AccordionGroup>
+  <Accordion title="How do client profiles work?">
+    The AI automatically builds a guest profile during a conversation. By default, the name and communication language are recorded. To collect additional data:
+    1. Go to the "Client Profiles" section → "Field Settings".
+    2. Add the required fields (for example: guest type, preferences, visit date).
+    3. In the Talent's instruction specify under which conditions each field should be filled in.
+  </Accordion>
+  <Accordion title="What profile update modes are available?">
+    Two modes are available — choose the one that suits you:
+    - **Realtime** — the profile is updated after every message. Suitable for scenarios where data currency is critical. Uses more tokens.
+    - **Scheduled** — updated on a schedule. Optimal for analytical tasks, saves significantly on tokens.
+    The mode is configured in the "Client Profiles" section → "Update Mode".
+  </Accordion>
+  <Accordion title="Where can I view analytics?">
+    Analytics are available in several sections of the personal account:
+    1. **Dashboard** → overall metrics for the last 24 hours, 7 days, 30 days.
+    2. **Profiles** → field fill-rate statistics across the guest database.
+    3. **Chats** → open any conversation → click "Response Analysis" next to an AI message for a detailed breakdown of a specific interaction.
+  </Accordion>
+  <Accordion title="How can I see what data the AI used to generate a response?">
+    Go to the "Chats" section → open the relevant conversation → find the AI message → click the "Response Analysis" button next to it. A detailed breakdown will open showing which data sources, Talents, and instruction fragments were used when generating the response.
+  </Accordion>
+  <Accordion title="Is there a summarizer bot (daily digest)?">
+    Yes. To connect the daily digest:
+    1. Add the @TexturaAi_summary_bot to the required Telegram group with administrator rights.
+    2. The bot automatically compiles and sends a summary for the previous day every morning.
+    No additional configuration is required.
+  </Accordion>
+  <Accordion title="Is there review analysis from Booking, Google, TripAdvisor?">
+    Yes. To start review analysis:
+    1. Message the @aitextura_reviews_bot and provide links to your pages on the required platforms.
+    2. The bot will parse the reviews and pass the results to a Google Sheet.
+    3. You will receive a link to the sheet from the bot once processing is complete.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## AUTO FOLLOW-UP
+
+<AccordionGroup>
+  <Accordion title="What is Auto Follow-up?">
+    Auto Follow-up is a tool for sending automatic reminders to clients who have stopped responding. You configure a chain of steps with the desired delays and instructions for the AI — and the system conducts the conversation on its own until a response is received.
+  </Accordion>
+  <Accordion title="How do I set it up?">
+    Here is how to do it:
+    1. Open the settings of the required employee.
+    2. Go to the **Auto Follow-up** section.
+    3. Click "Add Step".
+    4. For each step, specify the delay (in hours or minutes) and the instruction for the AI — what exactly to write to the client.
+    5. Repeat for each subsequent step.
+    As soon as the client responds — the chain resets automatically.
+  </Accordion>
+  <Accordion title="Does auto follow-up run around the clock?">
+    Auto Follow-up only operates within the working hours defined in the employee's schedule — this is an important nuance when planning the chain. Please note: it is not possible to disable auto follow-up for an individual chat — the setting applies to all of the employee's conversations.
+  </Accordion>
+  <Accordion title="Configuration recommendations?">
+    For most scenarios the optimal scheme is 2–3 steps with an interval of at least 2–4 hours between them. Keep in mind that each reminder sent consumes tokens — this is worth considering when planning long chains.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## WORKING HOURS
+
+<AccordionGroup>
+  <Accordion title="How do I set up the AI's working hours?">
+    Here is how to do it:
+    1. Open the settings of the required employee.
+    2. Go to the **Working Hours** section.
+    3. Set the schedule by day of the week, specify the time zone, and if necessary add breaks and public holidays.
+    4. Save the changes.
+    By default, the employee works in 24/7 mode.
+  </Accordion>
+  <Accordion title="Can different channels have different hours?">
+    Yes. One employee supports one schedule, so for different channels create separate employees and assign each their own working hours. This is standard practice when working with multiple platforms.
+  </Accordion>
+  <Accordion title="Can the AI be active only from 20:00 to 09:00?">
+    Yes, this is implemented through the schedule:
+    1. Open the employee settings → **Working Hours**.
+    2. Set the interval from 20:00 to 09:00 for the required days.
+    3. Specify the correct time zone — this is critical for accurate triggering.
+    4. Save.
+  </Accordion>
+</AccordionGroup>

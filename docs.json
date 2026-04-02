@@ -99,6 +99,32 @@
             ]
           },
           {
+            "tab": "FAQ",
+            "icon": "circle-question",
+            "iconType": "duotone",
+            "groups": [
+              {
+                "group": "Frequently Asked Questions",
+                "pages": [
+                  "en/faq/index",
+                  "en/faq/getting-started",
+                  "en/faq/persona-and-knowledge",
+                  "en/faq/channels",
+                  "en/faq/crm-integrations",
+                  "en/faq/pms-integrations",
+                  "en/faq/booking",
+                  "en/faq/ai-behavior",
+                  "en/faq/dialog-management",
+                  "en/faq/voice-and-media",
+                  "en/faq/analytics-and-profiles",
+                  "en/faq/security-and-access",
+                  "en/faq/billing",
+                  "en/faq/troubleshooting"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "API Reference",
             "icon": "code",
             "iconType": "duotone",
@@ -222,6 +248,32 @@
             ]
           },
           {
+            "tab": "FAQ",
+            "icon": "circle-question",
+            "iconType": "duotone",
+            "groups": [
+              {
+                "group": "Частые вопросы",
+                "pages": [
+                  "ru/faq/index",
+                  "ru/faq/getting-started",
+                  "ru/faq/persona-and-knowledge",
+                  "ru/faq/channels",
+                  "ru/faq/crm-integrations",
+                  "ru/faq/pms-integrations",
+                  "ru/faq/booking",
+                  "ru/faq/ai-behavior",
+                  "ru/faq/dialog-management",
+                  "ru/faq/voice-and-media",
+                  "ru/faq/analytics-and-profiles",
+                  "ru/faq/security-and-access",
+                  "ru/faq/billing",
+                  "ru/faq/troubleshooting"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "API Справочник",
             "icon": "code",
             "iconType": "duotone",
@@ -288,10 +340,10 @@
   },
   "seo": {
     "ogTemplate": {
-    "background": "/assets/og/docs-cover-1200x630.png",
-    "logo": "/assets/logo/light.svg",
-    "themeColor": "#5a4aaa"
-  },
+      "background": "/assets/og/docs-cover-1200x630.png",
+      "logo": "/assets/logo/light.svg",
+      "themeColor": "#5a4aaa"
+    },
     "metatags": {
       "charset": "UTF-8",
       "viewport": "width=device-width, initial-scale=1",

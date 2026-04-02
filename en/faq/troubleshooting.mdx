@@ -1,0 +1,176 @@
+---
+title: "Troubleshooting, Versions & Misc"
+description: "Service recovery, versioning, rollback and rare questions"
+---
+
+Service recovery, versioning, rollback and rare questions
+
+---
+
+## TECHNICAL DIAGNOSTICS AND SERVICE RECOVERY
+
+<AccordionGroup>
+  <Accordion title="The AI is not responding — what should I do?">
+    Run the diagnostics in sequence:
+    1. Check the word balance in your account — when the balance is zero the AI pauses operation.
+    2. Make sure the employee is activated and the required channel is enabled in its settings.
+    3. Disable the channel and re-enable it — this resets the connection state.
+    4. Check the platform status: https://status.aitextura.com — if maintenance is indicated, wait for recovery.
+    5. If all steps have been completed and the AI is still not responding — write to support and we will check the request chain on your account.
+  </Accordion>
+  <Accordion title="The website / personal account is unavailable.">
+    1) Open https://status.aitextura.com — it publishes up-to-date information about scheduled maintenance and incidents. 2) Check the Telegram channel https://t.me/ai_textura — real-time notifications are posted there. 3) Try accessing from a different browser or clear the cache. Support also notifies about access restoration — if needed, subscribe to the notification bot: https://t.me/aitexturanotificationbot.
+  </Accordion>
+  <Accordion title="The AI is receiving bot requests (spam).">
+    To reduce the load from automated requests:
+    1. Enable spam protection in the employee settings.
+    2. Write to support with the specific accounts indicated — we will check the logs and block spam sources if necessary.
+  </Accordion>
+  <Accordion title="Global OpenAI outage — what should I do?">
+    In this case no action is required from you — the platform automatically switches to backup models. The AI response time may temporarily increase: this is a normal technical characteristic when switching providers. We analyze the logs and monitor recovery. Current status: https://status.aitextura.com.
+  </Accordion>
+  <Accordion title="Service status page?">
+    The current status of all platform components is available at: https://status.aitextura.com. We recommend checking it first whenever any unusual system behavior occurs.
+  </Accordion>
+  <Accordion title="Messages are being duplicated.">
+    Message duplication is an integration nuance that occurs for one of two reasons:
+    1. Data discrepancy on the Umnico side — in this case write to support and we will check the request chain between platforms.
+    2. The guest uses the "reply" function on a message — the AI may interpret the quote as a separate incoming message. Check with guests how exactly they are replying.
+    In most cases the issue is resolved after updating the integration settings. If duplication continues — contact support.
+  </Accordion>
+  <Accordion title="The AI is responding to its own bot messages (loop).">
+    This non-standard behavior is resolved in one of two ways — choose the appropriate one:
+    1. Add your bot's automatic messages to the spam filter in the employee settings.
+    2. Configure an exclusion rule: "If the message starts with [specify the phrase] — do not reply". This is set in the employee's instruction or via filters.
+    If you cannot configure it yourself — describe the situation to support and we will check the configuration.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## VERSIONING AND SETTINGS ROLLBACK
+
+<AccordionGroup>
+  <Accordion title="How does versioning work?">
+    Every time you click "Save", the platform automatically creates a new version of the configuration — all tabs are saved simultaneously. To return to a previous state: 1) Go to the employee's version history section. 2) Select the required version from the list. 3) Apply it — the settings will be fully restored.
+  </Accordion>
+  <Accordion title="Can I roll back just one setting?">
+    Partial rollback is not supported — when a version is restored, the entire configuration is replaced. We recommend saving a checkpoint version manually before making major changes so you always have a point to return to.
+  </Accordion>
+  <Accordion title="Is prompt history saved (can a deleted prompt be recovered)?">
+    Yes. Every click of "Save" creates a new version, including the prompt text. To recover a deleted prompt: 1) Go to the employee's version history. 2) Find the version in which the prompt still existed. 3) Copy the required text or apply the version in full.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## RARE AND UNUSUAL QUESTIONS
+
+<AccordionGroup>
+  <Accordion title="What technology is the platform built on?">
+    The platform is built on NodeJS with Python modules. The infrastructure is hosted on Jelastic with load balancing — this ensures stability as load grows.
+  </Accordion>
+  <Accordion title="Which LLMs does the platform use?">
+    The platform works with OpenAI, Google, and other LLM models. No proprietary models are developed — the best available solutions from leading providers are used.
+  </Accordion>
+  <Accordion title="Can I create a real-time translator (Georgian → Russian)?">
+    Translation from English works well and is available right now. The Georgian language is supported by LLM models with limited quality — this is a technical characteristic of the language models themselves, not the platform. We are exploring alternative approaches for rare languages. If this is relevant to you — write to support so we can factor it into our priorities.
+  </Accordion>
+  <Accordion title="Can the AI create tasks in Bitrix24 and move deals?">
+    This functionality is being developed. To be notified when it becomes available — write to support and we will add you to the list of interested users.
+  </Accordion>
+  <Accordion title="Can the AI record and transcribe conversations?">
+    Yes, this capability exists. To configure it for your employee — contact support or consult the documentation: https://docs.aitextura.com/ru/guides/.
+  </Accordion>
+  <Accordion title="Can the AI know about nearby restaurants, parks and cinemas?">
+    The AI generally has basic knowledge of city infrastructure. For accurate and up-to-date information: 1) Prepare a file describing the relevant venues. 2) Upload it to the employee's Knowledge Base. After that the AI will rely on your data specifically.
+  </Accordion>
+  <Accordion title="How does the AI know the current date/time?">
+    The date and time are automatically passed to the AI from the system with each request — no additional configuration is required.
+  </Accordion>
+  <Accordion title="Can I create multiple communication styles (tone of voice)?">
+    Yes, without limitations. To set a style: 1) Open the instruction for the required employee. 2) Describe the persona, style and character — for example: empathetic Anna, business-like Boris, creative Borges. 3) Save and test in a conversation. For different channels you can create separate employees with different styles.
+  </Accordion>
+  <Accordion title="Can I configure a 'waiting list' for occupied dates?">
+    Yes. Configure it as follows: 1) When collecting contacts for occupied dates, add a trigger to the employee's instruction. 2) Specify that when a request for a closed date is recorded — a notification is sent to the manager. If you need help with the configuration — contact support.
+  </Accordion>
+  <Accordion title="Can I configure upselling of additional products (farm products)?">
+    Yes. To configure upselling: 1) Describe in the employee's instruction which products to offer and under what conditions. 2) We recommend offering add-ons after the booking is complete — this results in higher conversion. 3) For more flexible logic you can create a separate AI employee specialized in upselling.
+  </Accordion>
+  <Accordion title="Can the AI respond 'please wait, I'll check' and come back with an answer?">
+    Yes, this is an available feature. The AI tells the guest "please wait" and returns with an answer after processing the request. The received answer is also saved in memory for use in subsequent conversations. Ask support how to activate this feature for your employee.
+  </Accordion>
+  <Accordion title="How do I recognize guests who have already booked so as not to offer booking again?">
+    Automatic recognition based on booking history is not yet available. The current recommended approach: manually disable the AI in chats with guests who have already completed a booking. If this scenario is critical for you — describe it to support and we will record it as a feature request.
+  </Accordion>
+  <Accordion title="Is there an integration with Yandex Direct?">
+    There is no direct integration with Yandex Direct. If an advertising lead ends up in amoCRM — the AI can process it through the amoCRM integration. Clarify the details of your funnel with support to find a suitable connection scheme.
+  </Accordion>
+  <Accordion title="How do I configure unique promo codes (a different one for each guest)?">
+    This is a non-trivial task: the AI does not perform arithmetic discount calculations directly. Recommended approaches: 1) Store prices in the Knowledge Base already inclusive of the promo code for each segment. 2) Use third-party services for promo code generation and validation, passing the result to the AI via integration. If you need help with the solution architecture — contact support.
+  </Accordion>
+  <Accordion title="V1 vs V2 — what is the difference?">
+    V2 is more stable, more accurate, and more cost-efficient — in some scenarios word consumption is reduced several times over. We recommend switching to V2. To do this: 1) Create a new employee based on V2. 2) Transfer the instructions and Knowledge Base. 3) Test in a test channel. 4) Switch the working channels to the new employee. If needed, support will help with migrating the configuration.
+  </Accordion>
+  <Accordion title="How many hotels use the service?">
+    For exact figures, check with your manager. The platform is actively used in Russia, Kazakhstan, the Baltic states, Czech Republic, Georgia, and a number of other countries.
+  </Accordion>
+  <Accordion title="The documentation returns a 404.">
+    The documentation is updated periodically, and during updates individual pages may be temporarily unavailable — this is a planned technical aspect of the publishing process. Current link: https://docs.aitextura.com/ru/guides/. If a specific section is unavailable — write to support and we will direct you to the right page.
+  </Accordion>
+  <Accordion title="Are there tutorial videos?">
+    Yes. The following materials are available:
+    - Video tutorial (15 min) — on the official YouTube channel.
+    - Connecting Telegram: https://www.youtube.com/watch?v=GXSxWdkHkVg
+    - Quick start in the documentation: https://docs.aitextura.com/ru/guides/quick-start
+    If you cannot find what you need — write to support and we will point you to the right resource.
+    # USEFUL LINKS
+    | Resource | URL |
+    |---|---|
+    | Personal account | https://app.aitextura.com |
+    | Documentation | https://docs.aitextura.com/ru/guides/ |
+    | Service status | https://status.aitextura.com |
+    | Notification bot | https://t.me/aitexturanotificationbot |
+    | Telegram channel | https://t.me/ai_textura |
+    | Public offer | https://docs.aitextura.com/ru/terms-and-policies/offer |
+    | Buy words | https://app.aitextura.com/billing/words/buy |
+    | Usage history | https://app.aitextura.com/billing/words/history |
+    | Skills catalog | https://app.aitextura.com/catalog/skills |
+    | Website (Russian) | https://ru.aitextura.com |
+    | Umnico (sign up) | https://umnico.com |
+    | Wazzup24 | https://wazzup24.ru |
+    # BOT CHAT COMMANDS
+    | Command | Action |
+    |---|---|
+    | 😎😇😭😚😍 | Clear conversation history/memory |
+    | 📚📕📙📗📓📖 | Retrain the AI employee (re-read the instruction) |
+    | 😇 | Enable AI in the chat (after a pause) |
+    | Stop word (configurable) | Stop the AI in the chat |
+    > This document was created based on an analysis of 48 real AI TEXTURA support conversations and the official documentation at docs.aitextura.com.
+    > Contains 250+ questions and answers across 40 categories.
+    # USEFUL LINKS
+    | Resource | URL |
+    |---|---|
+    | Personal account | https://app.aitextura.com |
+    | Documentation | https://docs.aitextura.com/ru/guides/ |
+    | Service status | https://status.aitextura.com |
+    | Notification bot | https://t.me/aitexturanotificationbot |
+    | Telegram channel | https://t.me/ai_textura |
+    | Public offer | https://docs.aitextura.com/ru/terms-and-policies/offer |
+    | Buy words | https://app.aitextura.com/billing/words/buy |
+    | Usage history | https://app.aitextura.com/billing/words/history |
+    | Skills catalog | https://app.aitextura.com/catalog/skills |
+    | Website (Russian) | https://ru.aitextura.com |
+    | Umnico (sign up) | https://umnico.com |
+    | Wazzup24 | https://wazzup24.ru |
+    # BOT CHAT COMMANDS
+    | Command | Action |
+    |---|---|
+    | 😎😇😭😚😍 | Clear conversation history/memory |
+    | 📚📕📙📗📓📖 | Retrain the AI employee (re-read the instruction) |
+    | 😇 | Enable AI in the chat (after a pause) |
+    | Stop word (configurable) | Stop the AI in the chat |
+    > This document was created based on an analysis of 48 real AI TEXTURA support conversations and the official documentation at docs.aitextura.com.
+    > Contains 250+ questions and answers across 40 categories.
+  </Accordion>
+</AccordionGroup>
