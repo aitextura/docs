@@ -1,0 +1,128 @@
+---
+title: "Broadcasts"
+description: "Mass messages to customer segments through your connected channels."
+---
+
+Broadcasts let you send a single message to a group of customers at once — through a chosen channel and segment. Useful for announcements, reminders, reactivating "sleeping" customers, and post-purchase surveys.
+
+<Frame>
+  <img src="/public/screenshots/57-broadcasts.png" alt="Broadcasts — mass messages" />
+</Frame>
+
+<CardGroup cols={2}>
+  <Card title="Channels" icon="link" href="/en/channels/index">
+    Which channels you can broadcast through
+  </Card>
+  <Card title="Customer Profiles" icon="users" href="/en/guides/profiles">
+    Segment by customer data
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Alerts to your team about events
+  </Card>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Choose which agent sends on your behalf
+  </Card>
+</CardGroup>
+
+---
+
+## What broadcasts are
+
+A broadcast is the delivery of the same (or personalized) message to a list of recipients through the channel they already use to talk to you. This is **not** cold outreach — only customers who have already had a conversation with your AI employee and accepted communication via that channel will receive it.
+
+Typical scenarios:
+
+- Announcing a promotion or a new service.
+- Reminders about an unfinished order or abandoned cart.
+- Reactivating customers who haven't written in a while.
+- Collecting feedback after a purchase.
+- Notifying customers about company changes (hours, new services).
+
+<Warning>
+  Broadcasts are channel-sensitive: in a Telegram bot, the message will only reach users who started the dialog themselves; in CRM channels — only customers with an open conversation. Follow each platform's policy.
+</Warning>
+
+---
+
+## Where it lives
+
+The **Broadcasts** item is in the platform sidebar (URL `/broadcast`). The section is available in any context — your personal account or an [organization](/en/guides/organization).
+
+---
+
+## How to create a broadcast
+
+<Steps>
+  <Step title="Open the Broadcasts section">
+    In the sidebar, click **Broadcasts** (`/broadcast`).
+  </Step>
+  <Step title="Create a new broadcast">
+    Click the create button in the top-right corner of the page.
+  </Step>
+  <Step title="Choose a channel and a segment">
+    Specify which connected channel to send through and exactly who — a customer segment or a specific recipient list.
+  </Step>
+  <Step title="Write the message">
+    Enter the broadcast text. Where possible, use personalization — address by name, link to a specific product.
+  </Step>
+  <Step title="Send or schedule">
+    You can send immediately or schedule for a specific time.
+  </Step>
+</Steps>
+
+<Note>
+  An expanded description of the creation fields will be added after the next platform audit. If you have questions about a specific field, please write to [Support](/en/guides/support).
+</Note>
+
+---
+
+## Related sections
+
+- **Channels.** A broadcast goes through a channel that's already connected to one of your AI employees. See [Channels](/en/channels/index).
+- **Customer Profiles.** Segmenting by [Profiles](/en/guides/profiles) lets you message just the right group — for example, only those who purchased in the last 30 days.
+- **Notifications.** Don't confuse the two: [Notifications](/en/guides/notifications) are alerts to your team about chat events. Broadcasts are messages to your customers.
+- **Billing.** Each broadcast message consumes words just like a regular conversation. Watch your balance — see [Billing](/en/guides/finance).
+
+---
+
+## Best practices
+
+<Steps>
+  <Step title="Segment your recipients">
+    The narrower the segment, the better the response. Don't blast the same message to everyone; split your audience by interest, recency of dialog, customer status.
+  </Step>
+  <Step title="Use personalization">
+    Insert the name, region, last order. Generic "Hello, we have a sale" performs the worst.
+  </Step>
+  <Step title="Test on a small group">
+    Before a mass send, run a pilot to 10–20 customers and gauge the response.
+  </Step>
+  <Step title="Don't overdo the frequency">
+    Once a week is the norm. Daily is the path to unsubscribes and blocks.
+  </Step>
+</Steps>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Who receives the broadcast?">
+    Only customers with an active dialog in the chosen channel — that is, those who have already written to your AI employee. Cold outreach to strangers is not supported.
+  </Accordion>
+  <Accordion title="Can I cancel a running broadcast?">
+    If a broadcast is scheduled for the future, you can cancel or edit it before launch. Once sending starts, you can't fully halt it, but further delivery can be stopped.
+  </Accordion>
+  <Accordion title="How much does one broadcast cost?">
+    Each sent message consumes words from your plan — the same as a regular agent reply in chat. See [Billing](/en/guides/finance).
+  </Accordion>
+  <Accordion title="Which channels can I broadcast through?">
+    Through any channel connected to your AI employee. Technical limits depend on the specific platform — for example, in Telegram you cannot message someone first if they haven't started the dialog themselves.
+  </Accordion>
+  <Accordion title="Can I broadcast from an organization rather than my personal account?">
+    Yes — switch context to the [organization](/en/guides/organization), and that organization's channels and agents become available.
+  </Accordion>
+  <Accordion title="Where do I see broadcast statistics?">
+    On the broadcast page itself — sent / read / replied. Customer replies land in the regular chat of the corresponding AI employee.
+  </Accordion>
+</AccordionGroup>

@@ -32,6 +32,14 @@ Knowledge is the foundation of accurate answers from your AI employee. Without a
 
 ---
 
+## Video walkthrough
+
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/gagkwzwHFXo" title="How to add a knowledge base in AI Textura" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+A short video: how to upload documents and web pages into the knowledge base and connect them to an AI employee.
+
+---
+
 ## Two Places to Work with Knowledge
 
 AI Textura has two related but distinct sections for working with knowledge:
@@ -57,6 +65,10 @@ The **Knowledge** section in the left sidebar is a shared repository of files an
 - Add new sources
 - Delete outdated data
 
+<Frame>
+  <img src="/public/screenshots/51-knowledge.png" alt="Knowledge page: agent selector, mode tabs, folder tree, and file table" />
+</Frame>
+
 ### Interface
 
 The screen is split into two parts:
@@ -73,10 +85,62 @@ The screen is split into two parts:
 
 Above the table you will find:
 - **Breadcrumbs** -- navigation through folder levels
-- **Agent filter** (All agents) -- show sources connected to a specific employee
+- **Agent selector** (`All agents`) -- show sources connected to a specific employee
+- **Mode tabs** (`Extended` / basic) -- switch between display modes
 - **Add button** -- create folders and upload sources
 
 Each item in the table has an actions button (three dots): rename, move, or delete.
+
+### Agent Selector
+
+Above the table there is an **All agents** dropdown. This is the page's central filter:
+
+| Selection | What it shows |
+|---|---|
+| **All agents** | All sources and folders for all employees — overall view |
+| Specific employee | Only the sources **connected** to that employee. The folder tree collapses to the relevant branches |
+
+<Frame>
+  <img src="/public/screenshots/52-knowledge-agent.png" alt="Agent selector: filter sources by a specific AI employee" />
+</Frame>
+
+<Tip>
+  If you want to quickly see which knowledge a single employee actually "sees" — pick them in the selector. It's faster than going into their settings and opening the "Knowledge Base" tab.
+</Tip>
+
+### `Extended` and basic modes
+
+The tabs next to the agent selector switch the page view:
+
+| Mode | What it shows |
+|---|---|
+| **Basic** | A simple folder hierarchy and file table. Fits when there are few sources and you only need to add/remove files |
+| **Extended** | Expanded navigation with **Agent folders** (a separate branch per employee), a system **FAQ** folder, and custom folders. Useful as the knowledge library grows and sources get split across multiple employees |
+
+<Frame>
+  <img src="/public/screenshots/53-knowledge-extended.png" alt="'Extended' mode: agent folders, system folders, and custom directories" />
+</Frame>
+
+### Agent folders
+
+In Extended mode, a separate subfolder is created automatically inside the **Agents** branch for each employee. Any source you upload from an employee's **Knowledge Base** tab lands here. The folder name matches the employee's name.
+
+**Example structure:**
+
+```
+All knowledge
+├── Agents
+│   ├── Administrator
+│   │   └── (empty)
+│   └── bitrix test
+│       └── ...
+├── FAQ
+│   └── ...
+└── Price lists 2026
+    └── ...
+```
+
+Agent folders help keep things tidy in a large catalog: you see which sources are tied specifically to a single employee while still using shared custom folders (like `Price lists 2026`) across multiple employees at once.
 
 ### Folder Structure
 
@@ -122,15 +186,15 @@ All knowledge
 
 You can create folders within folders for deeper organization, for example: **Price lists → Summer 2026**, **Price lists → Winter 2026**.
 
-### Filtering by Agent
-
-Above the table there is an **All agents** dropdown. Select a specific employee to see only the sources connected to them. This is useful when you need to understand which knowledge a particular agent uses.
-
 ---
 
 ## "Knowledge Base" Tab -- Per-Employee Settings
 
 Open the desired AI employee → **Knowledge Base** tab. Here you select which sources from the shared repository to connect to this agent.
+
+<Frame>
+  <img src="/public/screenshots/41-agent-knowledge.png" alt="'Knowledge Base' tab in agent settings: folder checkboxes and file table" />
+</Frame>
 
 ### Interface
 

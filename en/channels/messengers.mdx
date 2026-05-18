@@ -1,67 +1,110 @@
 ---
-title: "WhatsApp, VK, Instagram, Avito & Other Messengers"
-description: "Connect popular messengers and marketplaces (WhatsApp, VK, Instagram, Avito, Viber, Facebook) to your AI employee through aggregator platforms: Umnico, Wazzup, Kommo, Salebot, SendAPI."
+title: "WhatsApp, VK, Instagram, Avito and Other Messengers"
+description: "Connect popular messengers and marketplaces (WhatsApp, VK, Instagram, Avito, Viber, Facebook) to your AI employee through aggregator platforms: Wazzup, Umnico, Kommo, Salebot, SendAPI, Jivo, HelpDeskEddy."
 ---
 
-To let your AI employee respond to customers on WhatsApp, VK, Instagram, Avito, and other channels, use an **aggregator platform**. An aggregator combines multiple messengers in one interface and provides a single API key for connecting to AI Textura.
+<Frame>
+  <img src="/public/screenshots/27-channel-wazzup.png" alt="Connecting Wazzup as an aggregator channel" />
+</Frame>
 
----
+<CardGroup cols={2}>
+  <Card title="Channels — overview" icon="plug" href="/en/channels">
+    What a channel is and how it works in AI Textura
+  </Card>
+  <Card title="Telegram" icon="paper-plane" href="/en/channels/telegram">
+    Direct connection of a Telegram bot
+  </Card>
+  <Card title="amoCRM and Kommo" icon="address-book" href="/en/channels/amocrm">
+    CRMs with built-in messengers
+  </Card>
+  <Card title="Bitrix24" icon="building" href="/en/channels/bittrix24">
+    Bitrix24 open channels
+  </Card>
+</CardGroup>
 
-## Supported Platforms
+To let your AI employee respond to customers on WhatsApp, VK, Instagram, Avito, and other channels, use an **aggregator platform**. An aggregator combines several messengers in one window and provides a single API key for connecting to AI Textura.
 
-| Platform | WhatsApp | VK | Instagram | Avito | Viber | Facebook | Telegram |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **Umnico** | + | + | + | + | + | + | + |
-| **Wazzup** | + | - | + | + | - | - | + |
-| **Kommo** | + | + | + | - | - | - | + |
-| **Salebot** | + | + | - | - | + | - | + |
-| **SendAPI** | + | + | + | + | + | + | + |
-
----
-
-## Platform Overview
-
-<Accordion title="Umnico — Universal Messenger Aggregator">
-  Umnico combines WhatsApp, Telegram, Instagram, VK, Viber, Facebook, Avito, and other channels in one window. Ideal for companies that need to connect multiple messengers without a CRM.
-
-  **Supported channels:** WhatsApp, Telegram, Instagram, VK, Viber, Facebook, Avito, and more.
-</Accordion>
-
-<Accordion title="Wazzup — WhatsApp Specialist">
-  Wazzup specializes in WhatsApp connections (personal number and Business API). It also supports Instagram, Avito, and Telegram. Simple setup and stable connection.
-
-  **Supported channels:** WhatsApp (personal and Business API), Instagram, Avito, Telegram.
-</Accordion>
-
-<Accordion title="Kommo — CRM with Built-in Messengers">
-  Kommo (formerly amoCRM) is a CRM system with native messenger integrations. If you already use Kommo for sales, connecting channels will be seamless.
-
-  **Supported channels:** WhatsApp, Telegram, Instagram, VK.
-</Accordion>
-
-<Accordion title="Salebot — Automation & Bot Builder">
-  Salebot is an automation platform with a visual bot builder. It lets you create conversation flows and connect messengers to AI Textura.
-
-  **Supported channels:** WhatsApp, Telegram, VK, Viber.
-</Accordion>
-
-<Accordion title="SendAPI — Universal API for Custom Integrations">
-  SendAPI provides a universal HTTP interface (webhooks) for connecting any channel. Best suited for non-standard integrations or channels not available in other aggregators.
-
-  **Supported channels:** any channel via HTTP webhooks.
-</Accordion>
+<Note>
+  **WhatsApp** in AI Textura is connected **only** through aggregators — the most reliable option is **Wazzup**. There is no direct WhatsApp channel on the platform.
+</Note>
 
 ---
 
-## How to Connect
+## Supported platforms
 
-The process is the same for all aggregator platforms.
+| Platform | Type | WhatsApp | VK | Instagram | Avito | Viber | Telegram | Other |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Wazzup** | Aggregator (WhatsApp focus) | + | - | + | + | - | + | — |
+| **Umnico** | Universal aggregator | + | + | + | + | + | + | Facebook, Skype |
+| **Kommo** | CRM with built-in channels | + | + | + | - | - | + | via Kommo integrations |
+| **Salebot** | Bot builder | + | + | - | - | + | + | — |
+| **SendAPI** | Universal API | + | + | + | + | + | + | any HTTP channel |
+| **Jivo** | Live chat + omnichannel | + | + | + | - | - | + | website widget, email |
+| **HelpDeskEddy** | Helpdesk platform | + | - | + | - | - | + | tickets, email |
 
-### Step 1. Set Up the Aggregator
+<Tip>
+  If your main goal is WhatsApp without a CRM, start with **Wazzup**. If you need a single dashboard for 5+ messengers, go with **Umnico** or **SendAPI**.
+</Tip>
+
+---
+
+## Platform overview
+
+<AccordionGroup>
+  <Accordion title="Wazzup — WhatsApp specialist">
+    Wazzup specializes in WhatsApp connections (personal number and Business API). It also supports Instagram, Avito, and Telegram. Simple setup and a stable connection.
+
+    **Supported channels:** WhatsApp (personal and Business API), Instagram, Avito, Telegram.
+  </Accordion>
+
+  <Accordion title="Umnico — universal messenger aggregator">
+    Umnico combines WhatsApp, Telegram, Instagram, VK, Viber, Facebook, Avito, and other channels in one window. A good fit for companies that need to connect multiple messengers without a CRM.
+
+    **Supported channels:** WhatsApp, Telegram, Instagram, VK, Viber, Facebook, Avito, and more.
+  </Accordion>
+
+  <Accordion title="Kommo — CRM with built-in messengers">
+    Kommo (the international version of amoCRM) is a CRM with native messenger integrations. If you already use Kommo for sales, connecting channels is as simple as it gets.
+
+    **Supported channels:** WhatsApp, Telegram, Instagram, VK.
+  </Accordion>
+
+  <Accordion title="Salebot — automation and bot builder">
+    Salebot is an automation platform with a visual bot builder. It lets you design conversation flows and connect messengers to AI Textura.
+
+    **Supported channels:** WhatsApp, Telegram, VK, Viber.
+  </Accordion>
+
+  <Accordion title="SendAPI — universal API for custom integrations">
+    SendAPI provides a universal HTTP interface (webhooks) for connecting any channel. A good fit if you need a non-standard integration or a channel that other aggregators don't have.
+
+    **Supported channels:** any channel via HTTP webhooks.
+  </Accordion>
+
+  <Accordion title="Jivo — live chat and omnichannel">
+    Jivo offers a live-chat website widget plus a messenger aggregator. Convenient if you already run Jivo as a website live chat — the AI employee plugs into the same dashboard.
+
+    **Supported channels:** WhatsApp, VK, Instagram, Telegram, email, website widget.
+  </Accordion>
+
+  <Accordion title="HelpDeskEddy — helpdesk with messengers">
+    HelpDeskEddy is a ticketing system with messenger support. A good fit for companies running support through tickets that want to add an AI employee as the first line.
+
+    **Supported channels:** WhatsApp, Instagram, Telegram, email, tickets.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## How to connect
+
+The process is the same for every aggregator platform.
+
+### Step 1. Set up the aggregator
 
 <Steps>
   <Step title="Register on the aggregator platform">
-    Go to the website of your chosen aggregator (Umnico, Wazzup, Kommo, Salebot, or SendAPI) and create an account.
+    Go to the website of your chosen aggregator (Wazzup, Umnico, Kommo, Salebot, SendAPI, Jivo, or HelpDeskEddy) and create an account.
   </Step>
   <Step title="Connect the desired messengers">
     In the aggregator's dashboard, add the channels you want to use: WhatsApp, VK, Instagram, Avito, Viber, and others.
@@ -72,66 +115,81 @@ The process is the same for all aggregator platforms.
 </Steps>
 
 <Warning>
-  Keep your API key secure — it provides full access to your channels in the aggregator. Do not share it with third parties.
+  Keep the API key secure — it grants full access to your channels in the aggregator. Do not share it with third parties.
 </Warning>
 
-### Step 2. Connect the Aggregator in AI Textura
+### Step 2. Connect the aggregator in AI Textura
 
 <Steps>
   <Step title="Open the Channel section">
-    Go to [AI Employees](/en/guides/ai-employees) → select your agent → **Channel** tab.
+    Go to [AI Employees](/en/guides/ai-employees) → select the agent → **Channel** tab → **Connect new** sub-tab.
   </Step>
   <Step title="Select the platform">
-    In the **Browse apps** tab, find the desired platform (e.g., Umnico or Wazzup) and click on it.
+    In the platform list, find the one you need (e.g., Wazzup or Umnico) and click on it.
   </Step>
   <Step title="Create a connection">
-    In the side panel, select the **Create** tab.
+    In the side panel, switch to the **Create** tab.
   </Step>
   <Step title="Fill in the settings">
-    - **Channel name**: any convenient name (e.g., "WhatsApp via Umnico").
+    - **Channel name**: any convenient name (e.g., "WhatsApp via Wazzup").
     - **API key**: paste the key copied from the aggregator.
   </Step>
   <Step title="Connect">
     Click **Connect**. The channel will appear in the **Connected** tab and start receiving messages.
   </Step>
+  <Step title="Pick the source (if applicable)">
+    For **Wazzup** and some other aggregators, after connecting you need to choose a specific source channel (e.g., the right WhatsApp number) from those available in the aggregator.
+  </Step>
 </Steps>
 
 <Tip>
-  You can connect multiple messengers through a single aggregator — one API key is enough.
+  A single aggregator can serve several messengers at once — one API key is enough.
 </Tip>
 
 ---
 
-## Which Aggregator to Choose
+## Which aggregator to choose
 
 <Note>
-  The choice depends on your needs and the channels you want to connect.
+  The choice depends on your goals and the channels you want to connect.
 </Note>
 
 | Scenario | Recommendation |
 | --- | --- |
-| Need to connect multiple messengers without a CRM | **Umnico** — widest channel coverage in one window |
 | Primary channel is WhatsApp | **Wazzup** — stable WhatsApp connection, simple setup |
+| Need multiple messengers without a CRM | **Umnico** — widest channel coverage in one window |
 | Already using Kommo CRM | **Kommo** — messengers are built into the CRM, no separate aggregator needed |
 | Need automation and bot scenarios | **Salebot** — visual builder + channel connections |
-| Custom integration or uncommon channel | **SendAPI** — universal API via webhooks |
+| You already have a website live chat | **Jivo** — widget + messengers in one dashboard |
+| Support runs through tickets | **HelpDeskEddy** — embed AI as the first line |
+| Custom integration or rare channel | **SendAPI** — universal API via webhooks |
 
 <Tip>
-  If you need WhatsApp, Instagram, VK, Avito, or other messengers but don't use a CRM — an aggregator (Umnico or Wazzup) is the simplest solution.
+  If you need WhatsApp, Instagram, VK, Avito, or other messengers but don't use a CRM, an aggregator (Wazzup or Umnico) is the simplest solution.
 </Tip>
 
 ---
 
 ## FAQ
 
-<Accordion title="Can I connect multiple aggregators at the same time?">
-  Yes. You can connect different channels through different aggregators to the same AI employee.
-</Accordion>
+<AccordionGroup>
+  <Accordion title="Can I connect several aggregators at the same time?">
+    Yes. You can connect different channels through different aggregators to the same AI employee.
+  </Accordion>
 
-<Accordion title="What happens if the aggregator goes down?">
-  The AI employee will not be able to send or receive messages through that channel until the aggregator is restored. Messages sent by customers during downtime will be processed after recovery (depends on the aggregator).
-</Accordion>
+  <Accordion title="Can I connect WhatsApp directly, without an aggregator?">
+    No. There is no direct WhatsApp channel in AI Textura. Use Wazzup, Umnico, Kommo, SendAPI, Jivo, or HelpDeskEddy — any of them supports WhatsApp.
+  </Accordion>
 
-<Accordion title="Do I need a separate subscription for the aggregator?">
-  Yes. Each aggregator is a separate service with its own pricing. The AI Textura subscription does not include the aggregator cost.
-</Accordion>
+  <Accordion title="What happens if the aggregator becomes unavailable?">
+    The AI employee won't be able to send or receive messages through that channel until the aggregator is back. Messages sent during the outage will be processed once it recovers (depending on the aggregator).
+  </Accordion>
+
+  <Accordion title="Do I need a separate subscription for the aggregator?">
+    Yes. Each aggregator is a separate service with its own pricing. The AI Textura subscription does not include the aggregator cost.
+  </Accordion>
+
+  <Accordion title="Can I use Avito without an aggregator?">
+    Currently there is no direct Avito channel in AI Textura. Avito connects through aggregators (Wazzup, Umnico, SendAPI) that support it.
+  </Accordion>
+</AccordionGroup>

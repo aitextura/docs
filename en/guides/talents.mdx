@@ -1,242 +1,393 @@
 ---
 title: "Talents"
-description: "Talents are apps and services that give your AI employee real-world capabilities: booking, CRM, calendars, spreadsheets, and thousands of other integrations."
+description: "Talents are MCP tools that give your AI employee real skills: PMS bookings, CRM operations, AI/LLM services, databases, documents, e-commerce, and dozens of other integrations. Plus the ability to connect your own custom MCP server."
 ---
 
-Talents transform your AI employee from a good conversationalist into a full-fledged assistant that doesn't just answer questions but performs real actions: books rooms, schedules appointments, searches the web, sends data to your CRM.
+Talents turn your AI employee from a good conversationalist into a full-fledged assistant that doesn't just answer questions — it performs real actions: books rooms, creates CRM deals, searches a database, sends emails, generates documents.
 
-**Without talents, an agent can only talk. With talents — it works.**
+**Without talents, an employee can only talk. With talents, it works.**
 
-<Frame><img src="/assets/images/en/screenshots/talents_1.png" /></Frame>
+<Frame>
+  <img src="/public/screenshots/13-agent-talents.png" alt="Talents catalog on the agent tab — apps overview" />
+</Frame>
 
 <CardGroup cols={2}>
-  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
-    Describe when and how to use each talent
+  <Card title="Persona" icon="brain" href="/en/guides/persona">
+    Describe talents in the agent's instructions
+  </Card>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Manage your virtual agents
   </Card>
   <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
-    Add facts and documents for your agent
+    Documents and information sources
   </Card>
-  <Card title="Channels" icon="plug" href="/en/channels/index">
-    Connect messengers and platforms
-  </Card>
-  <Card title="AI Employees" icon="users" href="/en/guides/ai-employees">
-    Manage all your virtual agents
+  <Card title="Channels" icon="link" href="/en/channels/index">
+    Connect messengers and CRM channels
   </Card>
 </CardGroup>
 
+<Note>
+  **"Talent" = MCP tool.** Don't confuse with a **channel** ([Channels](/en/channels/index)). A channel is a source of incoming messages (Telegram, Wazzup, Bitrix24 channel), while a talent is an **action tool** (create a deal, check a room in PMS, find a product, send an email). The same service can be both a channel and a talent — these are two independent connections. See [Bitrix24 — two connection paths](#bitrix24-two-connection-paths) below.
+</Note>
+
 ---
 
-## Talent Catalog
+## Video walkthrough
 
-The catalog offers **over 3,000 integrations** with external services and applications. Open the desired AI employee and navigate to the **Talents** tab.
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/VahV77HJe_M" title="Talents — how to add skills to your AI employee" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-| Tab | Description |
+A short video: how to pick a talent from the catalog, connect it step by step, and add your own MCP server via the "Create talent" button.
+
+---
+
+## Talents tab structure
+
+Open the AI employee and switch to the **Talents** tab.
+
+| Sub-tab / button | Purpose |
 |---|---|
-| **Browse apps** | Catalog of all available apps and services for connection |
-| **Connected** | List of talents already connected to this agent |
+| **Browse apps** | Catalog of all 30+ available talents (with filters and search) |
+| **Connected** | List of talents already added to the employee |
+| **+ Create talent** | Connect **your own** MCP server by URL (custom MCP — see below) |
 
-### Catalog Filters
+### Category filters
 
-| Filter | What it shows |
-|---|---|
-| **All** | Complete list of talents |
-| **Available talents** | Talents already configured and ready to connect |
-| **BY AI TEXTURA** | Talents developed by the AI Textura team |
-| **App Collections** | Themed collections |
+The catalog offers filters: **All**, **BY AI TEXTURA**, **App Collections**, **Artificial Intelligence (AI)**, **Business Management**, **Commerce**, **Communication**, and 22 more categories.
 
-### Categories
-
-The catalog features over 22 categories, including:
-
-- **CRM** — amoCRM, Bitrix24, and others
-- **Calendars** — Google Calendar and similar tools
-- **Spreadsheets** — Google Sheets and other spreadsheet tools
-- **Databases** — MySQL, PostgreSQL, and other databases
-- **AI** — OpenAI (ChatGPT), Anthropic (Claude), and others
-- **E-commerce** — Shopify and trading platforms
-- **Communication** — Telegram, Twilio SendGrid, and messengers
-- **Marketing** — marketing tools
-- **Developer Tools** — tools for developers
+<Frame>
+  <img src="/public/screenshots/14-agent-talents-all.png" alt="Talents catalog expanded — 30 of 32 integrations" />
+</Frame>
 
 ---
 
-## Two Catalog Sections
+## Talent catalog (30+ integrations)
 
-<AccordionGroup>
-  <Accordion title="Available talents (top section)">
-    Talents that are already configured for your account or created by you. This includes integrations with booking systems (Travelline, Bnovo), web search, Google Calendar, Google Sheets, and others. These are ready to use out of the box.
-  </Accordion>
-  <Accordion title="External talents (bottom section)">
-    An extensive library of **3,000+ external integrations**. This includes services from around the world: OpenAI, Anthropic, Notion, Google Drive, Telegram, Shopify, MySQL, PostgreSQL, AWS, Twilio SendGrid, and many more. The catalog is continuously expanding.
-  </Accordion>
-</AccordionGroup>
+The catalog is organized into thematic groups. Each talent's card includes a connect button and a description of capabilities.
 
----
+### AI TEXTURA-native
 
-## Most Popular Talents
+Built-in tools implemented by the AI TEXTURA team — they work without third-party accounts.
 
 | Talent | Purpose |
 |---|---|
-| **Travelline** | Hotel room booking: availability checks, rates, reservation creation |
-| **Bnovo** | Hotel PMS system: rooms, prices, availability |
-| **Google Calendar** | Event and schedule management: create, view, edit appointments |
-| **Google Sheets** | Read and write data in Google spreadsheets |
+| **Split Paragraphs Into Messages** | Automatically splits long answers into multiple messenger messages |
+| **Spam Filter** | Filters out spam and irrelevant messages before main processing |
+| **Message Limit** | Caps the number of messages per client/day |
+| **Language Detect** | Detects the language of the incoming message |
 | **WebSearch** | Real-time web search for up-to-date information |
-| **HTTP / Webhook** | Send HTTP requests and webhooks — a universal tool for connecting to any API |
+| **Geocode** | Converts addresses to coordinates and back |
+| **Currency Exchange Rates** | Currency exchange rates |
+
+### PMS / hotels
+
+Property management systems for hotels. Details in [FAQ — PMS integrations](/en/faq/pms-integrations).
+
+| Talent | Region / specifics |
+|---|---|
+| **MEWS** | Global PMS. Fields: Configuration ID, Client Name, Hotel ID, Age Category Adult/Children, Hotel Timezone, Connector Client Token / Access Token / Client / Enterprise ID |
+| **Travelline** | Hotel ID + Region (RU/BY/Worldwide) |
+| **Bnovo** | Hotel ID, Login, Password |
+| **RealtyCalendar** | PMS for apartments and hotels |
+| **Bronirui Online** | PMS focused on the Russian market |
+| **MeHotel** | PMS for small hotels and guesthouses |
+
+### CRM
+
+| Talent | Connection specifics |
+|---|---|
+| **Bitrix24** | Connect via an **already connected channel** or via an **inbound webhook**. See [the dedicated section below](#bitrix24-two-connection-paths) |
+| **amoCRM** | OAuth connection (New connection / Existing account) |
+| **Kommo** | Same as amoCRM, OAuth |
+| **Salesforce** | OAuth |
+| **HubSpot** | API key |
+| **Zoho CRM** | OAuth |
+| **Zendesk** | API key |
+| **ServiceNow** | API key |
+| **Microsoft Teams** | OAuth |
+
+### AI / LLM
+
+Connect external AI services as tools (for example, image generation or specialized answers).
+
+| Talent | Connection |
+|---|---|
+| **OpenAI (ChatGPT)** | API key |
+| **Anthropic (Claude)** | API key |
+| **Azure OpenAI** | Endpoint + key |
+
+### Communication / Utility
+
+| Talent | Purpose |
+|---|---|
+| **Slack** | Send messages to Slack channels |
+| **Telegram** (as a talent) | Separate from the Telegram channel: used for service messages and notifications |
+| **Schedule** | Scheduler for delayed actions |
+| **Pipedream Utils** | Set of utility functions from Pipedream |
+| **HTTP / Webhook** | Universal talent for sending HTTP requests to any URL — effectively, a bridge to any API |
+
+### Documents / Storage
+
+| Talent | Purpose |
+|---|---|
+| **Notion** | Read and write Notion pages and databases |
+| **Google Sheets** | Read and write data in Google spreadsheets |
 | **Google Drive** | Work with files in cloud storage |
-| **Notion** | Integration with Notion workspace |
-| **amoCRM** | CRM system integration |
-| **Bitrix24** | Bitrix24 integration |
+| **Google Calendar** | Manage events and schedules |
+
+### Databases and cloud
+
+| Talent | Purpose |
+|---|---|
+| **Supabase** | Postgres database with REST API |
+| **MySQL** | Direct MySQL connection |
+| **PostgreSQL** | Direct PostgreSQL connection |
+| **MongoDB** | NoSQL database |
+| **Snowflake** | Enterprise-grade data warehouse |
+| **AWS** | Amazon services (S3, Lambda, etc.) |
+
+### E-commerce / Payments / Email
+
+| Talent | Purpose |
+|---|---|
+| **Stripe** | Payments: create links, check payments, refunds |
+| **WooCommerce** | WordPress storefront |
+| **Twilio SendGrid** | Transactional email |
+| **Amazon SES** | Email via Amazon SES |
+| **Klaviyo** | Marketing email (API key) |
+
+### Social
+
+| Talent | Purpose |
+|---|---|
+| **Pinterest** | Work with pins and boards |
+
+<Tip>
+  The catalog is constantly expanding. If your service isn't there — use the universal **HTTP / Webhook** talent or connect [your own MCP server](#creating-a-custom-mcp-talent).
+</Tip>
 
 ---
 
-## How to Connect a Talent
+## <a id="bitrix24-two-connection-paths"></a>Bitrix24 — two connection paths
+
+In the platform, Bitrix24 appears **twice** — as a talent and as a channel ([/en/channels/bittrix24](/en/channels/bittrix24)). These are **two independent connections**:
+
+| Type | Where | Why |
+|---|---|---|
+| **Channel** | [Channel](/en/channels/bittrix24) — REST webhook URL | Receive messages from Bitrix24 Open Lines into AI TEXTURA chats |
+| **Talent** | Talents → Bitrix24 | Perform CRM operations from the agent's reply: create leads and deals, find contacts, set tasks, assign owners |
+
+They **can (and often should) be connected at the same time**: the channel — to receive messages, the talent — to perform CRM actions in response.
+
+### Connecting the Bitrix24 talent
+
+Click the `Bitrix24` card in the talents catalog. The modal has two tabs:
+
+<Tabs>
+  <Tab title="Connected channel">
+    "Use the authorization of an already connected Bitrix24 channel. The simplest way."
+
+    1. Pick the connected channel from the dropdown.
+    2. Click **Next** — the talent inherits the channel's permissions.
+  </Tab>
+  <Tab title="Webhook">
+    Create a separate inbound webhook in Bitrix24. Useful when no channel is in use, or when you need an isolated permission set.
+
+    <Steps>
+      <Step title="In Bitrix24, open the developer section">
+        `Apps → Developers → Other → Inbound webhook`
+      </Step>
+      <Step title="Select access permissions">
+        Check all required scopes:
+
+        - **CRM** (`crm`)
+        - **Users** (`user`)
+        - **Tasks** (`task`)
+        - **Chat and notifications** (`im`)
+        - **Chatbot creation and management** (`imbot`)
+        - **Open Lines** (`imopenlines`)
+      </Step>
+      <Step title="Save and copy the webhook URL">
+        Bitrix24 will show a webhook URL like `https://your-portal.bitrix24.com/rest/1/abcdef0123456/`.
+      </Step>
+      <Step title="Paste the URL into AI TEXTURA">
+        Return to the Bitrix24 talent modal and paste the URL into the field. Click **Connect**.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Tip>
+  If you've already connected the [Bitrix24 channel](/en/channels/bittrix24) — pick the **Connected channel** tab, it saves a few steps. The webhook option is for when no channel is used or the channel's permissions aren't enough.
+</Tip>
+
+---
+
+## How to connect any talent
 
 <Steps>
   <Step title="Open the Talents section">
-    Go to the desired AI employee's profile and open the **Talents** tab.
+    Go to the AI employee's card and open the **Talents** tab.
   </Step>
   <Step title="Find the talent you need">
-    On the **Browse apps** tab, use the search bar, category filters, or simply scroll through the catalog.
+    On the **Browse apps** tab, use the search bar, category filters, or just scroll through the catalog.
   </Step>
   <Step title="Open the talent card">
-    Click on the card — a connection dialog will open.
+    Click the card — a connection modal opens with fields specific to that service.
   </Step>
   <Step title="Fill in the parameters">
-    - **Instance name** — choose a clear name (e.g., "Hotel Seaside Booking" or "Teacher Ivanov's Calendar").
-    - **Talent settings** — fill in fields specific to the service (ID, access keys, region, etc.).
+    - **Instance name** — pick a clear name (for example, "Booking — Seaside Hotel").
+    - **Configuration** — fill in the service's fields (Hotel ID, keys, region, OAuth login, etc.).
   </Step>
   <Step title="Connect">
     Click **Connect talent**. It will appear on the **Connected** tab.
   </Step>
 </Steps>
 
+<Frame>
+  <img src="/public/screenshots/23-talents-connected.png" alt="Connected talents — list of tools added to the agent" />
+</Frame>
+
 <Tip>
-  If the connection requires authorization (e.g., OAuth for Google Calendar), the system will redirect you to the service's login page. Make sure you sign in with an account that has the necessary permissions.
+  If the connection requires OAuth (Google, amoCRM, Kommo, Salesforce, etc.), the system redirects you to the service's login page. Sign in with an account that has the right permissions.
 </Tip>
 
 ---
 
-## Connection Parameters
+## Multiple instances of the same talent
 
-| Parameter | Description |
+You can connect **the same talent multiple times** with different settings. Useful when:
+
+- You have **multiple hotels** — a separate Travelline / Bnovo / MEWS instance per Hotel ID
+- You have **multiple staff members** — each with their own Google Calendar
+- You need **different configurations** of the same service — for example, two MySQL instances for different databases
+
+Give each instance a clear name so both you and the agent can tell them apart: "Booking — Seaside Hotel" / "Booking — Mountain Hotel".
+
+---
+
+## <a id="creating-a-custom-mcp-talent"></a>Creating a custom talent (Custom MCP)
+
+If the catalog doesn't have the integration you need — connect **your own MCP server**. AI TEXTURA supports the **Model Context Protocol (MCP)**: any compliant server can be connected as a talent.
+
+<Frame>
+  <img src="/public/screenshots/22-talent-create-custom.png" alt="Create custom MCP talent — choose server type, authorization, and headers" />
+</Frame>
+
+### "Create talent" form parameters
+
+| Field | Description |
 |---|---|
-| **Talent name** | Filled automatically — the talent's name from the catalog |
-| **Description** | Brief description of what the talent can do (automatic) |
-| **Instance name** | The name you assign — this is how the talent appears in your connected list |
-| **Settings fields** | Fields specific to the talent (e.g., for Travelline — Hotel ID and hotel region) |
+| **Server type** | **SSE** (Server-Sent Events) or **Streamable HTTP** — depends on your MCP server's implementation |
+| **Server URL** | Address of your MCP server (HTTPS required) |
+| **Authorization** | One of: **None** / **Bearer Token** / **API Key** / **Basic Auth** |
+| **HTTP headers** | Arbitrary key-value pairs sent with each request (for example, `X-Tenant-Id: ...`) |
+| **"I trust this server"** | Required checkbox — confirms the server is controlled by you or a trusted party |
+
+### Authorization modes
+
+| Mode | When to use |
+|---|---|
+| **None** | The MCP server doesn't require authorization (for example, local development or internal network) |
+| **Bearer Token** | Token sent in the `Authorization: Bearer <token>` header |
+| **API Key** | Custom header name + key (for example, `X-API-Key: <key>`) |
+| **Basic Auth** | Login/password encoded in `Authorization: Basic <base64>` |
 
 <Warning>
-  Before connecting, make sure you have all required data: IDs, access keys, region, etc. This information can usually be found in the corresponding service's dashboard.
+  **The "I trust this server" checkbox is required.** The platform warns you: connecting an unverified MCP server gives it the full conversation context with the client and delegates actions on the agent's behalf. Don't connect third-party servers you don't trust.
 </Warning>
 
----
-
-## Multiple Instances of the Same Talent
-
-You can connect **the same talent multiple times** with different settings. This is useful when:
-
-- You have **multiple hotels** — each with its own Travelline instance and Hotel ID
-- You have **multiple employees** — each with their own Google Calendar
-- You need **different configurations** of the same service
-
-Give each instance a clear name so both you and the agent can distinguish them: for example, "Booking — Hotel Seaside" and "Booking — Hotel Mountain."
-
----
-
-## Creating a Custom Talent
-
-If the catalog doesn't have the integration you need — create your own talent.
+### Step-by-step custom MCP setup
 
 <Steps>
-  <Step title="Click + Create talent">
-    The button is located at the top of the catalog on the **Talents** tab.
+  <Step title="Prepare the MCP server">
+    Make sure your server implements MCP over SSE or Streamable HTTP, is accessible over HTTPS, and validates incoming requests.
   </Step>
-  <Step title="Fill in the parameters">
-    Specify the settings for the new talent following the on-screen instructions.
+  <Step title="Click 'Create talent'">
+    The button is at the top of the **Talents** tab.
   </Step>
-  <Step title="Save">
-    After saving, the talent will be available for connection.
+  <Step title="Choose the server type">
+    **SSE** or **Streamable HTTP** — to match your implementation.
+  </Step>
+  <Step title="Specify the URL and authorization">
+    Enter the Server URL, choose an authorization mode, and fill in the relevant fields.
+  </Step>
+  <Step title="Add headers (optional)">
+    If your server needs custom HTTP headers, add them as key-value pairs.
+  </Step>
+  <Step title="Confirm trust and save">
+    Tick **"I trust this server"** and click **Save**. The talent appears in the catalog.
   </Step>
 </Steps>
 
-Custom talents are ideal for:
-
-- Integrating with internal company systems
-- Non-standard logic not available in the catalog
-- Connecting to your APIs via HTTP requests and webhooks
-
 <Tip>
-  If you have a developer on your team, the **HTTP / Webhook** talent lets you connect virtually any service with an API. The agent can send data to your system and receive responses.
+  Custom MCP fits internal company systems (in-house CRM, ERP, billing) and bespoke logic that ready-made talents don't cover. For simple HTTP requests, the built-in **HTTP / Webhook** talent is easier.
 </Tip>
 
 ---
 
-## Persona Connection — Critically Important
+## Connection to the Persona — critical
 
 <Warning>
-  Connecting a talent is only half the job. **The other half is describing it in the agent's [Persona](/en/guides/persona).** Without this, the agent may not understand when to use the talent or may "forget" about it entirely.
+  Connecting a talent is only half the work. **The other half is describing it in the agent's [Persona](/en/guides/persona).** Without that, the agent may not know when to use the talent — or "forget" about it entirely.
 </Warning>
 
-In the [Persona](/en/guides/persona) section of your AI employee, write specific instructions for each connected talent:
+In the [Persona](/en/guides/persona) section, write specific instructions for each connected talent:
 
-**Example Persona instructions:**
+> When a guest asks about room availability for specific dates — use Travelline to check. Show available options with prices.
 
-> When a guest asks about room availability for specific dates — use Travelline to check. Show available options with prices. If no rooms are available — suggest the nearest available dates.
+> When a client is ready to place an order — create a deal in Bitrix24 via the talent, fill in "Name", "Phone", and "Amount" from the conversation context.
 
-> When a client wants to schedule a consultation — use Google Calendar to check available slots and create an event.
+> When a client asks for an invoice — create a Stripe payment link and send it to the client.
 
-The more precise the description in the Persona, the more appropriately the agent uses talents.
+The more precise the description in the Persona, the more appropriately the agent uses the talent.
 
 ---
 
-## Real-World Examples
+## Real-world examples
 
 <AccordionGroup>
-  <Accordion title="Hotel 'Seaside' — automated booking">
-    The hotel connected the **Travelline** talent. When a guest asks about room availability, the agent independently checks the PMS system and offers booking options — without involving the front desk staff.
+  <Accordion title="Hotel — automated booking via Travelline">
+    The hotel connected the **Travelline** talent. When a guest asks about room availability, the employee independently checks the PMS and offers booking options.
 
-    **Connected:** Travelline
-    **In [Persona](/en/guides/persona):** when asked about rooms — check Travelline, show options with prices, on confirmation — create the booking.
+    **Connected:** Travelline (Hotel ID, region).
+    **In the Persona:** when asked about rooms — check Travelline, show options with prices, and on confirmation create a booking.
   </Accordion>
-  <Accordion title="Online school — consultation scheduling">
-    The school connected **Google Calendar** to its curator agent. A student writes: "I want to book a consultation with the teacher on Thursday" — the agent checks available slots and offers a specific time. After confirmation, the event appears in the calendar.
-
-    **Connected:** Google Calendar
-    **In [Persona](/en/guides/persona):** when a student requests a booking — check the calendar, suggest slots, create an event after confirmation.
+  <Accordion title="School — bookings via Google Calendar">
+    A school connected **Google Calendar** to its tutor employee. Student: "I'd like a consultation on Thursday" — the employee checks slots and creates an event.
   </Accordion>
-  <Accordion title="E-commerce store — web search for support">
-    The store connected **WebSearch** to its support agent. If a question falls outside the knowledge base — the agent searches the web and provides an up-to-date answer.
+  <Accordion title="Bitrix24: channel + talent at the same time">
+    Messages from Bitrix24 Open Lines flow into AI TEXTURA chats via the [Bitrix24 channel](/en/channels/bittrix24). At the same time, via the **Bitrix24 talent**, the employee automatically creates a lead/deal and assigns a manager.
 
-    **Connected:** WebSearch
-    **In [Persona](/en/guides/persona):** if the question isn't covered by the knowledge base — search via web, informing the customer about the source.
+    **Channel:** REST webhook URL from Open Lines.
+    **Talent:** inbound webhook with `crm`, `user`, `task`, `im`, `imbot`, `imopenlines` permissions.
   </Accordion>
-  <Accordion title="Company with multiple hotels — multiple instances">
-    Each hotel has its own **Travelline** instance with a unique Hotel ID. One agent serves both properties and knows exactly which system to query when the guest specifies a hotel name.
-
-    **Connected:** two Travelline instances — "Booking — Hotel Seaside" and "Booking — Hotel Mountain."
+  <Accordion title="Store — Stripe for payments and SendGrid for email">
+    A store connected **Stripe** (payment links) and **Twilio SendGrid** (sending receipts/notifications by email).
+  </Accordion>
+  <Accordion title="Custom MCP — internal company billing">
+    The company's internal billing is exposed via MCP at `https://internal.example.com/mcp` with a Bearer Token. Connected as a custom talent with "I trust this server" enabled. The agent pulls a client's subscription data and helps with renewals.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Key Considerations
+## Things to watch
 
 <Steps>
-  <Step title="Prepare your data in advance">
-    Before connecting a talent, ensure you have the IDs, access keys, region, and other parameters. These can be obtained from the service's dashboard.
+  <Step title="Prepare the data ahead of time">
+    Hotel ID, access keys, region, OAuth accounts — gather everything before connecting.
   </Step>
-  <Step title="Test immediately">
-    After connecting, open the test chat (**Show chat** button) and try a scenario where the agent should use the talent.
+  <Step title="Test right away">
+    After connecting, open `Show chat` and run the scenario where the employee should use the talent.
   </Step>
-  <Step title="Monitor authorization">
-    If the talent connects via OAuth, make sure you authorize with the correct account. Changing the password or revoking access will break the talent.
+  <Step title="Watch the authorization">
+    OAuth tokens can expire; CRM webhooks can be revoked. Check the **Connected** tab.
   </Step>
-  <Step title="Describe talents in the Persona">
-    Without a [Persona](/en/guides/persona) description, the agent may not know when to use the talent. Write specific situations and instructions.
+  <Step title="Distinguish channel vs talent">
+    Message comes in — that's a channel. Employee performs an action — that's a talent. Don't connect a talent where you need a channel, and vice versa.
   </Step>
-  <Step title="Check the Connected tab regularly">
-    Periodically verify that all connections are active. API updates or expired tokens may require reconnection.
+  <Step title="Describe in the Persona">
+    Without a clear instruction in the Persona, the employee may not use the talent. Spell out specific situations.
   </Step>
 </Steps>
 
@@ -245,25 +396,37 @@ The more precise the description in the Persona, the more appropriately the agen
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="How many talents can I connect to one agent?">
-    There are no limits. However, the more talents you have, the more important it is to clearly describe in the [Persona](/en/guides/persona) when to use each one.
+  <Accordion title="What's the difference between a talent and a channel?">
+    A channel is a source of incoming messages (Telegram, Wazzup, Bitrix24 channel). A talent is an action tool the employee invokes from a reply (create a CRM deal, check a PMS room, send an email). Bitrix24 and amoCRM appear in both — those are **two separate connections**: the channel for the conversation, the talent for CRM operations. Details in [Channels](/en/channels/index) and [Bitrix24](/en/channels/bittrix24).
+  </Accordion>
+  <Accordion title="What is MCP?">
+    Model Context Protocol — an open standard for describing tools to language models. Most modern AI tools (including the AI TEXTURA catalog) are implemented as MCP servers. This makes it possible to connect **your own** servers via the same protocol — see [Creating a custom talent](#creating-a-custom-mcp-talent).
+  </Accordion>
+  <Accordion title="How many talents can be connected to one employee?">
+    There are no technical limits. But the more talents, the more important it is to spell out clearly in the [Persona](/en/guides/persona) when each one should be used.
   </Accordion>
   <Accordion title="Can I connect the same talent multiple times?">
-    Yes. This is useful for multiple instances with different settings — for example, two Travelline connections for two hotels or two Google Calendars for different employees.
+    Yes. Useful for multiple instances with different settings — for example, two Travelline instances for two hotels.
   </Accordion>
-  <Accordion title="The talent is connected but the agent isn't using it. What should I do?">
-    Most likely, there's no instruction in the [Persona](/en/guides/persona). Add a rule: "When a client asks about [situation] — use [talent name]." Then test in the chat.
+  <Accordion title="The talent is connected but the employee isn't using it. What now?">
+    Most likely there's no instruction in the [Persona](/en/guides/persona). Add a rule: "When a client asks about [situation] — use [talent name]." Then test through `Show chat`.
   </Accordion>
-  <Accordion title="What happens if the external service becomes unavailable?">
-    The agent will inform the client that it cannot perform the action at the moment and suggest an alternative. The agent itself will continue working — just without that specific talent.
+  <Accordion title="What happens if the external service is unavailable?">
+    The employee tells the client they can't perform the action and offers an alternative. The employee itself keeps working — just without that specific talent.
   </Accordion>
   <Accordion title="Can I connect a talent that isn't in the catalog?">
-    Yes, via the **+ Create talent** button or through the universal **HTTP / Webhook** talent, which allows sending arbitrary HTTP requests to any API.
+    Yes. Use **+ Create talent** to connect your own MCP server, or the universal **HTTP / Webhook** talent for arbitrary HTTP requests.
   </Accordion>
-  <Accordion title="Is talent data preserved between conversations?">
-    No. Each conversation is a separate session. Data obtained in one chat is not carried over to another. This is done for security and data accuracy.
+  <Accordion title="Is connecting a custom MCP safe?">
+    Connect only servers you trust. Through MCP, the server receives the conversation context and can act on the agent's behalf. The **"I trust this server"** checkbox is required — it's an explicit acknowledgment of responsibility.
   </Accordion>
-  <Accordion title="Do I need to pay for talents?">
-    Some talents are available for free with your plan. Certain integrations may require a subscription to the third-party service (Google Workspace, Notion, etc.). Details are provided in each talent's catalog description.
+  <Accordion title="Why connect Bitrix24 as both a channel and a talent?">
+    The channel is needed so messages from Bitrix24 Open Lines reach AI TEXTURA chats. The talent is needed so the employee can run CRM operations (create leads, deals, tasks) in response. They're two different layers of integration — and you usually need both.
+  </Accordion>
+  <Accordion title="Where do I get PMS parameters?">
+    In the dashboard of the corresponding PMS. Details for specific systems are in [FAQ — PMS integrations](/en/faq/pms-integrations). For AI TEXTURA-specific questions, contact [Support](/en/guides/support).
+  </Accordion>
+  <Accordion title="Do talents cost extra?">
+    Some talents are included in your plan. Some integrations require a subscription to a third-party service (Google Workspace, Notion, Stripe, etc.) — those are billed separately by the providers.
   </Accordion>
 </AccordionGroup>

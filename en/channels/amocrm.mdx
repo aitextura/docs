@@ -1,46 +1,87 @@
 ---
 title: "amoCRM"
-description: "The amoCRM integration allows your AI employee to handle incoming inquiries directly in the CRM system. Managers can see the agent's conversations with customers in the deal card."
+description: "The amoCRM integration lets your AI employee handle incoming inquiries directly in your CRM. amoCRM connects in two ways — as a channel (a source of messages) and as a talent (CRM operations via MCP). Both use OAuth."
 sidebarTitle: "amoCRM"
 ---
 
-## What the integration provides
+<Frame>
+  <img src="/public/screenshots/31-channel-amocrm.png" alt="Connecting amoCRM as a channel via OAuth" />
+</Frame>
 
-- The AI employee responds to customers directly from amoCRM.
-- Managers see the full conversation in the deal card.
-- You can connect messages from WhatsApp, Telegram, Instagram, and other channels configured in amoCRM.
+<CardGroup cols={2}>
+  <Card title="Channels — overview" icon="plug" href="/en/channels">
+    What a channel is and how it works in AI Textura
+  </Card>
+  <Card title="Bitrix24" icon="building" href="/en/channels/bittrix24">
+    A similar CRM with channel / talent split
+  </Card>
+  <Card title="Messengers" icon="comments" href="/en/channels/messengers">
+    WhatsApp, Instagram, VK via aggregators and Kommo
+  </Card>
+  <Card title="Talents" icon="puzzle-piece" href="/en/guides/talents">
+    Catalog of MCP tools and integrations
+  </Card>
+</CardGroup>
+
+## Two ways to connect amoCRM
+
+amoCRM integrates with AI Textura in two independent ways. Both rely on amoCRM OAuth, but they solve different problems:
+
+| | **Channel** | **Talent** |
+| --- | --- | --- |
+| Where it is configured | The agent's **Channel** tab | The agent's **Talents** tab |
+| What it does | The AI receives and replies to messages that arrive in amoCRM | The AI performs CRM actions: creates deals and contacts, finds existing ones, schedules tasks, adds notes and tags |
+| Technology | OAuth + message forwarding to AI Textura | MCP server (Model Context Protocol) |
+| Minimum to work | An authorized amoCRM account | An authorized amoCRM account (the same one or another) |
 
 <Tip>
-  AI employees do not create leads or deals — amoCRM only forwards messages to AI Textura.
+  Both connections share the same OAuth bridge — after you authorize amoCRM once, the second connection type can pick the same account without signing in again.
+</Tip>
+
+<Tip>
+  AI employees do not create leads or deals **automatically** just because the channel is connected — that requires the **talent**. The channel only forwards messages to AI Textura.
 </Tip>
 
 ---
 
-## How to connect amoCRM
+## Connecting amoCRM as a channel
+
+The channel ensures that all messages arriving in amoCRM reach the AI employee, who can then reply directly from the deal card.
+
+### What the channel provides
+
+- The AI employee responds to customers directly from amoCRM.
+- Managers see the full conversation in the deal card.
+- You can route messages from WhatsApp, Telegram, Instagram, and other channels configured in amoCRM.
+
+### How to connect the channel
 
 <Steps>
   <Step title="Open the Channel section">
-    Go to [AI Employees](/en/guides/ai-employees) → select the agent → **Channel** tab.
+    Go to [AI Employees](/en/guides/ai-employees) → select the agent → **Channel** tab → **Connect new** sub-tab.
   </Step>
   <Step title="Select amoCRM">
-    In the **Browse apps** tab, find **amoCRM** and click on it.
+    In the platform list, find **amoCRM** and click on it.
   </Step>
   <Step title="Create a connection">
-    In the side panel, select **Create**.
+    In the side panel, choose **Create**.
+  </Step>
+  <Step title="Authorize via OAuth">
+    Click **Connect amoCRM channel** — an amoCRM window will open. Sign in to your account and confirm access.
   </Step>
   <Step title="Fill in the settings">
     - **Platform**: already selected — amoCRM.
     - **Channel name**: any name convenient for you.
-    - **Long-term token**: paste the token from amoCRM.
+    - **Long-term token**: filled in automatically after OAuth (or paste it manually from amoCRM settings).
   </Step>
   <Step title="Connect">
     Click **Connect**. The channel will appear in the **Connected** tab.
   </Step>
 </Steps>
 
----
+### Where to get the amoCRM token (fallback path)
 
-## Where to get the amoCRM token
+If OAuth does not work, you can connect the channel using a long-term token:
 
 <Steps>
   <Step title="Open amoCRM settings">
@@ -56,16 +97,63 @@ sidebarTitle: "amoCRM"
 
 ---
 
+## Connecting amoCRM as a talent (MCP)
+
+<Frame>
+  <img src="/public/screenshots/17-talent-amocrm-modal.png" alt="amoCRM talent connection modal (OAuth)" />
+</Frame>
+
+The talent is an **MCP server** through which the AI can work with amoCRM **deals, contacts, companies, pipelines, tasks, and notes** during a conversation.
+
+### When you need the talent
+
+- The AI should create deals automatically based on the conversation outcome.
+- You need to look up an existing customer in the database before responding.
+- The AI should schedule tasks for managers or assign a responsible manager.
+- You want notes and tags maintained based on the dialog.
+
+### How to connect the talent
+
+<Steps>
+  <Step title="Open Talents">
+    On the agent page, go to the **Talents** tab → **Browse apps**.
+  </Step>
+  <Step title="Find amoCRM">
+    The amoCRM card lives in the **Business Management** category.
+  </Step>
+  <Step title="Pick a modal tab">
+    The "Connect amoCRM" modal has two tabs:
+    - **New connection** — starts the OAuth flow with amoCRM.
+    - **Existing account** — pick a previously authorized account (if you already have an amoCRM channel connected, or if another agent used the same login).
+  </Step>
+  <Step title="Authorize">
+    On the "New connection" tab, click **Connect amoCRM channel**, sign in to amoCRM, and confirm access.
+  </Step>
+  <Step title="Save">
+    The talent will appear in the **Connected** tab on the agent page.
+  </Step>
+</Steps>
+
+<Tip>
+  The talent and channel **can share a single amoCRM account** — the OAuth bridge remembers the authorization, so picking "Existing account" for the second connection skips the sign-in.
+</Tip>
+
+<Warning>
+  The talent acts on behalf of the authorized user. Mind their permissions in amoCRM — if the user has no access to a pipeline or task, the talent cannot work with it either.
+</Warning>
+
+---
+
 ## Kommo
 
-Kommo (formerly amoCRM for the international market) is connected in a similar way:
+Kommo (the international version of amoCRM) is connected the same way — both as a channel and as a talent. It uses the same OAuth bridge, but with a Kommo endpoint.
 
 <Steps>
   <Step title="Open settings">
-    Go to: **Channels → Kommo**.
+    On the **Channel** or **Talents** tab, select the **Kommo** platform.
   </Step>
   <Step title="Click Connect">
-    Select **Connect KommoCRM**.
+    In the modal, click **Connect KommoCRM**.
   </Step>
   <Step title="Authorize access">
     Log in to your Kommo account and confirm access.
@@ -76,5 +164,31 @@ Kommo (formerly amoCRM for the international market) is connected in a similar w
 </Steps>
 
 <Tip>
-  Kommo includes built-in channels: WhatsApp, Telegram, Instagram, VK. All messengers connected in Kommo automatically become available to the AI employee.
+  Kommo includes built-in channels: WhatsApp, Telegram, Instagram, VK. Every messenger connected in Kommo automatically becomes available to the AI employee through the Kommo channel.
 </Tip>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need to connect both the channel and the amoCRM talent?">
+    It depends on what you need. If you only want **conversations** in the deal card, the channel is enough. If the AI should **create deals on its own, schedule tasks, or look up customers in the database**, you need the talent. Most setups use both.
+  </Accordion>
+
+  <Accordion title="Can I use a single OAuth for both connection types?">
+    Yes. After the first amoCRM authorization, the second connection (channel or talent) can select "Existing account" — no login or password is required again.
+  </Accordion>
+
+  <Accordion title="The amoCRM OAuth window doesn't open / closes with an error.">
+    Make sure your browser is not blocking pop-ups for the AI Textura domain. If the integration has been removed in amoCRM or the permissions revoked, recreate the integration and use the long-term token from the "Keys and access" section.
+  </Accordion>
+
+  <Accordion title="Can I connect Kommo and amoCRM at the same time?">
+    Yes. They are two separate platforms and work independently. Connect them one at a time — each requires its own OAuth.
+  </Accordion>
+
+  <Accordion title="What if the AI is not responding in the deal card?">
+    Check: (1) the amoCRM channel is active and not disabled in AI Textura; (2) the chosen agent is "Active"; (3) the agent's working hours allow it to operate right now; (4) inside amoCRM the messenger is routed to the correct agent.
+  </Accordion>
+</AccordionGroup>

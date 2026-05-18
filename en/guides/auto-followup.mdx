@@ -3,14 +3,31 @@ title: "Auto Follow-up — Automatic Reminder Messages"
 description: "Set up automated follow-up reminder chains for clients who go silent, and monitor all active follow-up messages across your AI employees on the AI Textura platform."
 ---
 
+Auto Follow-up is an automated follow-up messaging mechanism. When a client stops responding, the AI employee will reach out after a specified delay — naturally, within the context of the conversation, without copy-paste templates.
+
+<Frame>
+  <img src="/public/screenshots/36-agent-followup.png" alt="Auto Follow-up — trigger and reminder chain configuration on the agent tab" />
+</Frame>
+
+<Warning>
+  **Auto Follow-up exists in two different places in the interface.**
+
+  - **Auto Follow-up section** (`/followup`) in the left menu of the platform — a monitoring dashboard showing all chats with scheduled reminders across all employees.
+  - **Auto Follow-up tab** in a specific AI employee's settings — where you enable the feature, set delays, and write instructions for each step.
+</Warning>
+
+<Note>
+  Auto Follow-up is also available **globally** as a separate `/followup` section in the platform's side panel — a unified monitoring dashboard across all employees (see "Monitoring Dashboard" below). Chain configuration is done on the individual employee's tab.
+</Note>
+
 <CardGroup cols={2}>
-  <Card title="Persona" icon="user" href="/en/guides/persona">
+  <Card title="Persona" icon="robot" href="/en/guides/persona">
     Reminder style follows the employee's persona settings
   </Card>
   <Card title="Working Hours" icon="clock" href="/en/guides/working-hours">
     Reminders respect the employee's working schedule
   </Card>
-  <Card title="Channels" icon="plug" href="/en/channels/index">
+  <Card title="Channels" icon="link" href="/en/channels/index">
     Auto follow-up works across all connected channels
   </Card>
   <Card title="Chats" icon="comments" href="/en/guides/chats">
@@ -18,14 +35,13 @@ description: "Set up automated follow-up reminder chains for clients who go sile
   </Card>
 </CardGroup>
 
-Auto Follow-up is an automated follow-up messaging mechanism. When a client stops responding, the AI employee will reach out after a specified delay -- naturally, within the context of the conversation, without copy-paste templates.
+---
 
-<Warning>
-  **Auto Follow-up exists in two different places in the interface.**
+## Video walkthrough
 
-  - **Auto Follow-up section** in the left menu -- a monitoring dashboard showing all chats with scheduled reminders across all employees.
-  - **Auto Follow-up tab** in a specific AI employee's settings -- where you enable the feature, set delays, and write instructions for each step.
-</Warning>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/JVBhnOsxua4" title="Auto follow-up — how to set up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+A short video: how to enable auto follow-up, configure a chain of steps with delays, and let the AI create reminders on its own when the client asks ("remind me in 30 minutes", "call me back in an hour").
 
 ---
 

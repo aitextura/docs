@@ -3,24 +3,26 @@ title: "Versions"
 description: "AI employee configuration history: browse, compare, and restore any previous state."
 ---
 
-<CardGroup cols={2}>
-  <Card title="Additional Settings" icon="sliders" href="/en/guides/additional-settings">
-    Language, voice, commands, and other fine-tuning options
-  </Card>
-  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Create and manage your AI employees
-  </Card>
-  <Card title="Account Settings" icon="gear" href="/en/guides/account-settings">
-    Theme, security, integrations, and personal data
-  </Card>
-  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
-    Core instructions that define employee behavior
-  </Card>
-</CardGroup>
-
 The **Versions** tab is a built-in "time machine" for your AI employee. Every save creates a full snapshot of the configuration, which is stored in the history. You can view any past version and restore it in one click.
 
-<Frame><img src="/assets/images/en/screenshots/versions_1.png" /></Frame>
+<Frame>
+  <img src="/public/screenshots/34-agent-versions.png" alt="Agent 'Versions' tab — save history with restore option" />
+</Frame>
+
+<CardGroup cols={2}>
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Role, tone, and instructions
+  </Card>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Connected data sources
+  </Card>
+  <Card title="Additional" icon="sliders" href="/en/guides/additional-settings">
+    Language, voice, and agent commands
+  </Card>
+  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
+    Manage your virtual agents
+  </Card>
+</CardGroup>
 
 ---
 
@@ -174,3 +176,7 @@ A version is a full snapshot of the entire employee configuration:
 <Note>
   **Don't be afraid to experiment.** Versions are your safety net. Try something, don't like it, roll back.
 </Note>
+
+<Tip>
+  **Live agent preview: `Show chat`.** Before saving the next version, try the new behavior right inside the editor — the **Show chat** toggle at the top opens a built-in test chat on the right. This lets you debug the [Persona](/en/guides/persona) and [Talents](/en/guides/talents) before the change ever reaches production.
+</Tip>

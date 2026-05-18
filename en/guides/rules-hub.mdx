@@ -1,28 +1,32 @@
 ---
 title: "Rules Hub"
-description: "A centralized library of pre-built and custom instruction blocks for configuring AI employee Personas on the AI Textura platform."
+description: "A centralized library of ready-made and custom instruction blocks for configuring AI employee Personas on the AI Textura platform."
 ---
 
+**Rules Hub** is the centralized storage of instruction blocks that you can use when configuring the [Persona](/en/guides/persona) of any AI employee. Instead of writing instructions from scratch every time, you pick a ready-made block from the hub, insert it into the [Persona](/en/guides/persona), and adapt it to your needs.
+
+The Rules Hub is a **global library of reusable Role / Tone / Instruction blocks**, available across all your organizations and for all AI employees. One block — many employees: configure a universal tone or scenario once and apply it to any agent.
+
+<Frame>
+  <img src="/public/screenshots/54-rulehub-expanded.png" alt="Rules Hub — section expanded in the left menu" />
+</Frame>
+
 <CardGroup cols={2}>
-  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
-    Core instructions that define employee behavior
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Role, tone, and instructions
   </Card>
   <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Create and manage your AI employees
+    Manage your virtual agents
   </Card>
-  <Card title="Knowledge" icon="book" href="/en/guides/knowledge">
-    Connect data sources for your employee
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Connected data sources
   </Card>
-  <Card title="FAQ" icon="message-question" href="/en/guides/faq">
-    Predefined questions and answers
+  <Card title="Versions" icon="clock-rotate-left" href="/en/guides/versions">
+    Configuration change history
   </Card>
 </CardGroup>
 
-**Rules Hub** is a centralized storage of instruction blocks that you can use when configuring the Persona of any AI employee. Instead of writing instructions from scratch every time, you pick a ready-made block from the hub, insert it into a [Persona](/en/guides/persona), and adapt it to your needs.
-
-The Rules Hub is located in the left menu of the platform. Clicking it reveals a submenu with two sections: **Templates** and **My Rules**.
-
-<Frame><img src="/assets/images/en/screenshots/rules_hub_1.png" /></Frame>
+The Rules Hub is in the left menu of the platform. Clicking it reveals a submenu with two sections: **Templates** and **My Rules**.
 
 ---
 
@@ -43,16 +47,41 @@ Both sections work the same way: find the block you need, click on it, and it ge
 
 **Templates** is a library of professionally written blocks covering typical roles and scenarios. The AI Textura team created them based on real use cases so you can launch an employee quickly without lengthy setup.
 
-### Block Types
+<Frame>
+  <img src="/public/screenshots/55-rulehub-presets.png" alt="Templates — catalog of presets from AI TEXTURA" />
+</Frame>
 
-Each template belongs to one of the block types used in a Persona:
+### Full catalog of AI TEXTURA presets
 
-| Block type | What it describes | Example templates |
-|---|---|---|
-| **Role** | Who your employee is, what role they play | Hotel administrator, Realtor, Personal assistant |
-| **Tone** | How the employee speaks: style, tone, form of address | Friendly tone, Formal tone |
-| **Instructions** | Specific behavioral rules and reactions | Greeting, Prohibited actions, Escalation |
-| **Script** | Step-by-step scenarios for typical tasks | Booking (hotel), Real estate sales |
+Each template belongs to one of three Persona block types. Here's the current full catalog:
+
+#### Role — who your employee is
+
+| Template | Best for |
+|---|---|
+| **Hotel Administrator** | Hotel chains, apartments, guesthouses — taking bookings and handling guests |
+| **Realtor** | Real estate agencies — lead qualification, property tours, deal handoff |
+| **Personal Assistant** | Universal helper — schedule, tasks, simple errands |
+| **Consultant** | Sales and customer service — expert advice on a product or service |
+
+#### Tone — how the employee speaks
+
+| Template | When to use |
+|---|---|
+| **Neutral** | Default professional tone — fits most businesses |
+| **Playful** | Lifestyle projects, B2C products with a young audience — the employee jokes and keeps a lively style |
+| **Empathetic** | Healthcare, education, psychological support — careful attention to the client's feelings |
+
+#### Instruction — step-by-step scenarios
+
+| Template | What it describes |
+|---|---|
+| **Booking (hotel)** | Booking intake scenario: dates, guests, payment, confirmation |
+| **Real Estate Sales** | Client qualification: budget, location, purchase intent, manager handoff |
+
+<Tip>
+  If your role isn't in the catalog — pick the closest match and adapt the text. For example, "Consultant" easily becomes "Auto-Loan Consultant" by adding 5–10 lines of specifics. That's faster than writing everything from scratch.
+</Tip>
 
 ### Finding Templates
 

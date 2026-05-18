@@ -1,56 +1,71 @@
 ---
 title: "Notifications"
-description: "Notification system for AI employees in AI Textura: delivery channels (Telegram, webhooks), triggers, conditions, actions, and integration with other platform sections."
+description: "Notification system for AI Textura employees: delivery channels (Telegram, webhooks, Bitrix24), triggers, firing conditions, actions, and integration with other platform sections."
 ---
+
+Notifications are an alert system that informs you about important events in your AI employee's conversations. A customer asked for a human, confirmed a booking, complained about service — you find out immediately, not hours later.
+
+In essence, notifications bridge automated AI work and your personal involvement. The employee handles routine, but in critical situations it passes the baton to you.
+
+<Frame>
+  <img src="/public/screenshots/32-agent-notifications.png" alt="Agent Notifications tab — delivery channels, templates, and trigger list" />
+</Frame>
 
 <CardGroup cols={2}>
   <Card title="Quick Answers" icon="bolt" href="/en/guides/quick-answers">
-    Combine Quick Answers with notification triggers for critical situations
+    Automated reactions with an optional notification
   </Card>
   <Card title="Working Hours" icon="clock" href="/en/guides/working-hours">
-    Triggers fire at any time, including outside working hours
+    Triggers fire outside working hours too
   </Card>
-  <Card title="Persona" icon="user" href="/en/guides/persona">
-    Configure escalation behavior in the Persona settings
+  <Card title="Persona" icon="robot" href="/en/guides/persona">
+    Configure escalation behavior
   </Card>
-  <Card title="Telegram" icon="paper-plane" href="/en/channels/telegram">
-    Primary delivery channel for notification alerts
+  <Card title="Channels" icon="link" href="/en/channels/index">
+    Notifications work across all connected channels
   </Card>
 </CardGroup>
 
-Notifications are an alert system that informs you about important events in your AI employee's conversations. A customer asked for a human agent, confirmed a booking, or filed a complaint — you find out immediately, not hours later.
-
-In essence, notifications bridge the gap between your AI employee's automated work and your personal involvement. The agent handles routine tasks, but in critical situations it passes the baton to you.
-
-<Frame><img src="/assets/images/en/screenshots/notifications_1.png" /></Frame>
-
 <Warning>
-  Without configured notifications, your AI employee works "in silence": it responds to customers, but you have no idea when you need to step in. This is acceptable during testing, but risky in production.
+  Without configured notifications, the AI employee works "in silence": it replies to clients, but you don't know when to step in. That's fine for testing, but risky in production.
 </Warning>
 
 ---
 
-## Section Structure
+## Video walkthrough
 
-Open the desired AI employee and navigate to the **Notifications** tab. The section consists of three blocks:
+End-to-end overview of notifications: how to set up triggers, on which channels, and which conditions to define.
 
-1. **Notification subscription** — connect a Telegram channel to receive alerts
-2. **Notification webhook** — alternative delivery via HTTP POST request to any URL
-3. **Triggers** — rules that define when to send a notification
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/JNFaKV8LzCQ" title="Notifications — trigger and delivery setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 
-## Delivery Channels
+## Section structure
 
-Notifications can be received in two ways. You can use both simultaneously.
+Open the AI employee and switch to the **Notifications** tab. The section consists of:
+
+1. **Delivery channels** — Telegram (via `@aitexturanotificationbot`), Webhook (HTTP POST), **Bitrix24**
+2. **Trigger quick-create templates** — "Need a human", "Booking confirmed", "Agent made a promise"
+3. **Trigger list** — up to **10 active triggers** per agent (Name, Active, Direction, Connected channel, Actions)
+4. **`Add new trigger` button** — opens the full form
+
+<Note>
+  **Limit — up to 10 triggers per agent.** If you need more notifications, revisit the wording: several narrow triggers can often be merged into one with a more general condition.
+</Note>
+
+---
+
+## Delivery channels
+
+You can receive notifications in two ways. Both can be used at the same time.
 
 ### Telegram
 
-The primary and simplest method. Notifications arrive in a dedicated Telegram channel that you subscribe to.
+The primary and simplest way. Notifications arrive in a dedicated Telegram channel that you subscribe to.
 
 <Steps>
   <Step title="Open the Notifications tab">
-    Go to the desired AI employee's card and select the **Notifications** tab.
+    Go to the AI employee's card and select the **Notifications** tab.
   </Step>
   <Step title="Click 'Receive notifications'">
     You will be redirected to Telegram.
@@ -61,12 +76,12 @@ The primary and simplest method. Notifications arrive in a dedicated Telegram ch
 </Steps>
 
 <Tip>
-  Subscribe everyone who needs to stay informed: managers, administrators, team leads. Everyone receives the same alerts — no need to configure separately for each person.
+  Subscribe everyone who needs to stay informed: managers, administrators, team leads. Everyone receives the same alerts — no per-person setup required.
 </Tip>
 
 ### Webhook (HTTP POST)
 
-A webhook is a URL where the system sends data about a triggered event as an HTTP POST request. It is suitable for integration with CRMs, Slack, Notion, Google Sheets, and any service that accepts webhooks.
+A webhook is a URL where the system sends data about a triggered event as an HTTP POST request. Suitable for integrating with CRMs, Slack, Notion, Google Sheets, and any service that accepts webhooks.
 
 <Steps>
   <Step title="Expand the 'Notification webhook' block">
@@ -81,145 +96,215 @@ A webhook is a URL where the system sends data about a triggered event as an HTT
 </Steps>
 
 <Tip>
-  Webhooks work great with automation platforms like Make (Integromat), n8n, or Zapier. For example: trigger fires → webhook goes to Make → a task is created in Trello and an email is sent to the manager.
+  Webhooks pair well with automation platforms like Make (Integromat), n8n, or Zapier. For example: trigger fires → webhook goes to Make → a task is created in Trello and an email is sent to the manager.
 </Tip>
+
+### Bitrix24 — the third delivery channel
+
+In addition to Telegram and Webhook, notifications can be delivered straight into **Bitrix24** — to a specific user or to a chat inside the portal. Convenient for teams that already work in Bitrix24 and don't want a separate Telegram channel to watch.
+
+See the [Routing notifications to Bitrix24](#bitrix24-routing) section below for details.
 
 ---
 
 ## Triggers
 
-A trigger is a rule: "if this event occurs in a conversation — send a notification." Without triggers, notifications do not work, even if you have subscribed to the channel.
+A trigger is a rule: "if a specific event happens in a chat — send a notification." Without triggers, notifications won't fire even if you've subscribed to the channel.
 
-### Trigger Templates
+### Trigger templates
 
-The platform offers ready-made templates covering the most common scenarios. You can use them as-is or customize them to fit your needs.
+The platform provides **three ready-made templates** for one-click trigger creation. Each template creates a trigger with default conditions and parameters — use as-is or refine.
 
 | Template | When it fires |
 |---|---|
-| **Need a human** | The customer asks to speak with a live operator, manager, or administrator |
-| **Booking confirmation** | The customer confirms a booking, order, or appointment |
-| **Complaint** | The customer expresses dissatisfaction or reports a problem |
-| **Refund request** | The customer asks for a refund or order cancellation |
+| **Need a human** | The client asks to be connected to a live operator, manager, or administrator — the main escalation template |
+| **Booking confirmed** | The client confirmed a booking, order, or appointment — capture the fact |
+| **Agent made a promise** | During the conversation, the agent promised something to the client (callback, send data, check with manager) — the manager should follow through |
 
-### Creating a Trigger
+### Creating a trigger
+
+<Frame>
+  <img src="/public/screenshots/33-notification-add-trigger.png" alt="'Add new trigger' modal — firing parameters and actions" />
+</Frame>
 
 <Steps>
   <Step title="Open the Notifications tab">
-    Go to the desired AI employee's card.
+    Go to the AI employee's card.
   </Step>
   <Step title="Add a trigger">
-    Click the button to add a new trigger or select one of the templates.
+    Click **`Add new trigger`** or pick one of the three templates ("Need a human", "Booking confirmed", "Agent made a promise").
   </Step>
   <Step title="Fill in the parameters">
-    Specify the name, firing condition, additional data, and action (details below).
+    Set the name, direction, working channel, condition instruction, additional data, and pause type (details below).
   </Step>
   <Step title="Save">
-    The trigger starts working immediately after saving.
+    The trigger starts working immediately after saving. Remember the limit — **no more than 10 active triggers** per agent.
   </Step>
 </Steps>
 
-### Trigger Parameters
+### Trigger parameters
 
 | Parameter | Type | What to specify |
 |---|---|---|
-| **Trigger name** | Text field | A clear name: "Complaint", "VIP guest", "Refund request" |
-| **Firing condition** | Text description | The situation that should trigger the alert — in your own words |
-| **Additional data from the conversation** | Text field | What information from the chat to include in the notification |
-| **Action** | Selection | Pause the chat for a set time or force a pause |
+| **Name** | Text field | A clear name: "Complaint", "VIP guest", "Refund request" |
+| **Active** | Toggle | Temporarily disable the trigger without deleting it |
+| **When to fire** | Choice: **On incoming** / **On outgoing** | On **client** messages or **agent** messages (see below) |
+| **Working channel** | Multi-select | Which connected channels of the agent activate the trigger |
+| **When to use?** (condition) | Text field, required | Plain-language description of the situation |
+| **Additional data in the message** | Text field | Which information from the chat to include in the notification |
+| **Chat pause** | Choice | **Regular pause** (10–20 min with auto-resume) / **Forced pause** (manual resume only) |
 
-### Firing Condition
+### "On incoming" vs "On outgoing"
 
-The condition is **not keywords** or exact phrases. It is a natural-language description of a situation that the AI interprets semantically.
+This is the **key parameter** that determines **what** the trigger inspects.
+
+| Mode | What is checked | Typical scenarios |
+|---|---|---|
+| **On incoming** | A message from the **client** | "Client asks for a human", "Client complains", "Client asks for a refund" |
+| **On outgoing** | A message from the **agent** | "Agent promised a callback", "Agent quoted a price", "Agent confirmed a booking" |
 
 <Tip>
-  Describe the situation as you would explain it to a new employee: "If the customer says they want a refund, asks about the return process, or complains that the product didn't suit them — let me know." This is exactly how the AI evaluates the condition.
+  The **"Need a human"** and **"Booking confirmed"** templates work **on incoming** (the trigger fires on the client's message). The **"Agent made a promise"** template works **on outgoing** (the trigger fires when the agent itself wrote something to the client).
+</Tip>
+
+### Firing condition
+
+The condition is **not keywords** or exact phrases. It's a natural-language description of a situation that the AI evaluates by meaning.
+
+<Tip>
+  Describe the situation as you would explain it to a new hire: "If the client says they want a refund, asks about the return process, or complains the product didn't suit them — let me know." That's exactly how the AI evaluates the condition.
 </Tip>
 
 **Good example:**
-> The customer expresses strong dissatisfaction, complains about service quality, or threatens to leave a negative review
+> The client expresses strong dissatisfaction, complains about service quality, or threatens to leave a negative review
 
 **Bad example:**
 > complaint
 
-The more detailed the description, the more accurately the trigger fires. An overly broad description leads to false positives; an overly narrow one leads to missed events.
+The more detail you put into the description, the more accurately the trigger fires. Too broad — false positives. Too narrow — missed events.
 
-### Additional Data from the Conversation
+### Additional data from the conversation
 
-This field determines what information the system attaches to the notification. Without it, you only receive the fact that the trigger fired, but no context.
+This field defines what information the system attaches to the notification. Without it, you'll only know the trigger fired — without context.
 
 What you can request:
-- Customer name
-- Summary of the issue or complaint
+- Client name
+- Summary of the question or complaint
 - Dates, order numbers, specific details from the conversation
 - A brief dialogue summary
 
 **Example:**
-> Customer name, summary of the issue, and booking number if mentioned
+> Client name, summary of the issue, and booking number if mentioned
 
-### Action on Trigger
+### Action on firing — chat pause
 
-In addition to sending the notification, the trigger can control the agent's behavior.
+In addition to sending a notification, a trigger pauses the chat. Two modes are available:
 
-| Action | What happens |
-|---|---|
-| **Pause chat for N minutes/hours** | The agent stops responding for the specified time. A message like "Connecting you with a manager, please wait" can be sent to the customer |
-| **Forced pause** | The agent stops completely until manually resumed |
+| Pause mode | What happens | When to use |
+|---|---|---|
+| **Regular pause** | The agent stops for 10–20 minutes, then auto-resumes if the client writes and the manager hasn't reacted | Informational triggers, soft escalation — the manager sees the alert, but if busy, the AI keeps the conversation going |
+| **Forced pause** | The agent stops **until manually resumed** by the manager (via the interface) or the [`Start AI` command](/en/guides/additional-settings#agent-commands) is sent in the chat | Complaints, refunds, manager escalation — critical scenarios where the AI must not "interrupt" |
 
 <Tip>
-  Use a pause for situations where the agent should not respond: complaints, refunds, complex negotiations. For informational triggers (e.g., "booking confirmation"), no pause is needed — the agent can continue the conversation.
+  For complaints, negativity, and refunds, use **Forced pause** — it prevents the AI from "hijacking" the conversation back from the manager 10–20 minutes later. For informational triggers ("booking confirmed", "agent made a promise"), a **Regular pause** or none at all is enough.
 </Tip>
 
 ---
 
-## Recommended Starter Triggers
+## Recommended starter triggers
 
-### Essential for Any Business
+### Essential for any business
 
-- **Escalation to a human** — the customer explicitly asks to speak with a live operator
-- **Complaint / negativity** — the customer expresses strong dissatisfaction
-- **Refund request** — the customer wants their money back
+- **Escalation to a human** — the client explicitly asks for a live operator
+- **Complaint / negativity** — the client expresses strong dissatisfaction
+- **Refund** — the client wants their money back
 
-### Recommended (Depends on Business)
+### Recommended (depend on your business)
 
 - **Booking/order confirmation** — for hotels, restaurants, services
-- **VIP customer** — the customer mentions a large budget or special requirements
-- **Technical issue** — the customer reports something not working
-- **Request beyond agent's scope** — anything the agent cannot answer
+- **VIP client** — the client mentions a large budget or special requirements
+- **Technical issue** — the client reports something not working
+- **Out-of-scope request** — anything the agent can't answer
 
 <Note>
-  Start with 2-3 triggers. Monitor for a week: if there are too many notifications, narrow the conditions. If important situations slip through, add new triggers or broaden existing ones.
+  Start with 2–3 triggers. Watch for a week: if you get too many notifications, narrow the conditions. If important events slip through, add or broaden triggers. Remember the limit — **up to 10 active triggers** per agent.
 </Note>
 
 ---
 
-## Practical Examples
+## <a id="bitrix24-routing"></a>Routing notifications to Bitrix24
+
+In addition to Telegram and Webhook, AI TEXTURA can deliver notifications **straight into Bitrix24** — to a specific user or a chat inside the portal. Convenient for teams that already work in Bitrix24 and don't want to maintain a separate Telegram channel.
+
+### Video walkthrough: notifications in Bitrix24
+
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/9IsmdbQ7Dfc" title="Notifications in Bitrix24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### What's required for Bitrix24 routing
+
+| Requirement | Where |
+|---|---|
+| Bitrix24 channel connected, or a Bitrix24 talent with `im`, `imbot`, `imopenlines` permissions | [/en/channels/bittrix24](/en/channels/bittrix24) and/or [/en/guides/talents](/en/guides/talents) |
+| The trigger is set to deliver to Bitrix24 (the corresponding delivery channel is selected in the trigger form) | On the agent's **Notifications** tab |
+
+<Note>
+  The Bitrix24 channel and the Bitrix24 talent are **separate connections**, but for notifications either one is enough (preferably the one configured with `im`/`imbot`/`imopenlines`). See [Talents → Bitrix24](/en/guides/talents#bitrix24-two-connection-paths).
+</Note>
+
+### Setup
+
+<Steps>
+  <Step title="Connect Bitrix24 to the agent">
+    Connect the [Bitrix24 channel](/en/channels/bittrix24) or the [Bitrix24 talent](/en/guides/talents#bitrix24-two-connection-paths) with permissions to send chats and notifications.
+  </Step>
+  <Step title="Create or open a trigger">
+    On the **Notifications** tab, click **Add new trigger** (or open an existing one).
+  </Step>
+  <Step title="Select Bitrix24 as the delivery channel">
+    In the trigger form, in the delivery block, choose **Bitrix24** (in addition to Telegram and Webhook).
+  </Step>
+  <Step title="Specify the recipient">
+    It can be a specific Bitrix24 user (by ID) or an open line / chat that should receive the notification.
+  </Step>
+  <Step title="Save and test">
+    Run a test chat that should match the condition and verify the notification arrives in Bitrix24.
+  </Step>
+</Steps>
+
+<Tip>
+  For teams that run all conversations inside Bitrix24 (CRM + Open Lines), routing notifications into the portal creates a **single working surface** — managers don't have to switch apps.
+</Tip>
+
+---
+
+## Real-world examples
 
 <AccordionGroup>
   <Accordion title="Law firm — urgent inquiries">
-    **Condition:** The customer says they have an urgent legal question, asks to speak with a lawyer, or describes a situation requiring immediate legal advice.
+    **Condition:** The client says they have an urgent legal question, asks to speak with a lawyer, or describes a situation requiring immediate legal advice.
 
-    **Additional data:** Customer name, summary of the issue, contact details if provided.
+    **Additional data:** Client name, summary of the issue, contact details if provided.
 
     **Action:** Forced pause.
   </Accordion>
   <Accordion title="Hotel — booking confirmation">
-    **Condition:** The customer confirmed a booking, agreed to the terms, and is ready to check in.
+    **Condition:** The client confirmed a booking, agreed to the terms, and is ready to check in.
 
     **Additional data:** Guest name, check-in and check-out dates, number of guests, selected room.
 
     **Action:** No pause.
   </Accordion>
   <Accordion title="Online school — refund request">
-    **Condition:** The student asks for a course refund, complains that the course was not suitable, or inquires about the refund process.
+    **Condition:** The student asks for a course refund, complains the course wasn't suitable, or asks about the refund process.
 
     **Additional data:** Student name, course name, reason for the refund.
 
     **Action:** Chat pause for 30 minutes.
   </Accordion>
   <Accordion title="E-commerce store — negative feedback">
-    **Condition:** The customer expresses strong dissatisfaction, threatens a negative review, or describes a serious issue with their order.
+    **Condition:** The client expresses strong dissatisfaction, threatens a negative review, or describes a serious order issue.
 
-    **Additional data:** Customer name, order number, summary of the problem.
+    **Additional data:** Client name, order number, summary of the problem.
 
     **Action:** Chat pause for 15 minutes.
   </Accordion>
@@ -227,36 +312,46 @@ In addition to sending the notification, the trigger can control the agent's beh
 
 ---
 
-## Integration with Other Sections
+## Integration with other sections
 
 <AccordionGroup>
   <Accordion title="Notifications + Quick Answers">
-    [Quick Answers](/en/guides/quick-answers) handle routine situations automatically (sending addresses, schedules, etc.), while notification triggers bring in a human for non-standard cases.
+    [Quick Answers](/en/guides/quick-answers) handle routine situations automatically (sending the address, the schedule, etc.), while notification triggers bring a human into the loop for non-standard cases.
 
-    [Quick Answers](/en/guides/quick-answers) also have a **Send notification** toggle — you can enable it for critical Quick Answers (e.g., when a complaint-related Quick Answer is triggered).
+    Quick Answers also have a **Send notification** toggle — enable it for critical Quick Answers (for example, a complaint trigger).
 
-    **Tip:** Use [Quick Answers](/en/guides/quick-answers) for standard situations and notification triggers for non-standard ones.
+    **Tip:** Use Quick Answers for routine situations and notification triggers for the non-standard ones.
   </Accordion>
   <Accordion title="Notifications + Working Hours">
-    Triggers fire **at any time**, including outside [Working Hours](/en/guides/working-hours). A notification will arrive even at 3 AM if a customer writes at that time. This is a plus — you won't miss anything. However, a chat pause at night may be useless if no manager is available.
+    Triggers fire **at any time**, including outside [Working Hours](/en/guides/working-hours). A notification will arrive even at 3 AM if the client wrote then. That's a plus — you won't miss anything. But a chat pause overnight may be useless if no manager is on call.
   </Accordion>
   <Accordion title="Notifications + Persona (escalation)">
-    In the [Persona's](/en/guides/persona) "Escalation" block, you can describe how the agent should behave before handing off to a human. For example: "If the customer asks for a manager — say you are connecting them with a specialist and ask them to wait." This works hand-in-hand with the "Need a human" trigger.
+    In the [Persona's](/en/guides/persona) "Escalation" block, you can describe how the agent should behave before handing off to a human. For example: "If the client asks for a manager — say you are connecting them with a specialist and ask them to wait." This works hand in hand with the "Need a human" trigger.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Settings Summary
+## Settings summary
 
 | Setting | Type | Description |
 |---|---|---|
-| **Receive notifications** | Button | Opens the Telegram channel for subscription |
+| **Receive notifications (Telegram)** | Button | Opens the `@aitexturanotificationbot` Telegram channel for subscription |
 | **Notification webhook** | URL | Address for sending notifications to external systems (HTTP POST) |
-| **Trigger name** | Text field | Custom name for the trigger |
-| **Firing condition** | Text field | Natural-language description of the situation |
-| **Additional data** | Text field | What information from the chat to include in the notification |
-| **Action** | Selection | Timed pause or forced pause |
+| **Bitrix24** | Delivery channel | Direct delivery into the Bitrix24 portal |
+| **Name** | Text field | Custom trigger name |
+| **Active** | Toggle | Temporarily disable without deleting |
+| **When to fire** | On incoming / On outgoing | On client message or agent message |
+| **Working channel** | Multi-select | Which channels the trigger is active on |
+| **When to use?** (condition) | Text field | Plain-language description of the situation |
+| **Additional data** | Text field | Information from the chat to include in the notification |
+| **Chat pause** | Regular / Forced | 10–20 min with auto-resume or manual resume |
+
+### Limit
+
+| Limit | Value |
+|---|---|
+| **Active triggers per agent** | **10** |
 
 ---
 
@@ -264,27 +359,39 @@ In addition to sending the notification, the trigger can control the agent's beh
 
 <AccordionGroup>
   <Accordion title="Can I receive notifications outside of Telegram?">
-    Yes. Use a webhook — enter your system's URL. Webhooks can send notifications to any service: CRM, email, messenger, spreadsheet.
+    Yes. Use a webhook — enter your system's URL. Webhooks can deliver to any service: CRM, email, messenger, spreadsheet.
   </Accordion>
   <Accordion title="Can I receive notifications via email?">
-    Not directly. However, through a webhook and an automation platform (Make, n8n, Zapier), you can set up email delivery in minutes.
+    Not directly. But via a webhook plus an automation platform (Make, n8n, Zapier), you can wire up email delivery in minutes.
   </Accordion>
   <Accordion title="How many triggers can I create?">
-    There is no limit. However, it is recommended to keep it under 5-7 per employee — otherwise you will receive too many notifications.
+    The limit is **up to 10 active triggers** per employee. In practice, 3–5 cover the vast majority of scenarios. If you hit the limit, revisit the wording — several narrow triggers can often be merged into one with a more general condition.
   </Accordion>
-  <Accordion title="My trigger is not firing — what should I do?">
-    Check the firing condition. It is likely too narrow or imprecisely described. Describe the situation in detail, in your own words — these are not keywords.
+
+  <Accordion title="What's the difference between 'On incoming' and 'On outgoing'?">
+    **On incoming** — the trigger checks **client** messages (classic escalation: "client asked for a human", "client complained"). **On outgoing** — the trigger checks **agent** messages ("agent promised a callback", "agent quoted a price"). The **"Agent made a promise"** template is an "On outgoing" example.
+  </Accordion>
+
+  <Accordion title="What's the difference between a regular pause and a forced pause?">
+    **Regular pause** — 10–20 minutes with auto-resume if the client writes and the manager hasn't reacted. **Forced pause** — until manually resumed (through the interface) or the [`Start AI` command](/en/guides/additional-settings#agent-commands) is sent in the chat. Forced pause is needed for complaints, refunds, and escalation, so the AI doesn't "hijack" the conversation back from the manager.
+  </Accordion>
+
+  <Accordion title="Can I send notifications to Bitrix24?">
+    Yes. It's the **third delivery channel** alongside Telegram and Webhook. Connect the [Bitrix24 channel](/en/channels/bittrix24) or [talent](/en/guides/talents#bitrix24-two-connection-paths) with permissions to send messages (`im`, `imbot`, `imopenlines`), then select Bitrix24 in the trigger form. See [Routing notifications to Bitrix24](#bitrix24-routing).
+  </Accordion>
+  <Accordion title="My trigger isn't firing — what should I do?">
+    Check the firing condition. It's likely too narrow or imprecisely described. Describe the situation in detail, in your own words — these aren't keywords.
   </Accordion>
   <Accordion title="My trigger fires too often">
-    Narrow the condition: add clarifications, exclusions, and specifics. Instead of "the customer asks a question," write "the customer asks a question that the agent cannot answer and explicitly expresses dissatisfaction."
+    Narrow the condition: add qualifications, exclusions, specifics. Instead of "the client asks a question", write "the client asks a question that the agent can't answer and explicitly expresses dissatisfaction".
   </Accordion>
   <Accordion title="Are notifications delayed?">
-    Notifications are sent almost instantly. If there is a delay, check your internet connection or webhook status.
+    Notifications are sent almost instantly. If there's a delay, check your internet connection or the webhook status.
   </Accordion>
   <Accordion title="Can I set up different notifications for different managers?">
-    Via Telegram — no, all channel subscribers receive the same alerts. Via webhook — yes: different triggers can send data to different URLs.
+    Via Telegram — no, all channel subscribers get the same alerts. Via webhook — yes: different triggers can send data to different URLs.
   </Accordion>
   <Accordion title="Do notifications consume tokens?">
-    Trigger checks consume a minimal number of tokens — this will not noticeably affect your budget.
+    Trigger checks consume a minimal number of tokens — they won't noticeably affect your budget.
   </Accordion>
 </AccordionGroup>

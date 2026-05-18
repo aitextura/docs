@@ -9,16 +9,16 @@ Persona is the main instruction set for your AI employee. It defines who the emp
 
 <CardGroup cols={2}>
   <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
-    Add facts and documents your agent can reference
+    Facts and documents for your employee
   </Card>
-  <Card title="Talents" icon="wand-magic-sparkles" href="/en/guides/talents">
-    Give your agent real-world capabilities
+  <Card title="Rules Hub" icon="folder" href="/en/guides/rules-hub">
+    Library of ready-made instruction blocks
   </Card>
-  <Card title="Rules Hub" icon="layer-group" href="/en/guides/rules-hub">
-    Reusable instruction blocks for all agents
+  <Card title="Profiles" icon="users" href="/en/guides/profiles">
+    Personalization based on customer data
   </Card>
-  <Card title="Versions" icon="clock-rotate-left" href="/en/guides/versions">
-    Roll back to any previous configuration
+  <Card title="Versions" icon="clock" href="/en/guides/versions">
+    Change history and rollback
   </Card>
 </CardGroup>
 
@@ -197,9 +197,15 @@ This lets you build **personalized scenarios**: one employee behaves differently
 
 ## Testing Changes
 
+In the top-right corner of the agent editing page there is a **"Show chat"** toggle — it opens a built-in **test chat** right next to the Persona editor (live agent preview). Convenient for verifying prompt changes without leaving the settings: edit a block on the left, message "as a guest" on the right, and see the result instantly.
+
+<Frame>
+  <img src="/public/screenshots/80-agent-test-chat.png" alt="Agent live preview: Persona editor on the left, test chat on the right" />
+</Frame>
+
 <Steps>
   <Step title="Open the test chat">
-    Click **"Show chat"** — the button in the top-right corner of the editor.
+    Toggle **"Show chat"** in the top-right corner of the agent page. The chat appears to the right of the Persona editor.
   </Step>
   <Step title="Test your scenarios">
     Write several messages as a guest. If the response is not satisfactory, return to the editor, make adjustments, and test again.

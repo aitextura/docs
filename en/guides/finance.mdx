@@ -1,41 +1,41 @@
 ---
 title: "Billing History"
-description: "Monitor expenses on the AI Textura platform: word balance, analytics, charts, billing table, pricing model, and tips for cost optimization."
+description: "Monitor expenses on the AI Textura platform: word balance, analytics, charts, billing table, pricing plans, and tips for cost optimization."
 ---
+
+**Billing History** is the platform's financial center, where all the statistics on word usage and spending are collected. Here you can see how many words each AI employee has used, how much it cost, how expenses changed by day and month, and you can manage plans and top up your balance.
+
+<Frame><img src="/public/screenshots/62-billing-history.png" alt="Billing History — charts and table" /></Frame>
 
 <CardGroup cols={2}>
   <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Create and manage your AI employees
+    Manage your employees
   </Card>
-  <Card title="Account Settings" icon="gear" href="/en/guides/account-settings">
-    Theme, security, integrations, and personal data
+  <Card title="Dashboard" icon="chart-line" href="/en/guides/dashboard">
+    Platform-wide analytics
   </Card>
-  <Card title="Dashboard" icon="chart-mixed" href="/en/guides/dashboard">
-    Overview of key platform metrics
+  <Card title="Persona" icon="user" href="/en/guides/persona">
+    Tone and instruction settings
   </Card>
-  <Card title="Referral Program" icon="gift" href="/en/guides/referral">
-    Invite users and earn rewards
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Connected data sources
   </Card>
 </CardGroup>
 
-**Billing History** is the financial control center of the platform, where all statistics on word usage and spending are collected. Here you can see how many words each AI employee has used, how much it cost, and how expenses changed by day and month.
-
-The section is located in the left menu: **Billing History**.
-
-<Frame><img src="/assets/images/en/screenshots/finance_1.png" /></Frame>
+The section is located in the platform's left menu: **Billing History**.
 
 ---
 
-## Page Overview
+## Page overview
 
 When you open the section, you see several blocks from top to bottom:
 
 | # | Block | Purpose |
 |---|-------|---------|
 | 1 | **Word Balance** | Progress bar and usage numbers |
-| 2 | **Bonus Mode** | Toggle between bonus/paid words |
+| 2 | **Bonus Mode** | Toggle between bonus / paid words |
 | 3 | **Summary Cards** | Key totals: messages, chats, words |
-| 4 | **Filters** | Date range and agent selection |
+| 4 | **Filters** | Period and employee selection |
 | 5 | **Analytics** | Four charts |
 | 6 | **Billing History Table** | Daily breakdown |
 
@@ -43,21 +43,21 @@ When you open the section, you see several blocks from top to bottom:
 
 ## Word Balance
 
-At the top of the page you will find the balance block:
+At the top of the page you'll find the balance block:
 
 | Element | What it shows |
 |---|---|
-| **Words Used** | How many words have been spent from the total limit (e.g., 1,475,624 out of 14,200,000) |
-| **Progress Bar** | Visual bar with usage percentage (e.g., "90% used") |
-| **Top Up Balance Button** | Navigate to the top-up page |
+| **Words used** | How many words have been spent out of the total limit (e.g., 1,475,624 of 14,200,000) |
+| **Progress bar** | Visual bar with usage percentage (e.g., "90% used") |
+| **Top Up Balance button** | Navigate to the top-up page |
 
 <Warning>
-  When usage approaches 90-95%, it is time to top up your balance. If words run out, all AI employees will pause and customers will stop receiving responses.
+  When usage approaches 90-95%, it is time to top up your balance. If words run out, all AI employees pause and clients stop receiving responses.
 </Warning>
 
 The balance is also displayed in two places on every page:
 - In the **bottom left corner** of the sidebar — dollar amount and remaining words
-- In the **top right corner** — button showing current balance in dollars
+- In the **top right corner** — button showing the current balance in dollars
 
 ---
 
@@ -71,7 +71,7 @@ Below the balance block there is a toggle with two tabs:
 | **Including Bonuses** | Total usage, including words received through bonus programs and promotions |
 
 <Tip>
-  The default mode is **Excluding Bonuses**. If you participate in a partner program or have received bonus words, switch to the second mode to see the full picture.
+  The default mode is **Excluding Bonuses**. If you participate in the [referral program](/en/guides/referral) or have received bonus words, switch to the second mode to see the full picture.
 </Tip>
 
 ---
@@ -95,29 +95,36 @@ The header above the cards shows the period — by default **"All time"**. When 
 The **Filters** button lets you narrow down data by two parameters:
 
 - **By period** — a specific date range (week, month, or custom interval)
-- **By agent** — expenses for a specific AI employee
+- **By employee** — expenses for a specific AI employee
 
 <Tip>
-  The agent filter is especially useful when you have multiple AI employees. It helps you quickly identify which one consumes the most resources so you can optimize its instructions or knowledge base.
+  The employee filter is especially useful when you have multiple AI employees. You'll quickly identify which one consumes the most resources, so you can optimize its instructions or [knowledge base](/en/guides/knowledge).
 </Tip>
 
 After applying filters, all data on the page — summary cards, charts, and table — recalculates accordingly.
 
 ---
 
-## Analytics — Four Charts
+## Analytics — four charts
 
-The **Analytics** section contains four charts. The block can be collapsed and expanded.
+The **Analytics** section contains four charts available at `/billing/words/history`. The block can be collapsed and expanded.
 
-### 1. Words and Messages by Day
+| # | Chart | What it shows |
+|---|---|---|
+| 1 | **Words and messages by day** | How many words and messages were used each day in the period |
+| 2 | **Cost by day** | Daily spending in dollars + maximum and average daily cost |
+| 3 | **Chats and messages by day** | Client activity: number of new dialogs and messages |
+| 4 | **Monthly cost trend** | Long-term dynamics — total spending and average daily cost by month |
+
+### 1. Words and messages by day
 
 A combined chart with two axes:
 - **Left axis** — number of words (thousands)
 - **Right axis** — number of messages
 
-Shows the relationship between words and messages: some days have few messages but high word usage (long conversations), and vice versa.
+Shows the relationship between words and messages: some days have few messages but high word usage (long dialogs), and vice versa.
 
-### 2. Cost by Day
+### 2. Cost by day
 
 A line chart of daily expenses in dollars. Above the chart:
 - **Maximum** daily cost (e.g., $48.89)
@@ -125,15 +132,15 @@ A line chart of daily expenses in dollars. Above the chart:
 
 Helps identify peak days and understand their cause.
 
-### 3. Chats and Messages by Day
+### 3. Chats and messages by day
 
 A combined chart:
-- **Left axis** — number of chats (conversations)
+- **Left axis** — number of chats (dialogs)
 - **Right axis** — number of messages
 
-Shows customer activity: how many new conversations were opened and how many messages were processed.
+Shows client activity: how many new dialogs were opened and how many messages were processed.
 
-### 4. Monthly Cost Trends
+### 4. Monthly cost trend
 
 A long-term chart with two lines:
 - **Total expenses ($)** — total spending per month
@@ -143,7 +150,7 @@ Shows the overall trend for budget planning.
 
 ---
 
-## Billing History Table
+## Billing History table
 
 A detailed table broken down by day. Each row represents one day with charges.
 
@@ -154,49 +161,93 @@ A detailed table broken down by day. Each row represents one day with charges.
 | **Words** | Number of words used that day |
 | **Messages** | Number of messages that day |
 | **Cost** | Total cost for the day in dollars |
-| **Conversations** | Number of unique chats that day |
-| **Per Conversation** | Average cost per conversation |
-| **Per Message** | Average cost per message |
+| **Dialogs** | Number of unique chats that day |
+| **Per dialog** | Average cost per dialog |
+| **Per message** | Average cost per message |
 
 <Tip>
-  Table rows are clickable — click any row to see detailed breakdown for that day.
+  Table rows are clickable — click any row to see a detailed breakdown for that day.
 </Tip>
 
 Pagination is available at the bottom of the table for navigating through pages.
 
 ---
 
-## Pricing Model
+## Pricing plans
 
 AI Textura uses a word-based pricing model:
 
-**Cost = Number of Words x Price per Word**
+**Cost = Number of words x Price per word**
 
 The price per word depends on your plan. The larger the word package, the lower the cost per word.
 
-### Factors Affecting Word Consumption
+### Current plans
+
+| Plan | Price | Word volume | Best for |
+|---|---|---|---|
+| **Starter** | $100 | 2,000,000 words | Launch, testing, 1–2 AI employees |
+| **Pro** | $500 | 10,000,000 words | Active use, several AI employees, mid-volume client traffic |
+| **Business** | $1000 | 20,000,000 words | Chains, agencies, high client traffic, or large [knowledge bases](/en/guides/knowledge) |
+
+<Frame><img src="/public/screenshots/63-billing-topup.png" alt="Top-up page with plan options" /></Frame>
+
+<Tip>
+  The price per word on the **Business** plan is lower than on **Starter** because of the package size. If you steadily spend more than 2M words a month, switching to a larger package is more economical. Track current consumption in the [Billing History table](#billing-history-table) and on the charts.
+</Tip>
+
+### Regions and payment methods
+
+The platform supports two regional payment gateways:
+
+| Region | Payment methods |
+|---|---|
+| **Russia** | Bank transfer (to a settlement account), invoice payment (the platform issues an invoice), cryptocurrency |
+| **World** | International cards and payment systems |
+
+Conversion rate for ruble payments: **$1 = 100 ₽**.
+
+<Note>
+  The **Cryptocurrency** method is available in the "Russia" region — convenient if you don't have Russian payment details or if your card doesn't pass through international gateways.
+</Note>
+
+### Transaction history
+
+After topping up the balance, entries appear in the **Transaction history** table on the plans page:
+
+| Column | Description |
+|---|---|
+| **Date** | Date and time of the transaction |
+| **Amount** | Top-up amount |
+| **Currency** | Payment currency ($ or ₽) |
+| **Words** | How many words were added to the balance |
+| **Gateway** | Payment gateway — e.g., "International" or the corresponding Russian gateway |
+| **Plan** | Which plan was applied (Starter / Pro / Business) |
+| **Method** | Payment method (card, transfer, cryptocurrency) |
+| **Status** | Successful transaction or error |
+
+### Factors affecting word consumption
 
 | Factor | Impact |
 |---|---|
-| **AI employee response length** | Longer responses use more words. Adjust in [Additional Settings](/en/guides/additional-settings) |
-| **Conversation context** | Longer conversations consume more — the AI considers previous messages |
-| [Knowledge](/en/guides/knowledge) | Querying the knowledge base increases usage |
-| [Profiles](/en/guides/profiles) **(Realtime)** | Updating the profile after each message adds words |
-| [Talents](/en/guides/talents) | Using external integrations can increase usage |
+| **AI employee response length** | Longer responses use more words |
+| **Conversation context** | Longer dialogs consume more — the AI considers previous messages |
+| **[Knowledge Base](/en/guides/knowledge)** | Querying the knowledge base increases usage |
+| **[Profiles](/en/guides/profiles) (Realtime)** | Updating the profile after each message adds words |
+| **[Talents](/en/guides/talents)** | Using external integrations may increase usage |
 
 ---
 
-## Tips for Reducing Costs
+## Tips for reducing costs
 
 <Steps>
   <Step title="Shorten response length">
-    Add an instruction to the [Persona](/en/guides/persona) tone: "reply briefly, no more than 2-3 sentences." This can reduce word usage significantly.
+    Add an instruction to the [Persona](/en/guides/persona) tone: "reply briefly, no more than 2-3 sentences." This can cut word usage several times.
   </Step>
   <Step title="Switch profile updates">
-    Change from Realtime mode to scheduled updates (e.g., once every 24 hours). This significantly reduces consumption.
+    Change Realtime mode to scheduled updates (e.g., once every 24 hours). This significantly reduces consumption.
   </Step>
   <Step title="Optimize the knowledge base">
-    Remove outdated and redundant documents. The more compact the base, the fewer words are used per query.
+    Remove outdated and redundant documents. The more compact the [base](/en/guides/knowledge), the fewer words are used per query.
   </Step>
   <Step title="Use quick replies (FAQ)">
     Set up [FAQ](/en/guides/faq) for common questions — they use fewer resources than full response generation.
@@ -205,9 +256,9 @@ The price per word depends on your plan. The larger the word package, the lower 
 
 ---
 
-## Step-by-Step Instructions
+## Step-by-step guides
 
-### How to View Expenses for a Period
+### How to view expenses for a period
 
 <Steps>
   <Step title="Open the section">
@@ -224,31 +275,31 @@ The price per word depends on your plan. The larger the word package, the lower 
   </Step>
 </Steps>
 
-### How to Find Which Agent Spends the Most
+### How to find which employee spends the most
 
 <Steps>
   <Step title="Open filters">
     In the **Billing History** section, click **Filters**.
   </Step>
-  <Step title="Select an agent">
-    Choose a specific AI employee in the agent field.
+  <Step title="Select an employee">
+    Choose a specific AI employee in the employee field.
   </Step>
   <Step title="Review the data">
     Check the summary cards and charts — they will show usage for that specific employee.
   </Step>
   <Step title="Compare">
-    Repeat for another agent and compare results.
+    Repeat for another employee and compare results.
   </Step>
 </Steps>
 
-### How to Top Up Your Balance
+### How to top up your balance
 
 <Steps>
   <Step title="Click 'Top Up'">
     Use the button at the bottom of the sidebar or **"Top Up Balance"** on the billing history page.
   </Step>
   <Step title="Choose an amount">
-    Select a dollar amount or word package.
+    Select an amount or word package.
   </Step>
   <Step title="Complete the payment">
     Confirm and complete the payment.
@@ -257,31 +308,40 @@ The price per word depends on your plan. The larger the word package, the lower 
 
 ---
 
-## Frequently Asked Questions
+## FAQ
 
 <AccordionGroup>
   <Accordion title="What are 'words' and how are they counted?">
-    Words are the unit of measurement on the platform. Every message (from both the customer and the AI employee) consumes a certain number of words. This includes the message text, conversation context, knowledge base queries, and talent operations. A typical AI employee message can consume from a few hundred to several thousand words.
+    Words are the unit of measurement on the platform. Every message (from both the client and the AI employee) consumes a certain number of words. This includes the message text, conversation context, [knowledge base](/en/guides/knowledge) queries, and [talent](/en/guides/talents) operations. A typical AI employee message can consume from a few hundred to several thousand words.
   </Accordion>
-  <Accordion title="Why does the cost per message differ between agents?">
-    The cost is affected by response length, context size (length of the previous conversation), knowledge base and talent usage, and the profile update mode. An agent with short responses and scheduled profile updates will cost significantly less.
+  <Accordion title="Why does the cost per message differ between employees?">
+    The cost is affected by response length, context size (length of the previous dialog), [knowledge base](/en/guides/knowledge) and [talent](/en/guides/talents) usage, and the [profile](/en/guides/profiles) update mode. An employee with short responses and scheduled profile updates will cost significantly less.
   </Accordion>
   <Accordion title="What does the 'Type' column in the table mean?">
     The "Type" column shows the charge category. If no type data is available, "No data" is displayed.
   </Accordion>
   <Accordion title="What happens if the word balance runs out?">
-    All active AI employees will pause. Customers will stop receiving responses until you top up your balance. We recommend topping up in advance and monitoring the progress bar.
+    All active AI employees will pause. Clients will stop receiving responses until you top up your balance. We recommend topping up in advance and monitoring the progress bar.
   </Accordion>
   <Accordion title="What is the difference between 'Excluding Bonuses' and 'Including Bonuses'?">
-    "Excluding Bonuses" shows only paid word usage. "Including Bonuses" also counts words received through partner programs or promotions. If you do not participate in bonus programs, there will be no difference.
+    "Excluding Bonuses" shows only paid word usage. "Including Bonuses" also counts words received through the [referral program](/en/guides/referral) or promotions. If you do not participate in bonus programs, there will be no difference.
   </Accordion>
-  <Accordion title="Can I view expenses for a specific agent?">
-    Yes. Click **Filters** and select the desired AI employee. All data on the page will recalculate for that agent only.
+  <Accordion title="Can I view expenses for a specific employee?">
+    Yes. Click **Filters** and select the desired AI employee. All data on the page will recalculate for that employee only.
   </Accordion>
   <Accordion title="How often is the data updated?">
     Data is updated in real time. Every new message is immediately reflected in the statistics.
   </Accordion>
   <Accordion title="Where can I check my balance without going to Billing History?">
     The balance is always visible at the bottom of the sidebar (dollar amount and word count) and in the top right corner of any page (button with the dollar amount).
+  </Accordion>
+  <Accordion title="Which plan should I pick?">
+    If you're just launching 1–2 AI employees and want to try the platform — go with **Starter ($100 / 2,000,000 words)**. With steady usage of more than 2M words a month, move to **Pro ($500 / 10,000,000)** — the price per word drops. Chains and agencies with high client traffic pick **Business ($1000 / 20,000,000)**.
+  </Accordion>
+  <Accordion title="Can I pay from Russia?">
+    Yes. In the "Russia" region three methods are available: bank transfer, invoice payment, and cryptocurrency. Conversion rate $1 = 100 ₽.
+  </Accordion>
+  <Accordion title="What does the 'Gateway' column in the transaction history show?">
+    The gateway is the payment system that processed the transaction. For example, "International" if you paid with a foreign card. For Russian payments, the corresponding Russian gateway is shown.
   </Accordion>
 </AccordionGroup>

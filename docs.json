@@ -42,6 +42,7 @@
               {
                 "group": "Overview",
                 "pages": [
+                  "en/guides/quickstart",
                   "en/guides/dashboard"
                 ]
               },
@@ -73,7 +74,8 @@
                   "en/channels/telegram",
                   "en/channels/messengers",
                   "en/channels/amocrm",
-                  "en/channels/bittrix24"
+                  "en/channels/bittrix24",
+                  "en/channels/pms"
                 ]
               },
               {
@@ -82,7 +84,8 @@
                 "iconType": "duotone",
                 "pages": [
                   "en/guides/chats",
-                  "en/guides/rules-hub"
+                  "en/guides/rules-hub",
+                  "en/guides/broadcast"
                 ]
               },
               {
@@ -90,6 +93,7 @@
                 "icon": "gear",
                 "iconType": "duotone",
                 "pages": [
+                  "en/guides/organization",
                   "en/guides/account-settings",
                   "en/guides/finance",
                   "en/guides/referral",
@@ -191,6 +195,7 @@
               {
                 "group": "Обзор",
                 "pages": [
+                  "ru/guides/quickstart",
                   "ru/guides/dashboard"
                 ]
               },
@@ -222,7 +227,8 @@
                   "ru/channels/telegram",
                   "ru/channels/messengers",
                   "ru/channels/amocrm",
-                  "ru/channels/bittrix24"
+                  "ru/channels/bittrix24",
+                  "ru/channels/pms"
                 ]
               },
               {
@@ -231,7 +237,8 @@
                 "iconType": "duotone",
                 "pages": [
                   "ru/guides/chats",
-                  "ru/guides/rules-hub"
+                  "ru/guides/rules-hub",
+                  "ru/guides/broadcast"
                 ]
               },
               {
@@ -239,6 +246,7 @@
                 "icon": "gear",
                 "iconType": "duotone",
                 "pages": [
+                  "ru/guides/organization",
                   "ru/guides/account-settings",
                   "ru/guides/finance",
                   "ru/guides/referral",
