@@ -42,6 +42,7 @@
               {
                 "group": "Overview",
                 "pages": [
+                  "en/index",
                   "en/guides/quickstart",
                   "en/guides/dashboard"
                 ]
@@ -195,6 +196,7 @@
               {
                 "group": "Обзор",
                 "pages": [
+                  "ru/index",
                   "ru/guides/quickstart",
                   "ru/guides/dashboard"
                 ]
