@@ -1,0 +1,324 @@
+---
+title: "Planfix"
+description: "Planfix connects as a channel: your AI employee replies to customers with comments inside tasks, and Planfix delivers each reply back to the messenger the request came from. Setup consists of an API token, a channel in AI Textura, and an automation scenario in Planfix."
+sidebarTitle: "Planfix"
+---
+
+<CardGroup cols={2}>
+  <Card title="Channels overview" icon="plug" href="/en/channels">
+    What a channel is and how it works in AI Textura
+  </Card>
+  <Card title="Bitrix24" icon="building" href="/en/channels/bittrix24">
+    Another system connected through a webhook
+  </Card>
+  <Card title="amoCRM and Kommo" icon="address-book" href="/en/channels/amocrm">
+    Connecting a CRM over OAuth
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Triggers and staff alerts
+  </Card>
+</CardGroup>
+
+## How it works
+
+Planfix is not a messenger. A customer writes to you on Telegram, WhatsApp, by email, or through a website chat, and Planfix turns the request into a **task**, storing the conversation in its comments. When a staff member replies with a comment, Planfix sends that reply back to the customer through the same channel.
+
+Your AI employee joins this flow as an ordinary Planfix staff member:
+
+<Steps>
+  <Step title="The customer writes">
+    The message lands in a Planfix task as a new comment.
+  </Step>
+  <Step title="Planfix calls AI Textura">
+    An automation scenario posts the comment to your channel's webhook address.
+  </Step>
+  <Step title="The AI replies">
+    AI Textura adds a reply comment to the task.
+  </Step>
+  <Step title="Planfix delivers the reply">
+    The customer receives the answer where they wrote — Telegram, WhatsApp, or email.
+  </Step>
+</Steps>
+
+<Tip>
+  You do not need to connect messengers separately. Every channel already configured in your Planfix becomes available to the AI employee through this single Planfix channel.
+</Tip>
+
+---
+
+## What you will need
+
+| Item | Where to get it |
+| --- | --- |
+| **A Planfix account** with admin rights | Your Planfix — you need the "API access" and "Automation scenarios" sections |
+| **Account domain** | Your full Planfix address including the zone: `acc.planfix.ru` or `acc.planfix.com` |
+| **API token** | Created in step 1 |
+| **A bot staff member in Planfix** | An ordinary staff member the AI's tasks will be assigned to. An existing one works fine |
+
+<Note>
+  Setup takes three steps and about 15 minutes. The order matters: the webhook address appears only **after** the channel is saved, and you cannot configure the scenario without it.
+</Note>
+
+---
+
+## Step 1. Create an API token in Planfix
+
+<Steps>
+  <Step title="Open the API section">
+    In Planfix go to **Account management** → **API access** → **REST API**.
+  </Step>
+  <Step title="Create a new key">
+    Create a new API key and give it a clear name — for example, "AI Textura".
+  </Step>
+  <Step title="Grant the scopes">
+    The token needs at least these permissions:
+
+    | Scope | Why |
+    | --- | --- |
+    | `comment_add` | Post replies as comments |
+    | `contact_readonly` | Identify which customer the request came from |
+    | `file_add` | Attach files |
+    | `file_readonly` | Read customer attachments |
+    | `task_update` | Reassign the task when handing over to an operator |
+    | `user_readonly` | Fetch the list of staff and groups for the "Assign to" field |
+  </Step>
+  <Step title="Copy the token">
+    Keep it somewhere temporary — you will need it in the next step.
+  </Step>
+</Steps>
+
+<Warning>
+  The API token grants full access to your Planfix account. Do not send it over messengers or store it in shared documents. Once saved in AI Textura, the token is hidden and never displayed again.
+</Warning>
+
+---
+
+## Step 2. Create the channel in AI Textura
+
+<Steps>
+  <Step title="Open the employee">
+    Go to [AI employees](/en/guides/ai-employees) → pick an employee → the **Channel** tab → the **Connect new** sub-tab.
+  </Step>
+  <Step title="Choose Planfix">
+    Find **Planfix** in the platform list and click **Create**.
+  </Step>
+  <Step title="Fill in the two required fields">
+    - **Domain** — the full account address including the zone: `acc.planfix.ru`. Pasting it with `https://` is fine — the extra part is stripped automatically.
+    - **API token** — the key from step 1.
+  </Step>
+  <Step title="Click «Connect»">
+    The channel is saved and AI Textura generates a **webhook address** for it — unique and secret.
+  </Step>
+  <Step title="Copy the webhook address">
+    Open the newly created channel under the **Connected** tab. In the **Webhook URL** field click the copy button. You will need this address in step 3.
+  </Step>
+</Steps>
+
+<Note>
+  The **Webhook URL** field stays empty until the channel is saved — that is expected. The address is generated once, when the channel is created, and never changes afterwards.
+</Note>
+
+<Warning>
+  The webhook address is a password. Anyone who knows it can send messages to your AI employee on behalf of customers. Do not publish it.
+</Warning>
+
+---
+
+## Step 3. Configure the automation scenario in Planfix
+
+The scenario is what makes Planfix call AI Textura on every new customer message.
+
+<Steps>
+  <Step title="Open scenarios">
+    In Planfix go to **Account management** → **Automation scenarios** and click **New scenario**.
+  </Step>
+  <Step title="Set the trigger">
+    **Event that starts the scenario** — *A comment was added and the task matches the conditions*.
+  </Step>
+  <Step title="Set the conditions">
+    Add two conditions and combine them as **1 AND 2**:
+
+    1. **Comment author is a contact** — so the bot replies only to the customer, not to comments from colleagues.
+    2. **Assignee = your bot staff member** — so the bot only works on tasks it has been given.
+  </Step>
+  <Step title="Add the «Send HTTP request» action">
+    Under **Perform the following operations** pick the **Send HTTP request** action and fill in:
+
+    - **Method** — `POST`
+    - **URL** — the webhook address copied in step 2
+    - **Type** — `application/json`
+    - **Request content** — switch to the **AS PARAMETERS** tab (not "As text")
+    - **Authorization** — *No authorization*
+  </Step>
+  <Step title="Add the parameters">
+    Add six parameters. The names on the left must match exactly, letter for letter:
+
+    | Parameter | Planfix field |
+    | --- | --- |
+    | `taskId` | Task → Number |
+    | `commentId` | Comment → Id |
+    | `text` | Comment → Text |
+    | `contactId` | Task → Submitter → Number |
+    | `contactName` | Task → Submitter → Full name |
+    | `fileIds` | Comment → Attached files → Ids |
+  </Step>
+  <Step title="Save the scenario">
+    Under **Change notification** leave **Notify** enabled and save.
+  </Step>
+</Steps>
+
+<Note>
+  Values are inserted through the Planfix variable picker, not typed by hand. In a Russian-language account the same fields look like `{{Задача.Номер}}`, `{{Комментарий.Идентификатор}}`, `{{Комментарий.Текст}}`, `{{Задача.Постановщик.Номер}}`, `{{Задача.Постановщик.ФИО}}` and `{{Комментарий.Прикреплённые файлы.Идентификаторы}}`.
+</Note>
+
+<Warning>
+  For `contactId` pick the submitter's **Number**, not their "Id". The "Id" field returns a different, internal number — with it the reply will never reach the customer's messenger.
+</Warning>
+
+<Tip>
+  To make every new task reach the AI immediately, set the bot staff member as the **default assignee in the task template**. Otherwise the assignee has to be set by hand, and until then the scenario will not fire.
+</Tip>
+
+---
+
+## Extra fields: task context
+
+Beyond the six required parameters you can pass the AI employee **any task fields** — city, contract number, plan, subject of the request. It receives them together with the message and takes them into account when replying.
+
+Add more rows to the same parameter list. You choose the name yourself, and that name becomes the label the AI sees:
+
+| Parameter | Planfix field | What the AI sees |
+| --- | --- | --- |
+| `Request subject` | Task → Title | Request subject: Invoice not received |
+| `City` | Task → Custom field → City | City: Kazan |
+| `Contract number` | Task → Custom field → Contract | Contract number: DG-7788 |
+
+<Tip>
+  Name the parameters in plain language — the AI reads exactly these labels. `Contract number` is clearer than `contract_no`.
+</Tip>
+
+<Note>
+  Limits: no more than **15** extra fields, names up to 60 characters, values up to 300 characters. Empty fields are not sent.
+</Note>
+
+---
+
+## Channel settings
+
+Open the channel under the **Connected** tab to change its settings.
+
+| Setting | What it does |
+| --- | --- |
+| **Domain** | Your Planfix account address including the zone |
+| **API token** | The access key. Hidden after saving — fill it in only to replace it with a new one |
+| **Webhook URL** | The address for the Planfix scenario. Read-only |
+| **Assign to** | The staff member or group the task is reassigned to on handover. If empty, the bot only unassigns itself |
+| **Send reply as a note** | Makes AI replies hidden: only Planfix staff see them, the customer does not |
+| **Allow handover to an operator** | Lets the AI hand the conversation over to a live staff member. Off by default |
+| **When to hand over to an operator** | Your own description of when a human should be called |
+
+### Note mode
+
+Turn on **"Send reply as a note"** when you want to review what the AI says before customers see it. Replies appear in the task as hidden comments — marked with a lock and visible only to your staff.
+
+<Tip>
+  A convenient way to break in a new employee on real requests with no risk. Once you are happy with the replies, switch the toggle off and the AI starts answering customers directly.
+</Tip>
+
+---
+
+## Handover to an operator
+
+With **"Allow handover to an operator"** enabled, the AI can call a live staff member itself. It happens like this:
+
+1. The AI tells the customer it is bringing in a colleague.
+2. A **hidden note** with a short summary of the conversation is added to the task — so the staff member does not have to reread the whole thread.
+3. The task is reassigned to whoever is set in **"Assign to"**.
+4. The bot goes quiet — the scenario stops firing, because it is no longer the assignee.
+
+### When to hand over
+
+The **"When to hand over to an operator"** field is written in plain words, with no special syntax. For example:
+
+```
+If they ask about a refund or if the order total is over 100,000 ₽
+```
+
+Leave it empty and the standard cases apply: the customer explicitly asks for a human, the AI cannot resolve the question, or the topic is a refund or a complaint.
+
+<Warning>
+  Handover is off by default — turn it on deliberately. If **"Assign to"** is empty, the task ends up with no assignee at all: the bot leaves it, but no specific person is put in its place.
+</Warning>
+
+---
+
+## Attachments
+
+When the scenario passes the `fileIds` parameter, the AI employee receives the files the customer attached to the comment:
+
+| File type | What happens |
+| --- | --- |
+| **Voice message** | Transcribed to text, and the AI answers its content |
+| **Image** | The AI looks at the picture and answers based on it |
+| **Other files** | The AI receives the file name — so it can answer sensibly rather than blindly |
+
+<Note>
+  Up to **3 files** per comment are processed, each up to 15 MB.
+</Note>
+
+---
+
+## Check that it works
+
+<Steps>
+  <Step title="Create a task">
+    In Planfix create a task and set the bot staff member as its assignee.
+  </Step>
+  <Step title="Write as a customer">
+    Add a comment from a contact — or ask a customer to write into a connected channel.
+  </Step>
+  <Step title="Wait for the reply">
+    Within a few seconds a comment from the AI employee appears in the task.
+  </Step>
+  <Step title="Confirm delivery">
+    Make sure the reply reached the customer in their messenger — unless note mode is on, of course.
+  </Step>
+</Steps>
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why is the API token field empty when I reopen the channel settings?">
+    That is by design. The token grants full access to your Planfix account, so we never show it again after saving — not even to you. The channel still works: the token is stored and used. Fill the field in only if you want to replace the key with a new one.
+  </Accordion>
+
+  <Accordion title="The «Assign to» list is empty and asks for a domain and token.">
+    The list of staff comes from Planfix, and the request needs a token — which, as described above, is not shown in the form. Paste the token into the field again, the list will load, then pick a staff member and save.
+  </Accordion>
+
+  <Accordion title="The AI does not reply to comments. What should I check?">
+    In order: (1) the task assignee is the bot staff member named in the scenario conditions; (2) the comment was written by a **contact**, not a staff member — comments from colleagues are ignored on purpose; (3) the scenario is enabled and the action points at the correct webhook address; (4) the channel is active in AI Textura and the employee's status is "Active"; (5) the employee's working hours allow it to reply right now.
+  </Accordion>
+
+  <Accordion title="Planfix returns «Scope denied» or «Access denied».">
+    The token is missing permissions. Go back to **Account management** → **API access** and grant the key all six scopes: `comment_add`, `contact_readonly`, `file_add`, `file_readonly`, `task_update`, `user_readonly`.
+  </Accordion>
+
+  <Accordion title="The reply appears in the task but never reaches the customer.">
+    Almost always the `contactId` parameter is at fault: the scenario uses "Id" instead of "Number". Switch the value to the submitter's **Number**. The other possibility is that "Send reply as a note" is on — then the reply is visible only to staff.
+  </Accordion>
+
+  <Accordion title="Could the bot start replying to itself?">
+    No. First, the scenario condition "comment author is a contact" filters out the bot's own comments. Second, Planfix does not fire scenarios for comments added through the API. Third, AI Textura discards repeats by comment id. Three independent safeguards.
+  </Accordion>
+
+  <Accordion title="Can I connect several Planfix accounts?">
+    Yes. Each account is a separate channel with its own domain, token, and webhook address. Remember the rule: one channel is bound to one AI employee.
+  </Accordion>
+
+  <Accordion title="What happens if I change the scenario or disable the channel?">
+    A disabled channel stops accepting messages — Planfix keeps sending requests, but no replies come back. If you need to hand conversations back to live staff temporarily, switch off the AI employee rather than the channel: that way the conversation history is preserved.
+  </Accordion>
+</AccordionGroup>
