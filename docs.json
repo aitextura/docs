@@ -230,11 +230,13 @@
                 "pages": [
                   "ru/channels/index",
                   "ru/channels/telegram",
+                  "ru/channels/telegram-groups",
                   "ru/channels/messengers",
                   "ru/channels/amocrm",
                   "ru/channels/bittrix24",
+                  "ru/channels/kommo",
                   "ru/channels/planfix",
-                  "ru/channels/pms"
+                  "ru/channels/helpdeskeddy"
                 ]
               },
               {
