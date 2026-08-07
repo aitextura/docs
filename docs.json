@@ -106,81 +106,42 @@
             ]
           },
           {
-            "tab": "FAQ",
-            "icon": "circle-question",
-            "iconType": "duotone",
-            "groups": [
-              {
-                "group": "Frequently Asked Questions",
-                "pages": [
-                  "en/faq/index",
-                  "en/faq/getting-started",
-                  "en/faq/persona-and-knowledge",
-                  "en/faq/channels",
-                  "en/faq/crm-integrations",
-                  "en/faq/pms-integrations",
-                  "en/faq/booking",
-                  "en/faq/ai-behavior",
-                  "en/faq/dialog-management",
-                  "en/faq/voice-and-media",
-                  "en/faq/analytics-and-profiles",
-                  "en/faq/security-and-access",
-                  "en/faq/billing",
-                  "en/faq/troubleshooting"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "API Reference",
-            "icon": "code",
-            "iconType": "duotone",
-            "groups": [
-              {
-                "group": "API Reference",
-                "pages": [
-                  "en/api-reference/introduction"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Terms and policies",
+            "tab": "Условия и политики",
             "icon": "scale-balanced",
             "iconType": "duotone",
             "groups": [
               {
-                "group": "Terms and policies",
+                "group": "Условия и политики",
                 "pages": [
-                  "en/terms-and-policies/index"
+                  "ru/terms-and-policies/index"
                 ]
               },
               {
-                "group": "Legal agreements",
+                "group": "Юридические соглашения",
                 "pages": [
-                  "en/terms-and-policies/offer",
-                  "en/terms-and-policies/terms-of-use",
-                  "en/terms-and-policies/privacy"
+                  "ru/terms-and-policies/offer",
+                  "ru/terms-and-policies/terms-of-use",
+                  "ru/terms-and-policies/privacy"
                 ]
               },
               {
-                "group": "Consents",
+                "group": "Согласия",
                 "pages": [
-                  "en/terms-and-policies/privacy-consent",
-                  "en/terms-and-policies/promo-consent"
+                  "ru/terms-and-policies/privacy-consent",
+                  "ru/terms-and-policies/promo-consent"
                 ]
               }
             ]
           },
           {
-            "tab": "Changelog",
+            "tab": "История изменений",
             "icon": "list-check",
             "iconType": "duotone",
             "groups": [
               {
                 "group": "Changelog",
                 "pages": [
-                  "en/changelog/index"
+                  "ru/changelog/index"
                 ]
               }
             ]
@@ -196,7 +157,9 @@
             "iconType": "duotone",
             "groups": [
               {
-                "group": "Обзор",
+                "group": "Начало работы",
+                "icon": "rocket",
+                "iconType": "duotone",
                 "pages": [
                   "ru/index",
                   "ru/guides/quickstart",
@@ -204,49 +167,78 @@
                 ]
               },
               {
-                "group": "ИИ-сотрудники",
+                "group": "ИИ-сотрудник",
                 "icon": "robot",
                 "iconType": "duotone",
                 "pages": [
                   "ru/guides/ai-employees",
                   "ru/guides/persona",
                   "ru/guides/knowledge",
-                  "ru/guides/faq",
-                  "ru/guides/talents",
-                  "ru/guides/connect-talents",
+                  "ru/guides/self-learning",
                   "ru/guides/quick-answers",
-                  "ru/guides/profiles",
-                  "ru/guides/auto-followup",
-                  "ru/guides/working-hours",
-                  "ru/guides/notifications",
-                  "ru/guides/versions",
-                  "ru/guides/additional-settings"
+                  "ru/guides/rules-hub"
                 ]
               },
               {
-                "group": "Подключение каналов",
+                "group": "Навыки",
+                "icon": "bolt",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/guides/talents",
+                  "ru/guides/connect-talents"
+                ]
+              },
+              {
+                "group": "Каналы",
                 "icon": "plug",
                 "iconType": "duotone",
                 "pages": [
                   "ru/channels/index",
-                  "ru/channels/telegram",
-                  "ru/channels/telegram-groups",
-                  "ru/channels/messengers",
-                  "ru/channels/amocrm",
-                  "ru/channels/bittrix24",
-                  "ru/channels/kommo",
-                  "ru/channels/planfix",
-                  "ru/channels/helpdeskeddy"
+                  {
+                    "group": "Мессенджеры",
+                    "pages": [
+                      "ru/channels/telegram",
+                      "ru/channels/telegram-groups",
+                      "ru/channels/messengers"
+                    ]
+                  },
+                  {
+                    "group": "CRM",
+                    "pages": [
+                      "ru/channels/amocrm",
+                      "ru/channels/kommo",
+                      "ru/channels/bittrix24"
+                    ]
+                  },
+                  {
+                    "group": "Тикет-системы",
+                    "pages": [
+                      "ru/channels/planfix",
+                      "ru/channels/helpdeskeddy"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Коммуникация",
+                "group": "Диалоги",
                 "icon": "message-lines",
                 "iconType": "duotone",
                 "pages": [
                   "ru/guides/chats",
-                  "ru/guides/rules-hub",
+                  "ru/guides/notifications",
+                  "ru/guides/profiles",
+                  "ru/guides/auto-followup",
                   "ru/guides/broadcast"
+                ]
+              },
+              {
+                "group": "Настройки сотрудника",
+                "icon": "sliders",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/guides/working-hours",
+                  "ru/guides/additional-settings",
+                  "ru/guides/versions"
                 ]
               },
               {
@@ -259,45 +251,6 @@
                   "ru/guides/finance",
                   "ru/guides/referral",
                   "ru/guides/support"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "FAQ",
-            "icon": "circle-question",
-            "iconType": "duotone",
-            "groups": [
-              {
-                "group": "Частые вопросы",
-                "pages": [
-                  "ru/faq/index",
-                  "ru/faq/getting-started",
-                  "ru/faq/persona-and-knowledge",
-                  "ru/faq/channels",
-                  "ru/faq/crm-integrations",
-                  "ru/faq/pms-integrations",
-                  "ru/faq/booking",
-                  "ru/faq/ai-behavior",
-                  "ru/faq/dialog-management",
-                  "ru/faq/voice-and-media",
-                  "ru/faq/analytics-and-profiles",
-                  "ru/faq/security-and-access",
-                  "ru/faq/billing",
-                  "ru/faq/troubleshooting"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "API Справочник",
-            "icon": "code",
-            "iconType": "duotone",
-            "groups": [
-              {
-                "group": "API Справочник",
-                "pages": [
-                  "ru/api-reference/introduction"
                 ]
               }
             ]
@@ -347,6 +300,12 @@
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/ru/guides/faq",
+      "destination": "/ru/guides/self-learning"
+    }
+  ],
   "navbar": {
     "primary": {
       "type": "button",
