@@ -4,21 +4,6 @@ description: "Planfix подключается как канал: ИИ-сотр�
 sidebarTitle: "Planfix"
 ---
 
-<CardGroup cols={2}>
-  <Card title="Каналы — обзор" icon="plug" href="/ru/channels">
-    Что такое канал и как он работает в AI Textura
-  </Card>
-  <Card title="Bitrix24" icon="building" href="/ru/channels/bittrix24">
-    Другая система с подключением по вебхуку
-  </Card>
-  <Card title="amoCRM и Kommo" icon="address-book" href="/ru/channels/amocrm">
-    Подключение CRM по OAuth
-  </Card>
-  <Card title="Уведомления" icon="bell" href="/ru/guides/notifications">
-    Триггеры и оповещения сотрудников
-  </Card>
-</CardGroup>
-
 ## Как это работает
 
 Planfix — это не мессенджер. Клиент пишет вам в Telegram, WhatsApp, на почту или в чат на сайте, а Planfix превращает обращение в **задачу** и складывает переписку в её комментарии. Ответ сотрудника, написанный комментарием, Planfix отправляет клиенту обратно в тот же канал.
@@ -318,3 +303,20 @@ Planfix — это не мессенджер. Клиент пишет вам в 
     Отключённый канал перестаёт принимать сообщения — Planfix продолжит слать запросы, но ответов не будет. Если нужно временно вернуть переписку живым сотрудникам, лучше выключить ИИ-сотрудника, а не канал: тогда история диалогов сохранится.
   </Accordion>
 </AccordionGroup>
+
+## Что дальше
+
+<CardGroup cols={2}>
+  <Card title="Каналы" icon="plug" href="/ru/channels">
+    Все способы подключить клиентов к ИИ-сотруднику
+  </Card>
+  <Card title="Bitrix24" icon="building" href="/ru/channels/bittrix24">
+    Другая система с подключением по вебхуку
+  </Card>
+  <Card title="amoCRM" icon="address-book" href="/ru/channels/amocrm">
+    Подключение CRM по OAuth
+  </Card>
+  <Card title="Уведомления" icon="bell" href="/ru/guides/notifications">
+    Сообщение вам, когда клиент зовёт человека
+  </Card>
+</CardGroup>
