@@ -180,7 +180,7 @@
                 ]
               },
               {
-                "group": "Навыки",
+                "group": "Таланты",
                 "icon": "bolt",
                 "iconType": "duotone",
                 "pages": [
@@ -251,6 +251,65 @@
                   "ru/guides/finance",
                   "ru/guides/referral",
                   "ru/guides/support"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Автономные агенты",
+            "icon": "wand-magic-sparkles",
+            "iconType": "duotone",
+            "groups": [
+              {
+                "group": "Знакомство",
+                "icon": "compass",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/agents/index",
+                  "ru/agents/use-cases"
+                ]
+              },
+              {
+                "group": "Запуск",
+                "icon": "rocket",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/agents/quickstart",
+                  "ru/agents/roles",
+                  "ru/agents/connect",
+                  "ru/agents/first-run"
+                ]
+              },
+              {
+                "group": "Кабинет агента",
+                "icon": "briefcase",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/agents/personality",
+                  "ru/agents/tasks",
+                  "ru/agents/schedule",
+                  "ru/agents/files",
+                  "ru/agents/sites",
+                  "ru/agents/team"
+                ]
+              },
+              {
+                "group": "Настройки агента",
+                "icon": "gear",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/agents/models",
+                  "ru/agents/skills",
+                  "ru/agents/maintenance"
+                ]
+              },
+              {
+                "group": "Правила работы",
+                "icon": "shield-halved",
+                "iconType": "duotone",
+                "pages": [
+                  "ru/agents/limits",
+                  "ru/agents/security"
                 ]
               }
             ]
