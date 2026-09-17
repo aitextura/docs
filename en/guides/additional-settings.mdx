@@ -1,23 +1,22 @@
 ---
 title: "Additional Settings"
-description: "Fine-tune your AI employee: response language, word limit, image recognition, voice (Normal / PRO ElevenLabs), agent commands from chat, and behavior toggles — jailbreak protection, pauses, and auto-resume."
+sidebarTitle: "Advanced"
+description: "Fine-tune your AI Employee: reply language, word limit, image recognition, voice (Standard / PRO ElevenLabs), agent commands from the chat, and behavior toggles — jailbreak protection, pauses, and auto-start."
 ---
 
-The **Additional** section gathers settings that fine-tune your AI employee's behavior: response language, message length, image recognition, voice (including PRO voices via ElevenLabs), service commands for controlling the agent, and behavior toggles (jailbreak protection, auto-pause, auto-resume).
+The **Advanced** section brings together settings that fine-tune your AI Employee's behavior: reply language, message length, image recognition, voice (up to PRO voices via ElevenLabs), service commands for controlling the agent, and behavior toggles (jailbreak protection, auto-pause, auto-start).
 
-<Frame>
-  <img src="/public/screenshots/35-agent-advanced.png" alt="Agent 'Additional' tab — language, voice, commands, and behavior toggles" />
-</Frame>
+<Frame><img src="/public/screenshots/35-agent-advanced.png" alt="The agent's Advanced tab — language, voice, commands, and behavior toggles" /></Frame>
 
 <CardGroup cols={2}>
   <Card title="Persona" icon="user" href="/en/guides/persona">
-    Role, tone, and instructions
+    The AI Employee's role, tone, and instructions
   </Card>
   <Card title="Versions" icon="clock-rotate-left" href="/en/guides/versions">
     Configuration change history
   </Card>
   <Card title="Account Settings" icon="gear" href="/en/guides/account-settings">
-    Global commands and ElevenLabs integration
+    Global commands and the ElevenLabs integration
   </Card>
   <Card title="Telegram" icon="paper-plane" href="/en/channels/telegram">
     Voice works in Telegram
@@ -25,100 +24,100 @@ The **Additional** section gathers settings that fine-tune your AI employee's be
 </CardGroup>
 
 <Note>
-  These settings are not required for basic operation — the employee will work without them. But this is exactly where you can tailor behavior to specific scenarios and brand style.
+  These settings aren't required for basic operation -- the AI Employee works without them. But this is where you can fine-tune its behavior for specific scenarios and your brand's style.
 </Note>
 
-Open the AI employee and switch to the **Additional** tab — it's the last (12th) tab in the employee editor.
+Open the AI Employee you need and go to the **Advanced** tab -- the last (12th) tab in the AI Employee editor.
 
 ---
 
-## Video walkthrough
+## Video guide
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/O6Y9CrjwP6Y" title="AI and team sync — additional settings" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/O6Y9CrjwP6Y" title="AI sync and commands — additional settings" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-A short video: an overview of the **Additional** tab — jailbreak protection, pause on manager reply, auto-resume with configurable delay, "silent by default" testing mode, and conversation completion detection.
+A short video: an overview of the Advanced section -- jailbreak protection, pausing when a manager replies, auto-start with a configurable delay, "silent by default" mode for testing, and conversation-end detection.
 
 ---
 
-## Response language
+## Reply language
 
-A selector that determines the language the employee responds in.
+A selector that defines which language the AI Employee uses to reply to customers.
 
 | Value | Behavior |
 |---|---|
-| **User's language** (default) | The employee auto-detects the client's language and replies in it |
-| **Specific language** (Russian, English, Қазақша, etc.) | The employee always replies in the chosen language, regardless of the client's |
+| **In the user's language** (default) | The AI Employee automatically detects the customer's language and replies in it |
+| **A specific language** (Русский, English, Қазақша, etc.) | The AI Employee always replies in the selected language, regardless of the customer's language |
 
 <Warning>
-  If a specific language is set, the employee will not stop *understanding* messages in other languages. It will understand everything — but only reply in the chosen language.
+  If you select a specific language, the AI Employee doesn't stop *understanding* messages in other languages. It understands everything -- but replies only in the selected language.
 </Warning>
 
 <Tip>
-  Lock the language if all clients speak the same language or the employee gets confused with auto-detection. Keep **User's language** for international business and tourism.
+  Lock the language if all your customers speak the same language or if the AI Employee gets confused by auto-detection. Keep **In the user's language** for international business and tourism.
 </Tip>
 
 ---
 
-## Response word limit
+## Reply word limit
 
-A numeric field that limits the length of the employee's responses.
+A number field that limits the length of the AI Employee's replies.
 
 | Value | Behavior |
 |---|---|
-| **0** (default) | No limit — the employee chooses the length |
-| **Any number** (for example, 50 or 100) | The employee tries to stay within the specified limit |
+| **0** (default) | No limit -- the AI Employee decides the reply length itself |
+| **Any number** (for example, 50 or 100) | The AI Employee tries to stay within the limit |
 
 <Warning>
-  This is a **soft limit**. The employee doesn't cut off mid-sentence — it phrases the answer more concisely. It may slightly exceed the limit at times.
+  This is a **soft limit**. The AI Employee doesn't cut a reply off mid-sentence -- it phrases it more concisely. It may occasionally go slightly over the limit.
 </Warning>
 
 <Tip>
-  For Telegram/WhatsApp, 50–80 words works well. For complex consultations (legal, medical) — 0 or 150–200.
+  For Telegram/WhatsApp, 50–80 words works well. For complex consultations (legal, medical), use 0 or 150–200.
 </Tip>
 
 ---
 
 ## Image recognition
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/noihUnchskY" title="Image recognition — how to set up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/noihUnchskY" title="Image recognition — how to set it up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-A text field with instructions on what the employee should focus on when analyzing photos, screenshots, and images sent by clients.
+A text field with instructions on what the AI Employee should pay attention to when analyzing photos, screenshots, and images from customers.
 
-Empty by default — the employee analyzes images in a generic way. Filling this field focuses it on what matters for your business.
+It's empty by default -- the AI Employee analyzes images in a general way. By filling it in, you focus the AI Employee on what matters for your business.
 
 ### Example instructions
 
 | Business | Example instruction |
 |---|---|
-| Hotel | "Pay attention to the booking number, check-in and check-out dates, number of guests, and total amount" |
+| Hotel | "Look for the booking number, check-in and check-out dates, number of guests, and the amount" |
 | Online store | "Identify the product in the photo, its condition (new, used, damaged), and any defects" |
-| Auto service | "Describe visible vehicle damage, its location, and approximate severity" |
+| Car service | "Describe the visible damage to the car, where it is, and roughly how severe it is" |
 | Restaurant | "Identify the dish in the photo and its approximate ingredients" |
 
 <Tip>
-  The more specific the instruction, the more accurate the result. Instead of "analyze the photo," write: "Find the order number, date, and amount on the screenshot. If there's no number — ask the client."
+  The more specific the instruction, the more accurate the result. Instead of "analyze the photo", write: "Find the order number, date, and amount in the screenshot. If there's no number, ask the customer."
 </Tip>
 
 ---
 
 ## Voice settings
 
-A block for voice-response settings. Lets the employee reply with voice messages.
+A block of settings for voice replies. It lets the AI Employee reply with a voice message.
 
 <Warning>
   Voice messages work only in [Telegram](/en/channels/telegram). For IP telephony, contact [Support](/en/guides/support).
 </Warning>
 
-### Normal mode vs PRO
+### Standard mode vs PRO
 
 | Mode | Description | When to use |
 |---|---|---|
-| **Normal** | Built-in platform voices. Connects instantly, no integrations | For basic voicing, MVP, testing |
-| **PRO** | Voices via **ElevenLabs** (professional TTS quality). Requires an ElevenLabs API key in [/settings → Integrations](/en/guides/account-settings) | For premium scenarios, branded sound, multilingual voicing |
+| **Standard** | Built-in platform voices. Connect instantly, no integrations needed | For basic voice-over, MVPs, testing |
+| **PRO** | Voices from **ElevenLabs** (professional TTS quality). Requires an ElevenLabs API key in [/settings → Integrations](/en/guides/account-settings) | For premium scenarios, a branded sound, multilingual voice-over |
 
 ### PRO voices (ElevenLabs)
 
-In PRO mode, branded ElevenLabs voices are available:
+PRO mode gives you the signature ElevenLabs voices:
 
 | Voice | Type |
 |---|---|
@@ -126,85 +125,85 @@ In PRO mode, branded ElevenLabs voices are available:
 | **coral** | female, soft |
 | **sage** | male, calm |
 | **onyx** | male, deep |
-| **alloy** | neutral, all-purpose |
+| **alloy** | neutral, versatile |
 | **echo** | male, expressive |
 | **fable** | storytelling, narrative |
 | **nova** | female, energetic |
 | **shimmer** | female, warm |
 
-Below the voice selector — a **speed control** for speech (from x0.5 to x1.5).
+Below the voice selector is the speech **speed control** (from x0.5 to x1.5).
 
-### Connecting the ElevenLabs API key
+### Connecting an ElevenLabs API key
 
-The API key is configured **globally for the account**, not per agent.
+The API key is set **globally for the account**, not per agent.
 
 <Steps>
   <Step title="Get an API key from ElevenLabs">
-    Sign up / log into [ElevenLabs](https://elevenlabs.io/) and copy the API key from your profile settings.
+    Sign up or sign in to [ElevenLabs](https://elevenlabs.io/) and copy the API key from your profile settings.
   </Step>
   <Step title="Open /settings → Integrations">
-    In AI TEXTURA: profile menu (bottom-left) → **Settings** → **Integrations** tab. Details in the [Account settings](/en/guides/account-settings) guide.
+    On the AI TEXTURA platform: profile menu (bottom-left corner) → **Settings** → **Integrations** tab. For details, see the [Account Settings](/en/guides/account-settings) guide.
   </Step>
   <Step title="Paste the ElevenLabs key">
     Enter the key in the **ElevenLabs API key** field and save.
   </Step>
-  <Step title="Enable PRO on the agent">
-    Return to the agent editor → **Additional** → **Voice** → switch the mode to **PRO**, pick a voice and speed.
+  <Step title="Turn on PRO in the agent">
+    Go back to the editor of the agent you need → **Advanced** → **Voice** → switch the mode to **PRO**, then choose a voice and speed.
   </Step>
 </Steps>
 
 <Tip>
-  For business communications (legal, medical, finance), the **sage** or **ash** voices at x1.0 work well. For youth-oriented projects, try **nova** or **shimmer** at x1.1–x1.2.
+  For business communication (legal, medical, finance), the **sage** or **ash** voices at x1.0 work well. For youth-oriented projects, try **nova** or **shimmer** at x1.1–x1.2.
 </Tip>
 
 ### Voice parameters
 
 | Parameter | Type | Description |
 |---|---|---|
-| **Voice type** | Toggle | Normal / PRO (ElevenLabs) |
+| **Voice type** | Toggle | Standard / PRO (ElevenLabs) |
 | **Voice** | Selector | In PRO: ash, coral, sage, onyx, alloy, echo, fable, nova, shimmer |
 | **Speed** | Slider | x0.5 – x1.5 |
-| **Style and emotions** | Text field | Style description: "calm and confident", "energetic and friendly" |
-| **Voice message response** | Selector | Voice + text / Voice only / Text only |
+| **Style and emotion** | Text field | A style description: "calm and confident", "energetic and friendly" |
+| **Reply to voice messages** | Selector | Voice + text / Voice only / Text only |
 
 ---
 
-## <a id="agent-commands"></a>Agent commands
+## <a id="komandy-agenta"></a>Agent commands
 
-Service commands let you control the employee **right from the chat** — without opening the control panel. Convenient for managers who work in the same chat as the employee.
+Service commands let you control the AI Employee **right from the chat** -- without opening the dashboard. This is handy for managers who work in the same chat as the AI Employee.
 
 <Note>
-  **Agent commands are global.** Their text is set **once for the entire account** in [/settings → General](/en/guides/account-settings) ("General settings" tab). On a specific agent's **Additional** page you see the same commands and can be sure they're current for all your agents at once.
+  **Agent commands are global.** You set their text **once for the whole account** in [/settings → General](/en/guides/account-settings) (the General settings tab). On a specific agent's **Advanced** page, you see the same commands and can be sure they're current for all your agents at once.
 </Note>
 
-### Full command list
+### Full list of commands
 
 | Command | What it does | When to use |
 |---|---|---|
-| **Start AI** | Activates the employee in the chat — it starts replying again | The manager finished intervening and is handing the chat back to the AI |
-| **Stop AI** | Pauses the employee — it stops replying but still "sees" messages | The manager wants to reply themselves |
-| **Clear memory** | Resets the current dialogue context — the employee "forgets" prior messages | The client arrived with a new question while the employee was still anchored to the old context |
-| **Jailbreak protection** | Toggles prompt-injection protection in this chat | Suspicious messages trying to "hack" instructions |
-| **Retraining** | Switches the employee's response into training mode — adds an entry to [Self-Learning](/en/guides/faq) | The manager wants to train the agent on this case |
-| **Report (all messages)** | Generates a dialogue report — all messages including the archive | Handing the case to another manager, audit |
-| **Report (without archive)** | Same, but excluding archived messages | A short summary without noise |
+| **Start AI** | Activates the AI Employee in the chat -- it starts replying again | The manager is done stepping in and hands the chat back to the AI |
+| **Stop AI** | Pauses the AI Employee -- it stops replying but still "sees" messages | The manager wants to reply personally |
+| **Clear memory** | Resets the current conversation's context -- the AI Employee "forgets" previous messages | The customer came with a new question, but the AI Employee clings to the old context |
+| **Jailbreak protection** | Turns prompt injection protection on/off in this chat | Suspicious messages trying to "hack" the instructions |
+| **Retrain** | Switches the AI Employee's reply to training mode -- adds an entry to [Self-Learning](/en/guides/self-learning) | The manager wants to train the agent on this case |
+| **Report (all messages)** | Generates a conversation report -- all messages, including the archive | Handing a case over to another manager, audits |
+| **Report (no archive)** | The same, but without archived messages | A short summary without noise |
 
 ### How commands work
 
-The manager types the command in the chat — the employee recognizes it and performs the service action. The command **doesn't go to the client** — it's interpreted by the system.
+A manager types a command in the chat -- the AI Employee recognizes it and performs the service action. The command **isn't sent to the customer** -- the system interprets it.
 
 <Tip>
-  Use unique, non-obvious commands (for example, `/aiti_pause` or `<<stop>>`) so a client doesn't accidentally type them. Plain verbs like "stop" are risky.
+  Use unique, non-obvious commands (for example, `/aiti_pause` or `<<stop>>`) so a customer doesn't type them by accident. Common verbs like "stop" are risky.
 </Tip>
 
 <Steps>
   <Step title="Open /settings → General">
-    Profile menu (bottom-left) → **Settings** → **General settings**.
+    Profile menu (bottom-left corner) → **Settings** → **General settings**.
   </Step>
   <Step title="Set the command text">
-    For each command (Start AI, Stop AI, etc.), specify the trigger phrase.
+    For each command (Start AI, Stop AI, and so on), specify a trigger command.
   </Step>
-  <Step title="Save and notify managers">
+  <Step title="Save and tell your managers">
     Make sure all managers know the current commands.
   </Step>
 </Steps>
@@ -213,102 +212,114 @@ The manager types the command in the chat — the employee recognizes it and per
 
 ## Behavior toggles
 
-A set of settings that control automation around the agent-manager interaction and the response to unusual situations.
+A set of settings that control how the agent automatically interacts with managers and responds to unusual situations.
 
 ### Jailbreak protection
 
-Blocks prompt-injection attempts — when a client tries to make the agent "forget instructions", "break character", or reveal a confidential prompt.
+Blocks prompt injection attempts -- when a customer tries to make the agent "forget its instructions", "break character", or reveal a confidential prompt.
 
 <Tip>
-  Enable for agents that handle sensitive data or are publicly accessible (bot channel, widget). For internal demo agents, you can leave it off.
+  Turn it on for agents that handle sensitive data or are publicly accessible (bot channel, widget). For internal demo agents, you can leave it off.
 </Tip>
 
 ### Stop after manager reply
 
-When enabled — as soon as the manager writes in the chat themselves, the employee automatically pauses. This protects against situations where the AI "interrupts" a live specialist.
+When on, the AI Employee pauses automatically as soon as a manager writes in the chat personally. This prevents the AI from "interrupting" a live specialist.
 
 <Note>
-  By default, this works in tandem with **auto-resume**: the AI pauses for 10–20 minutes, and if the client writes during that time and no one reacts, the AI resumes.
+  By default, it works together with **auto-start**: the AI turns off for 10–20 minutes, and if the customer sends a new message during that time, the AI resumes.
 </Note>
 
 ### Pause on bot messages
 
-When enabled — the employee ignores messages from other bots in the same chat (for example, a CRM chat-bot doesn't trigger the agent's reaction). Protects from "bot writes — bot replies — bot writes" loops.
+When on, the AI Employee ignores messages from other bots in the same chat (for example, a CRM chatbot doesn't trigger the agent). This protects against "bot writes — bot replies — bot writes" loops.
 
-### Auto-resume after pause
+### Auto-start after pause
 
-The employee automatically returns to work after a pause (10–20 minutes by default) — if the client wrote and the manager didn't react.
+The AI Employee automatically resumes work after a pause (10–20 minutes by default) -- if the customer wrote and the manager didn't respond.
 
 <Tip>
-  For 24/7 support, auto-resume is useful — the client won't be left without a response at night. For premium sales where a "human" feel matters, manage the employee manually via commands.
+  For 24/7 support, auto-start is useful -- customers won't be left without a reply at night. For premium sales, where a "human" style matters, it's better to control the AI Employee manually with commands.
 </Tip>
 
-### Conversation completion detection
+### Conversation-end detection
 
-The employee analyzes the conversation flow and decides on its own that the dialogue is over (the client said goodbye, the question is resolved). This affects [Auto Follow-up](/en/guides/auto-followup) and [Notifications](/en/guides/notifications).
+The AI Employee analyzes the flow of the conversation and determines on its own when the conversation is over (the customer said goodbye, the issue is resolved). This affects how [Auto Follow-up](/en/guides/auto-followup) and [Notifications](/en/guides/notifications) work.
 
 ---
 
-## Settings summary
+## Summary of all settings
 
 | Setting | Type | Default |
 |---|---|---|
-| **Response language** | Selector | User's language |
-| **Response word limit** | Numeric field | 0 (no limit) |
+| **Reply language** | Selector | In the user's language |
+| **Reply word limit** | Number field | 0 (no limit) |
 | **Image recognition** | Text field | Empty |
-| **Voice: mode** | Toggle | Normal |
+| **Voice: mode** | Toggle | Standard |
 | **Voice (PRO)** | Selector | — |
 | **Voice speed** | Slider | x1.0 |
-| **Style and emotions** | Text field | Empty |
-| **Voice message response** | Selector | Voice + text |
+| **Style and emotion** | Text field | Empty |
+| **Reply to voice messages** | Selector | Voice + text |
 | **Jailbreak protection** | Toggle | Off |
 | **Stop after manager reply** | Toggle | On |
 | **Pause on bot messages** | Toggle | On |
-| **Auto-resume after pause** | Toggle | On |
-| **Conversation completion detection** | Toggle | On |
+| **Auto-start after pause** | Toggle | On |
+| **Conversation-end detection** | Toggle | On |
 
 ---
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="If I choose a specific language, will the employee stop understanding others?">
-    No. The employee continues to understand messages in any language — but only replies in the chosen one.
+  <Accordion title="If I choose a specific language, will the AI Employee stop understanding other languages?">
+    No. The AI Employee keeps understanding messages in any language -- but replies only in the selected one.
   </Accordion>
 
-  <Accordion title="How do PRO ElevenLabs voices differ from Normal ones?">
-    PRO delivers significantly more natural sound (lifelike pronunciation, emotion, pauses). Important for premium businesses and audio content. Built-in voices are good enough for routine answers and tests.
+  <Accordion title="How are ElevenLabs PRO voices different from standard ones?">
+    PRO sounds much more natural (lifelike pronunciation, emotion, pauses). This matters for premium businesses and audio content. The standard voices are good enough for typical replies and testing.
   </Accordion>
 
   <Accordion title="Where do I get an ElevenLabs API key?">
-    Sign up at [elevenlabs.io](https://elevenlabs.io/), copy the key from your profile settings, and paste it into AI TEXTURA: [/settings → Integrations](/en/guides/account-settings). PRO mode then activates for all your agents.
+    Sign up at [elevenlabs.io](https://elevenlabs.io/), copy the key from your profile settings, and paste it into AI TEXTURA: [/settings → Integrations](/en/guides/account-settings). After that, PRO mode becomes available on all your agents.
   </Accordion>
 
   <Accordion title="Does voice work only in Telegram?">
-    Yes, today only Telegram. For IP telephony, contact [Support](/en/guides/support).
+    Yes, for now -- only Telegram. For IP telephony, contact [Support](/en/guides/support).
   </Accordion>
 
-  <Accordion title="How does 'Jailbreak protection' work?">
-    The employee detects prompt injections (attempts to break character, reveal instructions, or ignore restrictions) and neutralizes them. Enable for public agents and scenarios with sensitive data.
+  <Accordion title="How does Jailbreak protection work?">
+    The AI Employee recognizes prompt injections (attempts to make it break character, reveal its instructions, or ignore its restrictions) and neutralizes them. Turn it on for public agents and scenarios with sensitive data.
   </Accordion>
 
   <Accordion title="Where are agent commands stored?">
-    Globally, at the account level: [/settings → General settings](/en/guides/account-settings). On a specific agent's "Additional" tab you see the same commands — they can only be edited in one place.
+    Globally, at the account level: [/settings → General settings](/en/guides/account-settings). On a specific agent's Advanced tab, you see the same commands -- you can change them in only one place.
   </Accordion>
 
-  <Accordion title="What happens if I send the 'Clear memory' command?">
-    The employee resets the entire current dialogue context — as if the conversation just started. Useful when the employee is "stuck" in old context.
+  <Accordion title="What happens if I send the Clear memory command?">
+    The AI Employee resets the entire context of the current conversation -- as if the conversation just started. This is useful if the AI Employee is "stuck" in an old context.
   </Accordion>
 
-  <Accordion title="A client accidentally typed a command — what now?">
-    Use unique, non-obvious commands (with non-standard symbols or prefixes). If the incident already happened — re-enable the employee with the **Start AI** command.
+  <Accordion title="A customer typed a command by accident -- what should I do?">
+    Use unique, non-obvious commands (with unusual characters or prefixes). If it does happen, restart the AI Employee with the **Start AI** command.
   </Accordion>
 
-  <Accordion title="What is 'Auto-resume after pause'?">
-    After a pause (for example, after a manager's reply), the employee automatically returns to work in 10–20 minutes — if the client wrote and the manager didn't react. Protects against "forgotten" chats.
+  <Accordion title="What is Auto-start after pause?">
+    After a pause (for example, after a manager reply), the AI Employee automatically resumes work after 10–20 minutes -- if the customer wrote and the manager didn't respond. This protects against "forgotten" chats.
   </Accordion>
 
-  <Accordion title="Do I have to fill in every field in Additional?">
+  <Accordion title="Do I have to fill in every field in Advanced?">
     No. All settings have sensible defaults. Fill in only what you actually need.
+  </Accordion>
+
+  <Accordion title="How do I get the AI Employee to send photos, videos, or PDFs">
+    The file must be stored in the cloud and open via a direct link without signing in -- ending in `.jpg`, `.pdf`, or `.mp4`. Then describe the condition in the [Persona](/en/guides/persona) or create a [Quick Answer](/en/guides/quick-answers): "If asked about the banquet menu, send the link …".
+  </Accordion>
+
+  <Accordion title="The customer gets a link instead of a photo">
+    That's the channel's behavior, not the AI Employee's: Telegram expands media itself, while CRMs and some aggregators show only the link. Check that the link is direct and the file opens without signing in.
+  </Accordion>
+
+  <Accordion title="Can the AI Employee make and receive calls">
+    Yes, voice calls are connected separately through your manager: a minute of conversation costs about $0.10–0.15 plus a monthly fee for the number. A Russian number isn't available yet -- the outgoing number will be registered in another country, and SIP routing adds connection delay.
   </Accordion>
 </AccordionGroup>

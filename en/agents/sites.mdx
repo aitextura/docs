@@ -1,0 +1,82 @@
+---
+title: "Agent Sites"
+sidebarTitle: "Sites"
+description: "Everything the agent puts in its site/ folder goes live on the internet immediately — no deployment and no server of your own. Main site, additional sites, and a custom domain."
+---
+
+Ask in chat for "a page with a lead form" and get a working link a minute later — this is where that happens. Everything in the agent's `site/` folder is available online as soon as the file is saved: no deployment, no server, no hosting setup.
+
+<Frame>
+  <img src="/assets/images/ru/agents/sites.jpg" alt="The Sites tab: the main site with a Populated status and a public link, plus the Additional sites and Custom domains sections" />
+</Frame>
+
+## Main site
+
+The root of the `site/` folder opens at the agent's main address, which looks like `site-<id>.agents.aitextura.com`. The **Open** button takes you to the live page, and the badge next to it shows whether the site has content or is empty.
+
+The easiest way to change it is in words: "remove the second section and move the booking button to the top." The agent edits the files itself, and the update is visible right away.
+
+## Additional sites
+
+Each subfolder inside `site/` is a separate site with its own address. The **+ Create site** button creates a folder with a placeholder page and gives you a live address right away.
+
+This keeps different things apart: a landing page, an internal metrics dashboard, a page for a contractor.
+
+## Custom domain
+
+The **Custom domains** section connects your own domain to any of the agent's sites.
+
+<Steps>
+  <Step title="Add a CNAME record at your registrar">
+    One CNAME record pointing to the agent's address. Nothing else to configure.
+  </Step>
+  <Step title="Enter the domain in the platform">
+    In the **Domain** field, enter something like `www.example.com`. In the **Which site** list, choose which of the agent's sites to serve at that address.
+  </Step>
+  <Step title="Click Connect">
+    The certificate is issued automatically on the first visit — no need to set up HTTPS by hand.
+  </Step>
+</Steps>
+
+## What's public
+
+<Warning>The entire `site/` folder is public. Anything the agent puts there is available to anyone who knows the address: drafts, exports, customers' personal data. Working files belong in `workspace`, not in `site/`.</Warning>
+
+State this explicitly for the agent in the **Rules** document on the [Personality](/en/agents/personality) tab: "only put things in site/ that outsiders are allowed to see."
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Changes don't show up on the page">
+    Reload the page with the browser cache cleared. If that doesn't help, check on the [Files](/en/agents/files) tab that the agent actually saved the file in `site/` and not next to it.
+  </Accordion>
+
+  <Accordion title="Can I password-protect a site?">
+    The interface has no separate access setting. If a page isn't meant for outsiders, don't keep it in `site/`: share the file in chat or put it in `workspace`.
+  </Accordion>
+
+  <Accordion title="The domain is connected, but the site won't open">
+    Check the CNAME record at your registrar and wait: DNS updates take anywhere from a few minutes to a few hours. The certificate is issued on the first successful visit; until then, the browser may show a warning.
+  </Accordion>
+
+  <Accordion title="The agent broke a live page">
+    Ask it to restore the previous version — it keeps its changes in files. It's safer to have a [backup](/en/agents/maintenance) and not let the agent edit a live page without your review: first "show me what you're going to do," then the action.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Files" icon="folder-open" href="/en/agents/files">
+    Where site/ lives and what's around it
+  </Card>
+  <Card title="Tasks" icon="table-columns" href="/en/agents/tasks">
+    Page edits as cards on the board
+  </Card>
+  <Card title="What to delegate to the agent" icon="lightbulb" href="/en/agents/use-cases">
+    Other use cases where the agent writes code
+  </Card>
+  <Card title="Security and Access" icon="shield-halved" href="/en/agents/security">
+    What must never be made public
+  </Card>
+</CardGroup>

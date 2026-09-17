@@ -1,0 +1,116 @@
+---
+title: "Agent Models"
+sidebarTitle: "Models"
+description: "What your agent thinks with: four model slots, a catalog with prices, and connecting your own provider key directly."
+---
+
+Out of the box, your agent already thinks and works, so you don't need to touch the models. Come here in two cases: you have your own provider key and want to pay the provider directly, or the agent has started making mistakes and you're looking for a smarter model.
+
+## Four slots
+
+**Settings → Models**. Each role has its own model. This isn't duplication, it's a division of labor.
+
+<Frame>
+  <img src="/assets/images/ru/agents/models.jpg" alt="Models section: Brain, Fallbacks, Image Reading, and History Compression cards" />
+</Frame>
+
+| Slot | What it does | What to consider |
+|---|---|---|
+| **Brain** | Thinks and replies. The agent's main model | Defaults to `aitextura-chat`. Change it if the agent can't handle your tasks |
+| **Fallbacks** | Take over if the main model doesn't respond or refuses | Without fallbacks, a provider outage means a silent agent |
+| **Image Reading** | Looks at photos you send | The list only shows vision models: there's no point showing a picture to a blind one |
+| **History Compression** | Condenses a long conversation so it fits in memory | A simpler model works here: it needs to be careful, not smart |
+
+<Warning>The **Fallbacks** slot is the most underrated setting. A provider goes down for ten minutes, and all you see is a silent agent, with no idea why your scheduled tasks failed.</Warning>
+
+## Catalog
+
+The **Select** button opens the list: about a hundred models with search and sorting.
+
+<Frame>
+  <img src="/assets/images/ru/agents/models-catalog.jpg" alt="Model catalog: a table with Model, Context, and Price columns" />
+</Frame>
+
+| Column | What it means |
+|---|---|
+| **Model** | The name. The current model has a check mark |
+| **Context** | How much text the model holds at once. More context means a longer conversation before compression |
+| **Price** | Input → output per 1M tokens. The first number is the cost to read, the second is the cost to reply |
+
+<Frame>
+  <img src="/assets/images/ru/agents/models-card.jpg" alt="Model card in the catalog: context window, input and output cost, and model ID with a copy button" />
+</Frame>
+
+Hover over a model to open a card with details and the **Model ID** field. You'll need it if you connect the same model with your own key.
+
+## Your own model
+
+**Settings → General** → **Your Own Model (Your Own Key)** block. The agent will call the provider directly, bypassing the platform's infrastructure, and you'll pay the provider.
+
+<Frame>
+  <img src="/assets/images/ru/agents/settings-general.jpg" alt="General section: the Name field and the Your Own Model (Your Own Key) block with provider, key, and model" />
+</Frame>
+
+<Steps>
+  <Step title="Choose a provider">
+    The **Provider** list: who you buy access from.
+  </Step>
+  <Step title="Paste your key">
+    The **Provider Key** field. The key is verified with the provider, isn't stored in the conversation, and is never sent back to the browser.
+  </Step>
+  <Step title="Specify the model">
+    Once you enter the key, the model list loads automatically. You can also type the name manually. The platform checks whether the model understands photos when you connect it, so you don't need to specify that.
+  </Step>
+  <Step title="Click Verify and Connect">
+    The platform contacts the provider and confirms the key works.
+  </Step>
+</Steps>
+
+<Note>This is also where, in **General**, you change the agent's name: the one shown in the list and in the workspace.</Note>
+
+## What it costs
+
+The agent spends budget on every action: a conversation, a scheduled task, reading a file, overnight memory cleanup. Keep this in mind when you set up the [schedule](/en/agents/schedule): monitoring every 30 minutes costs dozens of times more than a daily summary.
+
+You can see spending and the remaining balance in **Billing** and [Charge History](/en/guides/finance). They're shared across the whole account.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="The agent gives dumb answers. Should I change the model?">
+    First, check the documents on the [Personality](/en/agents/personality) tab and how the task is worded: a vague task produces confident nonsense on any model. Change the model when the task is clearly described and the result still misses.
+  </Accordion>
+
+  <Accordion title="The agent went completely silent">
+    This looks like an outage at the main model's provider. Fill in the **Fallbacks** slot so the agent switches over on its own. You can see what happened in the [Log](/en/agents/maintenance).
+  </Accordion>
+
+  <Accordion title="It can't see the photos I send">
+    Check the **Image Reading** slot: if it holds a model without vision, the picture is simply never shown to it.
+  </Accordion>
+
+  <Accordion title="The conversation keeps losing details">
+    That's history compression. Put a model with a larger context in the **Brain** slot, and keep important facts in memory files: they aren't compressed.
+  </Accordion>
+
+  <Accordion title="Is my own key cheaper?">
+    It depends on the provider and volume. The practical value of your own key isn't only the price: it's your own limit and your own quota, independent of the account's shared budget.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Abilities and Skills" icon="bolt" href="/en/agents/skills">
+    What the agent is allowed to do
+  </Card>
+  <Card title="Maintenance" icon="wrench" href="/en/agents/maintenance">
+    Log, diagnostics, backup
+  </Card>
+  <Card title="Schedule" icon="clock" href="/en/agents/schedule">
+    The main source of ongoing spending
+  </Card>
+  <Card title="Charge History" icon="wallet" href="/en/guides/finance">
+    Where the account budget goes
+  </Card>
+</CardGroup>

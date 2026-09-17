@@ -1,194 +1,87 @@
 ---
 title: "amoCRM"
-description: "The amoCRM integration lets your AI employee handle incoming inquiries directly in your CRM. amoCRM connects in two ways — as a channel (a source of messages) and as a talent (CRM operations via MCP). Both use OAuth."
-sidebarTitle: "amoCRM"
+description: "Connect amoCRM as a channel: your AI Employee replies to customers right from the deal card, and you choose which sources and pipelines it handles."
 ---
+
+Customers write in WhatsApp, Telegram, Avito, and VK, and your manager sorts it all out in amoCRM. The **amoCRM** channel routes those same messages to your AI Employee: it replies right in the deal card, the conversation stays where it is, and nobody has to learn a new interface.
+
+## Connect the channel
+
+Open the AI Employee → **Channel** tab → **Connect New** → **amoCRM**.
 
 <Frame>
-  <img src="/public/screenshots/31-channel-amocrm.png" alt="Connecting amoCRM as a channel via OAuth" />
+  <img src="/public/screenshots/31-channel-amocrm.png" alt="The Add Channel panel with the amoCRM platform selected and the CONNECT AMOCRM button" />
 </Frame>
 
-<CardGroup cols={2}>
-  <Card title="Channels — overview" icon="plug" href="/en/channels">
-    What a channel is and how it works in AI Textura
-  </Card>
-  <Card title="Bitrix24" icon="building" href="/en/channels/bittrix24">
-    A similar CRM with channel / talent split
-  </Card>
-  <Card title="Messengers" icon="comments" href="/en/channels/messengers">
-    WhatsApp, Instagram, VK via aggregators and Kommo
-  </Card>
-  <Card title="Talents" icon="puzzle-piece" href="/en/guides/talents">
-    Catalog of MCP tools and integrations
-  </Card>
-</CardGroup>
+Enter a channel name (only you see it) and click **CONNECT AMOCRM**. An amoCRM window opens: sign in to your account and grant access. The platform handles the rest, and the channel appears on the **Connected** tab.
 
-## Two ways to connect amoCRM
+## Choose sources
 
-amoCRM integrates with AI Textura in two independent ways. Both rely on amoCRM OAuth, but they solve different problems:
-
-| | **Channel** | **Talent** |
-| --- | --- | --- |
-| Where it is configured | The agent's **Channel** tab | The agent's **Talents** tab |
-| What it does | The AI receives and replies to messages that arrive in amoCRM | The AI performs CRM actions: creates deals and contacts, finds existing ones, schedules tasks, adds notes and tags |
-| Technology | OAuth + message forwarding to AI Textura | MCP server (Model Context Protocol) |
-| Minimum to work | An authorized amoCRM account | An authorized amoCRM account (the same one or another) |
-
-<Tip>
-  Both connections share the same OAuth bridge — after you authorize amoCRM once, the second connection type can pick the same account without signing in again.
-</Tip>
-
-<Tip>
-  AI employees do not create leads or deals **automatically** just because the channel is connected — that requires the **talent**. The channel only forwards messages to AI Textura.
-</Tip>
-
----
-
-## Connecting amoCRM as a channel
-
-The channel ensures that all messages arriving in amoCRM reach the AI employee, who can then reply directly from the deal card.
-
-### What the channel provides
-
-- The AI employee responds to customers directly from amoCRM.
-- Managers see the full conversation in the deal card.
-- You can route messages from WhatsApp, Telegram, Instagram, and other channels configured in amoCRM.
-
-### How to connect the channel
-
-<Steps>
-  <Step title="Open the Channel section">
-    Go to [AI Employees](/en/guides/ai-employees) → select the agent → **Channel** tab → **Connect new** sub-tab.
-  </Step>
-  <Step title="Select amoCRM">
-    In the platform list, find **amoCRM** and click on it.
-  </Step>
-  <Step title="Create a connection">
-    In the side panel, choose **Create**.
-  </Step>
-  <Step title="Authorize via OAuth">
-    Click **Connect amoCRM channel** — an amoCRM window will open. Sign in to your account and confirm access.
-  </Step>
-  <Step title="Fill in the settings">
-    - **Platform**: already selected — amoCRM.
-    - **Channel name**: any name convenient for you.
-    - **Long-term token**: filled in automatically after OAuth (or paste it manually from amoCRM settings).
-  </Step>
-  <Step title="Connect">
-    Click **Connect**. The channel will appear in the **Connected** tab.
-  </Step>
-</Steps>
-
-### Where to get the amoCRM token (fallback path)
-
-If OAuth does not work, you can connect the channel using a long-term token:
-
-<Steps>
-  <Step title="Open amoCRM settings">
-    Go to amoCRM → **Settings** → **Integrations**.
-  </Step>
-  <Step title="Find the integration">
-    Find or create the AI Textura integration.
-  </Step>
-  <Step title="Copy the token">
-    In the **"Keys and access"** section, copy the long-term token.
-  </Step>
-</Steps>
-
----
-
-## Connecting amoCRM as a talent (MCP)
+To open a connected channel, click it on the **Connected** tab. The first thing to do is narrow the scope: your AI Employee doesn't always need to reply in every chat at once.
 
 <Frame>
-  <img src="/public/screenshots/17-talent-amocrm-modal.png" alt="amoCRM talent connection modal (OAuth)" />
+  <img src="/assets/images/ru/screenshots/amocrm_channel_sources.png" alt="The Edit Channel window: channel name and the expanded Sources list with checkboxes for connected messengers" />
 </Frame>
 
-The talent is an **MCP server** through which the AI can work with amoCRM **deals, contacts, companies, pipelines, tasks, and notes** during a conversation.
+The **Sources** list shows the messengers set up in your amoCRM: Telegram, Avito, VK, Facebook, and others. Uncheck the ones the AI Employee shouldn't handle. For example, leave it Avito and Telegram, and let your managers reply in VK themselves.
 
-### When you need the talent
+**Pipeline Filter** does the same for pipelines. While nothing is selected, the AI Employee replies to all deals. Select one pipeline, and it works only there, leaving your cold leads or post-sale support alone.
 
-- The AI should create deals automatically based on the conversation outcome.
-- You need to look up an existing customer in the database before responding.
-- The AI should schedule tasks for managers or assign a responsible manager.
-- You want notes and tags maintained based on the dialog.
+## Co-Pilot mode
 
-### How to connect the talent
+<Frame>
+  <img src="/assets/images/ru/screenshots/amocrm_copilot.png" alt="The Co-Pilot Mode toggle with a warning that AI replies are posted as notes on the deal" />
+</Frame>
 
-<Steps>
-  <Step title="Open Talents">
-    On the agent page, go to the **Talents** tab → **Browse apps**.
-  </Step>
-  <Step title="Find amoCRM">
-    The amoCRM card lives in the **Business Management** category.
-  </Step>
-  <Step title="Pick a modal tab">
-    The "Connect amoCRM" modal has two tabs:
-    - **New connection** — starts the OAuth flow with amoCRM.
-    - **Existing account** — pick a previously authorized account (if you already have an amoCRM channel connected, or if another agent used the same login).
-  </Step>
-  <Step title="Authorize">
-    On the "New connection" tab, click **Connect amoCRM channel**, sign in to amoCRM, and confirm access.
-  </Step>
-  <Step title="Save">
-    The talent will appear in the **Connected** tab on the agent page.
-  </Step>
-</Steps>
+With **Co-Pilot** on, the AI Employee sends nothing to the customer. Instead, it writes its reply as a note on the deal: the manager reads the suggestion, edits it as they see fit, and sends it themselves.
 
-<Tip>
-  The talent and channel **can share a single amoCRM account** — the OAuth bridge remembers the authorization, so picking "Existing account" for the second connection skips the sign-in.
-</Tip>
+This is the best way to roll out an AI Employee in a live sales team: for a week it writes notes, you review what it suggests and refine the [Persona](/en/guides/persona), and only then do you let it talk to customers.
 
-<Warning>
-  The talent acts on behalf of the authorized user. Mind their permissions in amoCRM — if the user has no access to a pipeline or task, the talent cannot work with it either.
-</Warning>
+## Settings
 
----
+<Frame>
+  <img src="/assets/images/ru/screenshots/amocrm_settings.png" alt="The Pipeline Filter and Settings blocks: message buffer with buffer time and history auto-cleanup" />
+</Frame>
 
-## Kommo
+**Message Buffer** makes the AI Employee wait before replying, since customers often split one thought into several messages. In a CRM, set a longer buffer than in a messenger, up to 120 seconds: messages arrive here with a delay, and an extra minute of silence doesn't bother anyone.
 
-Kommo (the international version of amoCRM) is connected the same way — both as a channel and as a talent. It uses the same OAuth bridge, but with a Kommo endpoint.
+**History Auto-Cleanup** deletes the conversation on a schedule.
 
-<Steps>
-  <Step title="Open settings">
-    On the **Channel** or **Talents** tab, select the **Kommo** platform.
-  </Step>
-  <Step title="Click Connect">
-    In the modal, click **Connect KommoCRM**.
-  </Step>
-  <Step title="Authorize access">
-    Log in to your Kommo account and confirm access.
-  </Step>
-  <Step title="Add the integration">
-    Click **Add** — the connection is ready.
-  </Step>
-</Steps>
+<Warning>Auto-cleanup deletes messages permanently.</Warning>
 
-<Tip>
-  Kommo includes built-in channels: WhatsApp, Telegram, Instagram, VK. Every messenger connected in Kommo automatically becomes available to the AI employee through the Kommo channel.
-</Tip>
+## Actions in amoCRM
 
----
+The channel only brings in messages; on its own, it doesn't create deals or tasks. To let your AI Employee work with cards hands-on (create deals and contacts, look up customers, add notes and tasks), connect the amoCRM talent on the **Talents** tab: [here's how](/en/guides/connect-talents#how-to-connect-amocrm).
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Do I need to connect both the channel and the amoCRM talent?">
-    It depends on what you need. If you only want **conversations** in the deal card, the channel is enough. If the AI should **create deals on its own, schedule tasks, or look up customers in the database**, you need the talent. Most setups use both.
+  <Accordion title="The AI Employee writes to customers on behalf of a real manager">
+    The channel is connected under that manager's user account. Create a separate user in amoCRM, such as "AI TEXTURA," and reconnect the channel under it: from then on, replies will go out under that name.
   </Accordion>
 
-  <Accordion title="Can I use a single OAuth for both connection types?">
-    Yes. After the first amoCRM authorization, the second connection (channel or talent) can select "Existing account" — no login or password is required again.
+  <Accordion title="Connecting says the account is already connected, but there's no channel">
+    Webhooks from a previous connection are still there. In amoCRM, delete the AI TEXTURA integration entirely along with its webhooks, then delete the channel on the platform and connect again.
   </Accordion>
 
-  <Accordion title="The amoCRM OAuth window doesn't open / closes with an error.">
-    Make sure your browser is not blocking pop-ups for the AI Textura domain. If the integration has been removed in amoCRM or the permissions revoked, recreate the integration and use the long-term token from the "Keys and access" section.
-  </Accordion>
-
-  <Accordion title="Can I connect Kommo and amoCRM at the same time?">
-    Yes. They are two separate platforms and work independently. Connect them one at a time — each requires its own OAuth.
-  </Accordion>
-
-  <Accordion title="What if the AI is not responding in the deal card?">
-    Check: (1) the amoCRM channel is active and not disabled in AI Textura; (2) the chosen agent is "Active"; (3) the agent's working hours allow it to operate right now; (4) inside amoCRM the messenger is routed to the correct agent.
+  <Accordion title="Conversations in amoCRM close on their own">
+    First, check the robots and automation rules in amoCRM itself: they're more often what closes the deal, not the AI Employee. If there are no such rules, contact [Support](/en/guides/support) and include an example deal.
   </Accordion>
 </AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Bitrix24" icon="building" href="/en/channels/bittrix24">
+    The same setup for Bitrix24
+  </Card>
+  <Card title="Talents" icon="bolt" href="/en/guides/talents">
+    Deals, tasks, and notes handled by your AI Employee
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels">
+    All the ways to connect customers to your AI Employee
+  </Card>
+  <Card title="Profiles" icon="address-card" href="/en/guides/profiles">
+    What the AI Employee remembers about a customer
+  </Card>
+</CardGroup>

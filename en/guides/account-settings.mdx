@@ -1,120 +1,120 @@
 ---
 title: "Account Settings"
-description: "Manage theme, language, AI commands, personal data, security, integrations, and experimental features in AI Textura."
+description: "Manage the theme, language, AI commands, personal details, security, integrations, and experimental features in AI Textura."
 ---
 
-Account Settings is your personal control panel for the platform. It contains everything related to appearance, security, integrations, notifications, global commands for AI employees, and experimental features.
+Account Settings is your personal control panel for the platform. It brings together everything related to appearance, security, integrations, notifications, global commands for AI Employees, and experimental features.
 
 <Frame><img src="/public/screenshots/67-user-settings.png" alt="User settings page — General settings" /></Frame>
 
 <CardGroup cols={2}>
   <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Manage your employees
+    Managing AI Employees
   </Card>
-  <Card title="Additional Settings" icon="sliders" href="/en/guides/additional-settings">
-    Fine-tuning per employee
+  <Card title="Advanced" icon="sliders" href="/en/guides/additional-settings">
+    Fine-tuning an AI Employee
   </Card>
   <Card title="Billing" icon="wallet" href="/en/guides/finance">
-    Balance and billing history
+    Balance and charge history
   </Card>
   <Card title="Support" icon="headset" href="/en/guides/support">
     Contact the AI Textura team
   </Card>
 </CardGroup>
 
-## How to access settings
+## How to open settings
 
 <Steps>
   <Step title="Open the profile menu">
-    At the bottom of the sidebar, find the block with your name and email — click on it.
+    At the bottom of the sidebar, find the block with your name and email and click it.
   </Step>
-  <Step title="Select 'Settings'">
-    In the dropdown menu, click **Settings**. A page with seven tabs will open.
+  <Step title="Select Settings">
+    In the menu that opens, click **Settings**. A page with seven tabs opens.
   </Step>
 </Steps>
 
 | Tab | What's inside |
 |---|---|
-| **General** | Theme (Light / Dark / System), interface language (English / Russian), [agent commands](#agent-commands) — text commands for controlling the AI |
+| **General** | Theme (Light / Dark / System), interface language (English / Русский), [agent commands](#agent-commands) -- text commands for controlling the AI |
 | **Account Settings** | First name, last name, company, phone, email, password change |
-| **Notifications** | Platform-level notification settings |
+| **Notifications** | General platform notification settings |
 | **Security** | Sessions, two-factor authentication, linked accounts |
 | **Integrations** | ElevenLabs API key for PRO voices |
-| **Activity** | Account action log — recent sign-ins, settings changes, security events |
-| **Experimental** | Beta features in testing |
+| **Activity** | Account activity log -- recent sign-ins, settings changes, security events |
+| **Experimental** | Beta features being tested |
 
 ---
 
-## 1. General
+## 1. General settings
 
-The first tab, open by default. It contains appearance settings and global commands for managing AI employees.
+The first tab, which opens by default. It holds the platform's appearance settings and global commands for controlling AI Employees.
 
 ### Interface theme
 
-Control the color scheme of the application. The setting applies to all pages at once.
+Control the app's color scheme. The setting applies to all pages at once.
 
 | Option | What it does |
 |---|---|
-| **Light** | Always light interface |
-| **Dark** | Always dark interface |
-| **System** | Follows your OS settings — if dark mode is enabled on your device, the platform also switches to dark |
+| **Light** | Always a light interface |
+| **Dark** | Always a dark interface |
+| **System** | Follows your OS settings -- if dark mode is on for your device, the platform turns dark too |
 
 ### Interface language
 
-Choose the language for the platform interface.
+Choose the language the platform interface is displayed in.
 
 | Option | Description |
 |---|---|
 | **English** | Interface in English |
-| **Russian** | Interface in Russian |
+| **Русский** | Interface in Russian |
 
-<Tip>The interface language does not affect the language AI employees use with clients. An employee responds in the language set in their [Persona](/en/guides/persona), or adapts to the client's language.</Tip>
+<Tip>The interface language doesn't affect the language AI Employees use with customers. An AI Employee replies in the language set in its [Persona](/en/guides/persona) or adapts to the customer's language.</Tip>
 
 ### Agent commands
 
-Global text commands that can be sent directly in a chat with an AI employee. Each command is a word, phrase, or set of emoji that triggers a specific action. You can change the command text to anything you prefer.
+Global text commands you can send right into a chat with an AI Employee. Each command is a word, phrase, or set of emoji that triggers a specific action. You can change the command text to anything you like.
 
 | Command | What it does | Default |
 |---|---|---|
-| **Start AI** | The employee begins writing automatically after 10-20 minutes of silence. After a manager replies, the AI stops and waits for the next pause | `😇` |
-| **Stop AI** | Immediately stops automatic messages, even if auto-support is enabled in the employee's settings | `❌` |
-| **Retrain AI** | The employee re-reads instructions and knowledge, including connected documents. Can be sent from any chat | `📚📕📙📗📓📖` |
-| **Toggle protection** | Enables and disables corporate protection across all chats simultaneously | `🔒🔒🔒🔒🔒🔒` |
-| **Wipe memory** | Completely clears the active dialog history. Use for testing knowledge from a clean slate | `delete all` |
-| **Report (all)** | Generates a complete dialog report including archived messages. The same report is available in the [chat action menu](/en/guides/chats#chat-action-menu) | set by you |
-| **Report (without archive)** | A short report — only active messages, without deleted or archived ones | set by you |
+| **Start AI** | The AI Employee starts writing automatically after 10-20 minutes of silence. After a manager replies, the AI stops and waits for the next pause | `😇` |
+| **Stop AI** | Instantly stops automatic messages, even if auto-support is on in the AI Employee's settings | `❌` |
+| **Retrain AI** | The AI Employee rereads its instructions and knowledge, including connected documents. You can send it from any chat | `📚📕📙📗📓📖` |
+| **Protection control** | Turns corporate protection on and off in all chats at once | `🔒🔒🔒🔒🔒🔒` |
+| **Erase memory** | Completely clears the active conversation's history. Use it to test knowledge from a clean slate | `delete all` |
+| **Full report** | Generates a full conversation report with all messages, including archived ones. The same report is available in the [chat actions menu](/en/guides/chats#chat-menu) | set by you |
+| **Report without archive** | A shorter report -- only active messages, without deleted or archived ones | set by you |
 
-<Warning>The **Wipe memory** command permanently deletes the conversation from the employee's context. This action cannot be undone.</Warning>
+<Warning>The **Erase memory** command completely removes the conversation from the AI Employee's context. This can't be undone.</Warning>
 
-To change a command, enter new text in the field next to the description and click **Save commands**. The **Reset** button restores all commands to their default values.
+To change a command, enter new text in the field next to its description and click **Save commands**. The **Reset** button restores all commands to their defaults.
 
 <Tip>
-  The **Report (all)** and **Report (without archive)** commands are convenient when contacting [Support](/en/guides/support): send the command in the chat — get the formatted report right in the messenger, without opening the platform.
+  The **Full report** and **Report without archive** commands are handy when contacting [Support](/en/guides/support): send the command in the chat and get the generated report right in the messenger, without opening the platform.
 </Tip>
 
 ---
 
 ## 2. Account Settings
 
-This is where your personal data is stored. The information is used for identification in the system and is displayed in the interface — for example, in the sidebar and in support tickets.
+This is where your personal details are stored. The information is used to identify you in the system and is shown in the interface -- for example, in the sidebar and in support tickets.
 
 ### Profile fields
 
 | Field | Description | Required |
 |---|---|---|
-| **First name** | Displayed in the interface | Yes |
-| **Last name** | Displayed next to the first name | No |
-| **Company** | Your company or project name | No |
+| **First name** | Shown in the interface | Yes |
+| **Last name** | Shown next to your first name | No |
+| **Company** | The name of your company or project | No |
 | **Phone** | Contact phone number | No |
-| **Email** | Address used for sign-in and notifications | Yes |
+| **Email** | The address for sign-in and notifications | Yes |
 
 After making changes, click **Save changes**. The **Reset** button discards unsaved edits.
 
 ### Changing your password
 
-The same tab has a **Change password** button. Clicking it opens a form: enter your current password and the new password twice, then confirm.
+The same tab has a **Change password** button. Clicking it opens a form: enter your current password and your new password twice, then confirm.
 
-<Tip>Use a strong password of at least 8 characters, with mixed-case letters and numbers. If you sign in via a linked account (Apple, Google, etc.), setting a password for added security is still recommended.</Tip>
+<Tip>Use a strong password at least 8 characters long, with upper- and lowercase letters and digits. Even if you sign in with a linked account (Apple, Google, etc.), setting a password for extra security is still worthwhile.</Tip>
 
 <Frame><img src="/public/screenshots/68-settings-account.png" alt="Account Settings tab" /></Frame>
 
@@ -122,57 +122,57 @@ The same tab has a **Change password** button. Clicking it opens a form: enter y
 
 ## 3. Notifications
 
-Platform-level notification settings — control delivery channels and alert categories at the account level.
+General platform notification settings -- manage delivery channels and alert categories at the account level.
 
 <Frame><img src="/public/screenshots/71-settings-notifications.png" alt="Notifications tab" /></Frame>
 
 <Note>
-  These settings cover **platform notifications** (news, updates, account events). The **escalation triggers** for specific AI employees are configured separately: see [Notifications](/en/guides/notifications) inside the agent tab.
+  These settings apply to **platform notifications** (news, updates, account events). **Escalation trigger** settings for specific AI Employees are a separate section: [Notifications](/en/guides/notifications) on the agent tab.
 </Note>
 
 ---
 
 ## 4. Security
 
-Tab for keeping your account under control. It has three blocks: active sessions, two-factor authentication, and linked accounts.
+The tab for keeping control of your account. It has three blocks: active sessions, two-factor authentication, and linked accounts.
 
 <Frame><img src="/public/screenshots/69-settings-security.png" alt="Security tab" /></Frame>
 
 ### Active sessions
 
-A list of all devices and browsers where your account is currently signed in.
+A list of all devices and browsers signed in to your account.
 
 | Parameter | What it shows |
 |---|---|
-| **IP address** | The address used to sign in |
-| **Label** | The current session is marked as "Current session" |
-| **Platform** | Application name — AI TEXTURA |
+| **IP address** | The address the sign-in came from |
+| **Label** | The current session is marked "Current session" |
+| **Platform** | The app name -- AI TEXTURA |
 | **Created** | When the session was opened |
-| **Last activity** | When the session was last used |
+| **Last active** | When the session was last used |
 
-<Warning>If you see an unfamiliar session — change your password immediately and enable two-factor authentication.</Warning>
+<Warning>If you see an unfamiliar session, change your password immediately and turn on two-factor authentication.</Warning>
 
 ### Two-factor authentication (2FA)
 
-An additional layer of protection. When signing in, the system requests a one-time code from an authenticator app (Google Authenticator, Authy, etc.).
+An extra layer of protection. When you sign in, the system asks for a one-time code from an authenticator app (Google Authenticator, Authy, etc.).
 
 <Steps>
-  <Step title="Click 'Enable 2FA'">
-    The button is located in the two-factor authentication block.
+  <Step title="Click Enable 2FA">
+    The button is in the two-factor authentication block.
   </Step>
   <Step title="Scan the QR code">
-    Open the authenticator app on your phone and scan the QR code displayed on screen.
+    Open the authenticator app on your phone and scan the QR code on the screen.
   </Step>
   <Step title="Enter the confirmation code">
-    Enter the one-time code from the app to complete setup.
+    Enter the one-time code from the app to finish setup.
   </Step>
 </Steps>
 
-<Tip>We strongly recommend enabling 2FA, especially if you use paid plans and have funds on your balance. It protects your account even if your password is compromised.</Tip>
+<Tip>We strongly recommend enabling 2FA, especially if you're on a paid plan and have funds on your balance. It protects your account even if your password leaks.</Tip>
 
 ### Linked accounts
 
-Link external accounts for quick passwordless sign-in. Four services are supported:
+Link external accounts for quick sign-in without a password. Four services are supported:
 
 | Service | Action |
 |---|---|
@@ -181,27 +181,27 @@ Link external accounts for quick passwordless sign-in. Four services are support
 | **Google** | Link / Unlink |
 | **Microsoft** | Link / Unlink |
 
-If an account is linked, its status shows **Linked** with an **Unlink** button. If not — a **Link** button redirects you to the service's authorization page.
+If an account is linked, you'll see the **Linked** status and an **Unlink** button next to it. If not, there's a **Link** button that takes you to the service's sign-in page.
 
-<Tip>Linking an external account is convenient for quick sign-in but does not replace a password. We recommend having both a password and a linked account — so you don't lose access if one method fails.</Tip>
+<Tip>Linking an external account is convenient for quick sign-in but doesn't replace a password. We recommend having both a password and a linked account -- that way you won't lose access if something happens to one of your sign-in methods.</Tip>
 
 ---
 
 ## 5. Integrations
 
-This tab configures connections to external services that extend the platform's capabilities.
+This tab is where you set up connections to external services that extend the platform's capabilities.
 
 <Frame><img src="/public/screenshots/70-settings-integrations.png" alt="Integrations tab — ElevenLabs API key" /></Frame>
 
 ### ElevenLabs API key
 
-AI Textura supports PRO voices through integration with **ElevenLabs** — over 1,000 professional voices, plus the ability to connect your own custom voice.
+AI Textura supports PRO voices through an integration with **ElevenLabs** -- over 1,000 professional voices, plus the option to connect your own voice.
 
 <Steps>
-  <Step title="Get your API key">
-    Register at [ElevenLabs](https://elevenlabs.io) and obtain an API key from your account.
+  <Step title="Get an API key">
+    Sign up at [ElevenLabs](https://elevenlabs.io) and get an API key in your account dashboard.
   </Step>
-  <Step title="Open the 'Integrations' tab">
+  <Step title="Open the Integrations tab">
     Go to **Settings** → **Integrations**.
   </Step>
   <Step title="Paste the key and save">
@@ -209,85 +209,109 @@ AI Textura supports PRO voices through integration with **ElevenLabs** — over 
   </Step>
 </Steps>
 
-After this, PRO voices become available in voice employee settings.
+After that, PRO voices become available in the settings of voice-enabled AI Employees.
 
-<Warning>This is an external integration. PRO voice charges are handled by ElevenLabs — the cost depends on your plan with their service. AI Textura does not charge extra for using PRO voices.</Warning>
+<Warning>This is an external integration. PRO voices are paid for on the ElevenLabs side -- the cost depends on your plan with their service. AI Textura doesn't charge anything extra for using PRO voices.</Warning>
 
-<Tip>If you don't use voice employees or are satisfied with the built-in voices — you can skip this tab. Built-in voices (the "Standard" category) are available without a key and at no additional cost.</Tip>
+<Tip>If you don't use voice-enabled AI Employees or you're happy with the built-in voices, you can skip this tab. The built-in voices (the Standard category) are available without a key and at no extra cost.</Tip>
 
 ---
 
 ## 6. Activity
 
-Action log for your account: sign-ins, settings changes, security events, adding and removing [AI employees](/en/guides/ai-employees), connecting [channels](/en/channels/index) and [talents](/en/guides/talents).
+A log of actions in your account: sign-ins, settings changes, security events, adding and removing [AI Employees](/en/guides/ai-employees), and connecting [channels](/en/channels/index) and [talents](/en/guides/talents).
 
-<Frame><img src="/public/screenshots/72-settings-activity.png" alt="Activity tab — account action log" /></Frame>
+<Frame><img src="/public/screenshots/72-settings-activity.png" alt="Activity tab — account activity log" /></Frame>
 
 | Field | What it shows |
 |---|---|
-| **Date and time** | When the event occurred |
-| **Action** | What was done (sign-in, settings change, employee added, etc.) |
-| **IP address** | Address from which the action was performed |
-| **Platform** | Browser or application |
+| **Date and time** | When the event happened |
+| **Action** | What was done (account sign-in, settings change, AI Employee added, etc.) |
+| **IP address** | The address the action came from |
+| **Platform** | Browser or app |
 
 <Tip>
-  Check the log if you suspect unauthorized access — every sign-in is visible. If you see unfamiliar events, change your password on the **Account Settings** tab and enable 2FA on the **Security** tab.
+  Check the log if you suspect unauthorized access -- it shows every sign-in. If you see unfamiliar events, change your password on the **Account Settings** tab and turn on 2FA on the **Security** tab.
 </Tip>
 
 ---
 
 ## 7. Experimental
 
-Features that are still in testing. They may be unstable or change in future updates, but you can try them now.
+Features being tested. They may be unstable or change in future updates, but you can try them now.
 
 <Frame><img src="/public/screenshots/73-settings-experimental.png" alt="Experimental tab" /></Frame>
 
-### Page transition animations
+### Transition animations
 
-Enables smooth animated transitions between platform pages. An experimental browser feature — it makes navigation visually smoother, but in rare cases may cause lag on low-powered devices.
+Turns on smooth animated transitions between platform pages. It's an experimental browser feature -- it makes navigation look smoother but may occasionally cause lag on low-end devices.
 
 | Parameter | Description |
 |---|---|
-| **Toggle** | On / Off — enables or disables the animation |
+| **Toggle** | On / Off -- turns the animation on or off |
 
-Animation is disabled by default. Enable it if you want to try — you can turn it off at any time.
+The animation is off by default. Turn it on if you want to try it -- you can turn it off at any time.
 
-<Tip>The Experimental section will be updated with new features over time. Check back after platform updates.</Tip>
+<Tip>The Experimental section will get new features over time. Check back after platform updates.</Tip>
 
 ---
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="How do I access account settings?">
-    Click on your name and email at the bottom of the sidebar. In the dropdown menu, select **Settings**.
+  <Accordion title="How do I open Account Settings?">
+    Click your name and email at the bottom of the sidebar. In the menu that opens, select **Settings**.
   </Accordion>
 
   <Accordion title="I changed my email but can't sign in with the new address">
-    After changing your email, make sure you saved the changes with the **Save changes** button. If the issue persists, contact support via the [Support](/en/guides/support) section in the left menu.
+    After changing your email, make sure you saved the changes with the **Save changes** button. If the problem persists, contact support through the [Support](/en/guides/support) section in the left menu.
   </Accordion>
 
-  <Accordion title="Can I use the platform without a password — only via Apple/Google?">
-    Yes. If you registered through an external service, you can sign in through it only. However, for added security we recommend setting a password on the **Account Settings** tab.
+  <Accordion title="Can I use the platform without a password -- only through Apple/Google?">
+    Yes. If you signed up through an external service, you can sign in only through it. But for extra security, we recommend setting a password on the **Account Settings** tab.
   </Accordion>
 
   <Accordion title="What should I do if I see an unfamiliar session?">
-    Immediately change your password on the **Account Settings** tab → **Change password**. Then enable two-factor authentication. If you suspect unauthorized access, contact support.
+    Immediately change your password on the **Account Settings** tab → **Change password**. Then turn on two-factor authentication. If you suspect unauthorized access, contact support.
   </Accordion>
 
   <Accordion title="Why do I need an ElevenLabs API key?">
-    Only for PRO voices. If you don't use voice employees or are satisfied with built-in voices, you don't need a key.
+    Only for PRO voices. If you don't use voice-enabled AI Employees or you're happy with the built-in voices, you don't need the key.
   </Accordion>
 
   <Accordion title="Do AI control commands work in all chats?">
-    Yes. Commands configured on the **General** tab apply globally — across all chats with all AI employees in your account.
+    Yes. Commands set on the **General settings** tab apply globally -- in all chats with all AI Employees in your account.
   </Accordion>
 
   <Accordion title="What happens if I send the retrain command?">
-    The employee re-reads all its instructions, [knowledge base](/en/guides/knowledge), and connected documents. This is useful if you updated data and want the employee to start using it immediately.
+    The AI Employee rereads all its instructions, [Knowledge Base](/en/guides/knowledge), and connected documents. This is useful if you've updated data and want the AI Employee to start using it right away.
   </Accordion>
 
   <Accordion title="Are experimental features paid?">
-    No. All features in the Experimental section are free. These are beta capabilities that the AI Textura team tests before full release.
+    No. All features in the Experimental section are free. They're beta features the AI Textura team is testing before a full launch.
+  </Accordion>
+
+  <Accordion title="The password reset email doesn't arrive">
+    The email is sent from `info@aitextura.com` -- check your Spam folder and make sure you're looking in the inbox your account is registered to. You start a reset with the **Forgot password?** link on the sign-in page.
+  </Accordion>
+
+  <Accordion title="The confirmation code for an email change takes a long time">
+    The email with the code is sometimes delayed by up to 20 minutes, and the code can expire in that time. Wait, check Spam, and if the code no longer works, request a new one in your profile settings.
+  </Accordion>
+
+  <Accordion title="The sign-in page doesn't load or gets stuck on the captcha">
+    Open it in Chrome, turn off your VPN, and refresh the page; if that doesn't help, try incognito mode or clear your cache and cookies. Still not working? Write to [Support](/en/guides/support) and include your browser, the country you're connecting from, and what you see on the screen.
+  </Accordion>
+
+  <Accordion title="I can't sign in -- I've tried different emails">
+    An account is tied to one address; you can't sign in with another. Check which inbox you need with your AI TEXTURA manager; you can change the linked address through [Support](/en/guides/support).
+  </Accordion>
+
+  <Accordion title="What happens to customers' personal data, and what about Federal Law 152-FZ?">
+    The platform doesn't store customer data: it passes through in transit and is anonymized. You remain the personal data operator, so the processing policy, secure channels, and reporting are on your side. If your policy requires keeping data inside Russia, discuss a local model, Russian communication channels, or running on local servers with your manager.
+  </Accordion>
+
+  <Accordion title="I need a separate NDA">
+    Confidentiality provisions are already in the [offer agreement](/en/terms-and-policies/offer). If you need a separate document, your manager will prepare one on request.
   </Accordion>
 </AccordionGroup>

@@ -37,11 +37,13 @@
         "tabs": [
           {
             "tab": "Documentation",
-            "icon": "book-open",
+            "icon": "book-open-lines",
             "iconType": "duotone",
             "groups": [
               {
-                "group": "Overview",
+                "group": "Getting Started",
+                "icon": "rocket",
+                "iconType": "duotone",
                 "pages": [
                   "en/index",
                   "en/guides/quickstart",
@@ -49,46 +51,78 @@
                 ]
               },
               {
-                "group": "AI Employees",
+                "group": "AI Employee",
                 "icon": "robot",
                 "iconType": "duotone",
                 "pages": [
                   "en/guides/ai-employees",
                   "en/guides/persona",
                   "en/guides/knowledge",
-                  "en/guides/faq",
-                  "en/guides/talents",
+                  "en/guides/self-learning",
                   "en/guides/quick-answers",
-                  "en/guides/profiles",
-                  "en/guides/auto-followup",
-                  "en/guides/working-hours",
-                  "en/guides/notifications",
-                  "en/guides/versions",
-                  "en/guides/additional-settings"
+                  "en/guides/rules-hub"
                 ]
               },
               {
-                "group": "Connect Channels",
+                "group": "Talents",
+                "icon": "bolt",
+                "iconType": "duotone",
+                "pages": [
+                  "en/guides/talents",
+                  "en/guides/connect-talents"
+                ]
+              },
+              {
+                "group": "Channels",
                 "icon": "plug",
                 "iconType": "duotone",
                 "pages": [
                   "en/channels/index",
-                  "en/channels/telegram",
-                  "en/channels/messengers",
-                  "en/channels/amocrm",
-                  "en/channels/bittrix24",
-                  "en/channels/planfix",
-                  "en/channels/pms"
+                  {
+                    "group": "Messengers",
+                    "pages": [
+                      "en/channels/telegram",
+                      "en/channels/telegram-groups",
+                      "en/channels/messengers"
+                    ]
+                  },
+                  {
+                    "group": "CRM",
+                    "pages": [
+                      "en/channels/amocrm",
+                      "en/channels/kommo",
+                      "en/channels/bittrix24"
+                    ]
+                  },
+                  {
+                    "group": "Ticket Systems",
+                    "pages": [
+                      "en/channels/planfix",
+                      "en/channels/helpdeskeddy"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Communication",
+                "group": "Conversations",
                 "icon": "message-lines",
                 "iconType": "duotone",
                 "pages": [
                   "en/guides/chats",
-                  "en/guides/rules-hub",
+                  "en/guides/notifications",
+                  "en/guides/profiles",
+                  "en/guides/auto-followup",
                   "en/guides/broadcast"
+                ]
+              },
+              {
+                "group": "Employee Settings",
+                "icon": "sliders",
+                "iconType": "duotone",
+                "pages": [
+                  "en/guides/working-hours",
+                  "en/guides/additional-settings",
+                  "en/guides/versions"
                 ]
               },
               {
@@ -101,6 +135,65 @@
                   "en/guides/finance",
                   "en/guides/referral",
                   "en/guides/support"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Autonomous Agents",
+            "icon": "wand-magic-sparkles",
+            "iconType": "duotone",
+            "groups": [
+              {
+                "group": "Introduction",
+                "icon": "compass",
+                "iconType": "duotone",
+                "pages": [
+                  "en/agents/index",
+                  "en/agents/use-cases"
+                ]
+              },
+              {
+                "group": "Launch",
+                "icon": "rocket",
+                "iconType": "duotone",
+                "pages": [
+                  "en/agents/quickstart",
+                  "en/agents/roles",
+                  "en/agents/connect",
+                  "en/agents/first-run"
+                ]
+              },
+              {
+                "group": "Agent Workspace",
+                "icon": "briefcase",
+                "iconType": "duotone",
+                "pages": [
+                  "en/agents/personality",
+                  "en/agents/tasks",
+                  "en/agents/schedule",
+                  "en/agents/files",
+                  "en/agents/sites",
+                  "en/agents/team"
+                ]
+              },
+              {
+                "group": "Agent Settings",
+                "icon": "gear",
+                "iconType": "duotone",
+                "pages": [
+                  "en/agents/models",
+                  "en/agents/skills",
+                  "en/agents/maintenance"
+                ]
+              },
+              {
+                "group": "Operating Rules",
+                "icon": "shield-halved",
+                "iconType": "duotone",
+                "pages": [
+                  "en/agents/limits",
+                  "en/agents/security"
                 ]
               }
             ]
@@ -363,6 +456,10 @@
     {
       "source": "/ru/guides/faq",
       "destination": "/ru/guides/self-learning"
+    },
+    {
+      "source": "/en/guides/faq",
+      "destination": "/en/guides/self-learning"
     }
   ],
   "navbar": {

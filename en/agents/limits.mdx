@@ -1,0 +1,96 @@
+---
+title: "Where the Agent Fails"
+sidebarTitle: "Where It Fails"
+description: "An honest list of what an autonomous agent does poorly: it forgets, reports success without results, and stays silent about failed tasks. And how to catch it."
+---
+
+Everything in the other sections holds true as long as you know about these four failures. None of them can be fixed with a setting: they're built into the nature of an agent, and you protect yourself with habits.
+
+The general principle: **check the result, not the report**. An agent is a diligent intern with no ill intent but a confident tone.
+
+## It forgets
+
+Working memory is finite. When a conversation gets long, the system quietly condenses it, and details disappear. The agent doesn't tell you it forgot: it just carries on with whatever is left.
+
+What it looks like: the agent mixes up names and numbers, asks again about things you agreed on an hour ago, and stops following its own rules.
+
+| What to do | How |
+|---|---|
+| Keep important things in files | Permanent facts go in **Long-Term Memory**, restrictions go in **Rules**. See [Personality and Memory](/en/agents/personality) |
+| Don't pile everything into one conversation | New topic, new conversation |
+| Don't pile everything onto one agent | One big task, one agent or a separate [Persona](/en/agents/team) |
+| Give it a model with a larger context | The **Brain** slot in [Models](/en/agents/models) |
+
+## It lies
+
+An agent can cheerfully report that a task is done when part of the work isn't. This isn't deception, it's a quirk: the agent reconstructs a picture of what happened and sometimes gets it wrong in its own favor.
+
+What it looks like: "logged all seven workouts," but the database has three. "Sent the emails," but only one went out.
+
+| What to do | How |
+|---|---|
+| Ask for proof, not a status | "Send me a line-by-line list of what you logged," not "done" |
+| Check the result yourself | A file in [Files](/en/agents/files), a row in a spreadsheet, an email in the Sent folder |
+| Give tasks with a verifiable outcome | Not "sort out the expenses" but "send a table with the total for each category" |
+
+## It goes silent
+
+The most expensive failure, because you can't see it. Background tasks can stop running, for example after a migration or an outage, and the agent won't say a word. Data simply isn't collected during that time.
+
+| What to do | How |
+|---|---|
+| Check recurring results | Did the Friday summary arrive? If not, go to the [Log](/en/agents/maintenance) |
+| Ask for an explicit sign of life in the task | "If there's nothing to collect, still write one line: checked, no changes" |
+| Check after every restart | Changing settings and installing skills restart the container |
+
+## It breaks things
+
+When an agent acts on its own, it can break something that worked and not realize it: upload data to the wrong place, mess up a page, overwrite a file. And then honestly report that everything is done.
+
+| What to do | How |
+|---|---|
+| "Show me" first, then "do it" | Until you trust it, use suggestion mode, not action mode |
+| Keep a [backup](/en/agents/maintenance) | Before any task that touches live data |
+| Don't give it live data right away | Let it work on a copy or a test page first |
+| Separate the risks | The agent that handles money and email isn't the one that experiments |
+
+## Access
+
+The two most expensive stories aren't about the agent's mistakes but about what it was given: access to email with delete rights, and a skill from an unknown author that contained an instruction to send keys outside. Both are covered in [Security](/en/agents/security).
+
+## How to live with it
+
+<AccordionGroup>
+  <Accordion title="Write tasks as a checklist">
+    An agent is an intern, not a genius. A vague task produces confident nonsense. "Collect July expenses from the receipts in the folder, group them by category, send a table, and name the three biggest expenses" works; "sort out the money" doesn't.
+  </Accordion>
+
+  <Accordion title="Make a habit of checking once a week">
+    Five minutes: did the scheduled summaries arrive, what's in the **Stuck** column on the [board](/en/agents/tasks), has anything odd appeared in the files. That's cheaper than discovering a month of lost data.
+  </Accordion>
+
+  <Accordion title="A second agent as a reviewer">
+    A proven approach: one agent does the work, the second checks the result against the source data. It costs more, but it pays off for critical things.
+  </Accordion>
+
+  <Accordion title="Don't expect it to report on its own initiative">
+    The agent won't come to you and say "I couldn't do it." It will answer your question if you ask. Anything that should arrive on its own, set up as a [scheduled task](/en/agents/schedule) with an explicit requirement to report.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Security and Access" icon="shield-halved" href="/en/agents/security">
+    Rules for granting permissions and third-party skills
+  </Card>
+  <Card title="Maintenance" icon="wrench" href="/en/agents/maintenance">
+    Log, diagnostics, backup
+  </Card>
+  <Card title="Personality and Memory" icon="brain" href="/en/agents/personality">
+    Files that aren't lost during compression
+  </Card>
+  <Card title="Schedule" icon="clock" href="/en/agents/schedule">
+    How to make the agent show signs of life
+  </Card>
+</CardGroup>

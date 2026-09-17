@@ -1,92 +1,92 @@
 ---
 title: "Working Hours"
-description: "Configure your AI employee's schedule: work week, breaks, timezone, special days, and quick presets on the AI Textura platform."
+description: "Set up an AI Employee's schedule on the AI Textura platform: work week, breaks, time zone, special days, and quick presets."
 ---
 
-The **Working Hours** section defines when your AI employee accepts and processes customer messages. During working hours the employee is active and responds; outside working hours it either stays silent or sends a pre-configured auto-reply.
+The **Working Hours** section defines when your AI Employee receives and handles customer messages. During working hours, the AI Employee is active and replies; outside working hours, it doesn't reply or sends an auto-reply.
 
 <Frame>
-  <img src="/public/screenshots/39-agent-worktime.png" alt="Agent 'Working Hours' tab — schedule by day of week and timezone" />
+  <img src="/public/screenshots/39-agent-worktime.png" alt="The agent's Working Hours tab — schedule by day of the week and time zone" />
 </Frame>
 
 <CardGroup cols={2}>
   <Card title="Channels" icon="link" href="/en/channels/index">
-    Configure out-of-hours auto-reply in channel settings
+    Set up an auto-reply for non-working hours
   </Card>
   <Card title="Auto Follow-up" icon="bolt" href="/en/guides/auto-followup">
-    Reminders respect the employee's schedule
+    Reminders respect the AI Employee's schedule
   </Card>
   <Card title="Persona" icon="robot" href="/en/guides/persona">
-    Add time-based behavioral instructions
+    Behavior instructions for specific hours
   </Card>
   <Card title="Notifications" icon="bell" href="/en/guides/notifications">
-    Alerts may arrive outside working hours
+    Alerts arrive even outside working hours
   </Card>
 </CardGroup>
 
 ---
 
-## Video walkthrough
+## Video guide
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/2dyopQSubXk" title="Working hours — AI employee schedule setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/2dyopQSubXk" title="Working Hours — setting up an AI Employee's schedule" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-A short video: how to configure an AI employee's schedule and how to use a cloned employee to run different modes for day and night work.
+A short video: how to set up an AI Employee's schedule and how to use a copy of the AI Employee to run different modes for daytime and nighttime work.
 
 ---
 
-## Section Structure
+## Section structure
 
-The section consists of two sub-tabs:
+The section has two sub-tabs:
 
 | Sub-tab | Purpose |
 |---|---|
-| **Work Week** | Main schedule: timezone, working hours for each day of the week, quick presets |
-| **Special Days** | Exceptions to the main schedule: holidays, days off, days with modified hours |
+| **Work week** | The main schedule: time zone, working hours for each day of the week, quick presets |
+| **Special days** | Exceptions to the main schedule: holidays, days off, days with a modified schedule |
 
 <Note>
-  The schedule applies to all channels connected to the employee. If you need different schedules for different channels, create separate AI employees.
+  The schedule applies to all channels connected to the AI Employee. If you need a different schedule for different channels, create separate AI Employees.
 </Note>
 
 ---
 
-## Work Week
+## Work week
 
-### Timezone
+### Time zone
 
-At the top of the section is the **Working Timezone** selector. The entire employee schedule is tied to the selected timezone. The default is **Europe/Moscow (GMT+3)**.
+At the top of the section is the **Working time zone** selector. The AI Employee's entire schedule is tied to the selected time zone. The default is **Europe/Moscow (GMT+3)**.
 
 <Warning>
-  The timezone affects the entire schedule — both the work week and special days. Make sure the correct timezone is selected before configuring anything else. A mistake here will cause the employee to work at unexpected hours.
+  The time zone affects the entire schedule -- both the work week and special days. Make sure the right time zone is selected before you set up anything else. A mistake here means the AI Employee will work at hours other than the ones you expect.
 </Warning>
 
-### Daily Schedule
+### Daily schedule
 
-Below the timezone selector is the schedule for each day of the week: Monday through Sunday. The following controls are available for each day:
+Below the time zone selector is the schedule for each day of the week, Monday through Sunday. Each day has the following controls:
 
-| Element | Description |
+| Control | What it does |
 |---|---|
-| **Start time** | The time the employee begins responding (HH:MM format) |
-| **End time** | The time the employee stops responding (HH:MM format) |
-| **Add interval** | Creates an additional working time slot within the same day |
-| **Remove interval** | Removes the current time interval (trash icon) |
-| **Disable day** | Makes the day completely non-working (sun icon next to the day name) |
+| **Start time** | The time the AI Employee starts replying (HH:MM format) |
+| **End time** | The time after which the AI Employee stops replying (HH:MM format) |
+| **Add interval** | Creates an additional working period within the same day |
+| **Delete interval** | Removes the current time interval (trash icon) |
+| **Disable day** | Makes the day a full day off (sun icon next to the day name) |
 
-Each day can contain **multiple intervals**. This is useful for scheduling breaks — for example, two intervals of 09:00–13:00 and 14:00–18:00 create a lunch break from 13:00 to 14:00.
+Each day can have **several intervals**. This is handy for breaks -- for example, two intervals, 09:00–13:00 and 14:00–18:00, create a lunch break from 13:00 to 14:00.
 
 <Tip>
-  If working hours are the same for all days, configure Monday first, then use the "Copy Mon to all days" preset.
+  If working hours are the same every day, set up Monday and then use the "Copy Mon to all days" preset.
 </Tip>
 
-### Quick Presets
+### Quick settings (presets)
 
-Below the schedule is the **Quick working hours presets** block — a set of ready-made templates:
+Below the schedule is the **Quick working hours settings** block -- a set of ready-made templates:
 
-| Preset | What it configures |
+| Preset | What it sets |
 |---|---|
-| **24/7 unlimited** | All days active, around the clock, no days off |
-| **Mon–Fri 09:00–18:00** | Standard work week, Saturday and Sunday are days off |
-| **Support: weekdays 10–19, Sat 10–16** | Support team schedule with a shorter Saturday |
-| **Sat/Sun — day off** | Disables Saturday and Sunday, leaves other days unchanged |
+| **24/7, no limits** | All days active, around the clock, no days off |
+| **Mon–Fri 09:00–18:00** | A standard work week; Saturday and Sunday are days off |
+| **Support: weekdays 10–19, Sat 10–16** | A support team schedule with a short Saturday |
+| **Sat/Sun off** | Disables Saturday and Sunday; leaves other days unchanged |
 | **Copy Mon to all days** | Applies Monday's schedule to all other days |
 
 <Note>
@@ -95,59 +95,59 @@ Below the schedule is the **Quick working hours presets** block — a set of rea
 
 ---
 
-## Special Days
+## Special days
 
-The **Special Days** sub-tab lets you configure exceptions to the main schedule: public holidays, corporate days off, and days with modified hours.
+The **Special days** sub-tab lets you set exceptions to the main schedule: public holidays, company days off, and days with a modified schedule.
 
-**Special days always take priority** over the regular work week schedule.
+**Special days always take priority** over the main work week schedule.
 
 For each special day, specify:
-- **Date** — a specific calendar day
-- **Parameters** — fully non-working day or a modified schedule with different working hours
+- **Date** -- a specific calendar day
+- **Parameters** -- a full day off or a modified schedule with different working hours
 
 <Warning>
-  Special days must be updated annually. Holidays added for the previous year do not carry over automatically to the next year.
+  You need to update special days every year. Holidays added for last year don't carry over to the next year automatically.
 </Warning>
 
 <Tip>
-  Add all public holidays in advance for the entire year. This ensures the employee behaves correctly on holidays.
+  Add all public holidays in advance -- a year ahead. That way you can be sure the AI Employee works correctly on holidays.
 </Tip>
 
 ---
 
-## Out-of-Hours Behavior
+## Behavior outside working hours
 
-When a customer writes to the employee outside of working hours, there are two possible outcomes:
+When a customer writes to the AI Employee outside working hours, there are two possible outcomes:
 
-1. **The employee does not respond** — the message remains unanswered until the next working interval begins.
-2. **The employee sends an auto-reply** — a pre-configured message informing the customer about working hours.
+1. **The AI Employee doesn't reply** -- the message stays unanswered until the next working interval begins.
+2. **The AI Employee sends an auto-reply** -- a preconfigured message with information about working hours.
 
 <Warning>
-  The auto-reply text is configured not here but in the **[Channels](/en/channels/index)** settings. The **Working Hours** tab is responsible only for the schedule — "when", not "what to do".
+  You set the auto-reply text not here but in the [Channel](/en/channels/index) section. The **Working Hours** tab only controls the schedule -- "when", not "what to do".
 </Warning>
 
 <Note>
-  If no working hours are configured, the default is **24/7** mode — all days are active from 00:00 to 23:59.
+  If you don't set up working hours, the AI Employee runs **24/7** by default -- all days are active from 00:00 to 23:59.
 </Note>
 
 ---
 
-## Step-by-Step Instructions
+## Step-by-step instructions
 
-### Setting Up a Standard Work Week
+### Setting up a standard work week
 
 <Steps>
   <Step title="Open the section">
-    Navigate to the desired employee and open the **Working Hours** tab.
+    Go to the AI Employee you need and open the **Working Hours** tab.
   </Step>
-  <Step title="Select the timezone">
-    Make sure the correct timezone is selected in the **Working Timezone** selector.
+  <Step title="Choose a time zone">
+    Make sure the correct time zone is selected in the **Working time zone** selector.
   </Step>
   <Step title="Set working hours">
-    For each working day, specify the **Start time** and **End time**.
+    For each working day, set the **Start time** and **End time**.
   </Step>
   <Step title="Disable days off">
-    For non-working days, click the sun icon next to the day name to disable them.
+    For days off, click the sun icon next to the day name to make them non-working.
   </Step>
   <Step title="Save">
     Click **Save**. Changes take effect immediately.
@@ -155,114 +155,114 @@ When a customer writes to the employee outside of working hours, there are two p
 </Steps>
 
 <Tip>
-  Or simply click the **Mon–Fri 09:00–18:00** preset in the quick settings block — the schedule will be filled in automatically.
+  Or just click the **Mon–Fri 09:00–18:00** preset in the quick settings block -- the schedule fills in automatically.
 </Tip>
 
-### Adding a Lunch Break
+### Adding a lunch break
 
 <Steps>
   <Step title="Find the day">
-    In the work week schedule, find the day where you want to add a break.
+    In the work week schedule, find the day you want to add a break to.
   </Step>
   <Step title="Set the first interval">
-    Specify working hours before the break — for example, **09:00–13:00**.
+    Set the working time before the break -- for example, **09:00–13:00**.
   </Step>
   <Step title="Add a second interval">
-    Click **Add interval** and specify working hours after the break — for example, **14:00–18:00**.
+    Click **Add interval** and set the working time after the break -- for example, **14:00–18:00**.
   </Step>
   <Step title="Save">
-    Click **Save**. The employee will now not respond to messages from 13:00 to 14:00.
+    Click **Save**. Now the AI Employee won't reply to messages from 13:00 to 14:00.
   </Step>
 </Steps>
 
-### Adding a Special Day (Holiday)
+### Adding a special day (holiday)
 
 <Steps>
   <Step title="Go to the sub-tab">
-    Open the **Special Days** sub-tab.
+    Open the **Special days** sub-tab.
   </Step>
   <Step title="Add an entry">
     Click the button to add a new special day.
   </Step>
-  <Step title="Set parameters">
-    Specify the **date** and choose the type: fully non-working day or a modified schedule with different hours.
+  <Step title="Set the parameters">
+    Set the **date** and choose the type: a full day off or a modified schedule with different hours.
   </Step>
   <Step title="Save">
     Click **Save**.
   </Step>
 </Steps>
 
-### Enabling 24/7 Mode
+### Turning on 24/7 mode
 
 <Steps>
   <Step title="Open the section">
-    Navigate to the **Working Hours** tab.
+    Go to the **Working Hours** tab.
   </Step>
   <Step title="Apply the preset">
-    In the quick settings block, click **24/7 unlimited**.
+    In the quick settings block, click **24/7, no limits**.
   </Step>
   <Step title="Save">
-    Click **Save**. All days of the week will become active from 00:00 to 23:59.
+    Click **Save**. All days of the week become active from 00:00 to 23:59.
   </Step>
 </Steps>
 
 ---
 
-## All Parameters
+## All parameters
 
 | Parameter | Description |
 |---|---|
-| **Timezone** | The timezone to which the entire employee schedule is tied |
-| **Start time** | The hour from which the employee begins responding to messages |
-| **End time** | The hour after which the employee stops responding |
-| **Add interval** | Creates an additional working time slot within a single day |
-| **Disable day** | Makes the day completely non-working (sun icon) |
-| **Quick presets** | Ready-made schedule templates — applied with one click |
+| **Time zone** | The time zone the AI Employee's entire schedule is tied to |
+| **Start time** | The hour the AI Employee starts replying to messages |
+| **End time** | The hour after which the AI Employee stops replying |
+| **Add interval** | Creates an additional working period within the same day |
+| **Disable day** | Makes the day a full day off (sun icon) |
+| **Quick settings** | Ready-made schedule presets, applied with one click |
 | **Special days** | Exceptions to the main schedule (holidays, days off) |
 
 ---
 
-## Related Sections
+## How it relates to other sections
 
 | Section | How it relates to Working Hours |
 |---|---|
-| **[Channels](/en/channels/index)** | This is where the out-of-hours auto-reply is configured — the message text the customer receives |
-| **[Persona](/en/guides/persona)** | You can add instructions for behavior at certain hours (e.g., night mode) |
-| **[Auto Follow-up](/en/guides/auto-followup)** | Consider the schedule when configuring — reminders may be sent outside working hours |
-| **[Notifications](/en/guides/notifications)** | Manager notifications may arrive outside working hours |
+| [Channel](/en/channels/index) | This is where you set up the auto-reply for non-working hours -- the text the customer receives |
+| [Persona](/en/guides/persona) | You can add instructions for behavior at specific hours (for example, a night mode) |
+| [Auto Follow-up](/en/guides/auto-followup) | Keep the schedule in mind when setting it up -- reminders may arrive during non-working hours |
+| [Notifications](/en/guides/notifications) | Manager notifications can arrive even outside working hours |
 
 ---
 
 ## FAQ
 
 <Accordion title="What happens when a customer writes outside working hours?">
-  The employee either does not respond or sends a pre-configured auto-reply. The specific behavior depends on the settings in the **[Channels](/en/channels/index)** section.
+  The AI Employee doesn't reply to messages or sends a preconfigured auto-reply. The exact behavior depends on the settings in the [Channel](/en/channels/index) section.
 </Accordion>
 
 <Accordion title="Can I set different schedules for different channels?">
-  No. The schedule is set at the employee level and applies to all connected channels. If you need different schedules, create separate AI employees.
+  No. The schedule is set at the AI Employee level and applies to all of its channels at once. If you need a different schedule, create separate AI Employees.
 </Accordion>
 
-<Accordion title="What takes priority — the regular schedule or a special day?">
-  Special days always take priority over the regular work week schedule.
+<Accordion title="What takes priority -- the main schedule or a special day?">
+  Special days always take priority over the main work week schedule.
 </Accordion>
 
-<Accordion title="How quickly do schedule changes take effect?">
-  Immediately after saving. No waiting or reloading is required.
+<Accordion title="How quickly do changes take effect?">
+  Immediately after saving. You don't need to wait or reload anything.
 </Accordion>
 
 <Accordion title="Can I set a break within a working day?">
-  Yes. Use the **Add interval** button to split a working day into multiple time slots. For example: 09:00–13:00 and 14:00–18:00.
+  Yes. Use the **Add interval** button to split the working day into several periods. For example: 09:00–13:00 and 14:00–18:00.
 </Accordion>
 
 <Accordion title="Do I need to update special days every year?">
-  Yes. Holidays added for the current year do not automatically carry over to the next year. Check and update the list at the beginning of each year.
+  Yes. Holidays added for the current year don't carry over to the next one automatically. Review and update the list at the start of each year.
 </Accordion>
 
-<Accordion title="If I don't configure working hours, will the employee work 24/7?">
-  Yes. By default, all days are active from 00:00 to 23:59, which corresponds to 24/7 mode with no days off.
+<Accordion title="If I don't set up working hours, will the AI Employee work 24/7?">
+  Yes. By default, all days are active from 00:00 to 23:59, which means round-the-clock mode with no days off.
 </Accordion>
 
-<Accordion title="How do I set up an auto-reply for out-of-hours messages?">
-  The auto-reply text is configured not here but in the **[Channels](/en/channels/index)** section. The **Working Hours** tab is responsible only for the schedule.
+<Accordion title="How do I set up an auto-reply for non-working hours?">
+  You set the auto-reply text not here but in the [Channel](/en/channels/index) section. The **Working Hours** tab only controls the schedule.
 </Accordion>

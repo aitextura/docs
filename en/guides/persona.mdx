@@ -1,238 +1,216 @@
 ---
-title: "Persona — Core Instructions for Your AI Employee"
-description: "How to configure a Persona: block-based editor, role, tone, instructions, importing from Rules Hub and Google Docs, XML editor, test chat, and common troubleshooting."
+title: "Persona — instructions for your AI Employee"
+sidebarTitle: "Persona"
+description: "Your AI Employee's first setting: create instructions from your website, a template, or an interview — then test them in the test chat."
 ---
 
-Persona is the main instruction set for your AI employee. It defines who the employee is, how it speaks, and what it does in every situation. Everything else — knowledge base, channels, talents — works on top of the Persona. If the Persona is poorly written, no knowledge base will compensate.
+The Persona is your AI Employee's main set of instructions: who it is, how it talks, and what it does. You don't have to write it from scratch — the platform builds the instructions for you, and all that's left is to review them and adjust them to your needs.
 
-<Frame><img src="/assets/images/en/screenshots/persona_1.png" /></Frame>
+## Create the instructions
 
-<CardGroup cols={2}>
-  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
-    Facts and documents for your employee
-  </Card>
-  <Card title="Rules Hub" icon="folder" href="/en/guides/rules-hub">
-    Library of ready-made instruction blocks
-  </Card>
-  <Card title="Profiles" icon="users" href="/en/guides/profiles">
-    Personalization based on customer data
-  </Card>
-  <Card title="Versions" icon="clock" href="/en/guides/versions">
-    Change history and rollback
-  </Card>
-</CardGroup>
-
----
-
-## How the Editor Works
-
-Open the desired AI employee and navigate to the **Persona** tab.
-
-The editor uses a **block-based system**: the entire instruction consists of individual blocks that you can create, edit, reorder, delete, and import from the library. Each block is a separate fragment of the instruction.
-
-To add a new block, type `/` at the end of the editor — a menu with options will appear.
-
----
-
-## Three Main Block Types
-
-<Steps>
-  <Step title="Role">
-    Who your employee is. One or two sentences that give the AI context: what role it plays and what business it represents.
-
-    **What to write:**
-    - Professional role and title
-    - Company or property it represents
-    - Primary objective
-
-    **Good example:**
-    > You are a virtual concierge for the "Seventh Heaven" apartments in Chelyabinsk. Your task is to help guests with bookings, answer questions, and ensure a comfortable experience.
-
-    **Bad example:**
-    > You are a smart assistant. Help people.
-
-    <Warning>A vague role causes the employee to "improvise" and respond unpredictably.</Warning>
-  </Step>
-
-  <Step title="Tone">
-    How the employee speaks. Describes the style, message length, emoji usage, form of address, and overall atmosphere.
-
-    **What to write:**
-    - Formal / friendly / casual
-    - Form of address (formal "you" vs. informal)
-    - Message length (short / detailed)
-    - Emojis: use or not
-    - What makes the tone "right" for your audience
-
-    **Example:**
-    > Communicate warmly and naturally, without corporate jargon. Use the formal "you." Keep messages short — no more than 3–4 sentences per message. Use 1–2 emojis where appropriate.
-
-    <Info>If no tone is set, the employee will default to a neutral, templated style — sometimes too formal, sometimes too casual.</Info>
-  </Step>
-
-  <Step title="Instructions (set of blocks)">
-    The most important part of the Persona. Unlike Role and Tone, instructions are a **set of individual blocks**, each responsible for a specific task. You can create any number of blocks — there are no limits.
-
-    **Example block set for an apartment concierge:**
-    - Greeting
-    - Handling unusual requests
-    - Group bookings
-    - Prohibited actions
-    - Booking scenario
-      - Step 1 — clarify dates and number of guests
-      - Step 2 — show available options
-      - Step 3 — details on the selected option
-      - Step 4 — request contact information
-      - Step 5 — make the booking and send instructions
-    - Escalation
-    - Additional instructions
-  </Step>
-</Steps>
-
----
-
-## Nesting and Block Hierarchy
-
-Nesting is created via indent — the button is available in the block menu. This is not just visual formatting: **the AI treats nested blocks as subordinate to the parent**, which helps it better understand the instruction hierarchy.
-
-<Tip>The more precisely the instruction is split into logical parts, the more predictable the employee's behavior.</Tip>
-
----
-
-## Reordering and Managing Blocks
-
-Blocks can be:
-- **Edited** directly in the editor
-- **Deleted** — click the X next to the block
-- **Reordered** — drag and drop
-- **Added** — type `/` at the end of the editor
-
----
-
-## Importing Blocks
-
-<AccordionGroup>
-  <Accordion title="Import from Rules Hub">
-    Type `/` in the editor and select **"Import from hub"**. Two sections are available:
-
-    - **Public** — ready-made templates from the AI Textura team: "Hotel Administrator," "Real Estate Agent," "Personal Assistant," and more.
-    - **My Rules** — blocks you have saved yourself.
-
-    The [Rules Hub](/en/guides/rules-hub) is accessible from the left menu. Edit a block once — it updates for all employees that use it.
-  </Accordion>
-
-  <Accordion title="Import from Google Docs">
-    Type `/` in the editor and select **"Import Google Doc"**.
-
-    If the instruction is long or you update it frequently, keep it in a Google Document. The employee will automatically pull the latest version. You can edit the document directly without opening the platform.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Special Blocks
-
-<AccordionGroup>
-  <Accordion title="Prohibited Actions">
-    If the employee says something it should not, you do not always need to rewrite the entire script. Simply add a prohibition.
-
-    **Examples:**
-    - Do not mention special rates unless the request conditions match
-    - Do not ask more than two questions in a single message
-    - Do not fabricate information — use only data from the knowledge base
-
-    This is the fastest way to fine-tune the employee on the fly.
-  </Accordion>
-
-  <Accordion title="Additional Instructions">
-    Targeted rules for non-standard situations that do not fit the main script.
-
-    Principle: "if X happens — do Y." The more specific the wording, the more accurate the behavior.
-
-    **Examples:**
-    - If a client asks a question outside your area of expertise — say you will check and do not answer on your own
-    - If a client asks for a discount — offer current promotions
-  </Accordion>
-</AccordionGroup>
-
----
-
-## XML Editor
-
-<Note>XML is a tool for advanced users. If the tag structure is broken (unclosed tag, extra characters), the instruction may malfunction.</Note>
-
-The blocks in the visual editor are a representation of an XML instruction. Click the **XML** button in the top-right corner of the editor to switch to XML mode.
-
-```xml
-<role>
-  You are a virtual concierge for the "Seventh Heaven" apartments.
-</role>
-
-<tone>
-  Friendly, short messages, formal address.
-</tone>
-
-<script>
-  1. Clarify dates and number of guests.
-  2. Show available options.
-  ...
-</script>
-```
-
-Switching between blocks and XML works both ways — no data is lost. If you are unsure about syntax, use the block editor — it is safer.
-
----
-
-## Referencing Profile Data
-
-You can reference data that the employee collects about clients in the [Profiles](/en/guides/profiles) section within your instructions.
-
-For example, if a profile has a "Hall" field, you can write in the instruction:
-
-> If the guest is interested in the [name] hall — tell them more about it and suggest suitable options.
-
-This lets you build **personalized scenarios**: one employee behaves differently depending on what is already known about a specific client.
-
----
-
-## Testing Changes
-
-In the top-right corner of the agent editing page there is a **"Show chat"** toggle — it opens a built-in **test chat** right next to the Persona editor (live agent preview). Convenient for verifying prompt changes without leaving the settings: edit a block on the left, message "as a guest" on the right, and see the result instantly.
+In **AI Agents**, click **Hire Agent** and choose a method — any of the three gives you ready-made instructions.
 
 <Frame>
-  <img src="/public/screenshots/80-agent-test-chat.png" alt="Agent live preview: Persona editor on the left, test chat on the right" />
+  <img src="/assets/images/ru/screenshots/persona_new_agent.png" alt="The “New agent” window with three options: Automatic, Templates, Blank agent" />
 </Frame>
 
-<Steps>
-  <Step title="Open the test chat">
-    Toggle **"Show chat"** in the top-right corner of the agent page. The chat appears to the right of the Persona editor.
-  </Step>
-  <Step title="Test your scenarios">
-    Write several messages as a guest. If the response is not satisfactory, return to the editor, make adjustments, and test again.
-  </Step>
-  <Step title="Review the reasoning">
-    Click the **checkmark** next to the employee's response to see where it got the information, which quick replies it checked, and what it used from the knowledge base.
-  </Step>
-</Steps>
+<Tabs>
+  <Tab title="Automatic">
+    Paste your website address — the platform reads it and writes the instructions for you. Then review the text and refine it with the **Improve instructions** button: describe in your own words what to change.
 
-<Tip>Do not start the conversation over — delete the last messages (trash button next to each message) and write again from the desired point.</Tip>
+    <Warning>Didn't work, or the result looks off? Most likely, the website is protected against bots. In that case, choose a template or a blank agent.</Warning>
+  </Tab>
 
----
+  <Tab title="Templates">
+    Ready-made instructions for typical tasks: support, sales, HR, online courses, cleaning, fitness, and more. There are also personal assistants — for emails, for tasks with deadlines, for ideas, and a career mentor.
 
-## Versions — Safety Net Against Mistakes
+    Pick the one closest to your task and tailor it: click **Improve instructions** and describe what works differently in your business.
+  </Tab>
 
-After every save, the platform creates a new version of the instruction. If something breaks, roll back to any previous version via the [Versions](/en/guides/versions) tab in the top menu of the employee settings.
+  <Tab title="Blank agent">
+    A clean slate, but you won't have to write anything — the AI Employee interviews you and builds the instructions from your answers.
 
-Do not be afraid to experiment — you can always revert.
+    <Steps>
+      <Step title="Click “Help me create instructions”">
+        The button is on the **Persona** tab, above the editor.
+      </Step>
+      <Step title="Name your AI Employee">
+        Customers will see this name. Click **Continue**.
+      </Step>
+      <Step title="Answer the questions">
+        What you do, what you sell, what result the customer gets. The more detailed your answers, the more accurate the instructions.
+      </Step>
+      <Step title="Done">
+        The instructions are built automatically. Read them and adjust anything you like.
+      </Step>
+    </Steps>
 
----
+    <Frame>
+      <img src="/assets/images/ru/screenshots/persona_interview.png" alt="The “Let's build your instructions in a few questions” interview: the first question about your business" />
+    </Frame>
 
-## Common Mistakes and Solutions
+    <Tip>Couldn't find a suitable template? Go with this option: the interview collects everything needed, so you won't miss anything.</Tip>
+  </Tab>
+</Tabs>
 
-| Symptom | Cause | Solution |
+## Two names
+
+| Field | What it is | Who sees it |
 |---|---|---|
-| Employee sounds robotic and templated | Tone is not set or is too formal | Rewrite the "Tone" block; add specific example phrases |
-| Employee fabricates information | No prohibition on fabrication; no knowledge base | Add to "Prohibited Actions": "do not fabricate; use only data from the knowledge base" |
-| Replies are too long | Tone does not limit length | Add to the "Tone" block: "do not write more than X sentences per message" |
-| Asks too many questions at once | No limitation set | Add to "Prohibited Actions": "do not ask more than two questions in a single message" |
-| Does not escalate to a human manager | Escalation section is not filled in | Specify concrete situations in the "Escalation" block |
+| **Technical name** | An internal name, for example `agent-hotel` | Only you |
+| **Display name** | How the AI Employee introduces itself in a conversation, for example “Anna” | Customers |
+
+## Instruction blocks
+
+The finished instructions appear in the editor as blocks rather than one long text: the greeting is one block, the booking scenario another, the restrictions a third. You can edit blocks, drag them to reorder, and delete them.
+
+<Accordion title="How to write instructions">
+  Instructions describe your AI Employee in words, as if you were onboarding a new hire. The easiest way is to follow four questions.
+
+  **Who it is.** Role, company, what it does: “You are the concierge of Seventh Heaven apartments. You help guests choose an apartment and book it.”
+
+  **How it talks.** Tone, form of address, reply length: “Friendly, polite, no more than 3–4 sentences, 1–2 emojis.” This is also where you set the language and how it introduces itself.
+
+  **What it does in typical situations.** Break it down into steps: what to ask, what to offer, how to wrap up. For non-standard cases, use the “if X, do Y” formula: “if the customer asks for a discount, offer current promotions.”
+
+  **What it must not do.** Direct restrictions: don't make up prices, don't promise deadlines, don't discuss competitors. And when to call a human: “if the customer is angry or asks for a manager, hand the conversation over to an operator.”
+
+  Write short sentences, one rule per line — your AI Employee understands them more precisely, and it's easier for you to find and fix the right spot later.
+</Accordion>
+
+<Note>Every save creates a new version of the instructions. If you break something, roll back on the [Versions](/en/guides/versions) tab. Feel free to experiment.</Note>
+
+## Testing in the test chat
+
+Click **Show chat** in the top-right corner and message your AI Employee as a customer. Don't like the reply? Fix the block and test again.
+
+<Tip>Click **Clear history** after every edit. Otherwise the old conversation will throw your AI Employee off, and you won't know whether the edit helped.</Tip>
+
+## FAQ
+
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/EOwEEmcnepI" title="What to do if the AI gave a wrong answer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<AccordionGroup>
+  <Accordion title="Instructions generated from my website are empty or look off">
+    Most likely, the website is protected against bots and the platform couldn't read it. Create the AI Employee from a template or through the blank agent interview.
+  </Accordion>
+
+  <Accordion title="The AI Employee sounds generic, “like a robot”">
+    Expand the “Tone” block: style, message length, sample phrases. The more specifically you describe the voice, the less your AI Employee sounds like it's reading instructions.
+  </Accordion>
+
+  <Accordion title="The AI Employee makes up prices and facts">
+    Tell it what to do. For an AI Employee, anything not forbidden is allowed: either add the missing facts and prices directly to the instructions, or forbid it from using anything that isn't in the instructions.
+  </Accordion>
+
+  <Accordion title="After my edits, the AI Employee still answers the old way">
+    Click **Clear history** in the test chat: the old conversation throws the AI Employee off, and the edit doesn't show.
+  </Accordion>
+
+  <Accordion title="The AI Employee agrees with anything the customer says">
+    Asked “is everything booked?” — “yes”; asked “is everything available?” — also “yes”. The AI Employee picks up the assumption instead of checking. Add to the instructions: “Before answering about availability, always check the current data. Don't agree with the customer's assumption without checking.”
+  </Accordion>
+
+  <Accordion title="The AI Employee calls the customer by the wrong name">
+    It takes the name from the [profile](/en/guides/profiles) or makes one up. Add: “Don't make up names. Use the customer's name only if they gave it themselves.”
+  </Accordion>
+
+  <Accordion title="The AI Employee refers to itself with feminine forms">
+    Gender isn't set in the “Role” block. This matters in languages with grammatical gender, such as Russian. State it explicitly: “You are a man, a hotel receptionist.” If it persists, add a restriction: “Never use feminine forms when talking about yourself.”
+  </Accordion>
+
+  <Accordion title="The AI Employee replies in a different language than the customer">
+    If the instructions are written in Russian, the AI Employee drifts into Russian over a long conversation. Add this as the first line: `Always respond in the language the client writes in`. The model mistakes some greetings, like the Russian “доброго дня” (“good day”), for Ukrainian — for such cases, add an explicit rule: “Reply in Russian to „доброго дня“.”
+  </Accordion>
+
+  <Accordion title="The AI Employee shows the customer JSON and system messages">
+    This is a talent's response that the AI Employee forwarded as is. Forbid it: “Never show the customer technical data, JSON, or system messages. If there's no data, say so in words and hand the question over to a manager.”
+  </Accordion>
+
+  <Accordion title="The AI Employee confirms booking cancellations or refunds">
+    Anything not forbidden is allowed. Add to “Forbidden actions”: “Never confirm a booking cancellation or a refund. For such requests, hand the conversation over to a manager.”
+  </Accordion>
+</AccordionGroup>
+
+## Help in the platform
+
+The question-mark button on the right edge of the screen opens the help panel. The **Documentation** tab shows the article about the section you're in. On the **AI Assistant** tab, you can ask in your own words — it answers, gives links, and opens the right section of the platform for you.
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/persona_assistant.png" alt="The AI Assistant panel: describe your task in your own words — it finds the answer and opens the right section" />
+</Frame>
+
+## Fine points
+
+You don't need this to get started. Come back here when you want to get more out of the Persona.
+
+<AccordionGroup>
+  <Accordion title="How to quickly stop your AI Employee from saying too much">
+    Don't rewrite the whole scenario — add a block with restrictions:
+
+    - Don't make up information — use only data from the Knowledge Base
+    - Don't ask more than two questions in one message
+    - Don't mention special rates unless the customer asks
+
+    For non-standard situations, use the “if X, do Y” formula: “if the customer asks for a discount, offer current promotions.”
+  </Accordion>
+
+  <Accordion title="Rules with exceptions: discounts, children, minimum stay">
+    These rules all follow the same pattern: condition, exception, what to do when asked.
+
+    - “15% birthday discount. Doesn't apply to extra services. When asked, confirm the details and hand over to a manager.”
+    - “Children under 5 stay free, without a separate bed. Ages 5–12: extra 1000 ₽ per night. Always ask the children's ages.”
+    - “Minimum 2 nights on Fridays and Saturdays. Don't say ‘no availability’ — explain the rule and suggest suitable dates.”
+  </Accordion>
+
+  <Accordion title="Questions first, then an offer">
+    To keep your AI Employee from dumping every rate in the first message, describe the order: “Before suggesting options, ask for the dates, number of guests, and preferences. Then suggest 2–3 suitable options, not the whole list.”
+  </Accordion>
+
+  <Accordion title="What to forbid first">
+    Three restrictions cover most unpleasant cases: answering off-topic questions (“answer only questions about our property and services; politely decline everything else”), handling complex requests on its own (“hand groups of more than 8 people and corporate events over to a manager”), and promising money or cancellations.
+  </Accordion>
+
+  <Accordion title="Instruction length and language">
+    Keep the instructions within 500–1000 words: price lists, descriptions, and policies belong in the [Knowledge Base](/en/guides/knowledge), not here — this makes every reply cheaper and search more accurate. The rules themselves work more reliably in English, and the reply language is set by a separate line about the customer's language.
+  </Accordion>
+
+  <Accordion title="Scenarios beyond answers: waitlists and upsells">
+    Your AI Employee can do more than answer. “If the date is booked, offer to add the guest to the waitlist and pass the contact to a manager,” “after the booking is confirmed, offer breakfast and a transfer” — these are ordinary rules in the instructions. Upsells work better after the booking than before it.
+  </Accordion>
+
+  <Accordion title="Nested blocks">
+    You can nest blocks inside each other: inside an existing block, click the gray **Add section** button. Your AI Employee treats a nested block as part of the block it sits in — a convenient way to lay out a sequence of steps in a conversation scenario.
+  </Accordion>
+
+  <Accordion title="Ready-made blocks from the Rules Hub">
+    Type `/` and select **Import from hub**. There you'll find **Public** blocks from the AI TEXTURA team (“Hotel Receptionist”, “Realtor”, “Personal Assistant”) and **My rules** — the ones you've saved. When you edit a block in the hub, it updates for every AI Employee that uses it.
+  </Accordion>
+
+  <Accordion title="Instructions in Google Docs">
+    Type `/` and select **Import Google Doc**. Your AI Employee will pull in the latest version of the document on its own — handy if the instructions are long and change often.
+  </Accordion>
+
+  <Accordion title="Raw XML — text mode">
+    The **Raw XML** button in the top-right corner of the editor shows the instructions as XML text. You can switch back and forth without losing data.
+
+    <Warning>An unclosed tag breaks the instructions. If you're not sure about the syntax, work with blocks — it's safer.</Warning>
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Channels" icon="comments" href="/en/channels">
+    Connect Telegram or a CRM, and your AI Employee starts answering customers
+  </Card>
+  <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
+    Prices, terms, documents — so it answers with facts, not guesses
+  </Card>
+  <Card title="Talents" icon="bolt" href="/en/guides/talents">
+    Teach it to take action: deals, bookings, emails
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Learn about important events in time
+  </Card>
+</CardGroup>

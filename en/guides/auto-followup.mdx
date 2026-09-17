@@ -1,223 +1,224 @@
 ---
-title: "Auto Follow-up — Automatic Reminder Messages"
-description: "Set up automated follow-up reminder chains for clients who go silent, and monitor all active follow-up messages across your AI employees on the AI Textura platform."
+title: "Auto Follow-up — automatic reminders"
+sidebarTitle: "Auto Follow-up"
+description: "Set up chains of automatic reminders for customers who went silent, and monitor all active follow-up messages on the AI Textura platform."
 ---
 
-Auto Follow-up is an automated follow-up messaging mechanism. When a client stops responding, the AI employee will reach out after a specified delay — naturally, within the context of the conversation, without copy-paste templates.
+Auto Follow-up sends automatic follow-up messages. If a customer stops replying, the AI Employee writes to them after a set delay -- gently, in the context of the conversation, with no copy-paste.
 
-<Frame>
-  <img src="/public/screenshots/36-agent-followup.png" alt="Auto Follow-up — trigger and reminder chain configuration on the agent tab" />
-</Frame>
+<Frame><img src="/public/screenshots/36-agent-followup.png" alt="Auto Follow-up — trigger and reminder chain settings on the agent tab" /></Frame>
 
 <Warning>
-  **Auto Follow-up exists in two different places in the interface.**
+  **Auto Follow-up lives in two different places in the interface.**
 
-  - **Auto Follow-up section** (`/followup`) in the left menu of the platform — a monitoring dashboard showing all chats with scheduled reminders across all employees.
-  - **Auto Follow-up tab** in a specific AI employee's settings — where you enable the feature, set delays, and write instructions for each step.
+  - **The Auto Follow-up section** (`/followup`) in the platform's left menu -- a monitoring panel for all chats with scheduled reminders across all AI Employees.
+  - **The Auto Follow-up tab** in a specific AI Employee's settings -- this is where you turn the feature on, set delays, and write instructions for each step.
 </Warning>
 
 <Note>
-  Auto Follow-up is also available **globally** as a separate `/followup` section in the platform's side panel — a unified monitoring dashboard across all employees (see "Monitoring Dashboard" below). Chain configuration is done on the individual employee's tab.
+  Auto Follow-up is also available **globally** as a separate `/followup` section in the platform sidebar -- a summary monitoring panel across all AI Employees at once (see "Monitoring panel" below). You set up chains on a specific AI Employee's tab.
 </Note>
 
 <CardGroup cols={2}>
   <Card title="Persona" icon="robot" href="/en/guides/persona">
-    Reminder style follows the employee's persona settings
+    The reminder style depends on the AI Employee's Persona
   </Card>
   <Card title="Working Hours" icon="clock" href="/en/guides/working-hours">
-    Reminders respect the employee's working schedule
+    Reminders are sent only during working hours
   </Card>
   <Card title="Channels" icon="link" href="/en/channels/index">
-    Auto follow-up works across all connected channels
+    Auto Follow-up works in all connected channels
   </Card>
   <Card title="Chats" icon="comments" href="/en/guides/chats">
-    View conversations and follow-up history
+    View conversation and reminder history
   </Card>
 </CardGroup>
 
 ---
 
-## Video walkthrough
+## Video guide
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/JVBhnOsxua4" title="Auto follow-up — how to set up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/JVBhnOsxua4" title="Auto Follow-up — how to set it up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-A short video: how to enable auto follow-up, configure a chain of steps with delays, and let the AI create reminders on its own when the client asks ("remind me in 30 minutes", "call me back in an hour").
+A short video: how to turn on Auto Follow-up, set up a chain of steps with delays, and let the AI create reminders on its own when a customer asks ("remind me in half an hour", "call me back in an hour").
 
 ---
 
-## Monitoring Dashboard (Left Menu)
+## Monitoring panel (left menu)
 
-The **Auto Follow-up** section in the left menu is a unified read-only panel displaying all chats with scheduled follow-up messages across all your AI employees. You don't configure chains here -- you observe what's already running.
+The **Auto Follow-up** section in the left menu is a single read-only panel that shows all chats with scheduled follow-up messages across all your AI Employees. You don't set up chains here -- you watch what's already running.
 
 ### Search
 
-At the top of the page is a search bar: **"Search by name, agent, or client"**. You can search by:
+The search bar at the top of the page reads **"Search by name, employee, or customer"**. You can search by:
 
-- Client name (e.g., "Michael")
-- AI employee name (e.g., "Alexey")
-- Any keyword from the chat name
+- customer name (for example, "Michael")
+- AI Employee name (for example, "Alex")
+- any keyword from the chat name
 
-### Filter by Employee
+### Filter by employee
 
-Below the search bar is a dropdown: **"All employees"**. By default, chats from all AI employees are displayed. Select a specific employee to see only their chats.
+Below the search bar is the **All employees** drop-down. By default, it shows chats for all AI Employees. Select a specific AI Employee to see only their chats.
 
-### Chat Table
+### Chats table
 
-The main part of the page is a two-column table:
+The main part of the page is a table with two columns:
 
 | Column | What it shows |
 |---|---|
-| **Chat** | Client name or chat title where auto follow-up is active |
-| **Employee** | Name of the AI employee managing the conversation and sending the follow-up |
+| **Chat** | The customer's name or the name of the chat where Auto Follow-up is active |
+| **Employee** | The name of the AI Employee handling this conversation who will send the follow-up |
 
-Each row represents one active chat where the client has gone silent and an automatic reminder is scheduled. Click a row to open the full conversation history.
+Each row is one active chat where the customer went silent and an automatic reminder is scheduled. Click a row to open the full conversation history.
 
 <Tip>
-  If one employee consistently has many chats in follow-up -- consider reviewing their Persona or improving their initial response.
+  If one AI Employee constantly has lots of chats in follow-up, consider reviewing their [Persona](/en/guides/persona) or improving the first reply.
 </Tip>
 
 <Note>
-  Only chats with active auto follow-up appear in this section. If an employee has auto follow-up disabled, their chats won't show up here.
+  This section shows only chats where Auto Follow-up is active. If an AI Employee has Auto Follow-up turned off, their chats won't appear here.
 </Note>
 
 ---
 
-## Configuring Auto Follow-up (Employee Tab)
+## Setting up Auto Follow-up (AI Employee tab)
 
-Open the desired AI employee and navigate to the **Auto Follow-up** tab.
+Open the AI Employee you need and go to the **Auto Follow-up** tab.
 
-<Frame><img src="/assets/images/en/screenshots/auto_followup_1.png" /></Frame>
+<Frame>
+  <img src="/assets/images/en/screenshots/auto_followup_1.png" />
+</Frame>
 
-### Enabling and Disabling
+### Turning it on and off
 
-At the top of the screen is the **"Enable Auto Follow-up"** toggle -- it turns the feature on or off entirely for this employee.
+At the top of the screen is the **Enable Auto Follow-up** toggle -- it turns the feature on or off entirely for this AI Employee.
 
-### Reminder Chain Steps
+### Chain of steps
 
-Below the toggle are **steps** -- sequential reminders that the employee will send to the client one after another if they continue to be silent.
+Below the toggle are the **steps** -- consecutive reminders the AI Employee sends to the customer one after another if they stay silent.
 
-#### Parameters for Each Step
+#### Step parameters
 
 | Parameter | Type | Description |
 |---|---|---|
-| **Delay (H / MIN)** | Numeric fields | Wait time before sending this reminder (hours and minutes) |
-| **Message instruction** | Text field (required) | Description of what the agent should write to the client. The agent composes the message on its own based on this instruction and the conversation context |
-| **Run once per chat** | Checkbox | If enabled, this step fires only once per chat -- even if the client goes silent again |
+| **Delay (H / MIN)** | Number fields | How long to wait before sending the reminder (hours and minutes) |
+| **Message instruction** | Text field (required) | A description of what the AI Employee should write to the customer. The AI Employee writes the text on its own based on the instruction and the conversation context |
+| **Run once per chat** | Checkbox | If checked, the step fires only once for the whole chat -- even if the customer goes silent again |
 
-### How the Chain Works
+### How the chain works
 
 <Steps>
-  <Step title="Client goes silent">
-    After the client's last message, the first step timer starts.
+  <Step title="The customer goes silent">
+    The first step's timer starts after the customer's last message.
   </Step>
   <Step title="First reminder">
-    When the first step's delay expires, the employee sends a reminder.
+    When the first step's delay runs out, the AI Employee sends a reminder.
   </Step>
-  <Step title="Subsequent steps">
-    If the client remains silent, each next step's delay counts from the moment the previous reminder was sent.
+  <Step title="Next steps">
+    If the customer stays silent, each next step's delay counts from when the previous reminder was sent.
   </Step>
-  <Step title="Client replies — reset">
-    If the client sends a message at any stage, the timer resets and the chain starts over from step one.
+  <Step title="The customer replied -- reset">
+    If the customer sends a message at any point, the timer resets and the chain starts over from the first step.
   </Step>
 </Steps>
 
-### Step-by-Step Setup
+### Step-by-step setup
 
 <Steps>
   <Step title="Open the Auto Follow-up tab">
-    Go to the desired AI employee's settings and select the **Auto Follow-up** tab.
+    Go to the settings of the AI Employee you need and select the **Auto Follow-up** tab.
   </Step>
-  <Step title="Enable the toggle">
-    Switch **Enable Auto Follow-up** to the active position.
+  <Step title="Turn on the toggle">
+    Switch **Enable Auto Follow-up** on.
   </Step>
   <Step title="Add a step">
     Click **Add step**, set the delay (hours/minutes), and write the message instruction.
   </Step>
   <Step title="Build the chain">
-    Add multiple steps with increasing delays for a complete reminder chain.
+    Add several steps with increasing delays for a complete reminder chain.
   </Step>
-  <Step title="Save changes">
-    Click the save button. Once a client goes silent, the chat will automatically appear in the **Auto Follow-up** section in the left menu.
+  <Step title="Save your changes">
+    Click the save button. From then on, when a customer goes silent, the chat automatically appears in the **Auto Follow-up** section in the left menu.
   </Step>
 </Steps>
 
-### Example Three-Step Chain
+### Example: a three-step chain
 
 | Step | Delay | Instruction |
 |---|---|---|
-| 1 | 4 hours | Remind the user that we're available and ready to help |
-| 2 | 24 hours | Ask if the question is still relevant |
-| 3 | 48 hours | Say a warm goodbye and let them know we're always happy to help when needed |
+| 1 | 4 hours | Remind the user that we're here and ready to help |
+| 2 | 24 hours | Ask whether the question is still relevant |
+| 3 | 48 hours | Say a warm goodbye and let them know we're always happy to help if needed |
 
 ---
 
 ## Recommendations
 
 <Warning>
-  Don't overdo frequent reminders. The recommended pause between steps is **at least 2-4 hours**. Messages that are too frequent annoy clients and may lead to blocking.
+  Don't overdo frequent reminders. The recommended pause between steps is **at least 2-4 hours**. Messages that are too frequent annoy customers and can lead to blocking.
 </Warning>
 
 <Accordion title="How to write good step instructions">
-  An instruction is not a ready-made message text -- it's a task for the AI. The employee reads the instruction, considers the conversation context, and composes the message on its own.
+  An instruction isn't the finished message text -- it's a task for the AI. The AI Employee reads the instruction, looks at the conversation context, and writes the message on its own.
 
   **Good:**
-  > "Gently remind that we're available. Ask if there are any remaining questions. Don't be pushy."
+  > "Gently remind them we're here. Ask if they have any questions left. Don't be pushy."
 
   **Bad:**
   > "Write: Hello! We'd like to remind you that you can..."
 
   **More examples of good instructions:**
-  - "Check if the client has made a decision. Offer help if they need more information."
-  - "Remind about the special offer that was discussed. Don't push, just refresh their memory."
-  - "Ask if everything is okay. If the client doesn't respond, say a warm goodbye."
+  - "Check whether the customer has made a decision. Offer help if they need more information."
+  - "Remind them of the special offer we discussed. Don't pressure them, just refresh their memory."
+  - "Ask if everything is okay. If the customer doesn't reply, say a warm goodbye."
 
-  The more specific the task -- the better the result. But don't write the actual message text -- let the employee formulate the message naturally.
+  The more specific the task, the better the result. But don't write the finished text -- give the AI Employee room to phrase the message naturally.
 </Accordion>
 
-<Accordion title="Interaction with other settings">
-  **[Persona](/en/guides/persona).** The reminder style depends on the employee's persona. If the persona uses a friendly tone -- reminders will follow the same style. Auto follow-up doesn't override the persona; it works on top of it.
+<Accordion title="How it works with other settings">
+  **[Persona](/en/guides/persona).** The reminder style depends on the AI Employee's Persona. If the Persona sets a friendly, informal tone, reminders will follow that style too. Auto Follow-up doesn't overwrite the Persona -- it works on top of it.
 
-  **[Working Hours](/en/guides/working-hours).** If the employee has a schedule configured -- reminders will only be sent during working hours. Make sure delays and the schedule don't conflict.
+  **[Working Hours](/en/guides/working-hours).** If the AI Employee has a schedule, reminders are sent only during working hours. Make sure the delays and the schedule don't conflict.
 
-  **[Channels](/en/channels/index).** Auto follow-up works across all connected channels -- [Telegram](/en/channels/telegram), WhatsApp, website widget, and others.
+  **[Channels](/en/channels/index).** Auto Follow-up works in all of the AI Employee's connected channels -- Telegram, WhatsApp, the website widget, and others.
 </Accordion>
 
 ---
 
 ## FAQ
 
-<Accordion title="Why is the Auto Follow-up section empty even though I have active chats?">
-  Most likely, auto follow-up isn't enabled for any employee. Check the **Auto Follow-up** tab in each employee's settings -- the toggle must be active and at least one step with an instruction must be added.
+<Accordion title="Why is the Auto Follow-up section empty even though there are active chats?">
+  Most likely, Auto Follow-up isn't turned on for any AI Employee. Check the **Auto Follow-up** tab in each AI Employee's settings -- the toggle must be on and at least one step with an instruction must be added.
 </Accordion>
 
-<Accordion title="What happens if the client replies before a step fires?">
+<Accordion title="What happens if the customer replies before a step fires?">
   The timer resets. The countdown starts over from the first step.
 </Accordion>
 
-<Accordion title="Does the agent send the exact text from the instruction?">
-  No. You write an instruction -- a task description -- and the agent composes the message on its own, considering the conversation context and its [Persona](/en/guides/persona).
+<Accordion title="Does the AI Employee send the exact text from the instruction?">
+  No. You write an instruction -- a description of the task -- and the AI Employee writes the message on its own, taking into account the conversation context and its Persona.
 </Accordion>
 
 <Accordion title="How many steps can I add?">
-  There is no limit on the number of steps. In practice, 2-3 steps is optimal. More than three reminders are usually perceived as spam.
+  There's no limit on the number of steps. In practice, 2-3 steps work best. More than three reminders usually feel like spam.
 </Accordion>
 
-<Accordion title="Is the delay counted from the client's last message?">
-  Only for the first step. Each subsequent step's delay counts from the moment the previous reminder was sent.
+<Accordion title="Is the delay counted from the customer's last message?">
+  Only for the first step. Each next step's delay counts from when the previous reminder was sent.
 </Accordion>
 
-<Accordion title="Does auto follow-up work across all channels?">
-  Yes, across all connected channels for the agent.
+<Accordion title="Does Auto Follow-up work in all channels?">
+  Yes, in all of the AI Employee's connected channels.
 </Accordion>
 
-<Accordion title="Will auto follow-up send messages outside working hours?">
-  If the employee has [Working Hours](/en/guides/working-hours) configured, the reminder will wait until the start of working hours.
+<Accordion title="Will Auto Follow-up send a message outside working hours?">
+  If the AI Employee has working hours set up, the reminder waits until working hours begin.
 </Accordion>
 
-<Accordion title="Does auto follow-up consume tokens?">
-  Yes, each sent reminder consumes tokens just like a regular agent response.
+<Accordion title="Does Auto Follow-up use tokens?">
+  Yes, each reminder sent uses tokens just like a regular AI Employee reply.
 </Accordion>
 
-<Accordion title="Can I disable auto follow-up for a specific chat?">
-  No, auto follow-up is configured at the agent level and applies to all their chats. If a client asks not to be contacted, add the appropriate instruction to the [Persona](/en/guides/persona).
+<Accordion title="Can I turn off Auto Follow-up for a single chat?">
+  No, Auto Follow-up is configured at the AI Employee level and works for all of its chats. If a customer asks you not to write to them, add a matching instruction to the Persona.
 </Accordion>

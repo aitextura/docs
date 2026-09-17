@@ -1,235 +1,237 @@
 ---
 title: "Quick Answers"
-description: "Pre-configured reactions to common customer questions — instant, precise, and prioritized over FAQ."
+description: "Preconfigured responses to common customer questions — instant, precise, and prioritized over FAQ."
 ---
 
+Quick Answers are preconfigured responses to specific questions or situations. Instead of "thinking" and composing a reply from scratch every time, the AI Employee instantly performs the action you defined: sends exact text, asks another employee for help, or transfers the customer to another AI Employee.
+
+<Frame>
+  <img src="/assets/images/en/screenshots/quick_answers_1.png" />
+</Frame>
+
 <CardGroup cols={2}>
-  <Card title="FAQ" icon="circle-question" href="/en/guides/faq">
-    Self-learning system that automatically extracts Q&A pairs from conversations
+  <Card title="FAQ / Self-Learning" icon="graduation-cap" href="/en/guides/self-learning">
+    Automatically build up an answer base from conversations
   </Card>
   <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
-    Central repository of information the AI employee uses for responses
+    The employee's main source of data for answers
   </Card>
   <Card title="Notifications" icon="bell" href="/en/guides/notifications">
-    Alert system for important events in AI employee conversations
+    Alerts about important events in conversations
   </Card>
-  <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Create and manage your AI employees
+  <Card title="AI Employees" icon="users" href="/en/guides/ai-employees">
+    Employee management and multi-agent scenarios
   </Card>
 </CardGroup>
 
-Quick Answers are pre-configured reactions to specific questions or situations. Instead of "thinking" and formulating a response from scratch each time, the AI employee instantly performs the action you defined: sends exact text, consults another agent behind the scenes, or transfers the client to a different AI employee.
-
-<Frame><img src="/assets/images/en/screenshots/quick_answers_1.png" /></Frame>
-
 ---
 
-## When to use
+## When to use them
 
-- Certain questions require a **strictly fixed answer** (address, payment details, business hours)
-- You need to **automatically transfer** the client to another AI employee for a specific topic
-- You want to **speed up processing** of common requests without spending tokens on "reasoning"
+- Certain questions need a **strictly fixed answer** (address, company details, business hours)
+- You need to **automatically transfer** the customer to another AI Employee when a specific topic comes up
+- You want to **speed up** handling of common requests without spending tokens on "thinking"
 
 ---
 
 ## How Quick Answers differ from FAQ
 
 <Warning>
-  Quick Answers **always** take priority over [FAQ](/en/guides/faq). If a customer's question matches both a Quick Answer and an [FAQ](/en/guides/faq) entry, the Quick Answer will fire.
+  Quick Answers **always** take priority over FAQ. If a customer's question matches both a quick answer and an FAQ entry, the quick answer fires.
 </Warning>
 
-| | Quick Answers | [FAQ](/en/guides/faq) |
+| | Quick Answers | FAQ |
 |---|---|---|
-| **Created by** | You configure manually | Agent populates automatically from conversations |
-| **Control** | Full — you set both the question and the action | Partial — the agent decides what to add |
-| **Priority** | Higher — checked first | Lower — used only if no Quick Answer matched |
-| **Action types** | 5 types: exact text, adaptive answer, transfer, behind-the-scenes query, expert council | Text answer only |
-| **Adaptation** | "Answer exactly" sends verbatim text; other actions adapt to context | Answers may adapt to context |
+| **Who creates them** | You set them up manually | The employee fills them in automatically from conversations |
+| **Control** | Full — you define both the question and the action | Partial — the employee decides what to add |
+| **Priority** | Higher — checked first | Lower — used if no quick answer fired |
+| **Action types** | 5 types: exact text, adaptive answer, transfer, request, expert council | Text answer only |
+| **Adaptation** | "Reply exactly" sends the text verbatim; the others adapt | Answers can adapt to context |
 
 <Tip>
-  For manually adding ready-made answers, use Quick Answers rather than [FAQ](/en/guides/faq). [FAQ](/en/guides/faq) is primarily designed for automatic population from conversations.
+  To add ready-made answers manually, use Quick Answers rather than FAQ. FAQ is primarily designed to be filled automatically from conversations.
 </Tip>
 
 ---
 
 ## 5 action types
 
-### 1. Answer exactly
+### 1. Reply exactly
 
-The agent sends the client **exactly the text** you specified — no changes, no adaptation.
+The employee sends the customer **exactly the text** you specified — unchanged, with no adaptation.
 
-**Best for:** addresses, payment details, contact information, legal wording that must not be altered.
+**Good for:** addresses, company details, contact information, legal wording that must not change.
 
 <Note>
-  Exact answers do not adapt to the conversation context. The client will receive the same text regardless of how they phrased the question. Make sure your answer text is universal.
+  Exact answers don't adapt to the conversation context. The customer gets the same text no matter how they asked. Make sure your answer is worded to fit any case.
 </Note>
 
 ### 2. Based on answer
 
-The agent uses your text as a **foundation** but **adapts** it to the conversation context. You give the agent a "hint," and it forms a response considering what was discussed.
+The employee uses your text as a **basis** but **adapts** it to the conversation context. You give the employee a "hint," and it builds a reply that accounts for what the conversation was about.
 
-**Best for:** answers that should account for context (information about a specific product or service), situations requiring flexibility with a guiding framework.
+**Good for:** answers that should take context into account (information about a specific product or service), and situations that need flexibility within a guiding frame.
 
 ### 3. Transfer to another AI
 
-The client is **fully handed off** to another AI employee. The current agent stops working with this conversation, and a different one takes over.
+The customer is **fully handed over** to another AI Employee. The current employee stops working on this conversation, and the other one takes over.
 
-**Best for:** the client's topic belongs to another department, one agent handles initial contact while specialized agents handle detailed work.
+**Good for:** a customer contacting you about another department's topic, or setups where one employee handles first contact and specialized employees do the detailed work.
 
 **Additional settings:**
-- **Agent selection** — choose which AI employee receives the client from the dropdown
-- **Instruction** — text describing the transfer context
+- **Employee selection** — choose from the dropdown which AI Employee receives the customer
+- **Instruction** — text describing the context of the handover
 
 #### Video
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/qNRnekKcBFU" title="AI for a hotel chain: switching between AI employees" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/qNRnekKcBFU" title="AI for a hotel chain: switching between AI Employees" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-In the video — a hotel chain example: a "reception" agent handles the initial contact and routes the client to specialized agents for specific properties.
+The video shows a hotel chain example: a "front desk" employee handles first contact and transfers the customer to specialized employees for specific properties.
 
 ### 4. Get answer from another AI
 
-The current agent **does not transfer** the client but queries another AI employee **behind the scenes**. The client does not see this — they continue chatting with the same agent.
+The current employee **doesn't hand over** the customer; instead, it requests information from another AI Employee **"behind the scenes."** The customer doesn't see this — they keep talking to the same employee.
 
-**Best for:** expertise from another domain is needed but transferring the client is inappropriate; one agent is the company's "face" while others are internal experts.
+**Good for:** when you need expertise from another area but transferring the customer isn't appropriate; when one employee is the "face" of the company and others act as internal experts.
 
 **Additional settings:**
-- **Agent selection** — who will answer behind the scenes
-- **Instruction** — what to find out from the other agent
+- **Employee selection** — who answers "behind the scenes"
+- **Instruction** — what to find out from the other employee
 
 <Tip>
-  **What's the difference from "Transfer to another AI"?** With a transfer, the client is fully handed off to another agent. With "Get answer," the current agent only requests information and delivers it to the client themselves. The client never knows someone else was involved.
+  **How is this different from "Transfer to another AI"?** With a transfer, the customer is fully handed over to another employee. With "Get answer," the current employee only requests information and passes it on to the customer itself. The customer never learns that anyone else was involved.
 </Tip>
 
 ### 5. Expert council
 
-The most powerful option: **2 to 10** AI agents simultaneously generate their answer variants, and the system **combines** them into a single final message.
+The most powerful option: **2 to 10** AI Employees draft their own answers at the same time, and the system **combines** them into one final message.
 
-**Best for:** complex or ambiguous questions, complaints and conflict situations, questions requiring a comprehensive approach.
+**Good for:** complex or ambiguous questions, complaints and conflicts, questions that need a comprehensive approach.
 
 **Additional settings:**
-- **Agent selection** — which AI employees participate in forming the answer
-- **Instruction** — the shared task for all experts
-- **Show expert answers** — if enabled, the client sees each expert's individual response (by default, only the combined final answer is shown)
+- **Employee selection** — which AI Employees take part in drafting the answer
+- **Instruction** — a shared task for all experts
+- **Show expert answers** — if enabled, the customer sees each expert's version (by default, only the final combined answer)
 
 ---
 
-## Main trigger question
+## Main question — the trigger
 
-The main question is the trigger that tells the system to fire a Quick Answer. The AI analyzes **meaning**, not exact word matches, so you don't need to write the question exactly as the client would say it.
+The main question is the trigger the system uses to decide when to run a quick answer. The AI analyzes **meaning**, not exact word matches, so you don't need to write the question word for word the way a customer would.
 
 **Good examples:**
-- "What is your address?"
+- "What's your address?"
 - "How do I request a refund?"
 - "I have a technical problem"
 
 **Bad examples:**
-- "Question about address" — too vague
-- "The client is asking where we are located, what the office address is, and how to get there by public transport or by car" — too long
+- "Question about the address" — too vague
+- "The customer asks where we are located, what the office address is, and how to get to us by public transport or by car" — too long
 
 <Tip>
-  Phrase the question as a real client would ask it. Write from the client's perspective, not the operator's. Limit: 50 words.
+  Phrase the question the way a real customer would ask it. Write from the customer's perspective, not the operator's. The limit is 50 words.
 </Tip>
 
-### Simplify button
+### The "Simplify" button
 
-Next to the **Main question** field there is a **Simplify** button. It launches AI to rephrase your question into a shorter, more universal form.
+Next to the **Main question** field there's a **Simplify** button. It runs an AI that rephrases your question in a shorter, more general form.
 
 <Steps>
-  <Step title="Enter the question">
+  <Step title="Enter a question">
     Type the question in the **Main question** field.
   </Step>
   <Step title="Click Simplify">
-    The AI will suggest a more concise wording.
+    The AI suggests a more concise wording.
   </Step>
-  <Step title="Review the result">
-    If the result works — keep it. If not — edit manually.
+  <Step title="Check the result">
+    If you like the result, keep it. If not, edit it manually.
   </Step>
 </Steps>
 
 **Example:**
-- Before: "Could you please tell me at what address your main office is located?"
-- After: "What is the office address?"
+- Before: "Could you please tell me the address of your main office?"
+- After: "What's the office address?"
 
 ---
 
 ## Additional parameters
 
-### Chat management
+### Chat control
 
-A dropdown that determines what happens to the chat after a Quick Answer fires. For example, you can pause the chat so a human manager can step in.
+A dropdown that defines what happens to the chat after the quick answer fires. For example, you can pause the chat so a manager can step in.
 
 ### Send notification
 
-A toggle. When enabled, the manager receives a notification whenever the Quick Answer fires.
+A toggle. When enabled, a manager receives a notification whenever the quick answer fires.
 
 <Warning>
-  Enable **Send notification** for Quick Answers related to complaints, refunds, and other situations where human involvement may be needed.
+  Enable **Send notification** for quick answers related to complaints, refunds, and other situations that may need a human.
 </Warning>
 
 ---
 
-## Step-by-step instructions
+## Step-by-step guides
 
-### How to add a Quick Answer with exact text
+### How to add a quick answer with exact text
 
 <Steps>
   <Step title="Open the tab">
-    Go to the **Quick Answers** tab for the desired agent.
+    Go to the **Quick Answers** tab of the employee you need.
   </Step>
   <Step title="Create a new one">
-    Click **+ Add Quick Answer**.
+    Click **+ Add quick answer**.
   </Step>
   <Step title="Set the trigger">
-    In the **Main question** field, enter the trigger question, e.g., "What is your address?". Optionally click **Simplify**.
+    In the **Main question** field, enter the trigger question, for example: "What's your address?". Optionally, click **Simplify**.
   </Step>
   <Step title="Choose the action">
-    Select **Answer exactly**.
+    Select **Reply exactly**.
   </Step>
   <Step title="Enter the answer">
-    In the **Answer** field, type the exact text the client will receive.
+    In the **Answer** field, enter the exact text the customer will receive.
   </Step>
-  <Step title="Configure parameters and save">
-    If needed, configure **Chat management** and **Send notification**. Click **Save**.
+  <Step title="Configure and save">
+    If needed, set **Chat control** and **Send notification**. Click **Save**.
   </Step>
 </Steps>
 
 ### How to set up a transfer to another AI
 
 <Steps>
-  <Step title="Create a Quick Answer">
-    Click **+ Add Quick Answer**.
+  <Step title="Create a quick answer">
+    Click **+ Add quick answer**.
   </Step>
   <Step title="Set the trigger">
-    In the **Main question** field, enter the trigger, e.g., "I have a technical problem."
+    In the **Main question** field, enter the trigger, for example: "I have a technical problem".
   </Step>
   <Step title="Choose the action">
     Select **Transfer to another AI**.
   </Step>
-  <Step title="Select the agent">
-    From the dropdown, choose the agent who will receive the client.
+  <Step title="Choose the employee">
+    From the dropdown, select the employee who will receive the customer.
   </Step>
-  <Step title="Add instruction and save">
-    In the **Instruction** field, describe the transfer context. Click **Save**.
+  <Step title="Add an instruction and save">
+    In the **Instruction** field, describe the handover context. Click **Save**.
   </Step>
 </Steps>
 
 ### How to use Expert council
 
 <Steps>
-  <Step title="Create a Quick Answer">
-    Click **+ Add Quick Answer**.
+  <Step title="Create a quick answer">
+    Click **+ Add quick answer**.
   </Step>
   <Step title="Set the trigger">
-    In the **Main question** field, enter the trigger, e.g., "I want to file a complaint."
+    In the **Main question** field, enter the trigger, for example: "I want to file a complaint".
   </Step>
   <Step title="Choose the action">
     Select **Expert council**.
   </Step>
   <Step title="Add experts">
-    Add expert agents (from 2 to 10).
+    Add expert employees (2 to 10).
   </Step>
   <Step title="Configure and save">
-    Write the shared instruction for the experts. Decide whether to enable **Show expert answers**. Click **Save**.
+    Write a shared instruction for the experts. Decide whether to enable **Show expert answers**. Click **Save**.
   </Step>
 </Steps>
 
@@ -237,57 +239,57 @@ A toggle. When enabled, the manager receives a notification whenever the Quick A
 
 ## Quick Answers priority
 
-When a client sends a message, the agent checks information sources in a specific order. Quick Answers have **higher priority** than [FAQ](/en/guides/faq) and the [Knowledge Base](/en/guides/knowledge).
+When a customer sends a message, the employee checks information sources in a specific order. Quick Answers have **higher priority** than FAQ and the Knowledge Base.
 
-If the agent answers a question differently than you'd like (via [FAQ](/en/guides/faq) or the [Knowledge Base](/en/guides/knowledge)), create a Quick Answer with the desired wording — it will take priority.
+If the employee answers a question differently than you'd like (using FAQ or the Knowledge Base), create a quick answer with the wording you want — it will take priority.
 
 <Tip>
-  In the test chat, click the checkmark next to the agent's response — you'll see its reasoning: which Quick Answers it checked, what it used from the knowledge base, and why it answered the way it did.
+  In the test chat, click the checkmark next to the employee's reply to see its reasoning: which quick answers it checked, what it used from the Knowledge Base, and why it answered the way it did.
 </Tip>
 
 ---
 
-## Recommendations on quantity
+## How many to create
 
-There are no limits on the number of Quick Answers. Practical recommendations:
+There's no limit. Practical recommendations:
 
-- **Don't duplicate similar phrasings.** If you have a trigger "What is your address?" — you don't need a separate "Where are you located?". Use the **Simplify** button.
-- **Don't overload.** Quick Answers are for truly common situations. Rare questions should be handled by the agent via the knowledge base.
-- **Review regularly.** Remove outdated Quick Answers — old addresses, prices, expired promotions.
-
----
-
-## Integration with other tools
-
-- **[FAQ](/en/guides/faq)** — they complement each other. Quick Answers for critical questions, FAQ for everything else.
-- **[Knowledge Base](/en/guides/knowledge)** — the "Based on answer" action uses knowledge base data to form personalized responses.
-- **[Notifications](/en/guides/notifications)** — you can combine Quick Answers with notification triggers.
-- **Other [AI Employees](/en/guides/ai-employees)** — "Transfer to another AI," "Get answer from another AI," and "Expert council" actions allow you to build multi-agent scenarios.
+- **Don't duplicate similar wording.** If you have a "What's your address?" trigger, you don't need a separate "Where are you located?". Use the **Simplify** button.
+- **Don't overload.** Quick Answers are for truly common situations. Let the employee handle rare questions through the Knowledge Base.
+- **Review the list regularly.** Delete outdated quick answers — old addresses, prices, expired promotions.
 
 ---
 
-## Frequently asked questions
+## How it works with other tools
+
+- [FAQ](/en/guides/self-learning) — they complement each other. Quick Answers for critical questions, FAQ for everything else.
+- [Knowledge Base](/en/guides/knowledge) — the "Based on answer" action uses Knowledge Base data to build a personalized reply.
+- [Notifications](/en/guides/notifications) — you can combine quick answers with notification triggers.
+- [AI Employees](/en/guides/ai-employees) — the "Transfer to another AI," "Get answer from another AI," and "Expert council" actions let you build multi-agent scenarios.
+
+---
+
+## FAQ
 
 <AccordionGroup>
-  <Accordion title="How many Quick Answers can I create?">
-    There are no limits. We recommend not duplicating similar phrasings — use the **Simplify** button for generalization.
+  <Accordion title="How many quick answers can I create?">
+    There's no limit. We recommend not duplicating similar wording — use the **Simplify** button to generalize instead.
   </Accordion>
-  <Accordion title="What happens if a question matches multiple Quick Answers?">
-    The system will choose the best match by meaning. Try to formulate triggers so they don't overlap.
+  <Accordion title="What happens if a question matches several quick answers?">
+    The system picks the one closest in meaning. Try to phrase triggers so they don't overlap.
   </Accordion>
-  <Accordion title="What's the difference between 'Get answer from another AI' and 'Transfer to another AI'?">
-    With a transfer, the client is fully handed off to another agent who continues the conversation. With "Get answer," the current agent queries another agent behind the scenes, and the client doesn't see this.
+  <Accordion title="How is &quot;Get answer from another AI&quot; different from &quot;Transfer to another AI&quot;?">
+    With a transfer, the customer is fully handed over to another employee, who continues the conversation. With "Get answer," the current employee requests information from another one "behind the scenes," and the customer doesn't see it.
   </Accordion>
-  <Accordion title="Is clicking 'Simplify' required?">
-    No. But it's recommended if your trigger question is long or contains specific phrasing. Simplification helps the agent better recognize different variations of the same question.
+  <Accordion title="Do I have to click Simplify?">
+    No. But it's recommended if your trigger question is long or uses specific wording. Simplifying helps the employee recognize different variations of the same question.
   </Accordion>
   <Accordion title="Can I combine Quick Answers with FAQ?">
-    Yes. Quick Answers and [FAQ](/en/guides/faq) complement each other. Quick Answers always have higher priority.
+    Yes. Quick Answers and FAQ complement each other. Quick answers always have higher priority.
   </Accordion>
-  <Accordion title="A Quick Answer isn't firing — what should I do?">
-    Check the trigger wording — it may be too narrow or too broad. Try clicking **Simplify** and resaving. Test in the test chat and check the agent's reasoning (checkmark next to the response).
+  <Accordion title="A quick answer isn't firing — what should I do?">
+    Check the trigger wording — it may be too narrow or too broad. Try clicking **Simplify** and saving again. Test it in the test chat and review the employee's reasoning (the checkmark next to the reply).
   </Accordion>
-  <Accordion title="Can I use Quick Answers without a knowledge base?">
-    Yes. The "Answer exactly" action doesn't depend on the [Knowledge Base](/en/guides/knowledge). But for "Based on answer," the [Knowledge Base](/en/guides/knowledge) significantly improves response quality.
+  <Accordion title="Can I use Quick Answers without a Knowledge Base?">
+    Yes. The "Reply exactly" action doesn't depend on the Knowledge Base. But for the "Based on answer" action, a Knowledge Base significantly improves answer quality.
   </Accordion>
 </AccordionGroup>

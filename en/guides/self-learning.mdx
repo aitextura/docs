@@ -1,0 +1,181 @@
+---
+title: "Self-Learning"
+description: "Your AI Employee collects questions it couldn't answer precisely. You review the answer, edit it, and confirm — and it goes into the Knowledge Base."
+---
+
+A customer asked something that's in neither the [Persona](/en/guides/persona) nor the [Knowledge Base](/en/guides/knowledge) — your AI Employee replied, but it didn't have exact data. **Self-Learning** catches these cases and collects them in a list: you read the answer, edit it, and confirm — and from then on, your AI Employee answers the same question correctly.
+
+That's how it gets smarter: the more question–answer pairs you confirm, the fewer questions are left that it answers by guessing.
+
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/V1CJmtRQ2gI" title="Self-Learning mode in AI TEXTURA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Turn on Self-Learning
+
+Open your AI Employee → **Self-Learning** tab. While the mode is off, the tab shows a yellow banner — click **Enable Self-Learning** or flip the toggle on the right.
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/self_learning_off.png" alt="The “Self-Learning” tab with the mode off: a yellow “Self-Learning is disabled for this agent” banner and an “Enable Self-Learning” button" />
+</Frame>
+
+The first entries appear after your AI Employee handles a few real conversations. Until then, the list is empty.
+
+<Note>The number on the tab itself shows how many questions are waiting for your review.</Note>
+
+## Settings
+
+The gray gear to the right of the toggle opens **Self-Learning Settings**. The defaults work for most cases — come here only if your AI Employee starts answering differently than you need.
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/self_learning_settings.png" alt="The “Self-Learning Settings” panel: strict mode, answer accuracy check method, and a search sensitivity slider" />
+</Frame>
+
+### Strict mode
+
+What to do when the fact check finds statements in your AI Employee's reply that the Knowledge Base doesn't confirm.
+
+| Option | What happens | When to choose it |
+|---|---|---|
+| **Allow the agent to answer** | It replies as is. The reply may be inaccurate — it didn't have the data it needed. The question still goes to Self-Learning, and you fix it there | When silence is worse than inaccuracy |
+| **Don't answer at all** | It stays silent until you confirm the answer in Self-Learning. Once confirmed, your answer goes to the customer and into the Knowledge Base | When a mistake costs more than a pause. Requires a manager to pick up conversations promptly |
+| **Answer with a preset phrase** | It sends your phrase, adapted to the context of the conversation. Self-Learning receives the question and the reply your AI Employee was going to give | When you need a predictable reply with no risk of made-up facts |
+
+Write the preset phrase in the field below, up to 450 characters: "I don't have confirmed information on this" or "Let me check with a colleague and get back to you."
+
+### Answer accuracy check
+
+| Option | What it means |
+|---|---|
+| **Simple check** | Fast and inexpensive. Works for most cases |
+| **Smart check** | Checks the answer against the Knowledge Base more precisely, but it's slower and more expensive. For projects where a factual error is costly |
+
+### Search sensitivity
+
+How closely a new customer question must match a Self-Learning entry for your AI Employee to answer with it. The slider goes from 10% to 90%; the optimal middle ground is 70%.
+
+| Value | What you get |
+|---|---|
+| Below 70% | Weak matches also trigger: a question may get the answer to another, only vaguely similar question |
+| Above 70% | Only close matches. If a customer rephrases slightly, the right entry is no longer found |
+
+## Review questions
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/self_learning_list.png" alt="The Self-Learning list: “New” and “In Knowledge” sub-tabs, rows with the “Pending” status, search, and bulk action buttons" />
+</Frame>
+
+The list has two sub-tabs:
+
+| Sub-tab | What's inside |
+|---|---|
+| **New** | Replies where the fact check found inaccuracies. They're waiting for your decision, with the **Pending** status. The number in parentheses shows how many there are |
+| **In Knowledge** | What you've already confirmed. It's in the Knowledge Base and works for similar questions in the future |
+
+Click a row to open the edit window. The **Your answer** field already contains what your AI Employee said: fix any inaccuracies or confirm it as is.
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/self_learning_edit.png" alt="The edit window: a “Why this was created automatically” block, a “View conversation context” button, and “Customer question” and “Your answer” fields" />
+</Frame>
+
+At the top, you can see **why the entry was created automatically** and open the **conversation context** — the full conversation.
+
+<Tip>Edit the question too — make it general. "Hi, my name is Anna, booking 4417, what time can I check in?" → "What time is check-in?". Remove names, booking numbers, dates, and other specifics: the cleaner the question, the more accurately your AI Employee recognizes it, and the answer works for everyone who asks something similar. Delete unnecessary, duplicate, and inaccurate questions right away — they throw off answer matching.</Tip>
+
+The **Also send the answer to the customer in the chat** checkbox sends your corrected text to the customer in the conversation. This is especially handy with the **Don't answer at all** strict mode: the customer is still waiting, and you send the answer right from here. If your AI Employee has already replied, your text arrives as an additional message rather than replacing the earlier one.
+
+### Answer style
+
+The **Additional** block at the bottom of the window sets how your AI Employee answers with this entry.
+
+| Setting | What it does |
+|---|---|
+| **Answer style** | **By meaning** — rephrases to fit the conversation. **Verbatim** — sends exactly your text. **Verbatim with translation** — the same text, but always in the customer's language |
+| **Category** | A label for review: `pricing`, `support`, `sales`, or your own. Entries with the same category are easier to find and review together later |
+| **Escalate to manager** | After replying, pauses the chat and sends a notification. For questions that always need a human |
+| **Follow-up question** | A phrase your AI Employee asks right after the answer: "Which houses are you interested in?" |
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/self_learning_edit_more.png" alt="The “Additional” block: answer style, category, an escalate-to-manager toggle, and a follow-up question" />
+</Frame>
+
+The **Confirm** button saves the entry and sends it to the Knowledge Base.
+
+## Clean up junk
+
+Your AI Employee collects questions from real conversations, and those contain much more than questions. The list picks up "yes", "thank you so much", "no", an emoji, fragments with personal data — anything it took for a request.
+
+<Warning>Confirm an answer to "yes", and next time any customer who writes "yes" gets exactly that answer. Edit or delete such entries — don't let them through "just in case".</Warning>
+
+The quick way: check all the junk with the checkboxes on the left and delete it in one go. You don't need to go through the list one entry at a time.
+
+## Clusters
+
+When there are many entries, the platform automatically groups similar questions into clusters. "What time is check-in?", "When can I check in?", and "From what time do you check guests in?" are the same question for your AI Employee, and it will have one shared answer for them.
+
+The practical point is simple: don't try to create a separate entry for every wording by hand. One well-written answer is enough — all similar questions will be matched to it, including ones you didn't anticipate.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="The AI Employee isn't answering the customer — what should I do?">
+    The **Don't answer at all** strict mode is on: your AI Employee stays silent and waits for your decision. Open the **New** sub-tab, edit the answer, and click **Confirm** with **Also send the answer to the customer in the chat** checked — the answer goes straight into the conversation.
+
+    To keep customers from waiting every time, switch the strict mode to a preset phrase.
+  </Accordion>
+
+  <Accordion title="The AI Employee pulls in the wrong answer — how do I fix it?">
+    Find the entry on the **In Knowledge** sub-tab and fix the answer right there.
+
+    While you're at it, narrow the question's wording: a question that's too general catches unrelated requests. If the entry is useless, delete it — that's faster than rewriting.
+  </Accordion>
+
+  <Accordion title="The AI Employee doesn't find the right entry, even though a similar one exists">
+    Lower the **search sensitivity** in the settings in steps of 5%: at a high value, only close matches get through, and a customer who asks in different words won't reach the entry.
+
+    Cleaning up the question in the entry also helps — remove names, dates, and booking numbers.
+  </Accordion>
+
+  <Accordion title="I confirmed an entry, but the AI Employee answers in its own words">
+    The answer style is set to **By meaning** — your AI Employee rephrases your text to fit the conversation. If you need it word for word, open the entry, go to the **Additional** block, and select **Verbatim**.
+
+    If a completely different answer came back, a [Quick Answer](/en/guides/quick-answers) was triggered — Quick Answers have higher priority.
+  </Accordion>
+
+  <Accordion title="A lot of junk has piled up: “yes”, “thanks”, emojis">
+    Check these entries with the checkboxes on the left and delete them in one go — you don't need to go through the list one by one. Learn more in [Clean up junk](#clean-up-junk).
+  </Accordion>
+
+  <Accordion title="It's unclear what the question in an entry is about">
+    Open the entry and click **View conversation context** — you'll see the full conversation and understand what the customer meant.
+  </Accordion>
+
+  <Accordion title="There have been no entries for a week — is that normal?">
+    First, check the Self-Learning toggle. If the mode is on, either there aren't many conversations yet, or your AI Employee is handling things on its own — which is a good sign.
+  </Accordion>
+
+  <Accordion title="Every question ends up in the list, not just the hard ones">
+    That's how it currently works: your AI Employee collects requests, not only the ones it couldn't answer. When reviewing, delete entries whose answer is already in the [Knowledge Base](/en/guides/knowledge) — you don't need them.
+  </Accordion>
+
+  <Accordion title="Can I add a question manually?">
+    No, Self-Learning is filled only from real conversations. For your own wording, use [Quick Answers](/en/guides/quick-answers).
+  </Accordion>
+</AccordionGroup>
+
+If you need to troubleshoot a specific wrong answer, see [Persona](/en/guides/persona), the "FAQ" section.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Persona" icon="brain" href="/en/guides/persona">
+    How your AI Employee leads conversations and what tone it uses
+  </Card>
+  <Card title="Channels" icon="comments" href="/en/channels">
+    Connect Telegram or a CRM, and your AI Employee starts answering customers
+  </Card>
+  <Card title="Talents" icon="bolt" href="/en/guides/talents">
+    Teach it to take action: deals, bookings, emails
+  </Card>
+  <Card title="Quick Answers" icon="reply" href="/en/guides/quick-answers">
+    Answers you write yourself — with priority over Self-Learning
+  </Card>
+</CardGroup>

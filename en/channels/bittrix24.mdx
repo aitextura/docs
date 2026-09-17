@@ -1,238 +1,140 @@
 ---
 title: "Bitrix24"
-description: "Bitrix24 integrates with AI Textura in two independent ways: as a channel (a source of messages from open channels) and as a talent (CRM operations via MCP). You can connect both at the same time."
+description: "Connect Bitrix24 as a channel: your AI Employee replies to customers in your portal's Open Channels, and you choose pipelines, reply mode, and operator involvement."
 ---
+
+Customers write in WhatsApp, Telegram, Avito, and your website chat, and your managers sort it all out in Bitrix24 Open Channels. The **Bitrix24** channel routes those same messages to your AI Employee: it replies right in the Open Channel, conversations and cards stay where they are, and nobody has to learn a new interface.
+
+## What you need
+
+- Bitrix24 portal administrator rights: only an administrator can access webhooks and Open Channel settings.
+- At least one channel connected in the Bitrix24 **Contact Center**, such as Telegram, WhatsApp, Avito, or website live chat. Your AI Employee hears the customer through the Open Channel, not directly.
+
+## Connection
+
+<Steps>
+  <Step title="Create a webhook in Bitrix24">
+    Open **Applications → Developer resources → Other → Inbound webhook**. In the **Permissions** block, select: CRM (`crm`), Drive (`disk`), Chatbot creation and management (`imbot`), Chat and notifications (`im`), Users (`user`), Tasks (`task`), Open Channels (`imopenlines`).
+
+    <Frame>
+      <img src="/assets/images/ru/screenshots/bitrix24_webhook_rights.png" alt="Creating an inbound webhook in Bitrix24: the URL field and the Permissions block with seven permissions selected" />
+    </Frame>
+
+    Click **Create** and copy the **Webhook to call REST API**, an address like `https://your-portal.bitrix24.ru/rest/1/abcdef0123456/`.
+  </Step>
+
+  <Step title="Go back to AI TEXTURA and connect the channel">
+    Open the AI Employee → **Channel** tab → **Connect New** → **Bitrix24**. Enter a **Channel Name** (only you see it), paste the webhook address into the **Webhook URL** field, and click **Create**.
+
+    <Frame>
+      <img src="/assets/images/ru/screenshots/bitrix24_channel_connect.png" alt="The Add Channel panel with the Bitrix24 platform: channel name, Webhook URL field, and message buffer settings" />
+    </Frame>
+
+    The channel appears on the **Connected** tab, and the platform creates a chatbot in Bitrix24: you can see its number in the **bot_id** field inside the channel.
+  </Step>
+
+  <Step title="Go back to Bitrix24 and assign the chatbot">
+    Until the chatbot is assigned as the responsible person, messages from the Open Channel don't reach your AI Employee.
+
+    Open the **Contact Center** and select the channel where the AI Employee should reply, such as Telegram, WhatsApp, or website live chat.
+
+    <Frame>
+      <img src="/assets/images/ru/screenshots/bitrix24_contact_center.png" alt="Bitrix24 Contact Center: channel tiles for telephony, website widget and form, live chat, WhatsApp, Telegram, VK" />
+    </Frame>
+
+    In the channel settings, open the **Chatbots** section, turn on **Assign chatbot as responsible person when a customer makes contact**, and select the bot that appeared after you connected the channel.
+
+    <Frame>
+      <img src="/assets/images/ru/screenshots/bitrix24_chatbot.png" alt="Open Channel settings in Bitrix24, Chatbots section: the checkbox for assigning the bot as responsible and the bot selection list" />
+    </Frame>
+
+    | Field | What to set |
+    |---|---|
+    | **When to connect the chatbot** | At the start of every new conversation |
+    | **When to transfer the conversation from the chatbot to the queue** | Don't transfer; otherwise Bitrix24 will take the conversation away from the AI Employee and hand it to the managers' queue |
+    | **When to disconnect the chatbot** | After the conversation ends |
+
+    Save the Open Channel settings.
+  </Step>
+
+  <Step title="Go back to AI TEXTURA and configure the channel">
+    Open the channel by clicking it on the **Connected** tab and go through the settings: pipeline filter, operator involvement, message buffer, Co-Pilot mode.
+  </Step>
+</Steps>
+
+## Test it
+
+Write to the connected channel as a customer, for example to the Telegram bot set up in this Open Channel. Your AI Employee replies in the same chat, and the conversation appears in [Chats](/en/guides/chats).
+
+## Channel settings
+
+The defaults don't suit every portal, so go through the settings right away.
+
+**Pipeline Filter** narrows the scope. While nothing is selected, the AI Employee replies to all deals. Select one pipeline, and it works only there, leaving your cold leads or post-sale support alone.
 
 <Frame>
-  <img src="/public/screenshots/28-channel-bitrix24.png" alt="Connecting Bitrix24 as a channel" />
+  <img src="/assets/images/ru/screenshots/bitrix24_funnels.png" alt="The Pipeline Filter block with the hint: if nothing is selected, the AI replies to all deals" />
 </Frame>
 
-<CardGroup cols={2}>
-  <Card title="Channels — overview" icon="plug" href="/en/channels">
-    What a channel is and how it works in AI Textura
-  </Card>
-  <Card title="amoCRM" icon="address-book" href="/en/channels/amocrm">
-    A similar CRM with channel / talent split
-  </Card>
-  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
-    Triggers and notification delivery to Bitrix24
-  </Card>
-  <Card title="Talents" icon="puzzle-piece" href="/en/guides/talents">
-    Catalog of MCP tools and integrations
-  </Card>
-</CardGroup>
-
-## Two ways to connect Bitrix24
-
-Bitrix24 integrates with AI Textura in **two independent ways**. They do not replace each other and can run side by side:
-
-| | **Channel** | **Talent** |
-| --- | --- | --- |
-| Where it is configured | The agent's **Channel** tab | The agent's **Talents** tab |
-| What it does | The AI receives and replies to messages from Bitrix24 open channels | The AI performs CRM actions: creates deals and leads, assigns responsible managers, schedules tasks, finds contacts |
-| Technology | REST webhook for receiving messages | MCP server with CRM/Users/Tasks/Im/Imbot/Openlines permissions |
-| Minimum permissions in Bitrix24 | Open Channels, Chatbots, CRM, Drive, Notifications | CRM, Users, Tasks, Chat & notifications, Chatbot creation, Open Channels |
-
-<Tip>
-  In most cases you need **both**: the channel — so the AI can hear the customer; the talent — so the AI can qualify the lead and create a deal during the conversation.
-</Tip>
-
----
-
-## Connecting Bitrix24 as a channel
-
-The channel is the path through which messages from Bitrix24 open channels reach the AI employee.
-
-### What the channel provides
-
-- The AI employee responds to messages from Bitrix24 open channels.
-- All inquiries are automatically saved in the CRM.
-- Managers can join the conversation at any time.
-
-### Step 1. Create a webhook in Bitrix24
-
-<Steps>
-  <Step title="Log in to Bitrix24">
-    Sign in to your Bitrix24 account.
-  </Step>
-  <Step title="Go to webhooks">
-    Open **Applications → For Developers → Other → Inbound webhook**.
-  </Step>
-  <Step title="Copy the address">
-    Copy the **"Webhook URL for calling REST API"** field.
-  </Step>
-</Steps>
-
-### Step 2. Connect the channel in AI Textura
+**Connect Operators in Parallel** adds the selected managers to the conversation after the AI Employee replies, so they can see the conversation and step in. The **Forced** toggle adds them on every incoming message without waiting for a reply.
 
 <Frame>
-  <img src="/public/screenshots/30-channel-bitrix24-config.png" alt="Webhook URL field when connecting a Bitrix24 channel" />
+  <img src="/assets/images/ru/screenshots/bitrix24_operators.png" alt="The Connect Operators in Parallel and Forced toggles in the channel settings" />
 </Frame>
 
-<Steps>
-  <Step title="Open the Channel section">
-    Go to [AI Employees](/en/guides/ai-employees) → select the agent → **Channel** tab → **Connect new** sub-tab.
-  </Step>
-  <Step title="Select Bitrix24">
-    In the platform list, find **Bitrix24** and click on it.
-  </Step>
-  <Step title="Paste the webhook">
-    In the side panel, choose **Create** and paste the webhook address into the **WEBHOOK** field.
-  </Step>
-  <Step title="Grant permissions in Bitrix24">
-    Go back to Bitrix24 and configure the webhook permissions. Required permissions for the channel:
-    - Open Channels
-    - Chatbot creation and management
-    - CRM
-    - Drive
-    - Notifications
-  </Step>
-  <Step title="Save">
-    Click **Save**. The channel will appear in the **Connected** tab.
-  </Step>
-</Steps>
+**Message Buffer** makes the AI Employee wait before replying, since customers often split one thought into several messages. The default **Buffer Time** is 8 seconds; in Open Channels, set it longer, up to 120 seconds, because messages arrive with a delay.
 
-### Step 3. Configure the chatbot in Bitrix24
+**History Auto-Cleanup** deletes the conversation on a schedule.
 
-After connecting the channel in AI Textura, configure Bitrix24:
+<Warning>Auto-cleanup deletes messages permanently.</Warning>
 
-1. Go to **CRM → Integrations → Messengers**.
-2. Open the desired chat → **Open Channel**.
-3. Enable the **"Assign chatbot as responsible"** checkbox.
-4. Select the AI employee → **Save**.
-
-<Tip>
-  After setup, send a test message through the open channel to verify that the AI employee receives and processes inquiries.
-</Tip>
-
----
-
-## Connecting Bitrix24 as a talent (MCP)
-
-The talent is an **MCP server** through which the AI employee can perform actions in the Bitrix24 CRM: create deals and leads, find contacts and companies, schedule tasks, **assign responsible managers**, and send messages to Bitrix24 chats.
+## Co-Pilot mode
 
 <Frame>
-  <img src="/public/screenshots/15-talent-bitrix24-modal.png" alt="Bitrix24 talent connection modal" />
+  <img src="/assets/images/ru/screenshots/bitrix24_copilot.png" alt="The Co-Pilot Mode toggle: the AI replies with notes for the manager instead of messages to the customer" />
 </Frame>
 
-### Two connection options
+With **Co-Pilot** on, the AI Employee sends nothing to the customer. Instead, it writes its reply as a note for the manager, who reads the suggestion, edits it as they see fit, and sends it themselves.
 
-When you open the **"Connect Bitrix24"** modal in the Talents tab, two tabs are available:
+This is the best way to roll out an AI Employee in a live sales team: for a week it writes notes, you review what it suggests and refine the [Persona](/en/guides/persona), and only then do you let it talk to customers.
 
-#### 1. Connected channel (recommended)
+## Actions in Bitrix24
 
-If you already have a Bitrix24 **channel** connected (see above), the talent can reuse its authorization. This is the simplest path.
+The channel only brings in messages: it doesn't create deals or leads, set tasks, or assign responsible persons. The Bitrix24 talent does all that: [how to connect it](/en/guides/connect-talents#how-to-connect-bitrix24).
 
-<Steps>
-  <Step title="Open Talents">
-    On the agent page, go to the **Talents** tab → **Browse apps**.
-  </Step>
-  <Step title="Select Bitrix24">
-    Find the **Bitrix24** card in the **Business Management** category and click on it.
-  </Step>
-  <Step title="Connected channel tab">
-    From the dropdown, pick a previously connected Bitrix24 channel.
-  </Step>
-  <Step title="Confirm the connection">
-    Click **Next** — the talent will appear in the **Connected** tab.
-  </Step>
-</Steps>
-
-#### 2. Webhook (if no channel is connected)
-
-If a channel is not yet connected, or if you need broader permissions, use a separate webhook dedicated to the talent.
-
-<Frame>
-  <img src="/public/screenshots/16-talent-bitrix24-webhook.png" alt="Connecting the Bitrix24 talent via a webhook with CRM/Users/Tasks/Im/Imbot/Openlines permissions" />
-</Frame>
-
-<Steps>
-  <Step title="Create an inbound webhook in Bitrix24">
-    Open **Applications → For Developers → Other → Inbound webhook**.
-  </Step>
-  <Step title="Grant permissions for CRM operations">
-    The talent needs broader permissions than the channel:
-    - **CRM** (`crm`) — deals, leads, contacts, companies, pipelines
-    - **Users** (`user`) — finding responsible managers
-    - **Tasks** (`task`) — creating tasks
-    - **Chat and notifications** (`im`) — sending messages
-    - **Chatbot creation and management** (`imbot`)
-    - **Open Channels** (`imopenlines`)
-  </Step>
-  <Step title="Copy the webhook URL">
-    Copy "Webhook URL for calling REST API" from Bitrix24.
-  </Step>
-  <Step title="Paste the URL into AI Textura">
-    Return to the Bitrix24 talent modal → **Webhook** tab → paste the URL → **Connect**.
-  </Step>
-</Steps>
-
-<Warning>
-  The Bitrix24 talent acts on behalf of the user whose webhook is connected. If that user has limited permissions inside Bitrix24, the talent will inherit the same restrictions.
-</Warning>
-
----
-
-## Assigning responsible managers
-
-Once the Bitrix24 **talent** is connected, the AI employee can **assign responsible managers** to deals and leads on its own, right during the conversation — for example, routing a warm lead to a specific manager based on rules or workload.
-
-### Video walkthrough
-
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/d8ZT_BM2K0A" title="How to assign responsible managers in Bitrix24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-### How it works
-
-<Steps>
-  <Step title="Connect the Bitrix24 talent">
-    See "Connecting Bitrix24 as a talent (MCP)" above — assigning responsible managers requires the `user` and `crm` permissions.
-  </Step>
-  <Step title="Describe the rules in the agent's instructions">
-    On the agent's **Persona** tab, specify whom to route the lead to: e.g., "If the customer asks about room reservations — assign manager Anna (ID 12) as responsible," or "For VIP service requests, set Ivan as responsible."
-  </Step>
-  <Step title="Test in the preview chat">
-    Open the agent's built-in test chat and simulate a customer inquiry. The AI should create a deal and immediately assign a responsible manager.
-  </Step>
-</Steps>
-
-<Tip>
-  Give the AI clear context: segmentation rules, IDs or names of responsible managers, whether to create a new deal or look up an existing one. The more specific the instruction, the more consistent the result.
-</Tip>
-
----
-
-## Notifications via Bitrix24
-
-In addition to channels and talents, Bitrix24 can also act as a **notification delivery channel**: a trigger fires, and the AI employee posts a message to a Bitrix24 chat for the responsible manager.
-
-### Video walkthrough
-
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/9IsmdbQ7Dfc" title="Notifications in Bitrix24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For details on configuring triggers and notification delivery, see [Notifications](/en/guides/notifications).
-
----
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/d8ZT_BM2K0A" title="How to assign responsible persons in Bitrix24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Do I need to connect both the channel and the talent?">
-    It is not required, but recommended. The channel handles incoming messages from open channels; the talent handles CRM actions. If you only need conversations without CRM operations, the channel is enough. If you need CRM actions (deals, responsible managers, tasks), you need the talent.
+  <Accordion title="Which Bitrix24 plan do I need">
+    The Basic plan is enough: you need Open Channels and the Developer resources section with inbound webhooks, and both are included in Basic.
   </Accordion>
 
-  <Accordion title="Can I use a single webhook for both the channel and the talent?">
-    Technically yes, if it has all the required permissions. But it's cleaner to keep webhooks separate: the channel — with minimal permissions for open channels; the talent — with broader permissions for CRM, Users, and Tasks.
-  </Accordion>
-
-  <Accordion title="Does the AI create deals in Bitrix24 without the talent?">
-    No. Without the Bitrix24 talent connected, the AI employee has no access to CRM operations. The channel only forwards messages — it does not create deals automatically.
-  </Accordion>
-
-  <Accordion title="What if the webhook returns 401 / Permission denied?">
-    Check the webhook permissions in Bitrix24. The talent requires `crm`, `user`, `task`, `im`, `imbot`, `imopenlines`. The channel requires `imopenlines`, `imbot`, `crm`, `disk`. Also make sure the user who created the webhook has corresponding permissions for the matching Bitrix24 sections.
-  </Accordion>
-
-  <Accordion title="The AI does not respond in an open channel — what should I check?">
-    Make sure (1) the channel is active in AI Textura; (2) the "Assign chatbot as responsible" checkbox is enabled on the relevant open channel in Bitrix24; (3) the selected AI employee matches the one bound to the channel; (4) the employee is "Active" and on shift (see Working hours).
+  <Accordion title="A customer sent a photo. Will it reach the AI Employee?">
+    Open Channels pass attachments as links, and how a file looks in the portal depends on the message source. Test it on your setup: send a test photo from WhatsApp, Telegram, and the website widget.
   </Accordion>
 </AccordionGroup>
+
+## Notifications in Bitrix24
+
+You can receive alerts that a customer is asking for a manager in the portal chat, sent to specific employees, instead of in Telegram. Set this up on the [Notifications](/en/guides/notifications) page.
+
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/9IsmdbQ7Dfc" title="Notifications in Bitrix24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Talents" icon="bolt" href="/en/guides/connect-talents#how-to-connect-bitrix24">
+    Deals, tasks, and responsible persons handled by your AI Employee
+  </Card>
+  <Card title="amoCRM" icon="address-book" href="/en/channels/amocrm">
+    The same setup for amoCRM
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    An alert for you when a customer asks for a human
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels">
+    All the ways to connect customers to your AI Employee
+  </Card>
+</CardGroup>

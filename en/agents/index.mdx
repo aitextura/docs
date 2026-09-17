@@ -1,0 +1,100 @@
+---
+title: "Autonomous Agents"
+sidebarTitle: "Overview"
+description: "An agent does the work on its own: sorts your email, keeps records, compiles scheduled reports, and sends the results to Telegram. How it differs from an AI Employee and how it works."
+---
+
+Some work isn't about talking to customers — it's routine: sort the inbox, tally expenses from receipts, put together a summary by Friday, publish a post. An **autonomous agent** does this on its own. It has its own workspace with files, memory, and a command line, and you give it tasks in plain words in Telegram.
+
+The difference from a chatbot is simple: a navigator shows you the way, a taxi driver takes you there. An AI Employee answers customers; an agent completes a task and sends you the result.
+
+## AI Employee or agent
+
+These are two separate products on the platform. You choose on the very first step of the hiring wizard.
+
+| | [AI Employee](/en/guides/ai-employees) | Autonomous agent |
+|---|---|---|
+| Who it talks to | Your customers | You |
+| Where it works | In channels: website, messengers, CRM | In its own workspace; replies arrive in Telegram |
+| What it does | Answers from the Knowledge Base, qualifies leads, books | Processes files, browses websites, writes scripts, keeps records, publishes |
+| Runs on a schedule | No, it responds to incoming messages | Yes, it wakes up on its own and runs scheduled jobs |
+| Remembers you | Remembers the customer in their [profile](/en/guides/profiles) | Keeps memory files about you and its work |
+| Ready to work | In a couple of minutes | The container starts in a minute; fine-tuning takes the first day |
+
+<Note>One doesn't rule out the other: an account can have both AI Employees and agents at the same time. Both are listed in the **Agents** section of the left menu.</Note>
+
+## How it works
+
+Four things that keep everything else from looking like magic.
+
+| Part | What it is | Where to configure it |
+|---|---|---|
+| **Personality** | Plain text files: how the agent talks, what matters to it, what it knows about you. No black box — open them and rewrite | [Personality](/en/agents/personality) |
+| **Skills** | Also text: an instruction file that teaches the agent something new once it reads it. Installed from the catalog | [Abilities and Skills](/en/agents/skills) |
+| **Heartbeat** | An internal timer. The agent wakes up on its own, rereads its instructions, and runs background jobs — no command from you needed | [Schedule](/en/agents/schedule) |
+| **Memory** | Working memory is finite. A long conversation gets compressed and details get lost — so one agent does one big job, not everything at once | [Personality and Memory](/en/agents/personality) |
+
+<Warning>One big job — one agent. If you have a single agent track sales, book restaurants, and write code, its memory will overflow and it will start ignoring its own rules.</Warning>
+
+## The first day
+
+An agent needs some fine-tuning, and that's a normal part of the launch, not a malfunction.
+
+- The first conversation is an introduction: the agent asks how to address you and suggests a name for itself. It then writes your answers to its files on its own.
+- The first real task can take half an hour: it clarifies details, asks follow-up questions, and asks for help with access.
+- You don't need to be a programmer. Need a drive, email, or a spreadsheet? Ask in the chat "how do I connect it" — it explains step by step and installs the missing tools itself.
+- The same task tomorrow takes a minute: it wrote down how to do it and follows its own notes next time.
+
+## Limits
+
+Upfront, before you get started.
+
+| Limit | What it means |
+|---|---|
+| **Two agents at a time** | You can't deploy more than two agents on an account. To free up a slot, delete one in the **Agents** section |
+| **The agent fails silently** | It may report a task as done when part of it isn't. Verify important results yourself — [Where the agent breaks](/en/agents/limits) |
+| **Access is a risk** | The agent has a command line and your connections. Grant the minimum permissions — [Security and Access](/en/agents/security) |
+| **Usage is billed per model** | The agent thinks with a model and spends your account balance on it. You can connect [your own provider key](/en/agents/models) |
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How is an agent different from an AI Employee if both run on AI?">
+    Who it talks to and what it's allowed to do. An AI Employee talks to your customers using the Knowledge Base and doesn't go anywhere beyond its connected channels and talents. An agent talks to you, has its own workspace with files and a command line, and completes tasks rather than answering questions.
+
+    If the job sounds like "answer customers," you need an [AI Employee](/en/guides/ai-employees). If it's "do this for me," you need an agent.
+  </Accordion>
+
+  <Accordion title="Do I need to know how to code?">
+    No. All communication is a regular chat in Telegram or in the dashboard. The agent picks and installs its own tools, and if it lacks access, it explains step by step what to click.
+  </Accordion>
+
+  <Accordion title="Where does the agent physically live?">
+    In a container on the platform side: its own disk, its own command line, and its own public address for [sites](/en/agents/sites). You don't need to set up a server, and nothing is installed on your computer.
+  </Accordion>
+
+  <Accordion title="How long do I wait after clicking “Create agent”?">
+    About a minute — the container starts, the environment is prepared, and the tools are connected. You can close the page; the platform will email you when the agent is ready.
+  </Accordion>
+
+  <Accordion title="Can I have the agent answer customers?">
+    Technically it can write to messengers, but that's not its job: it has no Knowledge Base, Self-Learning, Working Hours, or answer quality control. For customers, use an [AI Employee](/en/guides/ai-employees).
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="What to assign an agent" icon="lightbulb" href="/en/agents/use-cases">
+    Five areas and real examples — where people usually start
+  </Card>
+  <Card title="Create an agent" icon="rocket" href="/en/agents/quickstart">
+    A three-step wizard and deployment in a minute
+  </Card>
+  <Card title="First Run" icon="comments" href="/en/agents/first-run">
+    What the agent asks in the first conversation and how to answer
+  </Card>
+  <Card title="Security and Access" icon="shield-halved" href="/en/agents/security">
+    Five rules that remove almost all the pain
+  </Card>
+</CardGroup>

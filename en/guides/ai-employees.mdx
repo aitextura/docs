@@ -1,208 +1,102 @@
 ---
 title: "AI Employees"
-description: "Manage your virtual agents: full list, three ways to create (from the template library, by website URL, blank agent), 12-tab editor, and status control on the AI TEXTURA platform."
+description: "Your list of AI Employees: hire a new one, open settings, copy, or delete."
 ---
 
-The **AI Employees** section is the control center for all your virtual agents. Here you can see the full list of employees, their statuses, connected channels, and the latest activity. This is also where you create new agents and open their settings.
+This is where all your AI Employees live: which ones have a channel connected, which one replied a minute ago, and which one has been idle for a month. From here you hire a new AI Employee and open the settings of an existing one.
+
+<Note>In the platform menu, this section is called **Agents**: the list holds both AI Employees and [Autonomous Agents](/en/agents) — a second type that doesn't talk to customers but works for you.</Note>
 
 <Frame>
-  <img src="/public/screenshots/10-agents-list.png" alt="AI employees list with self-learning informer and table" />
+  <img src="/public/screenshots/10-agents-list.png" alt="The AI Employees list: search, a hire button, and a table with statuses, channels, and last activity" />
 </Frame>
+
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/jsGSyJj9qN8" title="Create an AI Employee and connect it to a CRM in 30 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Hire an AI Employee
+
+Click **Hire Agent** in the top-right corner. There are three ways:
+
+| Option | What happens | Who it's for |
+|---|---|---|
+| **Manually** | You pick a ready-made template from the library — it comes with instructions already written for a typical task | Anyone getting started |
+| **From a website link** | The platform reads the page and builds the first instructions from it: the business, services, tone | If you have a website or landing page describing your services |
+| **From scratch** | A blank AI Employee with no instructions at all | Those who know exactly what they want to write |
+
+Right after hiring, the AI Employee editor opens. The first tab you see is [Persona](/en/guides/persona) — start there; the other settings are organized in tabs along the top.
+
+## The list
+
+Click a row to open that AI Employee's settings.
+
+| Column | What it shows |
+|---|---|
+| **Name** | The AI Employee's avatar and name |
+| **Status** | **Active** — the AI Employee is working |
+| **Created** | When the AI Employee was hired |
+| **Channels** | Icons of connected channels. A dash means the AI Employee isn't connected to anything yet and doesn't answer real customers |
+| **Talents** | How many talents are connected |
+| **Last activity** | When the AI Employee last replied in a conversation |
+| **Chats** | The **Live chat** button |
+| **Actions** | An on/off toggle and the **...** menu |
+
+The toggle turns the AI Employee off completely: it stops processing new messages, and customers get no reply. If you only want to take it off night shifts, use [Working Hours](/en/guides/working-hours) instead of turning it off.
+
+The **...** menu has three actions: **Edit** opens the settings, **Copy** creates a copy with all settings, and **Delete**.
+
+<Warning>Deletion can't be undone: the AI Employee is removed along with its Persona, knowledge, and connections.</Warning>
+
+## Live chat
+
+The **Live chat** button opens the same test chat you have inside the AI Employee. What makes it useful is that you can copy the link from the address bar and send it to anyone. The other person doesn't need a platform account or a connected channel: they open the link and talk to your AI Employee.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="The AI Employee is created but doesn't answer customers">
+    Check in this order: the toggle in the **Actions** column is on, at least one [channel](/en/channels/index) is connected, and it isn't a day off according to [Working Hours](/en/guides/working-hours).
+
+    If there are unconfirmed entries on the [Self-Learning](/en/guides/self-learning) tab, chats may be paused — review them.
+  </Accordion>
+
+  <Accordion title="Do I need a separate AI Employee for each property or branch?">
+    Not necessarily. If your properties follow the same rules, one is enough — describe each property in its own block in the [Persona](/en/guides/persona). Use separate AI Employees when properties have different services, different rules, or their own PMS: otherwise the AI Employee will start mixing their data in a single reply.
+  </Accordion>
+
+  <Accordion title="One channel for several branches — the AI Employee mixes up properties">
+    The clean solution is a separate channel and a separate AI Employee for each branch. If you have only one channel, add an explicit rule to the [Persona](/en/guides/persona): which property was asked about, and which source to take the data from.
+  </Accordion>
+
+  <Accordion title="I created an AI Employee from a website link, but it knows very little">
+    The platform reads only the page you linked, not the whole website. Check the result in the [Persona](/en/guides/persona) and add the rest to the [Knowledge Base](/en/guides/knowledge).
+  </Accordion>
+
+  <Accordion title="How do I hand a conversation over to another AI Employee?">
+    Use [Quick Answers](/en/guides/quick-answers): the **Transfer to another AI** action hands over the whole conversation, and **Get answer from another AI** brings a colleague's reply into the current conversation. This is also how you build a setup with a dispatcher AI Employee: it identifies the topic and routes the customer to the right specialist.
+  </Accordion>
+
+  <Accordion title="A colleague just needs to talk to the AI Employee — do they need an account?">
+    No. Send them the **Live chat** link. Only people who will log in to the platform and change settings need an account — add them to the [Organization](/en/guides/organization) with the right role.
+  </Accordion>
+
+  <Accordion title="How many AI Employees can I hire?">
+    The limit depends on your plan — you can see the current limits in the [billing section](/en/guides/finance).
+  </Accordion>
+</AccordionGroup>
+
+## What's next
 
 <CardGroup cols={2}>
   <Card title="Persona" icon="brain" href="/en/guides/persona">
-    Character, style, and role of your employee
+    Your AI Employee's character, role, and rules — setup starts here
   </Card>
   <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
-    Documents and information sources
+    The documents and data it draws answers from
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels/index">
+    Connect Telegram or a CRM, and your AI Employee starts answering customers
   </Card>
   <Card title="Talents" icon="puzzle-piece" href="/en/guides/talents">
-    Integrations and agent skills
-  </Card>
-  <Card title="Channels" icon="link" href="/en/channels/index">
-    Messengers and platform connections
+    Teach it to take action: deals, bookings, emails
   </Card>
 </CardGroup>
-
----
-
-## Video walkthrough
-
-A full end-to-end overview: from creating an AI employee to connecting your CRM — in 30 minutes. The fastest way to get up to speed with the product.
-
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/jsGSyJj9qN8" title="Create an AI employee and connect a CRM in 30 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
----
-
-## Self-Learning informer
-
-A banner like the following may appear at the top of the list page:
-
-> **Self-Learning: N entries are awaiting confirmation. Open the agent and confirm the answers — otherwise the chats stay paused.**
-
-This is a signal that one or more employees have accumulated training entries (FAQ self-learning) that require manual confirmation. Until you confirm them, the relevant chats are paused. Open the employee → **Self-Learning** tab and review the entries.
-
-<Tip>
-  Don't ignore this banner. Each confirmation makes the agent more accurate, and any paused chats won't get AI responses until you decide.
-</Tip>
-
-For details, see [FAQ / Self-Learning](/en/guides/faq).
-
----
-
-## Employee table
-
-The main part of the page is a table with name search and a **Hire Employee** button in the top-right corner. Click any row to open the employee editor.
-
-| Column | Description |
-|---|---|
-| **Name** | Technical name of the employee. Click to open settings |
-| **Status** | Current state: green **Active** badge or gray **Inactive** |
-| **Channels** | Connected messengers and platforms (for example, `@BotName · Telegram`) |
-| **Talents** | Number of active integrations (MCP tools) |
-| **Last Activity** | Date and time of the employee's most recent action |
-| **Live Chat** | Button/link to the public Live chat at `/live/:id` — handy for sharing an agent preview or quickly testing behavior |
-| **Actions** | On/off toggle and **...** menu with additional actions |
-
-<Note>
-  The **Live Chat** field opens a public dialog page — accessible without authentication, so you can show the employee to colleagues or a client before fully connecting a channel.
-</Note>
-
----
-
-## Creating a new employee
-
-Click **Hire Employee** in the top panel. The **New Employee** dialog opens with three creation paths.
-
-<Steps>
-  <Step title="Manual — from the template library">
-    Pick a ready-made template from the library. Available presets:
-
-    - **Personal Assistant** — general-purpose personal assistant
-    - **Learning Companion** — tutor and learning companion
-    - **Creative Helper** — creative helper for copy, ideas, and concepts
-    - **Health & Wellness** — health and lifestyle consultant
-    - **Task Management** — task and planning manager
-    - **Research Assistant** — research and analytics assistant
-    - **Other** — empty template with no preset instructions
-
-    The platform offers a scaffolded template for a typical task — just adapt it in the [Persona](/en/guides/persona) tab.
-  </Step>
-  <Step title="Automatic — from a website URL">
-    Paste your website address — the platform will analyze its contents, gather key facts (what business it is, services, tone) and prepare a starting employee profile. Convenient if you already have a landing page or a website describing your services and products.
-  </Step>
-  <Step title="Blank agent — from scratch">
-    No instructions, no templates — you configure everything from zero. Best for experienced users who know exactly which prompt they want to write.
-  </Step>
-</Steps>
-
-<Tip>
-  When in doubt — start with **Manual** using the **Other** or **Personal Assistant** preset. It's faster than blank and more universal than the niche-specific templates.
-</Tip>
-
-After creation, the employee appears in the table. Next, configure the [Persona](/en/guides/persona), connect a [Channel](/en/channels/index), and add the necessary [Talents](/en/guides/talents).
-
----
-
-## 12 tabs in the employee editor
-
-Clicking an employee in the table takes you to the **employee editor**. The top navigation has 12 tabs. Each is documented on its own page.
-
-<AccordionGroup>
-  <Accordion title="Full list of tabs">
-    1. [Persona](/en/guides/persona) — technical name, display name, avatar, instructions by section (plus Raw XML mode)
-    2. [Knowledge Base](/en/guides/knowledge) — folders/documents/articles, tied to "Agent Folders" mode
-    3. [Self-Learning](/en/guides/faq) — badge with the number of entries (`Self-Learning N`) awaiting confirmation
-    4. [Talents](/en/guides/talents) — catalog of 30+ integrations via MCP
-    5. [Channel](/en/channels/index) — messenger and CRM channel connections
-    6. [Quick Answers](/en/guides/quick-answers) — instant-reply templates
-    7. [Profiles](/en/guides/profiles) — client profile field configuration
-    8. [Working Hours](/en/guides/working-hours) — employee work schedule
-    9. [Auto Follow-up](/en/guides/auto-followup) — fallback messaging to clients
-    10. [Notifications](/en/guides/notifications) — alert triggers
-    11. [Versions](/en/guides/versions) — configuration version history
-    12. [Additional](/en/guides/additional-settings) — response language, voice (PRO/ElevenLabs), agent commands, behavior toggles
-  </Accordion>
-</AccordionGroup>
-
-At the top of any tab there's a **Show chat** toggle: it opens an embedded test chat on the right side, where you can verify the agent's behavior without connecting real channels.
-
-At the bottom — **"Previous step" / "Next step"** navigation between tabs and a floating panel **"You have unsaved changes / Cancel / Save"**.
-
-<Tip>
-  Every press of **Save** creates a new entry in [Versions](/en/guides/versions) — don't be afraid to experiment.
-</Tip>
-
----
-
-## Enabling and disabling an employee
-
-In the **Actions** column next to each employee there is a toggle:
-
-- **Enabled** — the employee is active and handles messages
-- **Disabled** — the employee is paused and new messages are not processed
-
-<Warning>
-  When an employee is disabled, clients will not receive a response. If you need to limit availability temporarily — consider configuring [Working Hours](/en/guides/working-hours) instead of fully disabling.
-</Warning>
-
----
-
-## Actions menu
-
-The **...** button in the **Actions** column contains:
-
-- **Edit settings** — open the employee editor
-- **Duplicate employee** — create a copy with all settings
-- **Delete employee** — permanently delete the employee
-
-<Warning>
-  Deletion is irreversible. Make sure you've saved everything you need before deleting.
-</Warning>
-
----
-
-## Frequently asked questions
-
-<AccordionGroup>
-  <Accordion title="How many AI employees can I create?">
-    The number depends on your subscription plan.
-  </Accordion>
-
-  <Accordion title="Which creation method should a beginner choose?">
-    The fastest path is **Manual** with a preset from the library (for example, **Personal Assistant** or a niche-specific template). If you have a website — try **Automatic from URL**: the platform builds the initial instructions from your site's content for you.
-  </Accordion>
-
-  <Accordion title="Can I duplicate an existing employee?">
-    Yes. Click **...** next to the employee and select **Duplicate**. A copy with all settings will be created.
-  </Accordion>
-
-  <Accordion title="The employee is created but doesn't reply to clients. What's wrong?">
-    Check three things:
-    1. Status — must be **Active**
-    2. At least one [Channel](/en/channels/index) is connected
-    3. [Working Hours](/en/guides/working-hours) — the employee may not be on shift right now
-
-    Also check the "Self-Learning: N entries awaiting confirmation" banner — if it's there, chats may be paused due to unconfirmed training entries.
-  </Accordion>
-
-  <Accordion title="What happens if I delete an employee?">
-    The employee is deleted together with all settings. Deletion is irreversible.
-  </Accordion>
-
-  <Accordion title="What does the Live Chat button in the table show?">
-    It's a public page at `/live/:id` — accessible without authentication, so you can test the employee or share a preview with a colleague. No need to connect real channels for this.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Best practice
-
-<Note>
-  **One employee — one job.** Two narrowly specialized employees outperform a single universal one. Narrow instructions produce higher-quality responses.
-</Note>
-
-<Note>
-  **Test through `Show chat`.** Before connecting a production channel, verify behavior in the embedded test chat on the employee page — it's free and instant.
-</Note>

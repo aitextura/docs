@@ -1,418 +1,185 @@
 ---
-title: "Knowledge and Knowledge Base"
-description: "How to upload, organize, and connect information sources to AI employees in AI Textura: the central repository and per-agent knowledge base configuration."
+title: "Knowledge Base"
+description: "A fact reference for your AI Employee: how to upload documents, a website, or a Google Sheet, and how to tune search across them."
 ---
 
-Knowledge is the foundation of accurate answers from your AI employee. Without a knowledge base, the agent relies only on instructions from the Persona and the model's general knowledge. With a knowledge base, it provides fact-backed data: prices, terms, descriptions, specifications.
+For your AI Employee to answer with your prices and terms instead of generic phrases, it needs a reference. The **Knowledge Base** is the tab where you put files, texts, and links: your AI Employee searches them for facts when it replies to a customer.
 
-<Frame><img src="/assets/images/en/screenshots/knowledge_1.png" /></Frame>
+<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/gagkwzwHFXo" title="How to add a Knowledge Base in AI TEXTURA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<CardGroup cols={2}>
-  <Card title="Persona" icon="user-pen" href="/en/guides/persona">
-    Define how your agent communicates
-  </Card>
-  <Card title="FAQ" icon="circle-question" href="/en/guides/faq">
-    Prepared answers and self-learning
-  </Card>
-  <Card title="Talents" icon="wand-magic-sparkles" href="/en/guides/talents">
-    Connect integrations and services
-  </Card>
-  <Card title="AI Employees" icon="users" href="/en/guides/ai-employees">
-    Manage all your virtual agents
-  </Card>
-</CardGroup>
+## Add files
 
-<Warning>
-  **Knowledge is static.** After uploading, content does not update automatically. If the original document has changed, you need to delete the old source and upload the new one.
-</Warning>
+Open your AI Employee → **Knowledge Base** tab.
 
-<Info>
-  [Persona](/en/guides/persona) defines **how** the employee responds (tone, style, behavior). **Knowledge Base** defines **what** it knows (facts, data, documents). These two tools work together: an instruction in the Persona can direct the employee to specific data from the knowledge base.
-</Info>
+<Frame>
+  <img src="/assets/images/ru/screenshots/knowledge_tab.png" alt="The “Knowledge Base” tab: “Add files” and “Connect existing” buttons and a list of sources with their status" />
+</Frame>
 
----
+The tab has two buttons:
 
-## Video walkthrough
+- **Add files** — upload new sources.
+- **Connect existing** — reuse sources from another of your AI Employees that's already set up. Select individual files or a whole folder: you don't need to upload a shared price list five times for five AI Employees.
 
-<iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/gagkwzwHFXo" title="How to add a knowledge base in AI Textura" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+A new source can be one of four types:
 
-A short video: how to upload documents and web pages into the knowledge base and connect them to an AI employee.
+**Files** — documents from your computer: PDF, DOCX, TXT, CSV, and more. Price lists, policies, service descriptions.
 
----
+**Text** — paste or type text right in the platform. An address, contacts, a short rule.
 
-## Two Places to Work with Knowledge
+**YouTube video** — a video link; the platform takes the text from its subtitles. Reviews, presentations, training recordings.
 
-AI Textura has two related but distinct sections for working with knowledge:
+**Web page** — a link to a website, Google Docs, or Google Sheets. For information that's already published and that you don't want to duplicate.
 
-| Section | Location | Purpose |
+<Warning>The Knowledge Base is static: an uploaded file doesn't track the original. If your price list changes, delete the old source and upload the new one.</Warning>
+
+## How it works
+
+The [Persona](/en/guides/persona) and the Knowledge Base split the work. In the Persona, you define behavior: how your AI Employee leads the conversation, what tone it uses, what it does in different situations. The Knowledge Base is only a fact reference — it doesn't change behavior.
+
+Here's how it works: documents are split into small chunks in advance. For each customer message, your AI Employee searches those chunks for ones whose words match the question and, if it finds them useful, answers based on them.
+
+The key takeaway: your AI Employee doesn't know "the whole document" — only the chunks that matched the question. A customer asks "do you have cartridges for the AQ-500 filter?" — the AI Employee finds chunks with the word "AQ-500" and answers from them. But for "do you have consumables?", the same chunk may not come up, even though it's in the Knowledge Base.
+
+<Note>Technically, this is RAG (retrieval-augmented generation) — first a search of the Knowledge Base, then an answer based on what was found. The practical takeaway: use the same words in your documents that your customers use in their questions.</Note>
+
+## Search settings
+
+The gray gear in the top-right corner of the tab opens **Search and Response Settings**. The defaults work for most cases — come here only if your AI Employee starts answering differently than you need.
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/knowledge_settings.png" alt="The “Search and Response Settings” panel: four response modes and sliders for the number of chunks and the match threshold" />
+</Frame>
+
+### Response mode
+
+What your AI Employee does when it finds no matching data in the Knowledge Base.
+
+| Mode | What happens | When to choose it |
 |---|---|---|
-| **Knowledge** | Left sidebar menu | Central repository of all sources across all employees |
-| **Knowledge Base** | Tab in a specific employee's settings | Select which sources from the repository to connect to the agent |
+| **Allow the agent to answer without data** | It answers on its own, based on the Persona and the model's general knowledge | When silence is worse than inaccuracy. There's a risk the AI Employee will make up a fact |
+| **Don't answer at all** | No message is sent to the customer; the chat stays silent | When a mistake costs more than a pause and a manager will pick up the conversation |
+| **Answer with a preset phrase** | Always the same phrase, which you write yourself | When you need a predictable reply: "Let me check with a manager and get back to you" |
+| **Generate a reply from instructions** | It writes a polite reply based on your instructions, in the customer's language | For multilingual channels. Slower, but sounds more natural |
 
-You can upload files from both places, but there is an important difference:
+### Number of chunks
 
-- **Uploading via the agent's "Knowledge Base" tab** -- the file automatically lands in that agent's subfolder inside **Agents** and is immediately connected to the employee.
-- **Uploading via the "Knowledge" section in the left menu** -- the file goes to the folder you selected, but is **not automatically connected** to any employee. You must manually check the checkbox in the desired agent's **Knowledge Base** tab.
+How many retrieved chunks your AI Employee uses for a single reply. The slider goes from 1 to 50.
 
----
-
-## "Knowledge" Section -- Central Repository
-
-The **Knowledge** section in the left sidebar is a shared repository of files and information sources across all employees. Here you can:
-
-- See the full picture: which sources are uploaded and which employees they are connected to
-- Organize information into folders
-- Add new sources
-- Delete outdated data
-
-<Frame>
-  <img src="/public/screenshots/51-knowledge.png" alt="Knowledge page: agent selector, mode tabs, folder tree, and file table" />
-</Frame>
-
-### Interface
-
-The screen is split into two parts:
-
-**Left panel -- folder tree.** A hierarchical structure of all knowledge. At the top level is the root folder **All knowledge**. Click any folder to display its contents in the right panel.
-
-**Right panel -- file table.** When you select a folder, a **Knowledge files** table appears:
-
-| Column | What it shows |
+| Value | What you get |
 |---|---|
-| **Name** | File name, URL, or text source name |
-| **Type** | Element type: Folder, Text, File, Web, etc. |
-| **Updated** | Date of last update |
+| 1–2 | Only the most similar chunk: precise and cheap, but your Knowledge Base must be flawless — one miss and there's no answer |
+| 3–10 | The working range: what's needed usually makes it in, with little noise |
+| 25–50 | Almost everything gets pulled in: the right chunk is definitely there, but along with a lot of unrelated text — the reply gets diluted and costs more words |
 
-Above the table you will find:
-- **Breadcrumbs** -- navigation through folder levels
-- **Agent selector** (`All agents`) -- show sources connected to a specific employee
-- **Mode tabs** (`Extended` / basic) -- switch between display modes
-- **Add button** -- create folders and upload sources
+How to choose for your Knowledge Base:
 
-Each item in the table has an actions button (three dots): rename, move, or delete.
+- If you have one or two short sources, 3–5 is enough.
+- If your Knowledge Base is large and varied (price list, policies, service descriptions), set 8–12: the right chunk may be spread across different documents.
+- If replies come out fragmented, as if your AI Employee saw only half — increase by 2–3.
+- If replies become long and "watery" — decrease by 2–3.
 
-### Agent Selector
+### Match threshold
 
-Above the table there is an **All agents** dropdown. This is the page's central filter:
+How closely a chunk must match the question to be used in the reply. The slider goes from 0.1 to 0.9; the default is 0.30.
 
-| Selection | What it shows |
+| Value | What you get |
 |---|---|
-| **All agents** | All sources and folders for all employees — overall view |
-| Specific employee | Only the sources **connected** to that employee. The folder tree collapses to the relevant branches |
+| 0.1–0.2 | Loose: almost any text qualifies, including text about something else. Your AI Employee answers off the point |
+| 0.3–0.5 | Moderate: loosely related chunks still get through, but most replies are on point |
+| 0.8–0.9 | Strict: only direct matches. Your AI Employee will discard some correct answers and stay silent |
 
-<Frame>
-  <img src="/public/screenshots/52-knowledge-agent.png" alt="Agent selector: filter sources by a specific AI employee" />
-</Frame>
+How to choose for your Knowledge Base:
 
-<Tip>
-  If you want to quickly see which knowledge a single employee actually "sees" — pick them in the selector. It's faster than going into their settings and opening the "Knowledge Base" tab.
-</Tip>
+- If your AI Employee often says "I don't know" even though the fact is in the Knowledge Base, lower the threshold in steps of 0.05 until answers appear.
+- If your AI Employee answers the wrong question and pulls in neighboring topics, raise the threshold in steps of 0.05.
 
-### `Extended` and basic modes
+<Tip>Change one setting at a time and test on real customer questions. If you move both sliders at once, you can't tell what actually helped.</Tip>
 
-The tabs next to the agent selector switch the page view:
+## The Knowledge section in the left menu
 
-| Mode | What it shows |
-|---|---|
-| **Basic** | A simple folder hierarchy and file table. Fits when there are few sources and you only need to add/remove files |
-| **Extended** | Expanded navigation with **Agent folders** (a separate branch per employee), a system **FAQ** folder, and custom folders. Useful as the knowledge library grows and sources get split across multiple employees |
+This is the shared storage for all sources across all your AI Employees: you can see what's uploaded where, organize files into folders, rename them, and delete what you don't need.
 
-<Frame>
-  <img src="/public/screenshots/53-knowledge-extended.png" alt="'Extended' mode: agent folders, system folders, and custom directories" />
-</Frame>
-
-### Agent folders
-
-In Extended mode, a separate subfolder is created automatically inside the **Agents** branch for each employee. Any source you upload from an employee's **Knowledge Base** tab lands here. The folder name matches the employee's name.
-
-**Example structure:**
-
-```
-All knowledge
-├── Agents
-│   ├── Administrator
-│   │   └── (empty)
-│   └── bitrix test
-│       └── ...
-├── FAQ
-│   └── ...
-└── Price lists 2026
-    └── ...
-```
-
-Agent folders help keep things tidy in a large catalog: you see which sources are tied specifically to a single employee while still using shared custom folders (like `Price lists 2026`) across multiple employees at once.
-
-### Folder Structure
-
-By default, the system organizes knowledge as follows:
-
-```
-All knowledge
-├── Agents
-│   ├── [Employee 1 name]
-│   │   ├── file.pdf
-│   │   ├── text
-│   │   └── ...
-│   ├── [Employee 2 name]
-│   │   └── ...
-│   └── ...
-├── FAQ
-│   └── ...
-└── [Your folders]
-    └── ...
-```
-
-- **Agents** -- a system folder. Subfolders are automatically created for each employee when you add sources via the **Knowledge Base** tab in the agent's settings.
-- **FAQ** -- a folder for entries from the [self-learning](/en/guides/faq) section that have been sent to the knowledge base.
-- **Custom folders** -- create them at any level to organize by topic, department, or project.
-
-<Tip>
-  Folder structure does not affect how the employee works -- it searches across all connected sources regardless of their location. Folders are purely for your convenience.
-</Tip>
-
-### Creating a Folder
-
-<Steps>
-  <Step title="Go to the Knowledge section">
-    Open the **Knowledge** section in the left sidebar.
-  </Step>
-  <Step title="Click the create button">
-    In the left panel, click the **"+"** icon next to the **Folders** heading.
-  </Step>
-  <Step title="Enter a name">
-    Provide a clear name -- for example, "Price lists", "Policies", "Room descriptions". The folder will appear in the tree.
-  </Step>
-</Steps>
-
-You can create folders within folders for deeper organization, for example: **Price lists → Summer 2026**, **Price lists → Winter 2026**.
-
----
-
-## "Knowledge Base" Tab -- Per-Employee Settings
-
-Open the desired AI employee → **Knowledge Base** tab. Here you select which sources from the shared repository to connect to this agent.
-
-<Frame>
-  <img src="/public/screenshots/41-agent-knowledge.png" alt="'Knowledge Base' tab in agent settings: folder checkboxes and file table" />
-</Frame>
-
-### Interface
-
-The screen is split into two parts:
-
-**Left panel -- folder tree.** All folders with knowledge sources. Each folder has a **checkbox**:
-
-| Checkbox state | Meaning |
-|---|---|
-| Checked | Sources from this folder are connected to the current employee |
-| Unchecked | Sources are not in use |
-| Partially checked | Some sources inside are connected, some are not |
-
-Simply check or uncheck a box to connect or disconnect an entire folder.
-
-**Right panel -- file table.** When you select a folder, it shows the **Knowledge files** table:
-
-| Column | What it shows |
-|---|---|
-| **Access** | Checkbox -- whether the source is connected to this employee |
-| **Name** | File name, URL, or text source name |
-| **Type** | Source type (Text, Folder, etc.) |
-| **Updated** | Date of last update |
-
-Above the table -- **breadcrumbs** for folder navigation.
-
-### Connecting Sources to an Employee
-
-<Steps>
-  <Step title="Open the Knowledge Base tab">
-    Go to the desired employee's settings → **Knowledge Base** tab.
-  </Step>
-  <Step title="Find the relevant sources">
-    In the left panel, locate the folder with the sources you need.
-  </Step>
-  <Step title="Check the box">
-    Mark the checkbox next to the folder or individual file.
-  </Step>
-  <Step title="Save">
-    Click **Save**. The same source can be connected to multiple employees.
-  </Step>
-</Steps>
-
-<Tip>
-  Organize sources into folders -- for example, one folder per employee or per topic. This makes access management easier as the number of sources grows.
-</Tip>
-
----
-
-## Four Ways to Add a Knowledge Source
-
-While in the desired folder (in either section), click the **Add source** button. Four options are available:
-
-### 1. Upload Files
-
-Upload documents from your computer. Supported formats:
-
-| Format | Description |
-|---|---|
-| **PDF** | Documents, price lists, catalogs |
-| **DOCX** | Word text documents |
-| **TXT** | Plain text files |
-| **CSV** | Data tables |
-
-**When to use:** you have ready-made documents -- price lists, policies, service descriptions, manuals.
-
-<Tip>
-  For best results, use structured documents with headings and lists. AI works much better with well-organized text than with a continuous stream of characters.
-</Tip>
-
-### 2. Text
-
-Manual entry or paste text directly into the platform.
-
-| Field | Description |
-|---|---|
-| **Name** (optional) | A clear name for the source |
-| **Content** | The text itself -- paste or type manually |
-
-**When to use:** you need to quickly add brief information -- an address, contacts, business hours, special terms.
-
-### 3. YouTube Video
-
-Import a video transcript from YouTube. Enter the **URL** -- the platform will automatically extract text from subtitles.
-
-**When to use:** useful information is contained in video reviews, presentations, or educational videos.
-
-<Warning>
-  Import only works with videos that have subtitles -- either automatic or uploaded by the author.
-</Warning>
-
-### 4. Web Page
-
-Import content by URL. Supports regular websites, **Google Docs**, and **Google Sheets**.
-
-| Parameter | Description |
-|---|---|
-| **URL** | Page address |
-| **Parse mode** | **Single page** -- only the specified URL. **Full site** -- recursive crawl of all pages |
-
-**When to use:** the information is already published on a website or in a Google document.
-
-<Tip>
-  To import from Google Docs or Google Sheets, simply paste the link -- the system will detect the format automatically. For private documents, you will need to grant access to the platform's service account -- the address is shown in the import dialog.
-</Tip>
-
----
-
-## Updating Knowledge
-
-Uploaded sources do not update automatically. If a price list has changed, the employee will continue using the old data.
-
-<Steps>
-  <Step title="Find the outdated source">
-    Go to the **Knowledge** section and locate the file.
-  </Step>
-  <Step title="Delete the old version">
-    Using the actions menu (three dots), delete the outdated source.
-  </Step>
-  <Step title="Upload the new version">
-    Upload the new file or re-import the page.
-  </Step>
-</Steps>
-
-<Warning>
-  When you delete a source, it disappears from **all** employees it was connected to. If you only need to remove it from one agent, uncheck the box in that employee's **Knowledge Base** tab instead of deleting the file.
-</Warning>
-
----
-
-## Actions Summary Table
-
-| Action | Where to do it |
-|---|---|
-| Upload a new source | **Knowledge** (left menu) or **Knowledge Base** (agent tab) |
-| Connect a source to an employee | **Knowledge Base** (agent tab) -- via checkboxes |
-| View all sources across all employees | **Knowledge** (left menu) |
-| Delete a source from the system | **Knowledge** (left menu) |
-| Disconnect a source from an employee (without deleting) | **Knowledge Base** (agent tab) -- uncheck the box |
-
----
-
-## Usage Examples
-
-<Accordion title="Hotel -- centralized knowledge base">
-  A hotel uploaded sources to the **Knowledge** section and organized them into folders:
-
-  ```
-  All knowledge
-  ├── Agents
-  │   ├── Concierge (Telegram)
-  │   └── Support (website widget)
-  ├── General documents
-  │   ├── House rules.pdf
-  │   ├── Price list 2026.docx
-  │   └── Room descriptions.txt
-  ├── Restaurants and spa
-  │   ├── Restaurant menu.pdf
-  │   └── Spa services.txt
-  └── Transfers
-      └── Routes and prices.txt
-  ```
-
-  "General documents" and "Restaurants and spa" are connected to both employees. "Transfers" is connected only to the Concierge. When spa prices changed, the manager deleted the old file and uploaded a new one. Both employees immediately received up-to-date data.
-</Accordion>
-
-<Accordion title="Online store -- separation by department">
-  Two agents: "Product Consultant" and "Customer Support".
-
-  - **Catalog** -- product descriptions, specs, availability. Connected only to the Consultant.
-  - **Policies** -- returns, shipping, warranty. Connected only to Customer Support.
-  - **General** -- contacts, business hours, promotions. Connected to both.
-
-  When a new product was added, the file went into "Catalog". The Consultant can immediately talk about it, while Customer Support does not even see it.
-</Accordion>
-
-<Accordion title="Online school -- uploading a schedule">
-  The school uploaded a class schedule as a CSV and connected it to the curator agent. Students ask "When is the next marketing class?" -- the curator finds the answer in the table. The schedule is updated monthly: the admin deletes the old CSV and uploads the new one.
-</Accordion>
-
----
-
-## Best Practices
-
-- **Clear file names.** "Price list 2026 March.pdf" is immediately understandable. "Document_final_v3(2).pdf" is not.
-- **Don't upload everything.** Each extra source is context the employee searches through. More irrelevant documents mean a higher chance of inaccurate answers.
-- **Structure your documents.** Use headings, lists, and tables. A long unstructured document is better split into several thematic files.
-- **Test after uploading.** Open a test chat and ask questions about the uploaded information.
-- **Keep data current.** Outdated data means incorrect answers. The employee does not know the information is stale.
-
----
+You don't need it for everyday work — everything you need happens on the **Knowledge Base** tab of a specific AI Employee. Look there when you have many sources and want to tidy up.
 
 ## FAQ
 
-<Accordion title="How many sources can I add?">
-  There is no limit on the number of sources. However, more sources means more tokens spent on search -- only add what the employee truly needs.
-</Accordion>
+<AccordionGroup>
+  <Accordion title="The AI Employee says “I don't know” even though the file is uploaded">
+    The customer uses different words than the ones in the document. Add your customers' wording to the document, lower the match threshold, or increase the number of chunks.
+  </Accordion>
 
-<Accordion title="Does data update automatically?">
-  No. All knowledge is static. If the original document has changed, you need to delete the old source and upload a new version. There is no automatic synchronization.
-</Accordion>
+  <Accordion title="The AI Employee makes up facts">
+    Switch the response mode to **Don't answer at all** or **Answer with a preset phrase**, and add a rule to the Persona forbidding answers without data from the Knowledge Base.
+  </Accordion>
 
-<Accordion title="Can I use one source for multiple employees?">
-  Yes. A source is stored in the **Knowledge** section and can be connected to any number of employees via checkboxes in each agent's **Knowledge Base** tab.
-</Accordion>
+  <Accordion title="The AI Employee quotes old prices">
+    Sources don't update themselves. Delete the old file and upload the new one.
+  </Accordion>
 
-<Accordion title="What happens if I delete a source in the Knowledge section?">
-  It disappears from all employees it was connected to. If you only need to remove a source from one agent, uncheck the box in the **Knowledge Base** tab instead of deleting the file.
-</Accordion>
+  <Accordion title="The AI Employee stays silent on some questions">
+    The mode is set to **Don't answer at all**, or the match threshold is too high. Lower the threshold in steps of 0.05 until answers appear.
+  </Accordion>
 
-<Accordion title="The employee is not using data from the knowledge base. What should I do?">
-  Check three things: (1) the source is connected -- the checkbox is checked in the **Knowledge Base** tab; (2) the information is well-structured -- use headings and lists; (3) the [Persona](/en/guides/persona) includes an instruction like "answer based on knowledge base data, do not make things up."
-</Accordion>
+  <Accordion title="Replies have become vague and “watery”">
+    Too many chunks or too low a threshold — your AI Employee is drowning in extra text. Reduce the number of chunks by 2–3 or raise the threshold.
+  </Accordion>
 
-<Accordion title="Does folder structure affect how the employee works?">
-  No. Folders are a tool for your convenience. The employee searches across all connected sources regardless of their folder location.
-</Accordion>
+  <Accordion title="How many sources can I add?">
+    There's no limit on the number. But every extra source is more text for your AI Employee to search through: the more irrelevant documents, the higher the chance of an inaccurate reply and the more words you use.
+  </Accordion>
 
-<Accordion title="What is better: uploading a file or entering text?">
-  If the information already exists in a document, upload the file. If you need a brief reference (address, contacts, a short rule), use text. For current information from a website, import the web page.
-</Accordion>
+  <Accordion title="Is the data updated automatically?">
+    No, all knowledge is static. If the original document changes, delete the old source and upload the new version. This applies to web pages too: the platform saves the text as of the import.
+  </Accordion>
+
+  <Accordion title="How do I prepare documents so search works better?">
+    The more structured the text, the more accurate the search. Headings, short paragraphs, lists, tables — the chunks come out meaningful. A solid twenty-page wall of text gets split at random, and the reply ends up with the middle of an unrelated thought.
+
+    Split a long document into several topic files and give them clear names: "Price list 2026 March.pdf" instead of "Document_final_v3(2).pdf".
+  </Accordion>
+
+  <Accordion title="The AI Employee's reply doesn't match what's in the Knowledge Base. Why?">
+    Most likely, the Persona kicked in, not the Knowledge Base. Check the instructions: if they include a scenario for this case, your AI Employee follows it instead of searching. The Knowledge Base handles facts; the Persona handles behavior.
+  </Accordion>
+
+  <Accordion title="The AI Employee gives inaccurate info about nearby restaurants and parks">
+    It gets general information about the city from the model itself, and that can be outdated. Upload your own file about the neighborhood — what's nearby, how to get there, opening hours — and add a rule to the [Persona](/en/guides/persona): answer questions about the area only from that file.
+  </Accordion>
+
+  <Accordion title="The PDF uploaded, but the AI Employee doesn't see it">
+    The file has no text layer: to the platform, a scan or a photo of a document is just an image. Open the PDF, copy the text into a Google Doc, and add a link to it — or paste the text as a **Text** source.
+  </Accordion>
+
+  <Accordion title="The website link was added, but none of its facts show up">
+    The platform takes only the text from the page: images, PDF attachments, and content loaded by scripts aren't read. If the website is protected against bots, the page is imported empty — copy the text manually and add it as a **Text** source.
+  </Accordion>
+
+  <Accordion title="My data changes every day — what should I do?">
+    The Knowledge Base is static, so it's not the place for daily stock levels, prices, and schedules. Your AI Employee gets live data through [talents](/en/guides/talents): a Google Sheet, CRM, or PMS answers it at the moment of the question.
+  </Accordion>
+
+  <Accordion title="A deleted source is still shown in the list">
+    It's no longer used in replies — this is a display delay. Refresh the page; if the row is still there, contact [Support](/en/guides/support) with the source name.
+  </Accordion>
+
+  <Accordion title="Several AI Employees need the same price list">
+    Don't upload it again: in the second AI Employee, click **Connect existing** and select the file or a whole folder. There will still be a single source, and any edit reaches all of them.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Persona" icon="brain" href="/en/guides/persona">
+    How your AI Employee leads conversations and what tone it uses
+  </Card>
+  <Card title="Self-Learning" icon="circle-question" href="/en/guides/self-learning">
+    Ready-made question–answer pairs for frequent requests
+  </Card>
+  <Card title="Talents" icon="bolt" href="/en/guides/talents">
+    Teach it to take action: deals, bookings, emails
+  </Card>
+  <Card title="Channels" icon="comments" href="/en/channels">
+    Connect Telegram or a CRM
+  </Card>
+</CardGroup>

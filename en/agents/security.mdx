@@ -1,0 +1,124 @@
+---
+title: "Security and Access"
+sidebarTitle: "Security"
+description: "Five rules for working with an autonomous agent: minimal permissions, separate accounts, no skills from strangers, and a \"show me first, then do it\" mode."
+---
+
+Your agent has a command line, access to your files, and access to whatever services you've opened to it. That's exactly what makes it useful, and exactly what makes mistakes expensive. The five rules below prevent most of the pain.
+
+## Five rules
+
+| Rule | Why |
+|---|---|
+| **Separate accounts, not your personal ones** | Give the agent its own email, its own spreadsheet access, its own account in each service. Then any mistake stays within that account |
+| **One task, one agent** | Different areas of responsibility mean different access and different risk. Don't put experiments next to money |
+| **Skills only from well-known authors** | A third-party skill is text with instructions that the agent will follow without a second thought |
+| **"Show me" first, then "do it"** | Permissions grow as trust grows, not in advance |
+| **The agent is an intern, not a genius** | It needs clear procedures and verifiable results, or you'll get confident nonsense |
+
+<Note>The rule "don't install the agent on your personal computer," familiar from self-hosted setups, doesn't apply here: the agent lives in a container on the platform side. Nothing runs on your machine, and the agent can't see your files, only what you've given it access to yourself.</Note>
+
+## What not to give
+
+| Don't give | Give this instead |
+|---|---|
+| Access to your personal email with delete rights | A separate mailbox or read-only access |
+| Keys to wallets, banking, or payment services | Nothing. Don't assign financial operations to an agent |
+| Admin passwords for production systems | An account with permissions scoped exactly to the task |
+| Access to the customer database "just in case" | An export of the part you need, in a file |
+
+<Warning>Anything the agent can do, it will eventually do by mistake, including irreversibly. Base your permissions on that, not on how well it has behaved so far.</Warning>
+
+## Who can message the agent
+
+The only barrier between the agent and outsiders is the list of Telegram IDs on the [Connect](/en/agents/connect) tab. Anyone on the list controls the agent: its files, its command line, its access.
+
+- Only add people you trust with that access in full.
+- When an employee leaves, remove their ID from the list.
+- Shared access "for the team" is a reason to create a separate agent with separate permissions.
+
+If anyone besides you messages the agent, turn off the **Command Execution** ability in [Abilities](/en/agents/skills). That's the first thing to lock down.
+
+## Skills from the catalog
+
+A skill is a plain text file with instructions. It can hide a command to find keys and send them to a third party, and the agent will follow it without a second thought: to the agent, it's just part of the instructions.
+
+<Steps>
+  <Step title="Check the author and stats">
+    A well-known author, thousands of installs, a recent update. This lowers the risk but doesn't remove it.
+  </Step>
+  <Step title="Read the file">
+    The skill is on the [Files](/en/agents/files) tab and opens as text. Anything that sends data outside is a reason to pass.
+  </Step>
+  <Step title="Better yet, ask for a skill written from scratch">
+    You can generate the skill you need for your task. That's more reliable than installing someone else's file for a single feature.
+  </Step>
+</Steps>
+
+<Note>Sometimes the agent refuses to install a suspicious skill on its own and tells you so. Treat that as luck, not a safety system: the decision is still yours.</Note>
+
+## What to put in Rules
+
+The agent rereads the **Rules** document on the [Personality](/en/agents/personality) tab in every new conversation, unlike what you say in chat, which is lost when history is compressed. A minimal set:
+
+- Don't message people or send emails without my confirmation.
+- Don't publish anything externally without my confirmation.
+- Don't delete files or emails; move them to an archive.
+- Don't spend money or place orders.
+- Only put things in the `site/` folder that can be shown to outsiders.
+- Before a task that changes live data, show the plan and wait for my reply.
+
+## Before a risky task
+
+<Steps>
+  <Step title="Download a backup">
+    **Settings → Management → Backup**. An archive of the agent's full state: [Maintenance](/en/agents/maintenance).
+  </Step>
+  <Step title="Ask for a plan">
+    "Describe step by step what you're going to do, and don't start yet." Half the problems show up right here.
+  </Step>
+  <Step title="Give a slice, not everything">
+    One folder, ten records, a test page. Once you've accepted the result, expand.
+  </Step>
+</Steps>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can the agent see the files on my computer?">
+    No. It runs in its own container on the platform side. It can only access what you put there or what you've given it access to.
+  </Accordion>
+
+  <Accordion title="Who else can read my conversations with the agent?">
+    Conversations and files live in the agent's container. It can be controlled by anyone with access to your AI TEXTURA account and by the people whose Telegram IDs you added on the **Connect** tab.
+  </Accordion>
+
+  <Accordion title="The agent deleted important data. Can I get it back?">
+    Only from a backup, if you have one. That's exactly why you should add a no-delete rule to **Rules**: have it move things to an archive instead of deleting them.
+  </Accordion>
+
+  <Accordion title="What do I do if access has leaked?">
+    Revoke keys and tokens in the services themselves, change passwords, remove extra Telegram IDs on the **Connect** tab, and if needed, stop the agent in **Management**. Then contact [Support](/en/guides/support).
+  </Accordion>
+
+  <Accordion title="Can I trust the agent to chat with customers?">
+    No. That's the job of an [AI Employee](/en/guides/ai-employees): it has a Knowledge Base, response quality control, and working hours. The agent has none of that, but it does have a command line, so don't let outsiders near it.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Where the Agent Fails" icon="triangle-exclamation" href="/en/agents/limits">
+    Four failures no setting can fix
+  </Card>
+  <Card title="Abilities and Skills" icon="bolt" href="/en/agents/skills">
+    What to turn off if others have access
+  </Card>
+  <Card title="Connect" icon="telegram" href="/en/agents/connect">
+    The list of people who can message the agent
+  </Card>
+  <Card title="Maintenance" icon="wrench" href="/en/agents/maintenance">
+    Backup, diagnostics, stopping the agent
+  </Card>
+</CardGroup>

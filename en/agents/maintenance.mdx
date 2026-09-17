@@ -1,0 +1,124 @@
+---
+title: "Agent Maintenance"
+sidebarTitle: "Maintenance"
+description: "Log, terminal, and container management: restart, diagnostics, agent panel password, backup, and deletion."
+---
+
+An agent is a running container, and sometimes you need to do something with it: restart it, see where it got stuck, or take a copy before a risky task. All of this lives in three settings sections: **Log**, **Terminal**, and **Management**.
+
+## Log
+
+**Settings → Log** is the agent's technical diary: what it did and where it got stuck.
+
+<Frame>
+  <img src="/assets/images/ru/agents/logs.jpg" alt="Log section: a live console with technical lines and an auto-refresh toggle" />
+</Frame>
+
+You don't need to read it in full, and it wouldn't help. Come here in two cases: the agent is silent and you want to know why, or support asks you to share the log lines. The **Auto** toggle keeps the console live, and there's a manual refresh button next to it.
+
+<Tip>When you contact [support](/en/guides/support), attach the last log lines from the time things broke. It speeds up troubleshooting many times over.</Tip>
+
+## Management
+
+**Settings → Management** covers everything you do with the container as a whole.
+
+<Frame>
+  <img src="/assets/images/ru/agents/manage-state.jpg" alt="Management section: the Status block showing Running and the Agent Panel block with a password" />
+</Frame>
+
+| Block | What it does |
+|---|---|
+| **Status** | Container status plus **Restart** and **Stop** buttons |
+| **Agent Panel** | Password for the agent's own panel. You don't need it in the workspace, only if you open the panel in another browser |
+| **Diagnostics** | Checks the container, the model key, channels, and stuck locks |
+| **Backup** | An archive of the agent's full state: settings, personality, memory, conversations |
+| **Danger Zone** | Deletes the agent |
+
+### Diagnostics
+
+This is the first thing to click when the agent behaves strangely. **Check** only inspects; **Check and Fix** repairs what it finds, and the agent may restart in the process.
+
+### Backup
+
+The **Download Backup** button gives you the archive. Make one before any major change: deleting skills, rewriting the personality, or giving the agent access to live data.
+
+<Frame>
+  <img src="/assets/images/ru/agents/manage-danger.jpg" alt="Diagnostics, Backup, and Danger Zone blocks with a press-and-hold delete button" />
+</Frame>
+
+### Deletion
+
+The Danger Zone button works on press-and-hold, not a click, so you can't trigger it by accident. The agent and all its data are deleted permanently: files, memory, conversations.
+
+<Warning>Deleting an agent is the only way to free up a slot if your account already has two deployed agents. Download a backup first: the platform can't restore a deleted agent.</Warning>
+
+## Terminal
+
+**Settings → Terminal** is a command line inside the agent's container.
+
+<Frame>
+  <img src="/assets/images/ru/agents/terminal.jpg" alt="Terminal section: Connected status and a real shell prompt" />
+</Frame>
+
+This section is for people who know what they're doing: you can break settings here. If you do, run **Diagnostics → Check and Fix**. You don't need the terminal for everyday work: the agent will do anything you need in the container if you ask in chat.
+
+## If the agent breaks
+
+<Steps>
+  <Step title="Check the status">
+    Look for the green dot next to the agent's name at the top of the workspace. No dot means the container isn't running.
+  </Step>
+  <Step title="Restart">
+    **Management → Restart**. It takes half a minute and clears most hang-ups.
+  </Step>
+  <Step title="Run diagnostics">
+    **Check and Fix** finds problems with the model key, a channel, or a stuck lock on its own.
+  </Step>
+  <Step title="Check the log">
+    If that didn't help, the last log lines show where it's stumbling.
+  </Step>
+  <Step title="Contact support">
+    Include the log lines and a description of what you did before it broke: [Support](/en/guides/support).
+  </Step>
+</Steps>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What's lost on restart?">
+    None of the files or memory: they're on the container's disk. Only current conversations, scheduled tasks, and connected channels are interrupted, for about a minute.
+  </Accordion>
+
+  <Accordion title="Does a stopped agent use budget?">
+    A stopped agent does nothing: no scheduled tasks, no replies. Spending comes from model work, and there's no work.
+  </Accordion>
+
+  <Accordion title="What's the agent panel password for?">
+    To open the agent panel outside the workspace, for example in another browser. You don't need it inside the workspace. The buttons next to the field show and copy the password.
+  </Accordion>
+
+  <Accordion title="Can I restore an agent from a backup myself?">
+    There's no backup upload button in the interface: you keep the archive, and restoring is handled with [support](/en/guides/support). That makes a backup insurance, not a full time machine.
+  </Accordion>
+
+  <Accordion title="The agent is running, but scheduled tasks are silent">
+    Check the log to see whether the task ran at all. After a migration or long downtime, background tasks may fail to start, and the agent won't tell you. See [Where the Agent Fails](/en/agents/limits).
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Where the Agent Fails" icon="triangle-exclamation" href="/en/agents/limits">
+    Common failures and how to catch them
+  </Card>
+  <Card title="Security and Access" icon="shield-halved" href="/en/agents/security">
+    Minimal permissions and a backup before risk
+  </Card>
+  <Card title="Models" icon="microchip" href="/en/agents/models">
+    Fallback models keep the agent from going silent
+  </Card>
+  <Card title="Support" icon="life-ring" href="/en/guides/support">
+    When you've tried everything
+  </Card>
+</CardGroup>

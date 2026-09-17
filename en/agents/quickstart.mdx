@@ -1,0 +1,142 @@
+---
+title: "Create an agent"
+sidebarTitle: "Create an Agent"
+description: "A three-step wizard: pick a role, pick an engine, wait for deployment. The agent is ready to work in about a minute."
+---
+
+You don't need to set up a server or configure an environment: you pick a role from a ready-made list, and the platform deploys a container and writes the agent's personality for you. From clicking the button to the first message takes about a minute.
+
+## Hire an agent
+
+The **Agents** section in the left menu is a shared list of all agents and AI Employees on the account.
+
+<Frame>
+  <img src="/assets/images/ru/agents/agents-list.jpg" alt="The Agents section: a table with Name, Status, Created, Channels, Talents, and Last Activity columns, and the Hire Agent button" />
+</Frame>
+
+| Column | What it shows |
+|---|---|
+| **Name** | The agent's name; click it to open its workspace |
+| **Status** | Running · Active · Paused |
+| **Channels** | Icons of connected messengers |
+| **Talents** | How many personas and skills are connected |
+| **Last Activity** | When the agent last did something |
+| **Live chat** | Opens the conversation right from the list |
+
+On the right of each row is an on/off toggle and a `...` menu with actions, including delete. At the top are a name search and the blue **+ Hire Agent** button — that's where it all starts.
+
+<Steps>
+  <Step title="Choose what you're creating">
+    The first wizard step, **"What are we creating?"**, has two cards: **AI Employee** (a bot for customers) and **Autonomous Agent** (an independent worker with its own workspace). Click the second one.
+
+    <Frame>
+      <img src="/assets/images/ru/agents/wizard-who.jpg" alt="The “What are we creating?” step: AI Employee and Autonomous Agent cards" />
+    </Frame>
+  </Step>
+
+  <Step title="Pick a role">
+    The **"Where do we start?"** step shows ready-made roles, each with a predefined personality and workflow. Six cards are visible; the **Show more** link expands all 25.
+
+    <Frame>
+      <img src="/assets/images/ru/agents/wizard-roles.jpg" alt="The “Where do we start?” step: the first six role cards" />
+    </Frame>
+
+    The **From scratch** link below the list creates an agent without a preset — you'll have to write its name and personality yourself. For the full list of roles and what they do, see [Roles](/en/agents/roles).
+  </Step>
+
+  <Step title="Pick an engine and a name">
+    The **"Set up the agent"** step. The **Name** field is prefilled with the role name; you can change it. Below it, choose the engine.
+
+    <Frame>
+      <img src="/assets/images/ru/agents/wizard-engine.jpg" alt="The “Set up the agent” step: OpenClaw or Hermes engine choice and the Name field" />
+    </Frame>
+
+    | Engine | What it means |
+    |---|---|
+    | **OpenClaw** | The agent has its own web interface — you open it via a link and see the full workspace. Selected by default |
+    | **Hermes** | No web interface: all communication and management go through messengers |
+
+    Click **Create agent →**.
+  </Step>
+
+  <Step title="Connect Telegram or skip">
+    Right after creation, the platform offers to connect Telegram — no token needed; the bot is created in a couple of taps. You can put this off: the **Skip for now** link moves on, and you can connect a channel later from the workspace.
+
+    Details: [Connect](/en/agents/connect).
+  </Step>
+
+  <Step title="Wait for deployment">
+    The **"Deploying the agent"** screen shows a timer and five stages: starting the container → preparing the workspace → connecting tools → setting up work rules → final checks.
+
+    <Frame>
+      <img src="/assets/images/ru/agents/build-progress.jpg" alt="The “Deploying the agent” screen: five stages, some with green check marks" />
+    </Frame>
+
+    In our run, this took 55 seconds. You can close the page — the platform will email you when the agent is ready.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/assets/images/ru/agents/build-done.jpg" alt="The “Automator is ready to work” screen with a green check mark and an offer to connect Telegram" />
+</Frame>
+
+## Check it
+
+Open the agent and click **Chat** in the top-right corner of the workspace — a side panel with the conversation opens.
+
+<Frame>
+  <img src="/assets/images/ru/agents/chat-empty.jpg" alt="The chat panel: “Automator is online,” an input field, and the “What can you do?” hint" />
+</Frame>
+
+Type "Hi". A fresh agent won't reply with a canned phrase — it starts getting to know you: asks how to address you and suggests a name for itself. This is the [first run](/en/agents/first-run) — it's written in a file on the agent's side and runs once.
+
+<Tip>A green dot next to the agent's name at the top means the container is running. If the dot isn't green, check [Maintenance](/en/agents/maintenance) — it has restart and diagnostics.</Tip>
+
+## Agent limit
+
+An account can have **no more than two agents** deployed at a time. If you try to create a third, the platform shows a warning and won't let you continue.
+
+To free up a slot: **Agents** → the `...` menu of the agent you don't need → **Delete** → confirm by typing its name. After that, the creation wizard works again.
+
+<Warning>Deletion is permanent: the agent's files, memory, and conversations go with it. If you still need the data, download a [backup](/en/agents/maintenance) first.</Warning>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Which engine should I choose if I don't understand the difference?">
+    Keep **OpenClaw** — it's selected by default and gives the agent its own web interface that opens via a link. Hermes is for when you don't need a web interface at all and all communication goes through a messenger.
+  </Accordion>
+
+  <Accordion title="I picked the wrong role — do I need to recreate the agent?">
+    No. A role is starting personality text, not a hard setting: open [Personality](/en/agents/personality) and rewrite the **Soul** document for your task. Changes take effect immediately; no restart needed.
+  </Accordion>
+
+  <Accordion title="Deployment is taking longer than a minute">
+    Wait for the email — you can close the page; the process runs on the platform side. If the agent never shows up in the list, contact [Support](/en/guides/support).
+  </Accordion>
+
+  <Accordion title="Can I create an agent without Telegram?">
+    Yes, click **Skip for now**. You can talk to the agent right in the workspace using the **Chat** button. Telegram can be connected later on the [Connect](/en/agents/connect) tab — its main purpose is getting results on your phone.
+  </Accordion>
+
+  <Accordion title="The agent is created but doesn't reply in the chat">
+    Check the status: a green dot next to the name means the container is running. If the agent was just restarted or you changed settings that require a restart, wait 20–30 seconds. Next step: **Settings → Management → Diagnostics**.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="First Run" icon="comments" href="/en/agents/first-run">
+    What the agent asks in the first conversation and how to answer
+  </Card>
+  <Card title="Connect" icon="telegram" href="/en/agents/connect">
+    Connect Telegram and manage the agent from your phone
+  </Card>
+  <Card title="Personality and Memory" icon="brain" href="/en/agents/personality">
+    Personality and memory files: what's in them and what to add
+  </Card>
+  <Card title="Roles" icon="id-badge" href="/en/agents/roles">
+    25 ready-made roles and what each one does
+  </Card>
+</CardGroup>

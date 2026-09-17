@@ -1,0 +1,124 @@
+---
+title: "Agent Tasks"
+sidebarTitle: "Tasks"
+description: "The agent's kanban board: you add a task, the agent picks it up. How to enable the board, what the eight columns mean, and how to create cards."
+---
+
+You can assign tasks in chat, but then they exist only in the conversation: it's hard to tell what the agent picked up, what's stuck, and what's done. The **task board** is a shared to-do list where each task is a card and you can see which stage it's in.
+
+## Enable the board
+
+The board is off by default — the **Tasks** tab shows an **Enable board** button.
+
+<Frame>
+  <img src="/assets/images/ru/agents/board-off.jpg" alt="The Tasks tab with the board disabled and an Enable board button" />
+</Frame>
+
+The platform warns you that the agent needs to restart: chats, automations, and connected channels will be interrupted for about a minute.
+
+<Frame>
+  <img src="/assets/images/ru/agents/board-restart.jpg" alt="The Agent will restart dialog with Cancel and Enable board buttons" />
+</Frame>
+
+<Note>Right after you enable it, the board may show "Couldn't load the task list" — the container is still restarting. Wait 15–20 seconds and click **Retry**.</Note>
+
+## Columns
+
+Eight columns, left to right, trace a task's path from idea to result.
+
+<Frame>
+  <img src="/assets/images/ru/agents/board-columns.jpg" alt="The task board: Ready, In progress, In review, Stuck, and Done columns" />
+</Frame>
+
+| Column | What's in it |
+|---|---|
+| **Triage** | The task is recorded but not yet defined as work |
+| **Queued** | Triaged and waiting its turn |
+| **Waiting** | Blocked: missing access, data, or your reply |
+| **Ready** | Can be picked up |
+| **In progress** | The agent is working on it right now |
+| **In review** | There's a result, and it needs your eyes |
+| **Stuck** | The agent couldn't finish — open the card to see why |
+| **Done** | Closed |
+
+The **Dispatch** button in the top right moves queued tasks into work in bulk — this is your "go ahead" command.
+
+<Tip>The **Columns / List** toggle switches the board view, and the **Hide empty columns** checkbox removes clutter: with only two or three tasks, eight columns just get in the way.</Tip>
+
+## New task
+
+Click **+ Card** in the top right, or **+** in the header of the column you want.
+
+<Frame>
+  <img src="/assets/images/ru/agents/board-new-task.jpg" alt="The New task dialog: What needs to be done, Details, Priority, Labels, and Column fields" />
+</Frame>
+
+| Field | What to enter |
+|---|---|
+| **What needs to be done** | The task title in one line, as in a to-do list |
+| **Details** | Optional, but this is where the agent learns what counts as a finished result |
+| **Priority** | Defaults to "Normal" |
+| **Labels** | Comma-separated: `website, urgent`. You can filter the board by them later |
+| **Column** | Where to put the card. If you don't pick one, it goes to the default column |
+
+Phrase the task as an outcome, not a direction: "put July expenses into a spreadsheet by category and send me the file" instead of "sort out the expenses."
+
+## How it works
+
+The board doesn't run the agent by itself — it gives the agent a queue to pull work from.
+
+<Steps>
+  <Step title="You add a card">
+    From the Agent Workspace or right from chat: ask the agent to create a task, and it will make the card itself.
+  </Step>
+  <Step title="You dispatch it">
+    Click **Dispatch** or move the card to **Ready**.
+  </Step>
+  <Step title="The agent picks it up and does it">
+    The card moves to **In progress**, and the result goes to **In review**.
+  </Step>
+  <Step title="You review">
+    If you accept it, close the card. If the agent couldn't finish, the card ends up in **Stuck** with the reason.
+  </Step>
+</Steps>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Tasks sit in the queue and the agent doesn't pick them up">
+    Queued tasks don't move into work on their own — click **Dispatch** or drag the card to **Ready**. If nothing happens after that, check the container status: the green dot next to the agent's name.
+  </Accordion>
+
+  <Accordion title="A card is stuck — where's the reason?">
+    Open the card in the **Stuck** column: the agent writes down where it stopped. Most often it's missing access, or the description leaves out the key thing — what counts as a finished result.
+  </Accordion>
+
+  <Accordion title="The agent reported “done,” but there's no result">
+    This happens: the agent may report success after completing only part of the work. Verify the actual result — the file, the email, the row in the spreadsheet. Learn more in [Where the agent breaks](/en/agents/limits).
+  </Accordion>
+
+  <Accordion title="The board disappeared after a restart">
+    Wait half a minute and click **Retry**: the task list is unavailable while the container is starting up. If that doesn't help, go to **Settings → Management → Diagnostics**.
+  </Accordion>
+
+  <Accordion title="How is the board different from the schedule?">
+    The board holds one-off tasks you add by hand. The [Schedule](/en/agents/schedule) holds recurring jobs the agent runs on its own at set times.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Schedule" icon="clock" href="/en/agents/schedule">
+    Jobs the agent runs on its own at set times
+  </Card>
+  <Card title="Connect" icon="telegram" href="/en/agents/connect">
+    Assign tasks and get reports from your phone
+  </Card>
+  <Card title="Team" icon="users" href="/en/agents/team">
+    Different personas for different kinds of tasks
+  </Card>
+  <Card title="Where the agent breaks" icon="triangle-exclamation" href="/en/agents/limits">
+    Why you should verify the actual result
+  </Card>
+</CardGroup>

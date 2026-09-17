@@ -1,140 +1,138 @@
 ---
 title: "Versions"
-description: "AI employee configuration history: browse, compare, and restore any previous state."
+description: "An AI Employee's configuration change history: view, compare, and roll back to any previous state."
 ---
 
-The **Versions** tab is a built-in "time machine" for your AI employee. Every save creates a full snapshot of the configuration, which is stored in the history. You can view any past version and restore it in one click.
+The **Versions** tab is a built-in "time machine" for your AI Employee. Every save creates a full snapshot of the configuration that's kept in the history. You can view any past version and restore it in one click.
 
-<Frame>
-  <img src="/public/screenshots/34-agent-versions.png" alt="Agent 'Versions' tab — save history with restore option" />
-</Frame>
+<Frame><img src="/public/screenshots/34-agent-versions.png" alt="The agent's Versions tab — save history with restore options" /></Frame>
 
 <CardGroup cols={2}>
   <Card title="Persona" icon="user" href="/en/guides/persona">
-    Role, tone, and instructions
+    The AI Employee's role, tone, and instructions
   </Card>
   <Card title="Knowledge Base" icon="book" href="/en/guides/knowledge">
     Connected data sources
   </Card>
-  <Card title="Additional" icon="sliders" href="/en/guides/additional-settings">
-    Language, voice, and agent commands
+  <Card title="Advanced" icon="sliders" href="/en/guides/additional-settings">
+    The AI Employee's language, voice, and commands
   </Card>
   <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Manage your virtual agents
+    Managing AI Employees
   </Card>
 </CardGroup>
 
 ---
 
-## How It Works
+## How it works
 
-A new version is created **every time you click "Save"** in any tab of the employee settings. Each version captures the **entire** configuration, not just the tab you changed.
+A new version is created **every time you click Save** on any tab of the AI Employee's settings. A version captures the **entire** configuration, not just the tab you changed.
 
 | Rule | Description |
 |---|---|
-| **No auto-save** | A version is created only by your action — when you click "Save" |
-| **Full snapshot** | Every version includes all tabs: [Persona](/en/guides/persona), [Knowledge](/en/guides/knowledge), [FAQ](/en/guides/faq), [Talents](/en/guides/talents), [Channels](/en/channels/index), [Quick Answers](/en/guides/quick-answers), [Profiles](/en/guides/profiles), [Working Hours](/en/guides/working-hours), [Auto Follow-up](/en/guides/auto-followup), [Notifications](/en/guides/notifications), [Additional Settings](/en/guides/additional-settings) |
-| **No limit** | The number of versions is unlimited — the platform stores the complete history from the moment the agent was created |
-| **No partial rollback** | Restoration replaces the entire configuration, not a single tab |
+| **No autosave** | A version appears only when you act -- when you click Save |
+| **Full snapshot** | Each version includes all tabs: [Persona](/en/guides/persona), [Knowledge Base](/en/guides/knowledge), [FAQ](/en/guides/self-learning), [Talents](/en/guides/talents), Channel, [Quick Answers](/en/guides/quick-answers), [Profiles](/en/guides/profiles), [Working Hours](/en/guides/working-hours), [Auto Follow-up](/en/guides/auto-followup), [Notifications](/en/guides/notifications), [Advanced](/en/guides/additional-settings) |
+| **No limit** | There's no limit on the number of versions -- the platform keeps the full history from the moment the AI Employee was created |
+| **No partial rollback** | Restoring replaces the entire configuration, not a single tab |
 
 <Tip>
-  Think of every save as a checkpoint. Before making significant changes, just click "Save" to lock in the current working state.
+  Think of each save as a checkpoint. Before making major changes, just click Save to capture the current working state.
 </Tip>
 
 ---
 
-## Versions Tab Interface
+## The Versions tab interface
 
-Open the desired AI employee and navigate to the **Versions** tab in the top navigation bar.
+Open the AI Employee you need and go to the **Versions** tab in the top navigation bar.
 
 | Element | Description |
 |---|---|
 | **Version list** | All saves, sorted from newest to oldest |
-| **Date and time** | Exact moment of each save (in your account's time zone) |
-| **Version number** | Auto-assigned sequential number. Numbering starts at 1 — the moment the employee was created |
-| **View** | Click a version to open the agent's configuration at that point in time (read-only mode) |
-| **"Restore This Version" button** | Makes the selected version the current configuration |
+| **Date and time** | The exact moment of each save (in your account's time zone) |
+| **Version number** | A sequential number assigned automatically. Numbering starts at 1 -- the moment the AI Employee was created |
+| **View** | Click a version to open the AI Employee's configuration as of that moment (read-only) |
+| **Restore this version button** | Makes the selected version the current configuration |
 
 ---
 
-## How to Browse the Change History
+## How to view the change history
 
 <Steps>
-  <Step title="Open the agent">
-    Go to the [AI Employees](/en/guides/ai-employees) section and select the desired agent.
+  <Step title="Open the AI Employee">
+    Go to the [AI Employees](/en/guides/ai-employees) section and select the AI Employee you need.
   </Step>
-  <Step title="Navigate to the Versions tab">
-    In the top bar, click the **Versions** tab. You will see a list of all saved versions — the most recent one at the top.
+  <Step title="Go to the Versions tab">
+    In the top bar, click the **Versions** tab. You'll see a list of all saved versions, newest at the top.
   </Step>
-  <Step title="Open the version you need">
-    Click on the desired version — a card with the configuration details at that point will open. Viewing is read-only — you cannot accidentally change anything.
+  <Step title="Open the version you want">
+    Click the version you need -- a card opens with the configuration details as of that moment. Viewing is read-only, so you can't change anything by accident.
   </Step>
 </Steps>
 
 ---
 
-## How to Restore a Previous Version
+## How to restore a previous version
 
 <Steps>
   <Step title="Go to the Versions tab">
-    Open the agent and click the **Versions** tab.
+    Open the AI Employee and click the **Versions** tab.
   </Step>
   <Step title="Find the version you need">
-    Select a version from the list and click on it. Make sure it is the right one by reviewing the parameters.
+    Select a version in the list and click it. Review the parameters to make sure it's the right one.
   </Step>
-  <Step title="Click 'Restore This Version'">
-    Click the **"Restore This Version"** button and confirm the action.
+  <Step title="Click Restore this version">
+    Click **Restore this version** and confirm.
   </Step>
 </Steps>
 
-Once confirmed, the agent's configuration will be replaced with the selected version, and it will immediately start operating with it.
+Once you confirm, the AI Employee's configuration is replaced with the selected version, and it immediately starts working with it.
 
 <Warning>
-  Restoration replaces the **entire** configuration — all tabs at once. If you only need to roll back a single parameter, view the desired version, find the value, and transfer it manually to the current configuration.
+  Restoring replaces the **entire** configuration -- all tabs at once. If you need to roll back only one parameter, view the version you need, find the value, and copy it into the current configuration manually.
 </Warning>
 
 <Note>
-  Restoration **does not delete** intermediate entries. The full history is preserved, and the restored configuration becomes a new (latest) entry in the history. You can always go back.
+  Restoring **doesn't delete** intermediate entries. The full history is kept, and the restored configuration becomes a new (latest) entry in the history. You can always go back.
 </Note>
 
 ---
 
-## What Is Saved in a Version
+## What a version includes
 
-A version is a full snapshot of the entire employee configuration:
+A version is a full snapshot of the AI Employee's entire configuration:
 
-| Tab | What it includes |
+| Tab | What's included |
 |---|---|
-| [Persona](/en/guides/persona) | Role, tone, all instruction blocks |
-| [Knowledge](/en/guides/knowledge) | Connected sources |
-| [FAQ](/en/guides/faq) | Questions and answers |
-| [Talents](/en/guides/talents) | Connected tools |
-| [Channels](/en/channels/index) | Communication channel settings |
-| [Quick Answers](/en/guides/quick-answers) | Quick response templates |
-| [Profiles](/en/guides/profiles) | Configured fields |
-| [Working Hours](/en/guides/working-hours) | Agent work schedule |
-| [Auto Follow-up](/en/guides/auto-followup) | Automatic follow-up message settings |
-| [Notifications](/en/guides/notifications) | Alert parameters |
-| [Additional Settings](/en/guides/additional-settings) | Language, voice, commands |
+| **[Persona](/en/guides/persona)** | Role, tone, all instruction blocks |
+| **[Knowledge Base](/en/guides/knowledge)** | Connected sources |
+| **[FAQ](/en/guides/self-learning)** | Questions and answers |
+| **[Talents](/en/guides/talents)** | Connected tools |
+| **Channel** | Communication channel settings |
+| **[Quick Answers](/en/guides/quick-answers)** | Quick reaction templates |
+| **[Profiles](/en/guides/profiles)** | Configured fields |
+| **[Working Hours](/en/guides/working-hours)** | The AI Employee's work schedule |
+| **[Auto Follow-up](/en/guides/auto-followup)** | Automatic follow-up message settings |
+| **[Notifications](/en/guides/notifications)** | Alert parameters |
+| **[Advanced](/en/guides/additional-settings)** | Language, voice, commands |
 
 ---
 
-## Practical Examples
+## Real-world examples
 
 <Accordion title="Rolling back after a bad change">
-  You rewrote the system prompt in [Persona](/en/guides/persona) and the agent started giving irrelevant answers. Instead of trying to recall the previous text, open **Versions**, find the stable version, and restore it. The agent will immediately return to its previous behavior.
+  You rewrote the system prompt in the [Persona](/en/guides/persona), and the AI Employee started giving off-topic replies. Instead of trying to remember the old text, open **Versions**, find a stable version, and restore it. The AI Employee immediately goes back to its previous behavior.
 </Accordion>
 
-<Accordion title="Checkpoint before an experiment">
-  Before a major overhaul of the sales script, click **Save** to lock in the current state. If the experiment fails, you can revert in seconds.
+<Accordion title="A checkpoint before an experiment">
+  Before a major rework of the script, click **Save** to capture the current state. If the experiment fails, you can go back in a second.
 </Accordion>
 
-<Accordion title="Comparing before and after">
-  The agent's performance has degraded, but you are not sure which change caused it. Open **Versions**, review the last few entries, and compare configurations to find the cause.
+<Accordion title="Before-and-after comparison">
+  The AI Employee's performance got worse, but you're not sure which change caused it. Open **Versions**, view the last few entries, and compare the configurations to find the cause.
 </Accordion>
 
-<Accordion title="Team collaboration">
-  If multiple people configure the same employee, the version history helps track who changed what and when.
+<Accordion title="Working as a team">
+  If several people configure the same AI Employee, the version history helps you track who changed what and when.
 </Accordion>
 
 ---
@@ -142,41 +140,41 @@ A version is a full snapshot of the entire employee configuration:
 ## FAQ
 
 <Accordion title="Is there a limit on the number of versions?">
-  No. The platform stores the complete history — you can go back to the very first configuration that existed when the agent was created.
+  No. The platform keeps the full history -- you can go back to the very first configuration from when the AI Employee was created.
 </Accordion>
 
 <Accordion title="Are versions created automatically?">
-  No, there is no auto-save. A new version is created only when you click the **"Save"** button in any settings tab.
+  No, there's no autosave. A new version is created only when you click **Save** on any settings tab.
 </Accordion>
 
-<Accordion title="What happens to the current configuration when I restore?">
-  It does not disappear. The system creates a new entry in the history — the current state becomes yet another version. You can return to it at any time.
+<Accordion title="What happens to the current configuration when I roll back?">
+  It isn't lost. The system creates a new entry in the history -- the current state becomes another version. You can return to it at any time.
 </Accordion>
 
-<Accordion title="Can I roll back only one tab?">
-  No, restoration replaces the entire configuration. If you need to change only one parameter, view the desired version, find the value, and transfer it manually.
+<Accordion title="Can I roll back just one tab?">
+  No, restoring replaces the entire configuration. If you need to change only one parameter, view the version you need, find the value, and copy it over manually.
 </Accordion>
 
 <Accordion title="Can I delete a version from the history?">
-  No. All versions are stored permanently and cannot be deleted. This is intentional — so you can always return to any state.
+  No. All versions are kept permanently and can't be deleted. This is intentional -- so you can always return to any state.
 </Accordion>
 
-<Accordion title="I didn't change anything but clicked 'Save' — will a duplicate be created?">
-  Yes, a new history entry will appear even if the content has not changed. This is harmless — you simply get an extra checkpoint.
+<Accordion title="I didn't change anything but clicked Save -- will that create a duplicate?">
+  Yes, a new entry appears in the history even if nothing changed. That's fine -- you just get an extra checkpoint.
 </Accordion>
 
 ---
 
-## Best Practices
+## Best practice
 
 <Note>
-  **Save before experimenting.** Before major changes, click "Save" — it takes a second but can save you hours of recovery work.
+  **Save before experimenting.** Before major changes, click Save -- it takes a second but can save you hours of recovery.
 </Note>
 
 <Note>
-  **Don't be afraid to experiment.** Versions are your safety net. Try something, don't like it, roll back.
+  **Don't be afraid to experiment.** Versions are your safety net. Try something -- don't like it -- roll back.
 </Note>
 
 <Tip>
-  **Live agent preview: `Show chat`.** Before saving the next version, try the new behavior right inside the editor — the **Show chat** toggle at the top opens a built-in test chat on the right. This lets you debug the [Persona](/en/guides/persona) and [Talents](/en/guides/talents) before the change ever reaches production.
+  **Agent live preview: `Show chat`.** Before saving another version, try the new behavior right in the editor -- the **Show chat** toggle at the top opens a built-in test chat on the right. This lets you debug the [Persona](/en/guides/persona) and [Talents](/en/guides/talents) before the change goes to production.
 </Tip>

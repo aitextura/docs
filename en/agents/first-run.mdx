@@ -1,0 +1,106 @@
+---
+title: "First Run"
+sidebarTitle: "First Run"
+description: "Your first conversation with the agent is an introduction and briefing, following a script the platform put in its file. What it asks, how to answer, and why the first task takes half an hour."
+---
+
+A fresh agent doesn't wait for commands — it starts the introduction itself and draws out what it needs to do its job. Half an hour for the first task and a minute for the same task a week later isn't an exaggeration, it's the usual curve: the agent writes down in its files how to do it.
+
+## The first conversation
+
+Type "Hi" — in the workspace chat, or in Telegram if the channel is already connected.
+
+<Frame>
+  <img src="/assets/images/ru/agents/chat-onboarding.jpg" alt="The agent's reply to “Hi”: a greeting, a question about how to address you, three name options, and a question about your routine" />
+</Frame>
+
+This isn't a canned greeting. The agent's memory has a `memory/ONBOARDING.md` file — a first-run script that it follows step by step and then deletes at the end: the file's absence is the "introduction complete" marker. You can view or rewrite the script on the [Personality](/en/agents/personality) tab.
+
+<Frame>
+  <img src="/assets/images/ru/agents/onboarding.jpg" alt="The ONBOARDING.md document: the “Introduction” and “Briefing” steps with the questions the agent asks on first run" />
+</Frame>
+
+## What it asks
+
+| Step | Question | What happens to the answer |
+|---|---|---|
+| **Introduction** | How to address you: your name, and whether to be formal or casual | Saved to the **About User** document |
+| **Introduction** | What to call the agent — it suggests 2–3 name options | Saved to the **Personality** document |
+| **Briefing** | What routine eats up your time every week | Becomes the basis for the first tasks |
+
+The questions come one at a time — answer the same way, one at a time. An agent that gets everything dumped on it at once will simply lose some of it.
+
+<Tip>Tell it your time zone in the very first conversation. Without it, scheduled jobs will run at the wrong time, and "send the summary at 6:00 PM" will come as a surprise.</Tip>
+
+## What to tell it right away
+
+The more precisely you describe your situation, the fewer questions it will ask later.
+
+- What your business does and who your customers are — in one paragraph.
+- Where the materials it will work with are: drive, spreadsheets, email.
+- How you want to receive results: briefly in Telegram, as a file, as a spreadsheet.
+- What it must not do without your permission — message people, publish, spend money.
+
+Duplicate that last point in the **Rules** document on the [Personality](/en/agents/personality) tab: the agent rereads what's written in the file in every new conversation, while what you said in the chat can be lost when the history gets compressed.
+
+## The first task
+
+Start with the routine you named in the briefing. Here's what happens next:
+
+<Steps>
+  <Step title="It clarifies the details">
+    It asks about the format, the data source, and what counts as a finished result. That's normal: the agent isn't a genius, it's a doer that needs boundaries.
+  </Step>
+  <Step title="It lacks access">
+    Need a drive, email, or a spreadsheet? Ask right in the chat: "how do I connect Google Drive?". It explains step by step what to click and installs the missing [skill](/en/agents/skills) itself.
+  </Step>
+  <Step title="It does the work and shows the result">
+    Check the actual result, not the report — the agent may say "done" after doing half. Learn more: [Where the agent breaks](/en/agents/limits).
+  </Step>
+  <Step title="It writes down how it was done">
+    The workflow goes into its files. Next time the same task takes minutes, because it doesn't need to figure it out again.
+  </Step>
+</Steps>
+
+<Warning>For the first tasks, use "show me what you're going to do" mode — and only then let it act on its own. Permissions grow as trust grows; they aren't granted in advance: [Security and Access](/en/agents/security).</Warning>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="The agent jumped straight into work and didn't say hello">
+    That means the first-run script has already been completed and the file deleted — this happens if you chatted with the agent earlier. No big deal: just tell it about yourself in a regular message, and it will add that to its files.
+  </Accordion>
+
+  <Accordion title="I gave the wrong answer — can I redo it?">
+    Yes. Everything it wrote down is stored as text on the [Personality](/en/agents/personality) tab: the **About User** document is about you, **Personality** is about the agent. Open it, edit, and click **Save**. Changes take effect in the next conversation; no restart needed.
+  </Accordion>
+
+  <Accordion title="It keeps asking the same thing">
+    Check whether the **Memory** ability is enabled under **Settings → Abilities**: without it, the agent doesn't retain facts between conversations. If it's enabled, write the recurring fact into the **Long-Term Memory** document yourself — that's more reliable than waiting for the agent to save it.
+  </Accordion>
+
+  <Accordion title="The first task has been running for an hour">
+    Stop it and break it into parts. A sign the task is too big: the agent goes in circles clarifying details instead of showing an intermediate result. Give it a piece, accept it, give it the next one.
+  </Accordion>
+
+  <Accordion title="I want to redo the introduction">
+    Open the **Personality** tab, find the `ONBOARDING.md` document in the **Memory** block, and paste the script back in — the agent will run it in the next conversation. You can easily write the script in your own words: it's plain text with steps.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Personality and Memory" icon="brain" href="/en/agents/personality">
+    The files where the agent records you and itself
+  </Card>
+  <Card title="Tasks" icon="table-columns" href="/en/agents/tasks">
+    A board that shows what it has taken on
+  </Card>
+  <Card title="Schedule" icon="clock" href="/en/agents/schedule">
+    The first scheduled job — a morning summary
+  </Card>
+  <Card title="Security and Access" icon="shield-halved" href="/en/agents/security">
+    What to allow, and what to hold back until trust is built
+  </Card>
+</CardGroup>

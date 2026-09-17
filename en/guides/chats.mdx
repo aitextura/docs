@@ -1,375 +1,202 @@
 ---
-title: "Chats — Dialog Management Center"
-description: "A unified inbox for all conversations between your AI employees and clients: monitoring, search, manager intervention, escalation mechanics, and agent control commands."
+title: "Chats"
+description: "All of your AI Employees' conversations with customers in one list: find a conversation, reply to the customer manually, and understand why the employee answered the way it did."
 ---
 
-The **Chats** section in the AI Textura platform's left menu is a single place where the entire conversation history between your AI employees and clients is collected. Here you can see every dialog, monitor response quality, intervene in a conversation, reply to a client personally, and analyze every AI response.
+A customer wrote at night, the employee replied — and in the morning you want to know what happened and step in if needed. **Chats** gathers the conversations of all your AI Employees across all channels into one list: read them, reply to customers yourself, and review every answer the employee gave.
 
-Think of it as a control room: all conversations are in front of you, you can see what is happening right now, and you can step in at any moment.
+## Find a conversation
 
-<Frame><img src="/public/screenshots/42-chats-list.png" alt="Chat list in the platform" /></Frame>
+The left column is a shared list of conversations across all employees and channels. The most recent conversations are at the top.
 
-<Note>
-  The **Chats** section is accessible in two ways: via the left menu (all dialogs across all employees) or via the **Live chat** button in the [AI employees](/en/guides/ai-employees) list (dialogs for a specific employee).
-</Note>
+<Frame>
+  <img src="/assets/images/en/screenshots/chats_1.png" alt="The Chats section: search, All employees and All channels filters, conversation list on the left" />
+</Frame>
 
-<CardGroup cols={2}>
-  <Card title="Persona" icon="brain" href="/en/guides/persona">
-    How the employee runs a dialog and when to call a manager
-  </Card>
-  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
-    Escalation triggers and alerts
-  </Card>
-  <Card title="Quick Answers" icon="bolt" href="/en/guides/quick-answers">
-    Templates and chat management
-  </Card>
-  <Card title="Profiles" icon="users" href="/en/guides/profiles">
-    Client data inside the dialog
-  </Card>
-</CardGroup>
+The **Search chat...** field searches by customer name everywhere at once: type "Egorchenko" and you'll get their conversations in Telegram bots for different projects and in email, in a single list. Next to it are two filters: **All employees** — keep only one AI Employee's conversations, and **All channels** — keep only one connection.
 
----
+<Tip>Filters combine. Select an employee and the Telegram channel, and you'll see only that employee's Telegram conversations. This is a handy way to check answer quality in one channel.</Tip>
 
-## Why open Chats
+What a card in the list contains:
 
-- Watch how AI employees communicate with clients
-- Quickly find a specific dialog by client name, channel, or employee
-- Intervene in a conversation when the situation requires a human
-- Handle escalations -- cases when an employee handed the dialog to a manager
-- Evaluate AI employee performance on real conversations
-
----
-
-## Interface overview
-
-### Dialog list (left panel)
-
-The left side of the screen displays a list of all chats. Each list item is a separate dialog with a client. Dialogs are sorted by time: the most recent ones appear at the top.
-
-| Element | Description |
+| Element | What it shows |
 |---|---|
-| **Client name** | Name or identifier if the name is not available |
-| **AI employee name** | Which employee is handling the dialog |
-| **Channel** | Where the client came from: Telegram, amoCRM, Bitrix24, website widget, etc. |
-| **Time** | Time of the last message |
-| **Message preview** | A snippet of the last message |
-| **Status** | Active, paused, or completed |
+| **Name** | The customer's name, or, if it couldn't be determined, the channel or company name |
+| **Red circle with a number** | How many messages you haven't read yet |
+| **"employee · channel" line** | Who's handling the conversation and which connection it came through: "Anna · @GreenParkTestBOT" |
+| **Date and time** | When the last message arrived |
+| **Pink "AI off" badge** | The employee is stopped in this chat, and you're expected to reply |
 
-### Conversation view (center panel)
+## Conversation window
 
-Click any dialog in the list -- the full conversation history opens on the right. Messages are displayed like a regular messenger: client on the left, employee on the right. Each message includes a timestamp.
+Click a conversation to open it on the right. The header shows the customer's name, the caption "with [employee name] · [channel]," and the **•••** button — the chat control menu.
 
-The chat header shows: client name, AI employee name (`with {agent}`), channel (`· {channel}`), and the `⋮` menu button on the right — it opens the [chat action menu](#chat-action-menu).
+<Frame>
+  <img src="/public/screenshots/87-chat-menu-options.png" alt="An open conversation: the red AI stopped banner, a customer message on the left, a manager message, a pause label, an employee reply, and the input field" />
+</Frame>
 
-At the bottom of the window is the **message input field** -- this is how a manager can reply to the client manually.
+Customer messages appear on the left in gray; the AI Employee's replies appear on the right in blue, labeled with its name. Days are separated by a date chip, and the platform marks system events with a label in the center of the feed: "Chat paused after a manager's message," "Conversation history cleared."
 
-<Frame><img src="/public/screenshots/43-chat-open.png" alt="Open chat with a client" /></Frame>
+The red **AI stopped** banner appears when the employee is turned off in this specific chat. Next to it are two buttons: **Turn on AI** brings the employee back into the conversation, and **Clear history** erases the context it keeps in mind.
 
-### Chat info panel (right column)
+<Note>**Clear history** doesn't delete the conversation from **Chats** — it only resets what the employee takes into account for its next reply.</Note>
 
-The right column displays additional information about the current dialog: client profile, channel, employee name, and status. See [Dialog details](#dialog-details) for more.
+## Reply yourself
 
-<Frame><img src="/public/screenshots/83-chat-info-panel.png" alt="Chat info panel" /></Frame>
+The **Enter a message...** field at the bottom is for your manual reply to the customer. The message goes to the same channel the conversation is in: if the customer wrote in Telegram, they get it in Telegram — no need to switch anywhere.
 
----
+As soon as you send a message, the AI Employee pauses in this conversation so it doesn't interrupt a live person.
 
-## Status indicators and quick buttons
-
-Above the conversation feed and within the message stream, the platform shows several state indicators — they help you understand whether the AI employee is active in this dialog.
-
-| Indicator | When it appears | What it means |
-|---|---|---|
-| **"Chat paused after a manager message"** | Right after a manager writes a message into the chat | The AI employee is temporarily disconnected from this dialog — the manager is writing. See [Manager intervention](#manager-intervention) |
-| **"AI stopped"** | When the employee is disabled in this chat (by command, pause, or manually) | The client is writing into the void — the AI will not reply until it is started |
-| **"Enabled"** / **"AI is working"** | The employee is active in the chat | All incoming messages will be processed by the AI |
-
-Above the feed there are quick buttons:
-
-| Button | Action |
+| What happens | How it works |
 |---|---|
-| **Enable AI** | Resumes AI employee work in this chat immediately. Appears when AI is stopped or paused |
-| **Clear history** | Wipes the current dialog context. The AI employee will forget everything said before. Use for testing or to reset a conversation |
+| Customer messages | Keep arriving and being saved in the conversation |
+| AI Employee | Stays silent while you handle the conversation |
+| Return | After 10–20 minutes without activity from you, the employee returns to the conversation on its own |
 
-<Tip>
-  The **Clear history** button does not delete the conversation from your chat history — it only resets the context the AI employee considers for its next reply. The same is done by the **Wipe memory** action in the action menu and by the text command (default `delete all`, see [Account Settings](/en/guides/account-settings)).
-</Tip>
+You can bring it back sooner with the **Turn on AI** button above the feed or the **Resume AI** item in the chat menu. If the employee hasn't returned even after half an hour, the **Stop after manager reply** setting is enabled on the [Additional Settings](/en/guides/additional-settings) tab — that's also where you configure text commands a manager can use to stop and start the employee right from the messenger.
 
----
+## Response analysis
 
-## Chat action menu
+The chart icon under an AI Employee's reply opens the **Response analysis** panel on the right — a full trace of how that reply was put together. This is the first thing to open when the employee answered wrong; otherwise you're editing the [Persona](/en/guides/persona) blindly.
 
-The `⋮` button on the right side of the chat header opens the action menu — this is the **central control panel** for a specific dialog. It exposes commands that are not in the main interface.
-
-<Frame><img src="/public/screenshots/86-chat-actions-menu.png" alt="Chat action menu (three-dot button)" /></Frame>
-
-| Action | What it does |
+| Panel block | What's in it |
 |---|---|
-| **Share link** | Creates a public link of the form `/live/:id` — you can send it to a colleague or client so they can see the chat and reply from a browser if needed. See [Live chat](#live-chat--public-view) |
-| **Resume AI** | Lifts the pause: the AI employee starts processing messages in this dialog again. Equivalent to the AI start command |
-| **Hide deleted messages** | Hides messages marked as deleted from the feed. Useful for a clean stream without service noise |
-| **Report (all messages)** | Generates a complete dialog report — all messages, including archived ones. Used to analyze a specific case or attach to a [Support](/en/guides/support) ticket |
-| **Report (without archive)** | A short report — only active messages, without deleted or archived ones. Convenient for quickly sharing the gist of the conversation |
-| **Wipe memory** | Fully clears the dialog context, just like the `delete all` command in chat. The employee continues with a clean slate |
-| **Client profile** | Opens the [Client profile](/en/guides/profiles) — a card with fields the AI extracted from the conversation (name, language, custom fields) |
-| **Open employee** | Jumps to the AI employee settings handling this dialog — a fast way to tweak the [Persona](/en/guides/persona), [knowledge base](/en/guides/knowledge), or [notifications](/en/guides/notifications) |
+| **Agent response** | The text sent to the customer |
+| **Why the agent answered this way** | Whether something similar was found in [Self-Learning](/en/guides/self-learning), whether anything was found in the [Knowledge Base](/en/guides/knowledge), or whether the employee answered from the model's general knowledge |
+| **Language detection** | Which language the platform detected in the customer's message |
+| **What the agent did** | Which [talents](/en/guides/talents) it called and how that went |
+| **Final decision** | One line: what the customer ultimately got |
+| **Message log** | Step-by-step processing with timestamps — security check, assembling the final reply |
+| **Technical data** | Raw JSON for developers |
 
-<Frame><img src="/public/screenshots/87-chat-menu-options.png" alt="Expanded chat action menu" /></Frame>
+At the bottom of the panel is the **Get recommendations** button: the platform analyzes this specific case and suggests targeted changes to the employee's settings.
 
-<Tip>
-  **Report (all messages)** and **Report (without archive)** are especially useful when contacting [Support](/en/guides/support): the ticket already includes the context, and the team can investigate faster. The same is done automatically by the [thumbs-down button](/en/guides/support#how-to-report-an-ai-response-thumbs-down) — it attaches a "Context report" on its own.
-</Tip>
+<Tip>Often there's nothing to fix: the employee simply didn't find a document in the Knowledge Base or didn't call the right talent. The analysis shows this right away, before you rewrite the instruction.</Tip>
 
----
+## Reporting a bad answer
 
-## Per-message actions
-
-Every AI employee message has its own set of buttons — they appear on hover or below the message.
-
-| Button | What it does |
-|---|---|
-| **Copy** | Copies the message text to the clipboard |
-| **Delete message** | Marks the message as deleted. It is also removed from the AI's context — the next reply will not consider deleted text |
-| **Mark response as unhelpful** (thumbs down) | Triggers the 4-step bad-response review with automatic ticket creation in support. See [How to report an AI response](/en/guides/support#how-to-report-an-ai-response-thumbs-down) for details |
-| **Response analysis** | Opens a technical breakdown: which language the agent detected, which [talents](/en/guides/talents) it used, what it found in the [knowledge base](/en/guides/knowledge), and how it reached the final decision. Helps you understand why the AI responded the way it did |
-
-<Note>
-  Thumbs down is **not just a rating**. The button launches a full support flow: auto-diagnostics → instruction check → your problem description → automatic report attachment. Use it whenever the AI employee gave a wrong answer — the AI training team typically replies within 3 business days. See [How to report an AI response](/en/guides/support#how-to-report-an-ai-response-thumbs-down).
-</Note>
-
-<Tip>
-  **Response analysis** is the best debugging tool. Before changing the [Persona](/en/guides/persona) or [instructions](/en/guides/rules-hub), look at the analysis: maybe the AI simply didn't call the right [talent](/en/guides/talents) or didn't find the document in the [knowledge base](/en/guides/knowledge).
-</Tip>
-
----
-
-## Search and filtering
-
-<AccordionGroup>
-  <Accordion title="Search bar">
-    At the top of the dialog list there is a search bar (`Search chat...`). Enter a client name, keyword, or conversation fragment -- the list filters in real time.
-  </Accordion>
-  <Accordion title="Filter by employee">
-    Shows dialogs for a specific AI employee only. Useful when you have multiple employees and want to analyze the work of one of them.
-  </Accordion>
-  <Accordion title="Filter by channel">
-    Filters by source: Telegram, amoCRM, Bitrix24, Wazzup, web widget, and any other connected channels. The channel list is built automatically from your connected channels.
-  </Accordion>
-</AccordionGroup>
-
-<Tip>
-  Combine filters. For example, pick a specific employee and the Telegram channel — you'll only see that employee's Telegram conversations. This is convenient for analyzing performance in a specific channel.
-</Tip>
-
-<Frame><img src="/public/screenshots/44-chat-with-history.png" alt="Chat with accumulated conversation history" /></Frame>
-
----
-
-## Manager intervention
-
-One of the key capabilities of the **Chats** section is manual manager intervention in a conversation handled by an AI employee.
-
-### How to step in
+The thumbs-down under an employee's reply opens the **What went wrong?** panel. It's not a rating — it's a fork into two scenarios.
 
 <Steps>
-  <Step title="Open the Chats section">
-    From the left menu or via the **Live chat** button in the employees list.
+  <Step title="Describe the problem">
+    In your own words: "replied in the wrong language," "made up delivery terms," "ignored the question about price."
   </Step>
-  <Step title="Find the dialog">
-    Use search or filters to find the dialog, then click on it.
+  <Step title="Choose the closest option">
+    **Made up facts**, **Didn't understand the question**, **Didn't use knowledge**, **Tone / rudeness**, **Response length**, or **Other**.
   </Step>
-  <Step title="Read the conversation history">
-    Assess the context and decide whether intervention is needed.
-  </Step>
-  <Step title="Send a message">
-    Type your message in the input field at the bottom and send it. The client will see your reply in their messenger.
+  <Step title="Click Fix with AI">
+    The platform analyzes the case in the background — you can keep working — and shows the proposed settings changes before applying them.
   </Step>
 </Steps>
 
-### What happens after intervention
+If the instruction isn't the issue, click **The problem isn't the instruction — it's a technical error**: this opens the **Contact support** form with the fields "What went wrong" and "What the reply should have contained." The case report and a link to the message are attached to the request automatically — no need to retell the conversation. What happens to the request next is covered in [Support](/en/guides/support).
 
-As soon as the manager sends a message, the AI employee **automatically pauses** in that specific dialog. It will not interrupt the human.
+## Chat menu
 
-| Behavior | Description |
+The **•••** button in the conversation header opens a menu with two blocks: controls for this chat and navigation.
+
+<Frame>
+  <img src="/public/screenshots/86-chat-actions-menu.png" alt="The ••• menu: chat controls — share link, resume AI, hide deleted messages, two reports, erase memory; navigation — customer profile, open employee" />
+</Frame>
+
+| Item | What it does |
 |---|---|
-| **Client messages** | Continue to arrive and are saved in history |
-| **AI employee** | Remains paused while the manager handles the dialog |
-| **Auto-resume** | After 10-20 minutes of manager inactivity, the AI may automatically resume work |
+| **Share link** | Gives a direct link to view the conversation that opens without signing in to the platform |
+| **Stop AI** / **Resume AI** | Turns the employee off and on in this chat only, without affecting other conversations |
+| **Show deleted messages** | Brings messages previously deleted from the chat back into the feed. They're hidden by default |
+| **Report (all messages)** | A line-by-line export of the conversation with roles, timestamps, and a log under each employee reply |
+| **Report (without archive)** | The same, but without the archived part of the history |
+| **Erase memory** | Resets the context the employee has accumulated for this customer |
+| **Customer profile** | Opens the customer card — [Profiles](/en/guides/profiles) |
+| **Open employee** | Goes to the settings of the AI Employee handling this chat |
 
-<Warning>
-  Auto-resume after a pause is a configurable behavior. For 24/7 support, auto-start after a pause is almost always useful. For premium sales where a human touch matters, it is better to disable it.
-</Warning>
-
----
-
-## Agent control commands
-
-Managers can control an AI employee directly from a messenger using service commands. Commands are configured in the [Additional Settings](/en/guides/additional-settings) tab for each employee.
-
-| Command | What it does |
-|---|---|
-| **AI start command** | Activates the employee in the chat (you set the text) |
-| **AI stop command** | Pauses the employee (you set the text) |
-| **Clear memory command** | Resets the dialog context -- the conversation starts from scratch (default: `delete all`) |
-| **Protection command** | Activates protection against prompt injection attempts (you set the text) |
-
-<Tip>
-  Start and stop commands are especially convenient for managers who work directly in a messenger. They can quickly enable or disable an employee in a specific chat without opening the AI Textura dashboard.
-</Tip>
-
----
-
-## Escalation -- when an employee hands off to a manager
-
-Escalation is a situation when an AI employee recognizes it cannot or should not handle a request on its own and transfers the dialog to a human.
-
-### When escalation triggers
-
-Escalation triggers in cases that you define in advance:
-
-- In the employee's [Persona](/en/guides/persona) (the "When to call a manager" or "Escalation" block)
-- In [Notifications](/en/guides/notifications) (triggers that send an alert and pause the chat)
-- In [Quick Answers](/en/guides/quick-answers) (actions of the "Chat management" type with a pause)
-
-### What it looks like for a manager
-
-<Steps>
-  <Step title="Receive a notification">
-    The manager receives a notification in Telegram (or via webhook) that the employee handed off the dialog.
-  </Step>
-  <Step title="Find the dialog in Chats">
-    In the **Chats** section, the dialog is displayed with a status indicating that intervention is needed.
-  </Step>
-  <Step title="Reply to the client">
-    Open the conversation, read the context, and reply to the client.
-  </Step>
-</Steps>
-
-### Employee behavior on escalation
-
-| Trigger setting | Behavior |
-|---|---|
-| **Pause chat for N time** | The employee pauses for the specified duration. If the manager does not connect, the employee resumes automatically |
-| **Forced pause** | The employee stops completely. Work resumes only manually (via the start command or the interface) |
-
----
-
-## Dialog details
-
-When you open a specific chat, in addition to the conversation history, additional information is available:
-
-- **Client profile** -- filled fields: name, language, preferences, and any data the AI extracted from the conversation (see [Profiles](/en/guides/profiles))
-- **Channel** -- which messenger or CRM the conversation is going through
-- **AI employee name** -- which employee is handling this dialog
-- **Dialog status** -- whether the employee is active or paused
-
-<Frame><img src="/public/screenshots/49-chat-full-view.png" alt="Full chat view with all panels" /></Frame>
-
----
-
-## Live chat — public view
-
-"Live chat" is a public chat page at `/live/:id`, accessible by direct link without logging into the platform. It is useful for:
-
-- **Sharing a dialog with a colleague** who doesn't have a platform account.
-- **Giving the client an alternative way to reply** — straight from the page, without a messenger.
-- **Testing AI responses** in a regular web-chat format (handy when developing a prompt).
-
-### How to create the link
-
-<Steps>
-  <Step title="Open the chat">
-    Go to the **Chats** section and pick the dialog.
-  </Step>
-  <Step title="Open the action menu">
-    Click the `⋮` button on the right of the chat header.
-  </Step>
-  <Step title="Choose 'Share link'">
-    The platform will generate a public link to this chat.
-  </Step>
-  <Step title="Send the link">
-    Copy the URL and send it to the recipient any way you like.
-  </Step>
-</Steps>
-
-<Frame><img src="/public/screenshots/78-live-chat.png" alt="Public Live chat page" /></Frame>
-
-<Warning>
-  Anyone with the `/live/:id` link will see the chat contents. Don't share the link if the dialog contains confidential client data.
-</Warning>
-
----
-
-## Related sections
-
-| Section | How it relates to Chats |
-|---|---|
-| **[Persona](/en/guides/persona)** | Defines how the employee runs dialogs and when it calls a manager |
-| **[Notifications](/en/guides/notifications)** | Configures escalation triggers: when and how the manager learns about problematic dialogs |
-| **[Quick Answers](/en/guides/quick-answers)** | Can manage the chat: pause, transfer to another employee |
-| **[Profiles](/en/guides/profiles)** | Client data visible in the chat |
-| **[Auto Follow-up](/en/guides/auto-followup)** | Follow-up messages if the client goes silent |
-| **[Additional Settings](/en/guides/additional-settings)** | Agent control commands from the messenger, message limits |
-| **[Channels](/en/channels/index)** | Sources through which messages arrive in the chat |
-| **[Support](/en/guides/support)** | The thumbs-down button on an AI response triggers the review and creates a ticket automatically |
-
----
-
-## Practical tips
-
-<AccordionGroup>
-  <Accordion title="Review dialogs regularly">
-    Especially in the first days after launch. Browse conversations in the **Chats** section at least once a day during the first week.
-  </Accordion>
-  <Accordion title="Use filters for analysis">
-    Filter dialogs by a specific employee and review the last 10-15 conversations. This gives you an understanding of where the employee performs well and where adjustments to the persona or knowledge base are needed.
-  </Accordion>
-  <Accordion title="Don't hesitate to step in">
-    If you see that the employee is not responding correctly, jump in and reply yourself. The employee will automatically pause. After the conversation, adjust the settings.
-  </Accordion>
-  <Accordion title="Set up notifications for critical situations">
-    Create triggers in the [Notifications](/en/guides/notifications) section for complaints, returns, VIP clients, and questions outside the employee's competency. You'll get an alert in Telegram and can quickly step in.
-  </Accordion>
-  <Accordion title="Share control commands with the team">
-    If your managers work in a messenger, configure start and stop commands in the [Additional Settings](/en/guides/additional-settings) tab and share them with the team.
-  </Accordion>
-</AccordionGroup>
-
----
+<Warning>**Erase memory** can't be undone: the employee will forget everything you agreed on with the customer in this conversation. The label "Conversation history cleared" remains in the feed.</Warning>
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Are chats stored forever or deleted?">
-    Chat history is kept on the platform. For some channels an **Auto-clear history** setting is available in the [Channel](/en/channels/index) tab — it allows automatic deletion of old dialogs.
+  <Accordion title="Where did the employee get this answer?">
+    Click the chart icon under the message — **Response analysis** shows what was found in the Knowledge Base and Self-Learning, which talents fired, and why the reply turned out the way it did. Start your review of any mistake here.
   </Accordion>
-  <Accordion title="Can I reply to a client from the Chats section if they wrote in Telegram?">
-    Yes. When you send a message through the **Chats** section, the client receives it in whichever messenger they used to reach out. You don't need to open Telegram or amoCRM — everything is handled from one window.
+
+  <Accordion title="I cleared the history, but the employee still remembers the name and details">
+    The name, phone number, and preferences are stored separately — in the [customer profile](/en/guides/profiles), and clearing the conversation doesn't affect them. To make the employee forget those too, clear the profile.
   </Accordion>
+
+  <Accordion title="The employee starts greeting the customer again mid-conversation">
+    Automatic history clearing kicked in: the channel settings have too short an interval, so the context is reset during the conversation. Increase the interval or turn off automatic clearing in the [channel settings](/en/channels/index).
+  </Accordion>
+
+  <Accordion title="How do I turn off the employee in one chat without affecting the others?">
+    **•••** menu → **Stop AI**. A red banner appears, and you'll be the one replying in this conversation. To silence the employee across all channels at once, turn the employee itself off in the [AI Employees](/en/guides/ai-employees) list.
+  </Accordion>
+
+  <Accordion title="Can the customer tell that a human is replying instead of the AI?">
+    No. Your message comes from the same bot or account the customer was talking to the employee through — the switch is invisible to them.
+  </Accordion>
+
   <Accordion title="What happens if two managers reply in the same chat at the same time?">
-    The client will receive both messages. It is recommended to coordinate within your team who handles a specific dialog to avoid duplication.
+    The customer gets both messages — the platform doesn't merge them or block anyone. Agree within your team on who's handling each conversation.
   </Accordion>
-  <Accordion title="The employee paused after my reply. How do I resume it?">
-    Three options: (1) wait 10-20 minutes — if auto-resume is configured, the employee will start on its own; (2) send the **AI start command** in the messenger; (3) manage from the platform interface.
+
+  <Accordion title="The employee stopped replying after a certain number of messages">
+    The **Message limit** kicked in — a cap on the number of replies in one chat per day. It's set on the [Additional Settings](/en/guides/additional-settings) tab; if the field is empty, there's no limit.
   </Accordion>
-  <Accordion title="Can I view chats from all employees in one place?">
-    Yes. The **Chats** section in the left menu shows dialogs across all employees. Use the employee filter to narrow the selection.
-  </Accordion>
-  <Accordion title="Does the client see that they are talking to a manager, not the AI?">
-    In most cases, the client sees messages from the same contact (bot or account) through which the AI employee was communicating. The transition is visually seamless for the client.
-  </Accordion>
-  <Accordion title="Is there a message limit per chat?">
-    Yes. In the [Additional Settings](/en/guides/additional-settings) tab for each employee there is a **Message limit** setting — a cap on the number of messages in one chat per 24 hours. If no limit is set, there are no restrictions.
-  </Accordion>
-  <Accordion title="What should I do if the AI gave a bad answer?">
-    Click the **thumbs down** button on the specific AI message — it launches a 4-step review: auto-diagnostics → instruction check → your problem description → automatic context report attachment. The ticket is sent to the AI training team. See [How to report an AI response](/en/guides/support#how-to-report-an-ai-response-thumbs-down) for details.
-  </Accordion>
-  <Accordion title="How is 'Response analysis' different from 'thumbs down'?">
-    **Response analysis** is a technical breakdown: which language was detected, which [talents](/en/guides/talents) were called, what was found in the [knowledge base](/en/guides/knowledge), how the final decision was made. It only shows information — nothing is sent anywhere. **Thumbs down** uses the same diagnostics and **submits** it to support together with your description.
-  </Accordion>
-  <Accordion title="How do I share a chat with someone without an account?">
-    Open the `⋮` menu → **Share link**. The platform generates a public `/live/:id` link — you can send it to anyone. See [Live chat](#live-chat--public-view) for details.
-  </Accordion>
-  <Accordion title="How do I reset the dialog context with the AI?">
-    Three ways: (1) the **Clear history** button above the feed; (2) `⋮` menu → **Wipe memory**; (3) the text command (default `delete all`) right in the chat. The command can be changed in [Account Settings](/en/guides/account-settings).
+
+  <Accordion title="How do I know the employee handed the conversation over to me?">
+    Through a Telegram notification. The handover itself isn't configured here, but with triggers in [Notifications](/en/guides/notifications): until a trigger exists, the conversation won't pause and you won't get anything, even if the employee promised the customer to call a manager.
   </Accordion>
 </AccordionGroup>
+
+## Fine points
+
+You don't need these for everyday work. Come back here when you need to dig into a tricky case or show a conversation to a colleague.
+
+<AccordionGroup>
+  <Accordion title="Share a conversation with someone who has no platform access">
+    **•••** menu → **Share link**. The **Share chat** window opens with a link like `app.aitextura.com/live/…` — it opens the conversation in a browser without signing in to the platform, and you can reply to the customer under your own name from the same page.
+
+    <Warning>Anyone who gets the link can see the conversation. Don't send it if the conversation contains the customer's personal data.</Warning>
+  </Accordion>
+
+  <Accordion title="Chat report">
+    **Report (all messages)** lays out the conversation line by line: role (`user` or `assistant`), exact time, message ID, and an expanded log under each employee reply. At the top are **Copy all** and **Expand all**. The format is designed to be handed over in full to Support or a developer.
+  </Accordion>
+
+  <Accordion title="Link to a specific message">
+    Under an employee's reply there's a short code like `01351f` — clicking it copies it. This makes it easy to reference a single message when talking to colleagues or in a support request, without retelling the whole conversation.
+  </Accordion>
+
+  <Accordion title="What you can do with an individual message">
+    The action bar appears only under AI Employee replies — customer messages can only be deleted.
+
+    | Icon | What it does |
+    |---|---|
+    | Copy | Copies the reply text to the clipboard |
+    | Thumbs down | Opens **What went wrong?** |
+    | Chart | Opens **Response analysis** |
+    | Message code | Copies the short ID |
+    | Trash | Deletes the message from the chat and from the employee's context |
+  </Accordion>
+
+  <Accordion title="The customer profile fills itself in">
+    The **Customer profile** item opens a card with the customer's data: name, phone, needs, and other fields from connected templates. You don't need to enter anything manually — the AI Employee fills them in as the conversation goes. A new customer's card is empty, and that's normal. See [Profiles](/en/guides/profiles) for details.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Triggers that call you into a conversation and pause the chat
+  </Card>
+  <Card title="Persona" icon="brain" href="/en/guides/persona">
+    Rules the employee follows to run a conversation and call a human
+  </Card>
+  <Card title="Profiles" icon="users" href="/en/guides/profiles">
+    The customer card the employee fills in from the conversation
+  </Card>
+  <Card title="Additional Settings" icon="sliders" href="/en/guides/additional-settings">
+    Messenger commands, message limit, behavior after a manager replies
+  </Card>
+</CardGroup>

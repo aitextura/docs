@@ -1,0 +1,96 @@
+---
+title: "Telegram Groups"
+description: "An AI Employee in a Telegram group chat: it replies to mentions and replies or decides on its own when to step in, adds reactions, and sends a digest of discussions."
+---
+
+In a group, your AI Employee works differently than in a private chat: it doesn't reply to every message, or it would flood the chat. A group bot stays silent until someone calls it with an `@mention` or **Reply**. If you turn on the **AI Trigger**, it decides on its own when to chime in.
+
+## Add the bot to a group
+
+You'll need your own bot from **@BotFather**; the platform doesn't create bots for group channels. You get the token with the `/mybots` command → your bot → **API Token**.
+
+Open the AI Employee → **Channel** tab → **Connect New** → **Telegram** and switch **Channel Type** to **Group**.
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/tg_group_connect.png" alt="The Add Channel panel with the Group type selected: channel name, Telegram Bot Token, conversation memory, and lifetime" />
+</Frame>
+
+Fill in **Channel Name** and **Telegram Bot Token**, click **Create**, and then add the bot to the group as a regular member.
+
+<Warning>Turn off Privacy Mode in @BotFather: **My Bots** → your bot → **Bot Settings** → **Group Privacy** → **Turn off**. While it's on, the bot only sees mentions and replies, and the AI Trigger, reactions, and digest won't work.</Warning>
+
+## Conversation memory
+
+Two fields below the token set how much context your AI Employee keeps in mind. **Messages to Remember** sets how many recent group messages it rereads before replying. **Conversation Lifetime** sets how many minutes of silence end the conversation and reset the context. Zero means the conversation never ends.
+
+## When the bot replies
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/tg_group_behavior.png" alt="The Behavior block: @mention, Reply, and Typing Indicator toggles with a delay setting" />
+</Frame>
+
+The **Behavior** block controls direct requests. With **@mention**, the AI Employee replies when someone calls it by the bot's name. With **Reply**, it replies when someone responds to its message and the conversation continues. Both are usually left on: without them, the bot won't respond in the group at all.
+
+**Typing Indicator** shows a "typing" status in the chat. **Delay** sets how many seconds before it appears, **Show During Buffer** sets whether it shows while the AI Employee waits for more messages, and **Repeat While AI Is Working** keeps the status on until the reply is sent.
+
+### AI Trigger
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/tg_group_ai_trigger.png" alt="The AI Trigger (bot decides on its own) setting: trigger prompt and confidence threshold slider" />
+</Frame>
+
+With the **AI Trigger** on, your AI Employee reads the conversation and decides whether it has something to say, even when nobody called it. In the **AI Trigger Prompt**, describe in plain words when it should step in: "reply if someone asks a question on your topic, asks for help, or discusses a subject you're an expert in."
+
+**Confidence Threshold** sets how confident the AI Employee must be before it posts. The higher the value, the less often it chimes in: at 80%, it only replies when the reason is obvious; below 50%, it starts commenting on almost everything.
+
+## Reactions
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/tg_group_reactions.png" alt="The Random Reactions to Messages setting: probability, emoji list, and reaction prompt" />
+</Frame>
+
+**Random Reactions** make your AI Employee occasionally mark other people's messages with an emoji. The chat feels livelier, and the bot doesn't sit completely silent between replies. **Reaction Probability** sets how often this happens: 20% means roughly every fifth message.
+
+In the **Emoji** field, list the reactions it's allowed to use. The **Reaction Prompt** explains how to choose: "for a question, 🤔; for thanks, 🙏; for news, 🔥." If you leave the prompt empty, the AI Employee picks whatever it considers fitting from the list each time.
+
+## Daily digest
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/tg_group_digest.png" alt="The Daily Digest setting: time zone, send time, frequency, and summary prompt" />
+</Frame>
+
+Your AI Employee posts a recap of recent discussions to the group. This is handy for work chats where two hundred messages pile up in a day and nobody reads them all.
+
+Set the **Time Zone** and **Send Time** (the hour, in 24-hour format). **Frequency** sets how many days apart the summaries arrive. For the **Summary Prompt**, you can use a ready-made option or select **Write Your Own Prompt** and explain what matters to you: "highlight decisions made and open questions, skip the rest."
+
+## Other settings
+
+<Frame>
+  <img src="/assets/images/ru/screenshots/tg_group_settings.png" alt="The Settings block: daily per-user message limit, AI inline buttons, message buffer, and history auto-cleanup" />
+</Frame>
+
+| Setting | What it does |
+|---|---|
+| **Daily Message Limit per User** | How many times one member can call the AI Employee per day. Empty or zero means no limit |
+| **AI Inline Buttons** | The AI Employee adds buttons with options below its reply. They work noticeably worse in groups than in private chats: anyone can tap them, not just the person who asked |
+| **Message Buffer** | The AI Employee waits for the **Buffer Time** before replying, since people split one thought into several messages |
+| **History Auto-Cleanup** | Deletes the conversation on a schedule; **Cleanup Period** sets the frequency |
+
+<Warning>Auto-cleanup deletes messages permanently.</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Telegram" icon="paper-plane" href="/en/channels/telegram">
+    Private chats with customers and replies from your account
+  </Card>
+  <Card title="Channels" icon="plug" href="/en/channels">
+    All the ways to connect customers to your AI Employee
+  </Card>
+  <Card title="Persona" icon="brain" href="/en/guides/persona">
+    How the AI Employee runs conversations and what tone it uses
+  </Card>
+  <Card title="Notifications" icon="bell" href="/en/guides/notifications">
+    Learn about important events in time
+  </Card>
+</CardGroup>

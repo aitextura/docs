@@ -1,9 +1,10 @@
 ---
-title: "Organizations and Team"
-description: "Create organizations (companies) so your team can collaborate on AI employees together."
+title: "Organizations and teams"
+sidebarTitle: "Organization"
+description: "Create organizations (companies) so your team can work on AI Employees together."
 ---
 
-An organization is a shared workspace for your team: a common pool of AI employees, a shared balance, and dedicated member roles. If you work on the platform alone, your personal account is enough. If you bring in colleagues, hand off projects to clients, or run several business lines — create an organization.
+An organization is a workspace for your team: a shared pool of AI Employees, a shared balance, and separate member roles. If you work on the platform alone, a personal account is enough. If you're bringing in colleagues, handing projects over to clients, or running several business lines, create an organization.
 
 <Frame>
   <img src="/public/screenshots/04-organization-selector.png" alt="Organization selector menu" />
@@ -20,7 +21,7 @@ An organization is a shared workspace for your team: a common pool of AI employe
     Help and tickets
   </Card>
   <Card title="AI Employees" icon="robot" href="/en/guides/ai-employees">
-    Collaborate on agents as a team
+    Working on agents together
   </Card>
 </CardGroup>
 
@@ -28,42 +29,42 @@ An organization is a shared workspace for your team: a common pool of AI employe
 
 ## Terminology
 
-The platform UI uses the term **"Organization"** (`/organization`, the "Create organization" button in the context switcher). In casual conversation and marketing materials you'll often see the synonym **"Company"** — they refer to the same thing.
+The platform interface uses the term **Organization** (`/organization`, the Create organization button in the context switcher menu). In everyday speech and marketing materials, you'll often see the synonym **Company** -- they mean the same thing.
 
-In this documentation we use "Organization" as the primary term and mention "Company" once for those who are used to it.
+In this documentation, we use "Organization" as the main term and mention "Company" the first time for those who are used to it.
 
 ---
 
 ## Personal account vs organization
 
-The platform has two contexts that you can switch between with one click:
+The platform has two contexts at once, and you can switch between them in one click:
 
 | Context | What's inside |
 |---|---|
-| **Personal account** | Personal balance, charge history (`/billing/words/history`), personal AI employees, personal connections |
-| **Organization** | Shared balance, shared agents, shared connections, member roles. Charge history is hidden in the org context — billing follows the organization's plan |
+| **Personal account** | Personal balance, charge history (`/billing/words/history`), personal AI Employees, personal connections |
+| **Organization** | Shared balance, shared agents, shared connections, separate member roles. Charge history is hidden in the organization context -- billing follows the organization's plan |
 
-Things to know:
+What you need to know:
 
-- **Agents don't move automatically.** Personal agents stay in your personal context; organization agents live inside the organization. Create the agent in the right context from the start.
-- **Billing is separate.** Charges from a personal conversation come out of your personal balance. Charges in an organization come out of its own balance.
-- **Only owners and admins can invite people.** Regular members see the list of others but can't add new ones.
+- **Agents don't "move" automatically.** Personal agents stay in your personal context; organization agents stay inside the organization. Create an agent in the right context from the start.
+- **Billing is separate.** Charges for a personal conversation come from your personal balance. Charges in an organization come from its own balance.
+- **Only owners and admins can invite people to an organization.** Regular members see the list of others but can't add new ones.
 
 ---
 
 ## Context switcher
 
-The context switcher button is at the top of the sidebar — above the main menu. Clicking it opens the "Select organization" dropdown.
+The context switcher button is at the top of the sidebar, above the main menu. Clicking it opens the "Select organization" drop-down menu.
 
-The menu contains:
+The menu includes:
 
-- **Current context** — the highlighted item at the top (personal account or one of your organizations).
-- **List of your organizations** — each with your role (Owner, Admin, Member).
-- **Organization settings** — navigates to `/organization?tab=general` for the current organization.
-- **Create organization** — opens the new organization form.
+- **Current context** -- the checked item at the top (your personal account or one of your organizations).
+- **Your organizations** -- with your role in each (Owner, Admin, Member).
+- **Organization settings** -- goes to `/organization?tab=general` for the current organization.
+- **Create organization** -- opens the form for creating a new one.
 
 <Tip>
-  Switch context before opening a section — the balance, chats, agents, and billing pages all reflect whichever context you're currently in.
+  Switch the context before you open a section -- the balance, chats, agents, and billing you see belong to the context you're currently in.
 </Tip>
 
 ---
@@ -78,22 +79,22 @@ The menu contains:
   <Step title="Open the context switcher">
     Click the context switcher button at the top of the sidebar.
   </Step>
-  <Step title="Click 'Create organization'">
-    The button is at the bottom of the dropdown menu.
+  <Step title="Click Create organization">
+    The button to create a new organization is at the bottom of the drop-down menu.
   </Step>
   <Step title="Enter a name">
-    The **Name** field is required. This is the visible name of the organization in the switcher and in the header.
+    The **Name** field is required. It's the organization's visible name in the switcher and in the header.
   </Step>
   <Step title="Enter a slug (optional)">
-    The **Slug** field accepts Latin letters, digits, and hyphens. It's used in URLs (`/o/<slug>/...`). If you leave it blank, one is generated automatically from the name.
+    The **Slug** field accepts Latin letters, digits, and hyphens. It's used in the URL (`/o/<slug>/...`). If you leave it empty, it's generated automatically from the name.
   </Step>
-  <Step title="Click 'Create'">
-    The platform automatically switches context to the new organization. You are its owner.
+  <Step title="Click Create">
+    After creation, the platform automatically switches the context to the new organization. You're its owner.
   </Step>
 </Steps>
 
 <Note>
-  You can create multiple organizations — for example, for different clients or business lines. They all show up in the switcher.
+  You can create several organizations -- for example, for different clients or business lines. All of them are available in the switcher.
 </Note>
 
 ---
@@ -110,11 +111,11 @@ The `/organization` section has two tabs: **General** and **Members**.
 
 Here you can:
 
-- Upload an organization **avatar**.
+- Upload the organization's **avatar**.
 - Change the **name**.
 - Change the **slug** (URL).
 
-Changes are saved by clicking the corresponding button. Change the slug carefully — it changes public URLs.
+Changes are saved when you click the corresponding button. Be careful when changing the slug -- it changes public URLs.
 
 ### Members tab
 
@@ -124,43 +125,43 @@ Changes are saved by clicking the corresponding button. Change the slug carefull
 
 Here you'll find:
 
-- The full list of organization members with a role badge.
-- The invite button (available to owners and admins).
-- Member actions — change role or remove (available to owners and admins).
+- A list of all organization members with a role badge.
+- A button to invite a new member (available to owners and admins).
+- Member actions -- changing a role or removing a member (available to owners and admins).
 
 <Warning>
-  If you're a member without admin rights, you'll see an alert "Failed to load invitations." This is expected: the invitation list is only shown to owners and admins.
+  If you're a member without admin rights, you'll see the alert "Failed to load invitations". This is expected: the invitation list is shown only to owners and administrators.
 </Warning>
 
 ---
 
 ## Roles
 
-An organization has three roles with different access levels.
+An organization has three roles with different levels of access.
 
 | Role | What they can do |
 |---|---|
-| **Owner** | Full control. Can do everything, including deleting the organization. Cannot leave the organization (must transfer ownership first). |
-| **Admin** | Manage members (invitations, role changes except owner, removal), billing, and organization settings. |
-| **Member** | Standard access to agents, chats, and broadcasts. Doesn't see member management or billing tools. The "Leave organization" button is available. |
+| **Owner** | Full control. Can do everything, including deleting the organization. Can't leave the organization (must transfer the role first). |
+| **Admin** | Manages members (invitations, changing roles except the owner's, removal), billing, and organization settings. |
+| **Member** | Regular access to agents, chats, and broadcasts. Doesn't see people management or billing tools. The Leave organization button is available. |
 
 <Note>
-  Each organization has exactly one owner. To transfer ownership, the current owner promotes another member to Owner — after which the previous owner becomes an admin or can leave the organization.
+  Each organization has exactly one owner. To transfer ownership, the current owner must promote another member to owner, after which they become an admin or can leave the organization.
 </Note>
 
 ---
 
 ## Organization billing and balance
 
-Every organization has its **own balance** and **own plan**. Charges for the organization's agents come out of its own balance, not your personal one.
+Each organization has a **separate balance** and a **separate plan**. Charges for the organization's agents come from its own balance, not your personal one.
 
-What to know:
+What matters:
 
-- In the organization context, the `/billing` page shows the organization's balance, available plans, and its purchase history.
-- **The "charge history" page (`/billing/words/history`) is only visible in the personal account.** This breakdown is currently hidden for organizations — track spend through the aggregate metrics in [Billing](/en/guides/finance).
+- In the organization context, the `/billing` page shows the organization's balance, available plans, and that organization's purchase history.
+- **Charge history (`/billing/words/history`) is visible only in your personal account.** For organizations, this breakdown is hidden in the current version -- track usage with the summary metrics in [Billing](/en/guides/finance).
 - The owner and admins can top up the organization's balance.
 
-See [Billing](/en/guides/finance) for details.
+For details, see [Billing](/en/guides/finance).
 
 ---
 
@@ -170,30 +171,30 @@ Available to owners and admins. The basic flow:
 
 <Steps>
   <Step title="Open the Members tab">
-    `/organization?tab=members` in the desired organization's context.
+    `/organization?tab=members` in the context of the organization you need.
   </Step>
   <Step title="Click the invite button">
-    Enter the invitee's email and pick a role (Admin or Member).
+    Enter the invitee's email and choose a role (Admin or Member).
   </Step>
   <Step title="Send the invitation">
-    The user receives an email with a link. Once accepted, they appear in the member list.
+    The user receives a link by email. Once they accept, they appear in the member list.
   </Step>
 </Steps>
 
 <Tip>
-  If an invitation seems "stuck", ask the recipient to check their spam folder and double-check the email address.
+  If an invitation is "stuck", ask the recipient to check their Spam folder and make sure the email address is correct.
 </Tip>
 
 ---
 
-## Removing and leaving an organization
+## Removing members and leaving an organization
 
-- **Leave organization** (Member or Admin role) — button on the members page or in settings. After leaving, you lose access to the organization's agents and data; everything stays with the organization.
-- **Remove a member** (Owner, Admin) — action in the member list.
-- **Delete the entire organization** — Owner only, in settings. All of the organization's agents, chats, and profiles are deleted permanently.
+- **Leave organization** (Member or Admin role) -- a button on the members page or in settings. After you leave, you lose access to the organization's agents and data; they stay with the organization.
+- **Remove member** (Owner, Admin) -- an action in the member list.
+- **Delete the entire organization** -- Owner only, in settings. All of the organization's agents, chats, and profiles are permanently deleted.
 
 <Warning>
-  Deleting an organization is irreversible. If there's data you need to keep, export the chats and knowledge base first.
+  Deleting an organization can't be undone. If there's data you need to keep, export the chats and Knowledge Base first.
 </Warning>
 
 ---
@@ -201,28 +202,28 @@ Available to owners and admins. The basic flow:
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Can I have multiple organizations?">
-    Yes, there's no limit on the number. They all show up in the context switcher and you can switch between them with one click.
+  <Accordion title="Can I have several organizations?">
+    Yes, there's no limit. All organizations are available in the context switcher, and you can switch in one click.
   </Accordion>
   <Accordion title="What happens if I leave an organization?">
-    Access to its agents, chats, and settings is closed. The agents and data themselves stay with the organization — they're not deleted. If you come back via invitation, your access is restored.
+    You lose access to its agents, chats, and settings. The agents and data themselves stay with the organization -- they aren't deleted. If you come back via an invitation, your access is restored.
   </Accordion>
-  <Accordion title="Can I invite users to an organization?">
+  <Accordion title="Can I invite a user to an organization?">
     Yes, but only owners and administrators can. Regular members don't see this option.
   </Accordion>
-  <Accordion title="Where do I see organization spend?">
-    In the organization context, open [Billing](/en/guides/finance) — you'll see the balance and plans there. The detailed word-by-word charge history is hidden in the org context; use the aggregate metrics and the [Dashboard](/en/guides/dashboard).
+  <Accordion title="Where can I see the organization's spending?">
+    In the organization context, open the [Billing](/en/guides/finance) section -- it shows the balance and plans. The detailed word-by-word charge history is hidden in the organization context; use the summary metrics and the [Dashboard](/en/guides/dashboard).
   </Accordion>
-  <Accordion title="What's the difference between a personal account and an organization?">
-    A personal account is for a single user — your own balance, your own agents, your own history. An organization is for a team: a shared pool of agents, a shared balance, member roles, and joint management.
+  <Accordion title="How is a personal account different from an organization?">
+    A personal account is designed for a single user -- it has its own balance, agents, and history. An organization is for a team: a shared pool of agents, a shared balance, member roles, and joint management.
   </Accordion>
-  <Accordion title="Can I have personal agents and organization agents at the same time?">
-    Yes. The contexts are independent. Personal agents live in your personal account; organization agents live in the organization. Switch between them via the context switcher.
+  <Accordion title="Can I have personal and organization agents at the same time?">
+    Yes. The contexts are independent. Personal agents live in your personal account, organization agents in the organization. Use the switcher to move between them.
   </Accordion>
   <Accordion title="How do I transfer ownership of an organization to another user?">
-    The current owner promotes the chosen member to Owner on the Members tab. After that, the former owner becomes an admin or can leave the organization.
+    The current owner promotes the chosen member to Owner on the Members tab. After that, the former owner becomes an administrator or can leave the organization.
   </Accordion>
-  <Accordion title="Can I use the same agent in both a personal account and an organization?">
-    No — an agent is tied to a single context. If you need "the same" agent in an organization, copy the Persona and knowledge base into a new agent created inside that organization.
+  <Accordion title="Can I use the same agent in my personal account and in an organization?">
+    No -- an agent is tied to one context. If you need "the same" agent in an organization, copy the Persona and Knowledge Base into a new agent created inside the organization.
   </Accordion>
 </AccordionGroup>
