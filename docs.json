@@ -292,7 +292,8 @@
                     "pages": [
                       "ru/channels/telegram",
                       "ru/channels/telegram-groups",
-                      "ru/channels/messengers"
+                      "ru/channels/messengers",
+                      "ru/channels/jivo"
                     ]
                   },
                   {
